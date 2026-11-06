@@ -1,4 +1,4 @@
-# Ben 10 Bedrock Addon - Modular Bedrock 1.21.20+ JavaScript Logic
+# Ben 10 Bedrock Addon - Modular Bedrock 1.20.80+ / 1.21.x JavaScript Logic
 # Interactive Omnitrix Dial UI (@minecraft/server-ui), Series Sound FX, Battery Timers
 # Strictly under 1000 lines - Pure Python
 
@@ -65,6 +65,39 @@ function safeEquip(player, slot, itemId) {
   return false;
 }
 
+// Mobile Safe Form Show with UserBusy Retry
+function showActionFormSafe(player, form, onSelect, retries = 4) {
+  form.show(player).then((response) => {
+    if (response.canceled) {
+      if (response.cancelationReason === "UserBusy" && retries > 0) {
+        system.runTimeout(() => {
+          showActionFormSafe(player, form, onSelect, retries - 1);
+        }, 5);
+      }
+      return;
+    }
+    if (typeof onSelect === "function") {
+      onSelect(response.selection);
+    }
+  });
+}
+
+function showModalFormSafe(player, form, onSubmit, retries = 4) {
+  form.show(player).then((response) => {
+    if (response.canceled) {
+      if (response.cancelationReason === "UserBusy" && retries > 0) {
+        system.runTimeout(() => {
+          showModalFormSafe(player, form, onSubmit, retries - 1);
+        }, 5);
+      }
+      return;
+    }
+    if (typeof onSubmit === "function") {
+      onSubmit(response.formValues);
+    }
+  });
+}
+
 // Interactive Omnitrix Dial UI via @minecraft/server-ui
 function openOmnitrixDialUI(player, state) {
   if (state.rechargeSeconds > 0) {
@@ -84,7 +117,7 @@ function openOmnitrixDialUI(player, state) {
   const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
 
   const form = new ActionFormData();
-  form.title(`§2§l┏━━━━━━━━━━━━━━━━━━━━┓\n§a⚡ OMNITRIX: ${watchName} ⚡\n§2┗━━━━━━━━━━━━━━━━━━━━┛`);
+  form.title(`§2§l[ ⚡ OMNITRIX: ${watchName} ⚡ ]`);
 
   let statusText = `§a● CORE SYSTEM: §fONLINE §8| §bUSER: §fBEN TENNYSON\n`;
   statusText += `§e● STATUS: ${state.isTransformed ? "§eTRANSFORMED (" + state.currentAlien.name + ")" : "§bSTANDBY (HUMAN)"}\n`;
@@ -124,10 +157,8 @@ function openOmnitrixDialUI(player, state) {
     form.button(`§2§l${alien.name.toUpperCase()}\n§7[${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}]`, iconPath);
   }
 
-  form.show(player).then((response) => {
-    if (response.canceled) return;
-
-    let sel = response.selection;
+  showActionFormSafe(player, form, (sel) => {
+    if (sel === undefined || sel === null) return;
 
     if (hasDetransformBtn) {
       if (sel === 0) {
@@ -165,7 +196,7 @@ function openOmnitrixDialUI(player, state) {
 // Biomnitrix Dynamic Fusion Menu with 1-Click Upgrade Fusions & Custom Combiner
 function openBiomnitrixFusionUI(player, state) {
   const form = new ActionFormData();
-  form.title("§e§l🧬 BIOMNITRIX DUAL FUSION MATRIX 🧬");
+  form.title("§e§l[ 🧬 BIOMNITRIX DUAL FUSION 🧬 ]");
   form.body("§7Choose an iconic Upgrade Mechamorph Hybrid or create a custom DNA combo:");
 
   form.button("§a§l[ ⚡ MECHA-FOURARMS ⚡ ]\n§8Upgrade + Four Arms (EMP Quake Slam)", "textures/items/upgrade_ability.png");
@@ -176,8 +207,8 @@ function openBiomnitrixFusionUI(player, state) {
   form.button("§e§l[ ⚡ MECHA-CANNONBOLT ⚡ ]\n§8Upgrade + Cannonbolt (Galvanic EMP Pinball)", "textures/items/upgrade_ability.png");
   form.button("§f§l[ 🧬 CUSTOM DUAL FUSION MATRIX 🧬 ]\n§8Combine Any 2 Aliens from Database", "textures/items/biomnitrix_fusion_ability.png");
 
-  form.show(player).then((response) => {
-    if (response.canceled) return;
+  showActionFormSafe(player, form, (sel) => {
+    if (sel === undefined || sel === null) return;
     const upgradeAlien = ALL_ALIENS.find(a => a.id === "upgrade") || FUSION_POOL[0];
     const fourarmsAlien = ALL_ALIENS.find(a => a.id === "four_arms" || a.id === "fourarms") || FUSION_POOL[1];
     const xlr8Alien = ALL_ALIENS.find(a => a.id === "xlr8") || FUSION_POOL[2];
@@ -186,7 +217,6 @@ function openBiomnitrixFusionUI(player, state) {
     const ripjawsAlien = ALL_ALIENS.find(a => a.id === "ripjaws") || FUSION_POOL[5];
     const cannonboltAlien = ALL_ALIENS.find(a => a.id === "cannonbolt") || FUSION_POOL[6];
 
-    const sel = response.selection;
     if (sel === 0) transformFusion(player, upgradeAlien, fourarmsAlien, state);
     else if (sel === 1) transformFusion(player, upgradeAlien, xlr8Alien, state);
     else if (sel === 2) transformFusion(player, upgradeAlien, heatblastAlien, state);
@@ -199,15 +229,15 @@ function openBiomnitrixFusionUI(player, state) {
 
 function openCustomBiomnitrixModal(player, state) {
   const form = new ModalFormData();
-  form.title("§e§l🧬 CUSTOM DUAL DNA FUSION 🧬");
+  form.title("§e§l[ 🧬 CUSTOM DUAL DNA FUSION 🧬 ]");
   const alienNames = FUSION_POOL.map(a => a.name);
   form.dropdown("§6Select Primary Alien (Alien 1):", alienNames, 0);
   form.dropdown("§bSelect Secondary Alien (Alien 2):", alienNames, 1);
 
-  form.show(player).then((res) => {
-    if (res.canceled) return;
-    const a1 = FUSION_POOL[res.formValues[0]];
-    const a2 = FUSION_POOL[res.formValues[1]];
+  showModalFormSafe(player, form, (formValues) => {
+    if (!formValues) return;
+    const a1 = FUSION_POOL[formValues[0]];
+    const a2 = FUSION_POOL[formValues[1]];
     if (a1 && a2) {
       transformFusion(player, a1, a2, state);
     }
@@ -392,97 +422,87 @@ system.runInterval(() => {
   }
 }, 20);
 
-// Comprehensive Item Use Listeners (Watch Equip, Activator Dial UI, Alien Ability & Detransform)
-world.beforeEvents.itemUse.subscribe((event) => {
-  const item = event.itemStack;
-  const player = event.source;
+// Unified Robust Item Interaction Handler (Works on Mobile Touch, Blocks, Air & Inventory)
+function handleItemActivation(item, player) {
+  if (!item || !player) return;
   const state = getPlayerState(player);
   const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
 
-  // 1. Omnitrix Watch Wear/Switch
+  // 1. Omnitrix Watch Held: Tap screen to Synchronize AND open Dial UI immediately!
   if (item.typeId.startsWith("ben10:omnitrix_") || item.typeId.startsWith("ben10:biomnitrix_")) {
-    const rawWatchId = item.typeId.replace("ben10:", "");
-    event.cancel = true;
-    system.run(() => {
-      state.activeWatch = rawWatchId;
-      player.runCommandAsync("playsound random.anvil_use @a ~ ~ ~ 1 1.2");
-      player.runCommandAsync("playsound beacon.power @a ~ ~ ~ 1 1.5");
-      player.runCommandAsync("particle minecraft:villager_happy ~ ~1 ~");
-      player.runCommandAsync(`title @s actionbar §a§l[OMNITRIX SYNCHRONIZED] §f${rawWatchId.replace('_', ' ').toUpperCase()}`);
-    });
+    const rawWatchId = item.typeId.replace("ben10:", "").replace("_recharging", "");
+    state.activeWatch = rawWatchId;
+    player.runCommandAsync("playsound random.anvil_use @a ~ ~ ~ 1 1.2");
+    player.runCommandAsync("playsound beacon.power @a ~ ~ ~ 1 1.5");
+    player.runCommandAsync("particle minecraft:villager_happy ~ ~1 ~");
+    player.runCommandAsync(`title @s actionbar §a§l[OMNITRIX ACTIVE] §f${rawWatchId.replace('omnitrix_', '').replace('_', ' ').toUpperCase()}`);
+    openOmnitrixDialUI(player, state);
     return;
   }
 
   // 2. Omnitrix Activator: Opens Interactive Dial UI!
   if (item.typeId === "ben10:omnitrix_activator") {
-    event.cancel = true;
-    system.run(() => {
-      openOmnitrixDialUI(player, state);
-    });
+    openOmnitrixDialUI(player, state);
     return;
   }
 
   // 3. Dedicated Alien Ability Item
   if (item.typeId === "ben10:alien_ability" || item.typeId === "ben10:biomnitrix_fusion_ability") {
-    event.cancel = true;
-    system.run(() => {
-      if (!state.isTransformed || !state.currentAlien) {
-        player.runCommandAsync("title @s actionbar §c[NO ACTIVE TRANSFORMATION]");
-        return;
-      }
-
-      if (state.isFusion && state.fusionAlien1 && state.fusionAlien2) {
-        executeFusionAbility(player, state.fusionAlien1, state.fusionAlien2, player.isSneaking);
-      } else {
-        executeAbilityByType(player, state.currentAlien.ability_type, state.currentAlien.name, state.currentAlien.color_code, player.isSneaking);
-      }
-    });
+    if (!state.isTransformed || !state.currentAlien) {
+      player.runCommandAsync("title @s actionbar §c[NO ACTIVE TRANSFORMATION]");
+      return;
+    }
+    if (state.isFusion && state.fusionAlien1 && state.fusionAlien2) {
+      executeFusionAbility(player, state.fusionAlien1, state.fusionAlien2, player.isSneaking);
+    } else {
+      executeAbilityByType(player, state.currentAlien.ability_type, state.currentAlien.name, state.currentAlien.color_code, player.isSneaking);
+    }
     return;
   }
 
   // 4. Dedicated Detransform Item
   if (item.typeId === "ben10:detransform") {
-    event.cancel = true;
-    system.run(() => {
-      if (state.isTransformed) {
-        if (isClassic && state.transformSeconds > 0 && !state.masterControl) {
-          player.runCommandAsync("playsound random.break @a ~ ~ ~ 1 0.8");
-          player.runCommandAsync(`title @s actionbar §c§l[PROTOTYPE ERROR] §eClassic Manual Revert Locked! ⏳ ${state.transformSeconds}s Remaining`);
-          return;
-        }
-        player.runCommandAsync("title @s title §a§l[MANUAL REVERT]");
-        player.runCommandAsync("title @s subtitle §eReverted to normal form");
-        detransform(player, state);
+    if (state.isTransformed) {
+      if (isClassic && state.transformSeconds > 0 && !state.masterControl) {
+        player.runCommandAsync("playsound random.break @a ~ ~ ~ 1 0.8");
+        player.runCommandAsync(`title @s actionbar §c§l[PROTOTYPE ERROR] §eClassic Manual Revert Locked! ⏳ ${state.transformSeconds}s Remaining`);
+        return;
       }
-    });
+      player.runCommandAsync("title @s title §a§l[MANUAL REVERT]");
+      player.runCommandAsync("title @s subtitle §eReverted to normal form");
+      detransform(player, state);
+    }
     return;
   }
 
-  // 5. Direct Alien Badges
-  if (item.typeId.endsWith("_badge")) {
-    const rawAlienId = item.typeId.replace("ben10:", "").replace("_badge", "");
+  // 5. Direct Alien Badges / Abilities
+  if (item.typeId.endsWith("_badge") || (item.typeId.endsWith("_ability") && item.typeId !== "ben10:alien_ability" && item.typeId !== "ben10:biomnitrix_fusion_ability")) {
+    const rawAlienId = item.typeId.replace("ben10:", "").replace("_badge", "").replace("_ability", "");
     const directAlien = ALL_ALIENS.find(a => a.id === rawAlienId);
     if (directAlien) {
-      event.cancel = true;
-      system.run(() => {
-        transformPlayer(player, directAlien, state);
-      });
+      transformPlayer(player, directAlien, state);
       return;
     }
   }
 
   // 6. Entity Spawner Items
   if (item.typeId.startsWith("ben10:") && item.typeId.endsWith("_spawner")) {
-    event.cancel = true;
-    system.run(() => {
-      const rawEntity = item.typeId.replace("ben10:", "").replace("_spawner", "");
-      player.runCommandAsync(`summon ben10:${rawEntity} ~ ~ ~`);
-      player.runCommandAsync("playsound random.anvil_use @a ~ ~ ~ 1 1.4");
-      player.runCommandAsync("particle minecraft:villager_happy ~ ~1 ~");
-      player.runCommandAsync(`title @s actionbar §e[SUMMONED] §a§l${rawEntity.replace('_', ' ').toUpperCase()}!`);
-    });
+    const rawEntity = item.typeId.replace("ben10:", "").replace("_spawner", "");
+    player.runCommandAsync(`summon ben10:${rawEntity} ~ ~ ~`);
+    player.runCommandAsync("playsound random.anvil_use @a ~ ~ ~ 1 1.4");
+    player.runCommandAsync("particle minecraft:villager_happy ~ ~1 ~");
+    player.runCommandAsync(`title @s actionbar §e[SUMMONED] §a§l${rawEntity.replace('_', ' ').toUpperCase()}!`);
     return;
   }
+}
+
+// Subscribed to both afterEvents.itemUse (air) and afterEvents.itemUseOn (blocks) for 100% mobile reliability!
+world.afterEvents.itemUse.subscribe((event) => {
+  handleItemActivation(event.itemStack, event.source);
+});
+
+world.afterEvents.itemUseOn.subscribe((event) => {
+  handleItemActivation(event.itemStack, event.source);
 });
 
 // Chat Voice Commands System (!transform, !revert, !omnitrix, !mastercontrol, !dial, !fusion, !summon)
@@ -615,18 +635,18 @@ world.beforeEvents.chatSend.subscribe((event) => {
   }
 });
 
-// Auto-equip & Welcome Starter Kit upon entering the world
+// Auto-equip & Welcome Starter Kit upon entering the world (Safe 20-tick delay)
 world.afterEvents.playerSpawn.subscribe((event) => {
   const player = event.player;
   if (!player) return;
-  if (event.initialSpawn) {
-    player.runCommandAsync("title @s title §a§lBEN 10 ADDON ULTIMATE");
-    player.runCommandAsync("title @s subtitle §eEquip an Omnitrix or tap Activator to transform!");
+  system.runTimeout(() => {
+    player.runCommandAsync("title @s title §a§lBEN 10 ADDON");
+    player.runCommandAsync("title @s subtitle §eTap with Omnitrix to transform!");
     player.runCommandAsync("give @s ben10:omnitrix_classic 1");
     player.runCommandAsync("give @s ben10:omnitrix_activator 1");
     player.runCommandAsync("give @s ben10:kevin_car_spawner 1");
     player.runCommandAsync("give @s ben10:rustbucket_spawner 1");
     player.runCommandAsync("playsound random.levelup @a ~ ~ ~ 1 1.5");
-  }
+  }, 20);
 });
 """

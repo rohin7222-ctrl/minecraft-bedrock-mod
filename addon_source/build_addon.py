@@ -279,24 +279,26 @@ def write_bp_item(filename, identifier, icon, name, category="equipment", is_arm
         "minecraft:item": {
             "description": {"identifier": identifier, "menu_category": {"category": category}},
             "components": {
-                "minecraft:icon": icon,
+                "minecraft:icon": {"texture": icon},
                 "minecraft:display_name": {"value": name},
                 "minecraft:max_stack_size": 1,
-                "minecraft:hand_equipped": True
+                "minecraft:hand_equipped": True,
+                "minecraft:cooldown": {"category": "ben10_interactive", "duration": 0.2}
             }
         }
     }
     if is_armor:
         item_json["minecraft:item"]["components"]["minecraft:wearable"] = {"slot": "slot.armor.chest"}
         item_json["minecraft:item"]["components"]["minecraft:armor"] = {"protection": 10}
+        item_json["minecraft:item"]["components"].pop("minecraft:cooldown", None)
     if is_ability:
-        item_json["minecraft:item"]["components"]["minecraft:cooldown"] = {"category": "ben10_power", "duration": 0.5}
+        item_json["minecraft:item"]["components"]["minecraft:cooldown"] = {"category": "ben10_power", "duration": 0.4}
     with open(os.path.join(BP_DIR, "items", filename), "w", encoding="utf-8") as f:
         json.dump(item_json, f, indent=2)
 
 for w in WATCHES:
-    write_bp_item(f"{w['id']}.json", f"ben10:{w['id']}", w["id"], f"item.ben10:{w['id']}.name", is_armor=True)
-    write_bp_item(f"{w['id']}_recharging.json", f"ben10:{w['id']}_recharging", f"{w['id']}_recharging", f"item.ben10:{w['id']}_recharging.name")
+    write_bp_item(f"{w['id']}.json", f"ben10:{w['id']}", w["id"], f"item.ben10:{w['id']}.name", is_armor=False)
+    write_bp_item(f"{w['id']}_recharging.json", f"ben10:{w['id']}_recharging", f"{w['id']}_recharging", f"item.ben10:{w['id']}_recharging.name", is_armor=False)
 
     rec_json = {
         "format_version": "1.12.0",
@@ -354,12 +356,12 @@ with open(os.path.join(RP_DIR, "texts", "en_US.lang"), "w", encoding="utf-8") as
 with open(os.path.join(RP_DIR, "texts", "languages.json"), "w", encoding="utf-8") as f:
     json.dump(["en_US"], f)
 
-# 4. Manifests
-UUID_BP_HEADER = "e4c3f248-5fd4-4fce-a16a-7f8278de7d59"
-UUID_BP_DATA = "dfa444ca-78a6-4ff2-adf9-ea98c642e6e7"
-UUID_BP_SCRIPT = "9902c22a-4507-459b-a465-bd0ccddcbae5"
-UUID_RP_HEADER = "9eb93634-3b0c-42e5-8007-4ccf37f306ba"
-UUID_RP_MODULE = "786a8dc5-ab73-45d8-9778-f55ee3bc92b1"
+# 4. Manifests (Clean Universal Compatibility for Minecraft 1.20.80 - 1.21.x+)
+UUID_BP_HEADER = "a21b58f8-dc72-477f-b7e9-9856645b8629"
+UUID_BP_DATA = "4b758ad5-eae7-40ae-b0b5-023b4e0fe3ff"
+UUID_BP_SCRIPT = "fd374cda-6477-4c6a-908d-31d7df6707af"
+UUID_RP_HEADER = "41a98185-c42b-486a-91a5-cc335f1eb2e8"
+UUID_RP_MODULE = "99285d79-f2fb-44c7-9027-267659271a0b"
 
 bp_manifest = {
     "format_version": 2,
@@ -367,17 +369,16 @@ bp_manifest = {
         "name": "Ben 10: Omnitrix Origins (BP)",
         "description": "9 Legendary Omnitrixes, 76 Aliens, Humungousaur Titan Growth, Ultimates & Dynamic Biomnitrix Fusions! Smooth 60 FPS Mobile Optimized.",
         "uuid": UUID_BP_HEADER,
-        "version": [2, 1, 0],
-        "min_engine_version": [1, 21, 0]
+        "version": [3, 0, 0],
+        "min_engine_version": [1, 20, 80]
     },
     "modules": [
-        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [2, 1, 0]},
-        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [2, 1, 0], "entry": "scripts/main.js"}
+        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 0, 0]},
+        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 0, 0], "entry": "scripts/main.js"}
     ],
     "dependencies": [
-        {"module_name": "@minecraft/server", "version": "1.13.0"},
-        {"module_name": "@minecraft/server-ui", "version": "1.3.0"},
-        {"uuid": UUID_RP_HEADER, "version": [2, 1, 0]}
+        {"module_name": "@minecraft/server", "version": "1.11.0"},
+        {"module_name": "@minecraft/server-ui", "version": "1.2.0"}
     ]
 }
 with open(os.path.join(BP_DIR, "manifest.json"), "w", encoding="utf-8") as f:
@@ -389,10 +390,10 @@ rp_manifest = {
         "name": "Ben 10: Omnitrix Origins (RP)",
         "description": "High performance textures, sound effects, Carnitrix horror effects, and alien models.",
         "uuid": UUID_RP_HEADER,
-        "version": [2, 1, 0],
-        "min_engine_version": [1, 21, 0]
+        "version": [3, 0, 0],
+        "min_engine_version": [1, 20, 80]
     },
-    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [2, 1, 0]}]
+    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 0, 0]}]
 }
 with open(os.path.join(RP_DIR, "manifest.json"), "w", encoding="utf-8") as f:
     json.dump(rp_manifest, f, indent=2)
