@@ -6,7 +6,7 @@ def get_main_code():
     return r"""import { world, system, EquipmentSlot, ItemStack } from "@minecraft/server";
 import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";
 import { ALL_ALIENS, WATCH_ALIENS, FUSION_POOL } from "./aliens_data.js";
-import { executeAbilityByType } from "./abilities.js";
+import { executeAbilityByType, executeFusionAbility } from "./abilities.js";
 
 const playerStates = new Map();
 
@@ -162,21 +162,52 @@ function openOmnitrixDialUI(player, state) {
   });
 }
 
-// Biomnitrix Dynamic Fusion Menu
+// Biomnitrix Dynamic Fusion Menu with 1-Click Upgrade Fusions & Custom Combiner
 function openBiomnitrixFusionUI(player, state) {
-  const form = new ModalFormData();
-  form.title("§e§l🧬 BIOMNITRIX DUAL FUSION 🧬");
+  const form = new ActionFormData();
+  form.title("§e§l🧬 BIOMNITRIX DUAL FUSION MATRIX 🧬");
+  form.body("§7Choose an iconic Upgrade Mechamorph Hybrid or create a custom DNA combo:");
 
+  form.button("§a§l[ ⚡ MECHA-FOURARMS ⚡ ]\n§8Upgrade + Four Arms (EMP Quake Slam)", "textures/items/upgrade_ability.png");
+  form.button("§b§l[ ⚡ MECHA-XLR8 ⚡ ]\n§8Upgrade + XLR8 (Lightning Vortex Dash)", "textures/items/upgrade_ability.png");
+  form.button("§6§l[ ⚡ MECHA-HEATBLAST ⚡ ]\n§8Upgrade + Heatblast (Galvanic Plasma Flame)", "textures/items/upgrade_ability.png");
+  form.button("§3§l[ ⚡ MECHA-DIAMONDHEAD ⚡ ]\n§8Upgrade + Diamondhead (Charged Crystal Railgun)", "textures/items/upgrade_ability.png");
+  form.button("§2§l[ ⚡ MECHA-RIPJAWS ⚡ ]\n§8Upgrade + Ripjaws (Hydro-Electric Cyber Bite)", "textures/items/upgrade_ability.png");
+  form.button("§e§l[ ⚡ MECHA-CANNONBOLT ⚡ ]\n§8Upgrade + Cannonbolt (Galvanic EMP Pinball)", "textures/items/upgrade_ability.png");
+  form.button("§f§l[ 🧬 CUSTOM DUAL FUSION MATRIX 🧬 ]\n§8Combine Any 2 Aliens from Database", "textures/items/biomnitrix_fusion_ability.png");
+
+  form.show(player).then((response) => {
+    if (response.canceled) return;
+    const upgradeAlien = ALL_ALIENS.find(a => a.id === "upgrade") || FUSION_POOL[0];
+    const fourarmsAlien = ALL_ALIENS.find(a => a.id === "four_arms" || a.id === "fourarms") || FUSION_POOL[1];
+    const xlr8Alien = ALL_ALIENS.find(a => a.id === "xlr8") || FUSION_POOL[2];
+    const heatblastAlien = ALL_ALIENS.find(a => a.id === "heatblast") || FUSION_POOL[3];
+    const diamondheadAlien = ALL_ALIENS.find(a => a.id === "diamondhead") || FUSION_POOL[4];
+    const ripjawsAlien = ALL_ALIENS.find(a => a.id === "ripjaws") || FUSION_POOL[5];
+    const cannonboltAlien = ALL_ALIENS.find(a => a.id === "cannonbolt") || FUSION_POOL[6];
+
+    const sel = response.selection;
+    if (sel === 0) transformFusion(player, upgradeAlien, fourarmsAlien, state);
+    else if (sel === 1) transformFusion(player, upgradeAlien, xlr8Alien, state);
+    else if (sel === 2) transformFusion(player, upgradeAlien, heatblastAlien, state);
+    else if (sel === 3) transformFusion(player, upgradeAlien, diamondheadAlien, state);
+    else if (sel === 4) transformFusion(player, upgradeAlien, ripjawsAlien, state);
+    else if (sel === 5) transformFusion(player, upgradeAlien, cannonboltAlien, state);
+    else if (sel === 6) openCustomBiomnitrixModal(player, state);
+  });
+}
+
+function openCustomBiomnitrixModal(player, state) {
+  const form = new ModalFormData();
+  form.title("§e§l🧬 CUSTOM DUAL DNA FUSION 🧬");
   const alienNames = FUSION_POOL.map(a => a.name);
   form.dropdown("§6Select Primary Alien (Alien 1):", alienNames, 0);
   form.dropdown("§bSelect Secondary Alien (Alien 2):", alienNames, 1);
 
-  form.show(player).then((response) => {
-    if (response.canceled) return;
-    const idx1 = response.formValues[0];
-    const idx2 = response.formValues[1];
-    const a1 = FUSION_POOL[idx1];
-    const a2 = FUSION_POOL[idx2];
+  form.show(player).then((res) => {
+    if (res.canceled) return;
+    const a1 = FUSION_POOL[res.formValues[0]];
+    const a2 = FUSION_POOL[res.formValues[1]];
     if (a1 && a2) {
       transformFusion(player, a1, a2, state);
     }
@@ -218,14 +249,12 @@ function transformPlayer(player, alien, state) {
   player.runCommandAsync(`title @s title ${flashColor}`);
 
   player.runCommandAsync("particle minecraft:villager_happy ~ ~1 ~");
-  player.runCommandAsync("particle minecraft:sonic_boom ~ ~1 ~");
 
-  // Alien Vocal Shout
   system.runTimeout(() => {
-    player.runCommandAsync("title @s times 4 35 8");
+    player.runCommandAsync("title @s times 4 40 8");
     player.runCommandAsync(`title @s title ${alien.color_code}§l[ ${alien.name.toUpperCase()}! ]`);
-    player.runCommandAsync(`title @s subtitle §7Species: §f${alien.species} §8| §bHome: §f${alien.species} Prime`);
-  }, 8);
+    player.runCommandAsync(`title @s subtitle §aSpecies: §f${alien.species} §8| §e⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}`);
+  }, 6);
 
   // Equip 3D Alien Suit Armor
   safeEquip(player, "chest", `ben10:${alien.id}_suit`);
@@ -257,11 +286,14 @@ function transformFusion(player, a1, a2, state) {
   state.transformSeconds = state.masterControl ? 9999 : 75;
   state.rechargeSeconds = 0;
 
-  const fusionName = `${a1.name.slice(0, Math.ceil(a1.name.length / 2))}-${a2.name.slice(Math.floor(a2.name.length / 2))}`;
+  const isMecha = a1.id === "upgrade" || a2.id === "upgrade";
+  const partner = a1.id === "upgrade" ? a2 : a1;
+  const fusionName = isMecha ? `Mecha-${partner.name}` : `${a1.name.slice(0, Math.ceil(a1.name.length / 2))}-${a2.name.slice(Math.floor(a2.name.length / 2))}`;
 
   player.runCommandAsync("playsound beacon.power @a ~ ~ ~ 1 1.2");
   player.runCommandAsync("playsound random.explode @a ~ ~ ~ 1 1.5");
   player.runCommandAsync("particle minecraft:totem_particle ~ ~1 ~");
+  player.runCommandAsync("particle minecraft:electric_spark_particle ~ ~1 ~");
   player.runCommandAsync("title @s times 0 10 5");
   player.runCommandAsync("title @s title §e§l█§6█████████§e§l█");
 
@@ -298,103 +330,85 @@ function detransform(player, state) {
   player.runCommandAsync("playsound mob.slime.attack @a ~ ~ ~ 1 1.4");
   player.runCommandAsync("title @s times 0 8 4");
   player.runCommandAsync("title @s title §c§l█§4█████████§c§l█");
-  player.runCommandAsync("title @s subtitle §c§l[REVERTED - RECHARGING]");
 
-  player.runCommandAsync("particle minecraft:redstone_wire_dust_particle ~ ~1 ~");
-  player.runCommandAsync("particle minecraft:smoke_particle ~ ~1 ~");
+  system.runTimeout(() => {
+    player.runCommandAsync("title @s times 4 30 6");
+    player.runCommandAsync("title @s title §7[NORMAL FORM]");
+    player.runCommandAsync(`title @s subtitle ${state.masterControl ? "§bInstant Recharge (Master Control)" : "§cOmnitrix Battery Recharging (25s)..."}`);
+  }, 6);
 
-  player.runCommandAsync("effect @s clear");
-
-  // Re-equip Wristwatch and Activator
-  safeEquip(player, "chest", `ben10:${state.activeWatch || "omnitrix_classic"}`);
+  safeEquip(player, "chest", "air");
+  safeEquip(player, "mainhand", "ben10:omnitrix_activator");
+  player.runCommandAsync("clear @s ben10:detransform");
   player.runCommandAsync("clear @s ben10:alien_ability");
   player.runCommandAsync("clear @s ben10:biomnitrix_fusion_ability");
-  player.runCommandAsync("clear @s ben10:detransform");
-
-  // Ensure Omnitrix Activator is safely in inventory
-  player.runCommandAsync("give @s ben10:omnitrix_activator 1");
+  player.runCommandAsync("effect @s clear");
 }
 
-// 1-Second Periodic Heartbeat Tick Loop
+// 1-Second Battery & Holographic HUD Tick Loop
 system.runInterval(() => {
   for (const player of world.getAllPlayers()) {
     const state = getPlayerState(player);
     const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
 
-    if (state.isTransformed) {
-      if (!state.masterControl && !state.lifeFormLock) {
-        state.transformSeconds--;
-      }
-
-      const ratio = Math.max(0, Math.min(1.0, state.transformSeconds / 60.0));
-      const bars = Math.round(ratio * 10);
-      const batteryBar = `§a[${"█".repeat(bars)}${"░".repeat(10 - bars)}]`;
-
-      if (state.transformSeconds <= 10 && state.transformSeconds > 0) {
-        player.runCommandAsync("particle minecraft:redstone_wire_dust_particle ~ ~1 ~");
-        if (state.transformSeconds === 10) {
-          player.runCommandAsync("playsound random.orb @a ~ ~ ~ 1 0.8");
-          player.runCommandAsync(`title @s actionbar §c§l[TIMEOUT IMMINENT] §4§l♥ ♥ ♥ §e10s §4§l♥ ♥ ♥ ${batteryBar}`);
-        } else if (state.transformSeconds === 5) {
-          player.runCommandAsync("playsound random.orb @a ~ ~ ~ 1 1.3");
-          player.runCommandAsync(`title @s actionbar §c§l[TIMEOUT WARNING] §4§l♥ ♥ §e5s §4§l♥ ♥ ${batteryBar}`);
-        } else if (state.transformSeconds <= 3) {
-          player.runCommandAsync("playsound random.orb @a ~ ~ ~ 1 1.8");
-          player.runCommandAsync("playsound random.click @a ~ ~ ~ 1 2.0");
-          player.runCommandAsync(`title @s actionbar §4§l[SHUTTING DOWN!] §c§l♥ §4${state.transformSeconds}s §c§l♥ ${batteryBar}`);
-        }
-      } else {
-        if (isClassic) {
-          player.runCommandAsync(`title @s actionbar §8[ §a§l◎ CLASSIC OMNITRIX §8] ${state.currentAlien.color_code}§l${state.currentAlien.name.toUpperCase()} §8| §e⏳ ${state.transformSeconds}s §7[Auto-Revert at 0s]`);
-        } else {
-          player.runCommandAsync(`title @s actionbar §8[ ${state.currentAlien.color_code}§l◎ ${state.currentAlien.name.toUpperCase()} §8] ${batteryBar} §e${state.transformSeconds}s §8| §a[Sneak+Tap: REVERT]`);
-        }
-      }
-
-      // Classic Omnitrix auto-reverts when timer reaches 0!
-      if (state.transformSeconds <= 0) {
-        detransform(player, state);
-      }
-    } else if (state.rechargeSeconds > 0) {
+    if (state.rechargeSeconds > 0) {
       state.rechargeSeconds--;
-
-      const rechRatio = Math.max(0, Math.min(1.0, (25 - state.rechargeSeconds) / 25.0));
-      const rechBars = Math.round(rechRatio * 10);
-      const rechBar = `§c[${"█".repeat(rechBars)}${"░".repeat(10 - rechBars)}]`;
-      player.runCommandAsync(`title @s actionbar §8[ §c§l◎ RECHARGING §8] ${rechBar} §e${state.rechargeSeconds}s`);
-
-      if (state.rechargeSeconds <= 0) {
-        player.runCommandAsync("playsound random.levelup @a ~ ~ ~ 1 1.4");
-        player.runCommandAsync("playsound random.orb @a ~ ~ ~ 1 2.0");
-        player.runCommandAsync("title @s title §a§lOMNITRIX RECHARGED!");
-        player.runCommandAsync(`title @s subtitle §8[§aAZMUTH AI§8] §f"Recharge complete. All systems nominal."`);
+      if (state.rechargeSeconds === 0) {
+        player.runCommandAsync("playsound random.levelup @a ~ ~ ~ 1 2.0");
+        player.runCommandAsync("playsound beacon.activate @a ~ ~ ~ 1 1.5");
+        player.runCommandAsync("title @s actionbar §a§l[OMNITRIX RECHARGED & READY!]");
       }
+    }
+
+    if (state.isTransformed) {
+      if (!state.masterControl) {
+        state.transformSeconds--;
+
+        // Classic Prototype Timeout Beep (Audible tick down in last 10s)
+        if (state.transformSeconds <= 10 && state.transformSeconds > 0) {
+          player.runCommandAsync("playsound note.harp @a ~ ~ ~ 1 1.8");
+          player.runCommandAsync("particle minecraft:redstone_wire_dust_particle ~ ~1 ~");
+        }
+
+        if (state.transformSeconds <= 0) {
+          detransform(player, state);
+          continue;
+        }
+      }
+
+      // Live Actionbar HUD Display
+      const name = state.isFusion && state.fusionAlien1 && state.fusionAlien2
+        ? (state.fusionAlien1.id === "upgrade" || state.fusionAlien2.id === "upgrade"
+            ? `Mecha-${(state.fusionAlien1.id === "upgrade" ? state.fusionAlien2 : state.fusionAlien1).name}`
+            : `${state.fusionAlien1.name.slice(0, 4)}-${state.fusionAlien2.name.slice(0, 4)}`)
+        : (state.currentAlien ? state.currentAlien.name : "ALIEN");
+      const color = state.currentAlien ? state.currentAlien.color_code : "§a";
+      const timerStr = state.masterControl ? "§3[∞ MC]" : `§e[⏳ ${state.transformSeconds}s]`;
+      const revertHint = isClassic ? "§7(Timed Out)" : "§a(Tap Detransform to Revert)";
+      player.runCommandAsync(`title @s actionbar ${color}§l[ ${name.toUpperCase()} ] ${timerStr} ${revertHint}`);
+    } else if (state.rechargeSeconds > 0) {
+      player.runCommandAsync(`title @s actionbar §c§l[OMNITRIX COOLDOWN] §e⏳ ${state.rechargeSeconds}s Remaining`);
     }
   }
 }, 20);
 
-// Interaction & Item Event Listeners
+// Comprehensive Item Use Listeners (Watch Equip, Activator Dial UI, Alien Ability & Detransform)
 world.beforeEvents.itemUse.subscribe((event) => {
-  const player = event.source;
   const item = event.itemStack;
-  if (!item || !player) return;
-
+  const player = event.source;
   const state = getPlayerState(player);
   const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
 
-  // 1. Direct Equipping of Omnitrix Watch from Hand -> Wrist!
-  if (item.typeId.startsWith("ben10:omnitrix_")) {
+  // 1. Omnitrix Watch Wear/Switch
+  if (item.typeId.startsWith("ben10:omnitrix_") || item.typeId.startsWith("ben10:biomnitrix_")) {
+    const rawWatchId = item.typeId.replace("ben10:", "");
     event.cancel = true;
     system.run(() => {
-      state.activeWatch = item.typeId.replace("ben10:", "");
-      state.selectedAlienIndex = 0;
-      safeEquip(player, "chest", item.typeId);
-      player.runCommandAsync("give @s ben10:omnitrix_activator 1");
-      player.runCommandAsync("playsound random.anvil_use @a ~ ~ ~ 1 1.4");
-      player.runCommandAsync("playsound random.orb @a ~ ~ ~ 1 1.8");
-      player.runCommandAsync("title @s title §a§lOMNITRIX ATTACHED!");
-      player.runCommandAsync("title @s subtitle §eBiometric lock engaged to left wrist");
-      openOmnitrixDialUI(player, state);
+      state.activeWatch = rawWatchId;
+      player.runCommandAsync("playsound random.anvil_use @a ~ ~ ~ 1 1.2");
+      player.runCommandAsync("playsound beacon.power @a ~ ~ ~ 1 1.5");
+      player.runCommandAsync("particle minecraft:villager_happy ~ ~1 ~");
+      player.runCommandAsync(`title @s actionbar §a§l[OMNITRIX SYNCHRONIZED] §f${rawWatchId.replace('_', ' ').toUpperCase()}`);
     });
     return;
   }
@@ -417,16 +431,8 @@ world.beforeEvents.itemUse.subscribe((event) => {
         return;
       }
 
-      // Modern Omnitrix Manual Revert via Sneak + Tap
-      if (player.isSneaking && !isClassic) {
-        player.runCommandAsync("title @s title §a§l[MANUAL REVERT]");
-        player.runCommandAsync("title @s subtitle §eChest Dial Pressed");
-        detransform(player, state);
-        return;
-      }
-
       if (state.isFusion && state.fusionAlien1 && state.fusionAlien2) {
-        executeAbilityByType(player, state.fusionAlien1.ability_type, state.fusionAlien1.name, state.fusionAlien1.color_code, player.isSneaking);
+        executeFusionAbility(player, state.fusionAlien1, state.fusionAlien2, player.isSneaking);
       } else {
         executeAbilityByType(player, state.currentAlien.ability_type, state.currentAlien.name, state.currentAlien.color_code, player.isSneaking);
       }
@@ -459,7 +465,6 @@ world.beforeEvents.itemUse.subscribe((event) => {
     if (directAlien) {
       event.cancel = true;
       system.run(() => {
-        if (!state.activeWatch) state.activeWatch = directAlien.watch;
         transformPlayer(player, directAlien, state);
       });
       return;
@@ -480,7 +485,7 @@ world.beforeEvents.itemUse.subscribe((event) => {
   }
 });
 
-// Chat Voice Commands System (!transform, !revert, !omnitrix, !mastercontrol, !dial)
+// Chat Voice Commands System (!transform, !revert, !omnitrix, !mastercontrol, !dial, !fusion, !summon)
 world.beforeEvents.chatSend.subscribe((event) => {
   const msg = event.message.trim().toLowerCase();
   const player = event.sender;
@@ -499,6 +504,81 @@ world.beforeEvents.chatSend.subscribe((event) => {
         player.runCommandAsync(`title @s actionbar §c[DNA ERROR] Alien "${query}" not found in database!`);
       });
     }
+    return;
+  }
+
+  if (msg.startsWith("!fusion")) {
+    event.cancel = true;
+    const query = msg.replace("!fusion", "").trim();
+    const upgradeAlien = ALL_ALIENS.find(a => a.id === "upgrade") || FUSION_POOL[0];
+    system.run(() => {
+      if (query.includes("fourarms") || query.includes("four")) {
+        const fourarms = ALL_ALIENS.find(a => a.id === "four_arms" || a.id === "fourarms") || FUSION_POOL[1];
+        transformFusion(player, upgradeAlien, fourarms, state);
+      } else if (query.includes("xlr8")) {
+        const xlr8 = ALL_ALIENS.find(a => a.id === "xlr8") || FUSION_POOL[2];
+        transformFusion(player, upgradeAlien, xlr8, state);
+      } else if (query.includes("heatblast") || query.includes("heat")) {
+        const heat = ALL_ALIENS.find(a => a.id === "heatblast") || FUSION_POOL[3];
+        transformFusion(player, upgradeAlien, heat, state);
+      } else if (query.includes("diamondhead") || query.includes("diamond")) {
+        const dia = ALL_ALIENS.find(a => a.id === "diamondhead") || FUSION_POOL[4];
+        transformFusion(player, upgradeAlien, dia, state);
+      } else if (query.includes("ripjaws") || query.includes("rip")) {
+        const rip = ALL_ALIENS.find(a => a.id === "ripjaws") || FUSION_POOL[5];
+        transformFusion(player, upgradeAlien, rip, state);
+      } else if (query.includes("cannonbolt") || query.includes("cannon")) {
+        const can = ALL_ALIENS.find(a => a.id === "cannonbolt") || FUSION_POOL[6];
+        transformFusion(player, upgradeAlien, can, state);
+      } else {
+        openBiomnitrixFusionUI(player, state);
+      }
+    });
+    return;
+  }
+
+  if (msg === "!car" || msg === "!kevin") {
+    event.cancel = true;
+    system.run(() => {
+      player.runCommandAsync("summon ben10:kevin_car ~ ~ ~");
+      player.runCommandAsync("title @s actionbar §a§l[SUMMONED] Kevin's Muscle Car!");
+    });
+    return;
+  }
+
+  if (msg === "!rustbucket" || msg === "!rv") {
+    event.cancel = true;
+    system.run(() => {
+      player.runCommandAsync("summon ben10:rustbucket ~ ~ ~");
+      player.runCommandAsync("title @s actionbar §a§l[SUMMONED] Grandpa Max's Rust Bucket RV!");
+    });
+    return;
+  }
+
+  if (msg === "!drone") {
+    event.cancel = true;
+    system.run(() => {
+      player.runCommandAsync("summon ben10:battle_drone ~ ~ ~");
+      player.runCommandAsync("title @s actionbar §c§l[DEPLOYED] Vilgax Battle Drone!");
+    });
+    return;
+  }
+
+  if (msg === "!ship") {
+    event.cancel = true;
+    system.run(() => {
+      player.runCommandAsync("summon ben10:vilgax_ship ~ ~ ~");
+      player.runCommandAsync("title @s actionbar §4§l[SUMMONED] Vilgax Drone Warship!");
+    });
+    return;
+  }
+
+  if (msg === "!vilgax") {
+    event.cancel = true;
+    system.run(() => {
+      player.runCommandAsync("summon ben10:vilgax ~ ~ ~");
+      player.runCommandAsync("title @s actionbar §4§l[BOSS SUMMONED] Vilgax the Conqueror!");
+    });
     return;
   }
 
@@ -544,6 +624,8 @@ world.afterEvents.playerSpawn.subscribe((event) => {
     player.runCommandAsync("title @s subtitle §eEquip an Omnitrix or tap Activator to transform!");
     player.runCommandAsync("give @s ben10:omnitrix_classic 1");
     player.runCommandAsync("give @s ben10:omnitrix_activator 1");
+    player.runCommandAsync("give @s ben10:kevin_car_spawner 1");
+    player.runCommandAsync("give @s ben10:rustbucket_spawner 1");
     player.runCommandAsync("playsound random.levelup @a ~ ~ ~ 1 1.5");
   }
 });

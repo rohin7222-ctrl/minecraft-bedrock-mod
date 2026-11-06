@@ -435,9 +435,12 @@ with open(os.path.join(BP_DIR, "functions", "ben10_give_all.mcfunction"), "w", e
     lines.append("give @s ben10:omnitrix_activator 1")
     lines.append("give @s ben10:detransform 1")
     lines.append("give @s ben10:kevin_car_spawner 1")
+    lines.append("give @s ben10:rustbucket_spawner 1")
     lines.append("give @s ben10:vilgax_spawner 1")
     lines.append("give @s ben10:battle_drone_spawner 1")
     lines.append("give @s ben10:vilgax_ship_spawner 1")
+    lines.append("give @s ben10:meteor_pod_spawner 1")
+    lines.append("give @s ben10:kevin11_spawner 1")
     lines.append("title @s actionbar §aAll Omnitrixes, Omnitrix Activator, Bosses & Vehicles Received!\n")
     f.write("\n".join(lines))
 
