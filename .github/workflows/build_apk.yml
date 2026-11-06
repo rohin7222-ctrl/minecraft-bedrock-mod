@@ -66,18 +66,19 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Ben 10 Mod APK v1.0.${{ github.run_number }} (100 Ideas Complete)
+          name: Minecraft Bedrock Ben 10 Mod APK v1.0.${{ github.run_number }} (HD Visual & UI Overhaul)
           body: |
-            ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition) - 100 Solutions Complete!
-            - **Classic Omnitrix Timer Lock**: Actionbar countdown timer; manual detransformation is locked (Prototype Error) and automatically reverts at 0s!
-            - **Modern Omnitrixes Manual Revert**: Dedicated hotbar button & Sneak+Tap chest-dial ability to return to human form anytime!
-            - **7 Custom 3D Entities**: Grandpa Max's Rust Bucket RV, Omnitrix Meteor Pod Capsule, Mutated Kevin 11 Boss, Kevin's Muscle Car, Vilgax, Vilgax Battle Cruiser, and Vilgax Chimerian Bio-Drones!
-            - **9 Legendary Omnitrixes & 76 Playable Aliens**: Classic, Recalibrated, Ultimatrix, Omniverse, Biomnitrix, Ben 23, Reboot, Carnitrix, Albedo!
-            - **Biomnitrix 2-Alien Fusion Engine**: Dynamic hybrid abilities!
-            - **Alien Shouts, Authentic Geometries & Magma/Nanite Textures**!
-            - **Auto-Bypass Android 14/15/16+ Scoped Storage (1-Click Import)**!
+            ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition) - Masterpiece HD Overhaul!
+            - **32x32 HD Item Art**: Crisp, high-definition shaded textures for all 9 Omnitrix watches, Holographic Activator, Detransform Emergency Badge, and 76 Alien Species Emblems!
+            - **Series-Accurate 3D Omnitrix Wristbands**: Sleek customized wrist cuffs on player's left arm with 3D octagonal bezels, corner rivets, side pop-up buttons, and glowing cores!
+            - **Alien Visual Overhaul**: Completely eliminated checkerboard noise! Replaced with authentic muscle shading, carapace armor plating, species contours, and chest Omnitrix badges!
+            - **Interactive In-Game UI**: High-tech ActionFormData Omnitrix Dial UI, Titanium HUD status capsule with digital energy bars, and dynamic actionbar indicators!
+            - **Classic Omnitrix Timer Lock**: Actionbar countdown timer; manual detransformation locked (Prototype Error) and auto-reverts at 0s!
+            - **Modern Omnitrixes Manual Revert**: Dedicated hotbar button & Sneak+Tap chest dial ability to return to human form anytime!
+            - **Biomnitrix 2-Alien Fusion Engine & Master Control Mode**!
+            - **Auto-Bypass Android Scoped Storage (1-Click Import into Minecraft)**!
             
-            ### 📥 Download:
+            ### 📥 Direct APK Download:
             Download the `app-debug.apk` file below and tap Install!
           files: apk_output/*.apk
         env:
