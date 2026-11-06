@@ -2,7 +2,7 @@
 # Strictly under 1000 lines - Pure Python
 
 def get_bp_kevin_car():
-    """Kevin Levin's Upgraded Muscle Car (High speed, 2-seat, durable chassis)"""
+    """Kevin Levin's Upgraded Muscle Car (High speed, 2-seat, wide muscle stance)"""
     return {
         "format_version": "1.20.80",
         "minecraft:entity": {
@@ -14,12 +14,12 @@ def get_bp_kevin_car():
             },
             "components": {
                 "minecraft:type_family": {"family": ["car", "vehicle", "inanimate"]},
-                "minecraft:collision_box": {"width": 1.8, "height": 1.2},
-                "minecraft:health": {"value": 300, "max": 300},
+                "minecraft:collision_box": {"width": 2.2, "height": 1.4},
+                "minecraft:health": {"value": 350, "max": 350},
                 "minecraft:physics": {},
-                "minecraft:knockback_resistance": {"value": 0.8},
+                "minecraft:knockback_resistance": {"value": 0.85},
                 "minecraft:pushable": {"is_pushable": True, "is_pushable_by_piston": True},
-                "minecraft:movement": {"value": 0.70},
+                "minecraft:movement": {"value": 0.72},
                 "minecraft:movement.basic": {},
                 "minecraft:navigation.walk": {"can_path_over_water": False, "avoid_damage_blocks": True},
                 "minecraft:rideable": {
@@ -27,8 +27,8 @@ def get_bp_kevin_car():
                     "family_types": ["player"],
                     "interact_text": "action.interact.drive",
                     "seats": [
-                        {"position": [0.35, 0.4, -0.2], "min_rider_count": 0, "max_rider_count": 1},
-                        {"position": [-0.35, 0.4, -0.2], "min_rider_count": 1, "max_rider_count": 2}
+                        {"position": [0.45, 0.45, -0.2], "min_rider_count": 0, "max_rider_count": 1},
+                        {"position": [-0.45, 0.45, -0.2], "min_rider_count": 1, "max_rider_count": 2}
                     ]
                 },
                 "minecraft:input_ground_controlled": {}
@@ -148,7 +148,7 @@ def get_bp_vilgax_ship():
     }
 
 def get_bp_rustbucket():
-    """Grandpa Max's 4-Seat Rust Bucket RV Camper (Upgraded Plumber vehicle, 450 HP)"""
+    """Grandpa Max's 4-Seat Rust Bucket RV Camper (Colossal Class-A Motorhome, 550 HP)"""
     return {
         "format_version": "1.20.80",
         "minecraft:entity": {
@@ -160,12 +160,12 @@ def get_bp_rustbucket():
             },
             "components": {
                 "minecraft:type_family": {"family": ["rv", "vehicle", "inanimate"]},
-                "minecraft:collision_box": {"width": 2.2, "height": 1.8},
-                "minecraft:health": {"value": 450, "max": 450},
-                "minecraft:knockback_resistance": {"value": 0.9},
+                "minecraft:collision_box": {"width": 2.8, "height": 2.8},
+                "minecraft:health": {"value": 550, "max": 550},
+                "minecraft:knockback_resistance": {"value": 0.95},
                 "minecraft:physics": {},
                 "minecraft:pushable": {"is_pushable": True},
-                "minecraft:movement": {"value": 0.58},
+                "minecraft:movement": {"value": 0.60},
                 "minecraft:movement.basic": {},
                 "minecraft:navigation.walk": {"can_path_over_water": False, "avoid_damage_blocks": True},
                 "minecraft:rideable": {
@@ -173,10 +173,10 @@ def get_bp_rustbucket():
                     "family_types": ["player"],
                     "interact_text": "action.interact.drive.rustbucket",
                     "seats": [
-                        {"position": [0.45, 0.6, -1.0], "min_rider_count": 0, "max_rider_count": 1},
-                        {"position": [-0.45, 0.6, -1.0], "min_rider_count": 1, "max_rider_count": 2},
-                        {"position": [0.45, 0.6, 0.6], "min_rider_count": 2, "max_rider_count": 3},
-                        {"position": [-0.45, 0.6, 0.6], "min_rider_count": 3, "max_rider_count": 4}
+                        {"position": [0.65, 0.9, -1.8], "min_rider_count": 0, "max_rider_count": 1},
+                        {"position": [-0.65, 0.9, -1.8], "min_rider_count": 1, "max_rider_count": 2},
+                        {"position": [0.65, 0.9, 0.6], "min_rider_count": 2, "max_rider_count": 3},
+                        {"position": [-0.65, 0.9, 0.6], "min_rider_count": 3, "max_rider_count": 4}
                     ]
                 },
                 "minecraft:input_ground_controlled": {}

@@ -1,15 +1,18 @@
 # Ben 10 Bedrock Addon - Series Accurate Bosses & Vehicles (Maximum Visual Upgrade)
-# 1. Kevin's Muscle Car (Dodge Dart with Blower & Dual Stripes)
-# 2. Rust Bucket RV Base (Grandpa Max's Iconic Camper Van)
+# 1. Kevin's Muscle Car (Dodge Dart with Blower & Dual Stripes - Real Muscle Car Proportions)
+# 2. Rust Bucket RV Base (Grandpa Max's Colossal Class-A GMC Motorhome Plumber Base)
 # 3. Vilgax the Conqueror (Chimera An Sui Generis Cybernetic Warlord)
-# 4. Vilgax Battle Drone (Combat Spider Walker Droid)
+# 4. Vilgax Battle Drone (Combat Quad-Spider Walker Droid)
 # 5. Mutated Kevin 11 (Alien Amalgam Boss)
 # 6. Vilgax Drone Ship (Flying Battleship)
 # 7. Meteor Pod (Galvanic Crash Capsule)
 # Strictly under 1000 lines - Pure Python
 
 def get_kevin_car_geometry():
-    """3D Model of Kevin Levin's Green Muscle Car with supercharger scoop, spoiler, and 5-spoke wheels"""
+    """3D Model of Kevin Levin's Green Muscle Car (Dodge Dart / Muscle Coupe)
+    True muscle car proportions: 30 units wide, 58 units long, 20 units tall.
+    Flared wheel arches, low-slung cabin, supercharger blower scoop, rear ducktail spoiler.
+    """
     return {
         "format_version": "1.12.0",
         "minecraft:geometry": [
@@ -18,9 +21,9 @@ def get_kevin_car_geometry():
                     "identifier": "geometry.ben10.kevin_car",
                     "texture_width": 128,
                     "texture_height": 128,
-                    "visible_bounds_width": 4.5,
-                    "visible_bounds_height": 2.2,
-                    "visible_bounds_offset": [0, 1, 0]
+                    "visible_bounds_width": 5.5,
+                    "visible_bounds_height": 2.5,
+                    "visible_bounds_offset": [0, 1.2, 0]
                 },
                 "bones": [
                     {"name": "root", "pivot": [0, 0, 0]},
@@ -29,40 +32,53 @@ def get_kevin_car_geometry():
                         "parent": "root",
                         "pivot": [0, 5, 0],
                         "cubes": [
-                            # Lower Chassis Base (Green with black underside)
-                            {"origin": [-12, 4, -20], "size": [24, 6, 40], "uv": [0, 0]},
-                            # Front Engine Hood
-                            {"origin": [-11, 8, -19], "size": [22, 4, 14], "uv": [0, 48]},
-                            # Supercharger Blower Scoop with Twin Chrome Intakes
-                            {"origin": [-4, 12, -14], "size": [8, 3, 7], "uv": [74, 48]},
-                            # Cabin & Slanted Roof
-                            {"origin": [-10, 10, -5], "size": [20, 8, 18], "uv": [0, 68]},
+                            # Main Lower Chassis & Underside (x: -14..14, y: 4..9, z: -28..28)
+                            {"origin": [-14, 4, -28], "size": [28, 5, 56], "uv": [0, 0]},
+                            # Front Left Flared Wheel Arch / Fender
+                            {"origin": [13, 4, -25], "size": [3, 6, 14], "uv": [0, 36]},
+                            # Front Right Flared Wheel Arch / Fender
+                            {"origin": [-16, 4, -25], "size": [3, 6, 14], "uv": [0, 36]},
+                            # Rear Left Flared Wheel Arch / Fender
+                            {"origin": [13, 4, 9], "size": [3, 6, 14], "uv": [0, 36]},
+                            # Rear Right Flared Wheel Arch / Fender
+                            {"origin": [-16, 4, 9], "size": [3, 6, 14], "uv": [0, 36]},
+                            # Front Engine Hood with Muscle Ridge
+                            {"origin": [-13, 9, -27], "size": [26, 4, 21], "uv": [0, 62]},
+                            # Supercharger Blower Scoop
+                            {"origin": [-4, 13, -19], "size": [8, 4, 9], "uv": [74, 48]},
+                            # Dual Chrome Air Intakes
+                            {"origin": [-3.5, 14, -20], "size": [7, 2, 1], "uv": [74, 62]},
+                            # Cockpit & Slanted Roof (Cabin Greenhouse)
+                            {"origin": [-12, 12, -6], "size": [24, 8, 22], "uv": [0, 88]},
                             # Front Slanted Windshield (Tinted glass)
-                            {"origin": [-9.5, 10.5, -5.8], "size": [19, 7.2, 1], "uv": [78, 68]},
-                            # Rear Slanted Window
-                            {"origin": [-9.5, 10.5, 12.8], "size": [19, 7.2, 1], "uv": [78, 78]},
-                            # Rear Trunk
-                            {"origin": [-11, 8, 13], "size": [22, 4, 7], "uv": [0, 96]},
+                            {"origin": [-11.5, 12.5, -6.8], "size": [23, 7.5, 1], "uv": [78, 68]},
+                            # Rear Slanted Fastback Window
+                            {"origin": [-11.5, 12.5, 15.8], "size": [23, 7.5, 1], "uv": [78, 78]},
+                            # Rear Trunk Deck
+                            {"origin": [-13, 9, 16], "size": [26, 4, 11], "uv": [56, 62]},
                             # Rear Ducktail Spoiler Wing
-                            {"origin": [-12, 12, 18], "size": [24, 2, 3], "uv": [60, 96]},
-                            # Front Bumper, Chrome Grille & Headlights
-                            {"origin": [-12, 3, -22], "size": [24, 5, 2], "uv": [0, 110]},
-                            # Rear Bumper, Tail Light Bar & Twin Exhausts
-                            {"origin": [-12, 3, 20], "size": [24, 5, 2], "uv": [54, 110]}
+                            {"origin": [-14, 13, 25], "size": [28, 2, 4], "uv": [60, 90]},
+                            # Front Steel Bumper, Chrome Grille & Headlight Bezel
+                            {"origin": [-14.5, 3.5, -29.5], "size": [29, 5, 2], "uv": [0, 118]},
+                            # Rear Bumper, Tail Light Bar & Twin Exhaust Tips
+                            {"origin": [-14.5, 3.5, 27.5], "size": [29, 5, 2], "uv": [64, 118]}
                         ]
                     },
-                    # 4 Individual Rotating Wheels with Silver 5-Spoke Rims
-                    {"name": "wheel_front_left", "parent": "root", "pivot": [11, 4, -13], "cubes": [{"origin": [10.5, 0, -16], "size": [3, 8, 6], "uv": [80, 0]}]},
-                    {"name": "wheel_front_right", "parent": "root", "pivot": [-11, 4, -13], "cubes": [{"origin": [-13.5, 0, -16], "size": [3, 8, 6], "uv": [80, 0]}]},
-                    {"name": "wheel_back_left", "parent": "root", "pivot": [11, 4, 11], "cubes": [{"origin": [10.5, 0, 8], "size": [3, 8, 6], "uv": [80, 0]}]},
-                    {"name": "wheel_back_right", "parent": "root", "pivot": [-11, 4, 11], "cubes": [{"origin": [-13.5, 0, 8], "size": [3, 8, 6], "uv": [80, 0]}]}
+                    # 4 Wide 5-Spoke Muscle Car Wheels
+                    {"name": "wheel_front_left", "parent": "root", "pivot": [14, 5, -18], "cubes": [{"origin": [13.5, 0, -22], "size": [4, 10, 8], "uv": [80, 0]}]},
+                    {"name": "wheel_front_right", "parent": "root", "pivot": [-14, 5, -18], "cubes": [{"origin": [-17.5, 0, -22], "size": [4, 10, 8], "uv": [80, 0]}]},
+                    {"name": "wheel_back_left", "parent": "root", "pivot": [14, 5, 16], "cubes": [{"origin": [13.5, 0, 12], "size": [4, 10, 8], "uv": [80, 0]}]},
+                    {"name": "wheel_back_right", "parent": "root", "pivot": [-14, 5, 16], "cubes": [{"origin": [-17.5, 0, 12], "size": [4, 10, 8], "uv": [80, 0]}]}
                 ]
             }
         ]
     }
 
 def get_rustbucket_geometry():
-    """3D Model of Grandpa Max's Rust Bucket RV (256x256 High-Fidelity Camper Van)"""
+    """3D Model of Grandpa Max's Rust Bucket RV (Colossal Class-A GMC Motorhome Plumber Base)
+    Massive motorhome proportions: 38 units wide, 88 units long, 44 units tall!
+    Over twice the height of Kevin's car and 50% longer!
+    """
     return {
         "format_version": "1.12.0",
         "minecraft:geometry": [
@@ -71,38 +87,42 @@ def get_rustbucket_geometry():
                     "identifier": "geometry.ben10.rustbucket",
                     "texture_width": 256,
                     "texture_height": 256,
-                    "visible_bounds_width": 6.5,
-                    "visible_bounds_height": 3.8,
-                    "visible_bounds_offset": [0, 1.8, 0]
+                    "visible_bounds_width": 8.0,
+                    "visible_bounds_height": 5.0,
+                    "visible_bounds_offset": [0, 2.5, 0]
                 },
                 "bones": [
                     {"name": "root", "pivot": [0, 0, 0]},
                     {
                         "name": "body",
                         "parent": "root",
-                        "pivot": [0, 5, 0],
+                        "pivot": [0, 6, 0],
                         "cubes": [
-                            # Main Camper RV Body (White with classic Red/Green side stripe)
-                            {"origin": [-14, 6, -26], "size": [28, 16, 52], "uv": [0, 0]},
-                            # Front Cab Overhang & Windshield
-                            {"origin": [-13, 9, -29], "size": [26, 12, 4], "uv": [0, 72]},
-                            # Roof Air Conditioner Unit
-                            {"origin": [-6, 22, -2], "size": [12, 4, 16], "uv": [64, 72]},
+                            # Heavy Underside Chassis & Drive Frame (x: -17..17, y: 4..10, z: -42..42)
+                            {"origin": [-17, 4, -42], "size": [34, 6, 84], "uv": [0, 180]},
+                            # Main Living Compartment Body (Cream with Red & Green Side Stripes)
+                            {"origin": [-18, 10, -40], "size": [36, 24, 80], "uv": [0, 0]},
+                            # Front Cab Overhang & Aerodynamic Cockpit Windshield
+                            {"origin": [-18, 12, -50], "size": [36, 20, 10], "uv": [0, 106]},
+                            # Front Heavy Bullbar Bumper & Quad Headlights
+                            {"origin": [-19, 5, -53], "size": [38, 8, 3], "uv": [94, 106]},
+                            # Rooftop Heavy Duty Air Conditioner Unit
+                            {"origin": [-10, 34, -10], "size": [20, 6, 26], "uv": [0, 138]},
                             # Grandpa Max's Plumber Satellite Radar Dish
-                            {"origin": [-3, 26, 4], "size": [6, 4, 6], "uv": [124, 72]},
-                            # Front Chrome Bumper & Headlight Pods
-                            {"origin": [-14, 4, -31], "size": [28, 5, 3], "uv": [0, 92]},
-                            # Rear Ladder & Spare Tire Cover
-                            {"origin": [-4, 7, 26], "size": [8, 9, 3], "uv": [66, 92]}
+                            {"origin": [-5, 40, 4], "size": [10, 7, 10], "uv": [94, 138]},
+                            # Rear Heavy Duty Exterior Access Ladder
+                            {"origin": [-15, 10, 40.5], "size": [6, 24, 2], "uv": [136, 138]},
+                            # Rear Spare Tire Mount with Protective Vinyl Cover
+                            {"origin": [-6, 14, 40.5], "size": [12, 12, 4], "uv": [154, 138]}
                         ]
                     },
-                    # 6 Heavy Duty RV Wheels (Dual rear axle)
-                    {"name": "wheel_fl", "parent": "root", "pivot": [13, 5, -18], "cubes": [{"origin": [12.5, 0, -21], "size": [3.5, 9, 7], "uv": [160, 0]}]},
-                    {"name": "wheel_fr", "parent": "root", "pivot": [-13, 5, -18], "cubes": [{"origin": [-16.0, 0, -21], "size": [3.5, 9, 7], "uv": [160, 0]}]},
-                    {"name": "wheel_ml", "parent": "root", "pivot": [13, 5, 8], "cubes": [{"origin": [12.5, 0, 5], "size": [3.5, 9, 7], "uv": [160, 0]}]},
-                    {"name": "wheel_mr", "parent": "root", "pivot": [-13, 5, 8], "cubes": [{"origin": [-16.0, 0, 5], "size": [3.5, 9, 7], "uv": [160, 0]}]},
-                    {"name": "wheel_rl", "parent": "root", "pivot": [13, 5, 17], "cubes": [{"origin": [12.5, 0, 14], "size": [3.5, 9, 7], "uv": [160, 0]}]},
-                    {"name": "wheel_rr", "parent": "root", "pivot": [-13, 5, 17], "cubes": [{"origin": [-16.0, 0, 14], "size": [3.5, 9, 7], "uv": [160, 0]}]}
+                    # 6 Heavy Duty RV Wheels (Dual Rear Tandem Axle)
+                    {"name": "wheel_fl", "parent": "root", "pivot": [18, 6, -30], "cubes": [{"origin": [17.0, 0, -35], "size": [5, 12, 10], "uv": [180, 0]}]},
+                    {"name": "wheel_fr", "parent": "root", "pivot": [-18, 6, -30], "cubes": [{"origin": [-22.0, 0, -35], "size": [5, 12, 10], "uv": [180, 0]}]},
+                    {"name": "wheel_ml", "parent": "root", "pivot": [18, 6, 12], "cubes": [{"origin": [17.0, 0, 7], "size": [5, 12, 10], "uv": [180, 0]}]},
+                    {"name": "wheel_mr", "parent": "root", "pivot": [-18, 6, 12], "cubes": [{"origin": [-22.0, 0, 7], "size": [5, 12, 10], "uv": [180, 0]}]},
+                    {"name": "wheel_rl", "parent": "root", "pivot": [18, 6, 26], "cubes": [{"origin": [17.0, 0, 21], "size": [5, 12, 10], "uv": [180, 0]}]},
+                    {"name": "wheel_rr", "parent": "root", "pivot": [-18, 6, 26], "cubes": [{"origin": [-22.0, 0, 21], "size": [5, 12, 10], "uv": [180, 0]}]}
                 ]
             }
         ]
@@ -118,9 +138,9 @@ def get_vilgax_geometry():
                     "identifier": "geometry.ben10.vilgax",
                     "texture_width": 128,
                     "texture_height": 128,
-                    "visible_bounds_width": 3.5,
-                    "visible_bounds_height": 4.5,
-                    "visible_bounds_offset": [0, 2.2, 0]
+                    "visible_bounds_width": 4.0,
+                    "visible_bounds_height": 5.0,
+                    "visible_bounds_offset": [0, 2.5, 0]
                 },
                 "bones": [
                     {
@@ -132,7 +152,9 @@ def get_vilgax_geometry():
                             # Left Spiked Shoulder Pauldron
                             {"origin": [5.5, 27, -5], "size": [5, 6, 10], "uv": [44, 18]},
                             # Right Spiked Shoulder Pauldron
-                            {"origin": [-10.5, 27, -5], "size": [5, 6, 10], "uv": [76, 18]}
+                            {"origin": [-10.5, 27, -5], "size": [5, 6, 10], "uv": [76, 18]},
+                            # Cybernetic Respirator Chest Harness Unit
+                            {"origin": [-4, 20, -5], "size": [8, 6, 2], "uv": [0, 96]}
                         ]
                     },
                     {
@@ -141,11 +163,15 @@ def get_vilgax_geometry():
                         "pivot": [0, 32, 0],
                         "cubes": [
                             # Vilgax Alien Squid Head
-                            {"origin": [-4, 32, -4], "size": [8, 9, 8], "uv": [0, 0]},
+                            {"origin": [-4, 32, -4], "size": [8, 10, 8], "uv": [0, 0]},
                             # 6 Segmented Facial Squid Tentacles (Beard)
-                            {"origin": [-3.5, 26, -5.2], "size": [7, 7, 2], "uv": [36, 0]},
+                            {"origin": [-3.5, 25, -5.2], "size": [7, 8, 2], "uv": [36, 0]},
                             # Glowing Red Cybernetic Eye Visor Implant
-                            {"origin": [1, 35, -4.8], "size": [2.5, 2.5, 1], "uv": [56, 0]}
+                            {"origin": [1, 35, -4.8], "size": [2.5, 2.5, 1], "uv": [56, 0]},
+                            # Warlord Head Ridge Horns
+                            {"origin": [-3, 41, -2], "size": [6, 2, 6], "uv": [64, 0]},
+                            # Cybernetic Breathing Tubes (Cheeks to Neck)
+                            {"origin": [-5, 28, -4], "size": [10, 4, 1], "uv": [22, 96]}
                         ]
                     },
                     {
@@ -156,7 +182,7 @@ def get_vilgax_geometry():
                             # Heavy Armored Cybernetic Right Arm
                             {"origin": [-11, 14, -3], "size": [5, 17, 6], "uv": [0, 44]},
                             # Translucent Ruby Laser Energy Blade
-                            {"origin": [-12, 4, -1], "size": [2, 16, 2], "uv": [24, 44]}
+                            {"origin": [-12, 2, -1], "size": [2, 18, 2], "uv": [24, 44]}
                         ]
                     },
                     {
@@ -194,7 +220,7 @@ def get_vilgax_geometry():
     }
 
 def get_battle_drone_geometry():
-    """3D Model of Vilgax Battle Drone (Combat Samurai Walker Droid)"""
+    """3D Model of Vilgax Battle Drone (Combat Samurai Quad-Spider Walker Droid)"""
     return {
         "format_version": "1.12.0",
         "minecraft:geometry": [
@@ -203,9 +229,9 @@ def get_battle_drone_geometry():
                     "identifier": "geometry.ben10.battle_drone",
                     "texture_width": 64,
                     "texture_height": 64,
-                    "visible_bounds_width": 3,
-                    "visible_bounds_height": 3,
-                    "visible_bounds_offset": [0, 1.5, 0]
+                    "visible_bounds_width": 3.2,
+                    "visible_bounds_height": 3.2,
+                    "visible_bounds_offset": [0, 1.6, 0]
                 },
                 "bones": [
                     {
@@ -246,10 +272,11 @@ def get_battle_drone_geometry():
                             {"origin": [3.5, 8, -2], "size": [4, 4, 4], "uv": [48, 16]}
                         ]
                     },
-                    # 3 Hydraulic Spider Walker Legs
-                    {"name": "leg_front_left", "parent": "body", "pivot": [3, 10, 2], "cubes": [{"origin": [2.5, 0, 2], "size": [3, 10, 4], "uv": [0, 48]}]},
-                    {"name": "leg_front_right", "parent": "body", "pivot": [-3, 10, 2], "cubes": [{"origin": [-5.5, 0, 2], "size": [3, 10, 4], "uv": [0, 48]}]},
-                    {"name": "leg_back", "parent": "body", "pivot": [0, 10, -3], "cubes": [{"origin": [-1.5, 0, -6], "size": [3, 10, 4], "uv": [16, 48]}]}
+                    # 4 Hydraulic Spider Walker Legs
+                    {"name": "leg_front_left", "parent": "body", "pivot": [3, 10, -3], "cubes": [{"origin": [2.5, 0, -5], "size": [3, 10, 4], "uv": [0, 48]}]},
+                    {"name": "leg_front_right", "parent": "body", "pivot": [-3, 10, -3], "cubes": [{"origin": [-5.5, 0, -5], "size": [3, 10, 4], "uv": [0, 48]}]},
+                    {"name": "leg_back_left", "parent": "body", "pivot": [3, 10, 3], "cubes": [{"origin": [2.5, 0, 2], "size": [3, 10, 4], "uv": [16, 48]}]},
+                    {"name": "leg_back_right", "parent": "body", "pivot": [-3, 10, 3], "cubes": [{"origin": [-5.5, 0, 2], "size": [3, 10, 4], "uv": [16, 48]}]}
                 ]
             }
         ]

@@ -5,7 +5,7 @@
 def get_main_code():
     return r"""import { world, system, EquipmentSlot, ItemStack } from "@minecraft/server";
 import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";
-import { ALL_ALIENS, WATCH_ALIENS, FUSION_POOL } from "./aliens_data.js";
+import { ALL_ALIENS, WATCH_ALIENS, FUSION_POOL, PLAYLIST_CLASSIC, PLAYLIST_AF, PLAYLIST_ULTIMATE, PLAYLIST_OMNIVERSE } from "./aliens_data.js";
 import { executeAbilityByType, executeFusionAbility } from "./abilities.js";
 
 const playerStates = new Map();
@@ -98,6 +98,31 @@ function showModalFormSafe(player, form, onSubmit, retries = 4) {
   });
 }
 
+// Dedicated Sub-Menu for an Alien Playlist (Instant fast selection without scrolling)
+function openAlienPlaylistUI(player, playlistTitle, aliens, state) {
+  const form = new ActionFormData();
+  form.title(playlistTitle);
+  form.body(`§aSelect alien DNA sample to initiate transformation (${aliens.length} Available):`);
+  form.button("§8« [ RETURN TO GALVAN OS DIAL ]", "textures/items/detransform.png");
+
+  for (const alien of aliens) {
+    const iconPath = `textures/items/${alien.id}_ability.png`;
+    form.button(`§a§l[ ⚡ ${alien.name.toUpperCase()} ⚡ ]\n§7${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}`, iconPath);
+  }
+
+  showActionFormSafe(player, form, (sel) => {
+    if (sel === undefined || sel === null) return;
+    if (sel === 0) {
+      openOmnitrixDialUI(player, state);
+      return;
+    }
+    const selectedAlien = aliens[sel - 1];
+    if (selectedAlien) {
+      transformPlayer(player, selectedAlien, state);
+    }
+  });
+}
+
 // Interactive Omnitrix Dial UI via @minecraft/server-ui
 function openOmnitrixDialUI(player, state) {
   if (state.rechargeSeconds > 0) {
@@ -115,6 +140,7 @@ function openOmnitrixDialUI(player, state) {
   const watchName = watchKey.replace("omnitrix_", "").replace("_", " ").toUpperCase();
   const alienList = WATCH_ALIENS[watchKey] || ALL_ALIENS;
   const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
+  const usePlaylists = alienList.length > 12 || state.masterControl;
 
   const form = new ActionFormData();
   form.title(`§2§l[ ⚡ GALVAN OS: ${watchName} ⚡ ]`);
@@ -131,7 +157,9 @@ function openOmnitrixDialUI(player, state) {
     statusText += `§3  ● PROTOCOL: §bMASTER CONTROL ACTIVE (UNLIMITED)\n`;
   }
   statusText += `§2╚═══════════════════════════════════════╝\n`;
-  statusText += `§7Touch any alien DNA matrix profile below to morph:`;
+  statusText += usePlaylists
+    ? `§7Select an Alien Playlist below to quickly morph:`
+    : `§7Touch any alien DNA matrix profile below to morph:`;
   form.body(statusText);
 
   let hasDetransformBtn = false;
@@ -155,10 +183,18 @@ function openOmnitrixDialUI(player, state) {
     hasFusionBtn = true;
   }
 
-  // List all series-accurate aliens for this Omnitrix with full stats
-  for (const alien of alienList) {
-    const iconPath = `textures/items/${alien.id}_ability.png`;
-    form.button(`§a§l[ ⚡ ${alien.name.toUpperCase()} ⚡ ]\n§7${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}`, iconPath);
+  if (usePlaylists) {
+    form.button("§e§l[ 🌟 PLAYLIST 1: ORIGINAL 10 🌟 ]\n§8Heatblast, Four Arms, XLR8, Diamondhead...", "textures/items/heatblast_ability.png");
+    form.button("§b§l[ ⚡ PLAYLIST 2: ALIEN FORCE ⚡ ]\n§8Swampfire, Humungousaur, Big Chill, Echo Echo...", "textures/items/swampfire_ability.png");
+    form.button("§6§l[ 💥 PLAYLIST 3: ULTIMATE EVOLUTION 💥 ]\n§8Ult. Swampfire, Ult. Humungousaur, UA Aliens...", "textures/items/ultimate_humungousaur_ability.png");
+    form.button("§d§l[ 🔮 PLAYLIST 4: OMNIVERSE & EXPANDED 🔮 ]\n§8Feedback, Bloxx, Gravattack, Crashhopper...", "textures/items/feedback_ability.png");
+    form.button("§a§l[ 🧬 PLAYLIST 5: BIOMNITRIX FUSIONS 🧬 ]\n§8Mecha-Fourarms, Mecha-XLR8, Custom Combos...", "textures/items/biomnitrix_fusion_ability.png");
+    form.button(`§f§l[ 👑 PLAYLIST 6: COMPLETE ARCHIVE (${alienList.length}) 👑 ]\n§8Full Alien Database`, "textures/items/omnitrix_activator.png");
+  } else {
+    for (const alien of alienList) {
+      const iconPath = `textures/items/${alien.id}_ability.png`;
+      form.button(`§a§l[ ⚡ ${alien.name.toUpperCase()} ⚡ ]\n§7${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}`, iconPath);
+    }
   }
 
   showActionFormSafe(player, form, (sel) => {
@@ -188,6 +224,16 @@ function openOmnitrixDialUI(player, state) {
         return;
       }
       sel--;
+    }
+
+    if (usePlaylists) {
+      if (sel === 0) openAlienPlaylistUI(player, "§e§l[ 🌟 PLAYLIST 1: ORIGINAL 10 🌟 ]", PLAYLIST_CLASSIC.length ? PLAYLIST_CLASSIC : alienList.slice(0, 10), state);
+      else if (sel === 1) openAlienPlaylistUI(player, "§b§l[ ⚡ PLAYLIST 2: ALIEN FORCE ⚡ ]", PLAYLIST_AF.length ? PLAYLIST_AF : alienList.slice(10, 20), state);
+      else if (sel === 2) openAlienPlaylistUI(player, "§6§l[ 💥 PLAYLIST 3: ULTIMATE ALIENS 💥 ]", PLAYLIST_ULTIMATE.length ? PLAYLIST_ULTIMATE : alienList.slice(20, 32), state);
+      else if (sel === 3) openAlienPlaylistUI(player, "§d§l[ 🔮 PLAYLIST 4: OMNIVERSE & EXPANDED 🔮 ]", PLAYLIST_OMNIVERSE.length ? PLAYLIST_OMNIVERSE : alienList.slice(32), state);
+      else if (sel === 4) openBiomnitrixFusionUI(player, state);
+      else if (sel === 5) openAlienPlaylistUI(player, `§f§l[ 👑 COMPLETE ARCHIVE (${alienList.length}) 👑 ]`, alienList, state);
+      return;
     }
 
     const selectedAlien = alienList[sel];

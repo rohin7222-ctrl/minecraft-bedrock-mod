@@ -30,114 +30,114 @@ def create_kevin_car_texture():
             idx = (y * w + x) * 4
             pixel = c_trans
 
-            # 1. Lower Chassis (0..127, 0..45)
-            if 0 <= y <= 45 and 0 <= x < 128:
-                if y in (0, 45) or x in (0, 127):
+            # 1. Lower Chassis (0..127, 0..35)
+            if 0 <= y <= 35 and 0 <= x < 128:
+                if y in (0, 35) or x in (0, 127):
                     pixel = c_green_sh
-                elif y < 10:
+                elif y < 8:
                     pixel = c_black # Underside frame
                 else:
-                    # Side panels with gloss highlight
-                    pixel = c_green_hi if y in (12, 13) else c_green
+                    pixel = c_green_hi if y in (10, 11) else c_green
 
-            # 2. Front Hood (0..71, 48..65) with Dual Black Racing Stripes
-            elif 48 <= y <= 65 and 0 <= x <= 71:
-                # Center dual stripes at x: 30..33 and 38..41
-                if (30 <= x <= 33) or (38 <= x <= 41):
-                    pixel = c_stripe
-                elif 34 <= x <= 37:
-                    pixel = c_green # Green stripe gap
-                elif y == 48 or y == 65 or x in (0, 71):
-                    pixel = c_green_sh # Hood edge seams
-                else:
-                    pixel = c_green_hi if y in (50, 51) else c_green
+            # 2. Flared Wheel Arches / Fenders (0..40, 36..47)
+            elif 36 <= y <= 47 and 0 <= x <= 40:
+                pixel = c_green_hi if y == 36 else (c_black if y >= 45 else c_green)
 
-            # 3. Supercharger Blower Scoop (74..101, 48..56)
-            elif 48 <= y <= 56 and 74 <= x <= 101:
+            # 3. Supercharger Blower Scoop (74..105, 48..61)
+            elif 48 <= y <= 61 and 74 <= x <= 105:
                 local_x = x - 74
-                # Dual chrome intakes with red butterfly valves
-                if local_x in (6, 7, 18, 19) and y in (51, 52):
+                if local_x in (6, 7, 18, 19) and y in (53, 54):
                     pixel = hex_to_rgba("#dc2626") # Butterfly valve
-                elif local_x in (5, 8, 17, 20) or y in (50, 53):
-                    pixel = c_chrome # Intake bezel
+                elif local_x in (5, 8, 17, 20) or y in (52, 55):
+                    pixel = c_chrome
                 else:
                     pixel = c_chrome_sh
 
-            # 4. Cabin & Slanted Roof (0..75, 68..93) with Dual Stripes on Roof
-            elif 68 <= y <= 93 and 0 <= x <= 75:
-                if (32 <= x <= 35) or (40 <= x <= 43):
-                    pixel = c_stripe # Roof dual stripes
-                elif 36 <= x <= 39:
+            # 4. Front Hood & Rear Trunk (0..85, 62..75) with Dual Black Racing Stripes
+            elif 62 <= y <= 75 and 0 <= x <= 85:
+                if x <= 55: # Hood
+                    if (22 <= x <= 25) or (30 <= x <= 33):
+                        pixel = c_stripe
+                    elif 26 <= x <= 29:
+                        pixel = c_green
+                    elif y in (62, 75) or x in (0, 55):
+                        pixel = c_green_sh
+                    else:
+                        pixel = c_green_hi if y in (64, 65) else c_green
+                else: # Trunk
+                    local_trunk_x = x - 56
+                    if (11 <= local_trunk_x <= 13) or (16 <= local_trunk_x <= 18):
+                        pixel = c_stripe
+                    else:
+                        pixel = c_green
+
+            # 5. Dual Chrome Intakes (74..85, 62..65)
+            elif 62 <= y <= 65 and 74 <= x <= 85:
+                pixel = c_chrome
+
+            # 6. Cabin Greenhouse & Slanted Roof (0..55, 88..105)
+            elif 88 <= y <= 105 and 0 <= x <= 55:
+                if (22 <= x <= 25) or (30 <= x <= 33):
+                    pixel = c_stripe
+                elif 26 <= x <= 29:
                     pixel = c_green
-                elif y in (68, 93) or x in (0, 75):
+                elif y in (88, 105) or x in (0, 55):
                     pixel = c_green_sh
                 else:
-                    pixel = c_green_hi if y in (70, 71) else c_green
+                    pixel = c_green_hi if y in (90, 91) else c_green
 
-            # 5. Front & Rear Windshields (78..96, 68..85)
+            # 7. Front & Rear Windshields (78..96, 68..85)
             elif 68 <= y <= 85 and 78 <= x <= 96:
                 if x in (78, 96) or y in (68, 77, 78, 85):
-                    pixel = c_chrome_sh # Chrome window frame
+                    pixel = c_chrome_sh
                 elif y in (70, 80) and x in (82, 83, 84):
-                    pixel = c_glass_hi # Sun reflection
+                    pixel = c_glass_hi
                 else:
-                    pixel = c_glass # Dark obsidian tinted glass
+                    pixel = c_glass
 
-            # 6. Rear Trunk (0..55, 96..105) with Dual Stripes
-            elif 96 <= y <= 105 and 0 <= x <= 55:
-                if (23 <= x <= 25) or (29 <= x <= 31):
-                    pixel = c_stripe
-                elif 26 <= x <= 28:
-                    pixel = c_green
+            # 8. Ducktail Spoiler Wing (60..90, 90..98)
+            elif 90 <= y <= 98 and 60 <= x <= 90:
+                pixel = c_stripe if y >= 96 else c_green_hi
+
+            # 9. Front Bumper, Chrome Grille & Headlights (0..55, 118..127)
+            elif 118 <= y <= 127 and 0 <= x <= 55:
+                if x in (6, 7, 10, 11, 44, 45, 48, 49) and y in (120, 121, 122):
+                    pixel = c_headlight
+                elif 16 <= x <= 38 and y in (120, 121):
+                    pixel = c_black
                 else:
-                    pixel = c_green
+                    pixel = c_chrome
 
-            # 7. Ducktail Spoiler Wing (60..83, 96..105)
-            elif 96 <= y <= 105 and 60 <= x <= 83:
-                pixel = c_stripe if y >= 102 else c_green_hi
-
-            # 8. Front Bumper & Headlights (0..51, 110..115)
-            elif 110 <= y <= 115 and 0 <= x <= 51:
-                # Dual Headlights on left & right
-                if x in (6, 7, 10, 11, 40, 41, 44, 45) and y in (111, 112, 113):
-                    pixel = c_headlight # Halogen headlights
-                elif 16 <= x <= 35 and y in (111, 112):
-                    pixel = c_black # Chrome mesh grille
-                else:
-                    pixel = c_chrome # Front steel bumper
-
-            # 9. Rear Bumper & Taillights (54..105, 110..115)
-            elif 110 <= y <= 115 and 54 <= x <= 105:
-                # Horizontal Red Tail Light Bar
-                if y in (111, 112) and (58 <= x <= 72 or 87 <= x <= 101):
-                    pixel = c_red_tail # Bright red tail lights
-                elif y in (113, 114) and x in (60, 61, 98, 99):
-                    pixel = c_chrome # Twin chrome exhaust tips
+            # 10. Rear Bumper, Taillights & Twin Exhausts (64..127, 118..127)
+            elif 118 <= y <= 127 and 64 <= x <= 127:
+                if y in (120, 121) and (68 <= x <= 84 or 100 <= x <= 116):
+                    pixel = c_red_tail
+                elif y in (123, 124) and x in (72, 73, 112, 113):
+                    pixel = c_chrome
                 else:
                     pixel = c_chrome_sh
 
-            # 10. Muscle Car Wheels (80..97, 0..13)
-            elif 0 <= y <= 13 and 80 <= x <= 97:
-                dx = abs(x - 88.5)
-                dy = abs(y - 6.5)
+            # 11. Muscle Car 5-Spoke Wheels (80..105, 0..15)
+            elif 0 <= y <= 15 and 80 <= x <= 105:
+                dx = abs(x - 92.5)
+                dy = abs(y - 7.5)
                 dist_sq = dx * dx + dy * dy
-                if dist_sq <= 36:
+                if dist_sq <= 49:
                     if dist_sq <= 6:
-                        pixel = c_chrome # Center hubcap
-                    elif dist_sq <= 16:
-                        # 5-Spoke Star Rim
+                        pixel = c_chrome
+                    elif dist_sq <= 20:
                         pixel = c_rim if (int(dx * 2 + dy * 3) % 2 == 0) else c_black
-                    elif dist_sq <= 25:
-                        pixel = c_chrome # Outer rim lip
+                    elif dist_sq <= 30:
+                        pixel = c_chrome
                     else:
-                        pixel = c_tire # Rubber tire tread
+                        pixel = c_tire
 
             data[idx:idx+4] = bytes(pixel)
 
     return make_png(w, h, bytes(data))
 
 def create_rustbucket_texture():
-    """256x256 High-Fidelity HD Texture for Grandpa Max's Rust Bucket RV Camper Van"""
+    """256x256 High-Fidelity HD Texture for Grandpa Max's Rust Bucket RV (Colossal Motorhome Plumber Base)"""
     w, h = 256, 256
     data = bytearray(w * h * 4)
     c_trans = [0, 0, 0, 0]
@@ -162,72 +162,81 @@ def create_rustbucket_texture():
             idx = (y * w + x) * 4
             pixel = c_trans
 
-            # 1. Main Camper Body (0..168, 0..68)
-            if 0 <= y <= 68 and 0 <= x <= 168:
-                # Dual Horizontal Stripes (Red top, Green bottom)
-                if 30 <= y <= 34:
+            # 1. Main Camper Body (0..180, 0..105)
+            if 0 <= y <= 105 and 0 <= x <= 180:
+                # Dual Iconic Side Stripes (Red top, Green bottom)
+                if 48 <= y <= 54:
                     pixel = c_stripe_red
-                elif 35 <= y <= 40:
+                elif 55 <= y <= 63:
                     pixel = c_stripe_green
                 # Side Windows (Tinted glass with frames)
-                elif 14 <= y <= 26 and (20 <= x <= 60 or 90 <= x <= 140) and (x % 24 < 18):
-                    if y in (14, 26) or (x % 24 in (0, 17)):
+                elif 22 <= y <= 40 and (24 <= x <= 80 or 105 <= x <= 165) and (x % 30 < 22):
+                    if y in (22, 40) or (x % 30 in (0, 21)):
                         pixel = c_chrome # Window frame
                     else:
-                        pixel = c_glass_hi if y in (16, 17) and x % 6 == 0 else c_glass
-                elif y in (0, 68) or x in (0, 168):
-                    pixel = c_cream_sh # Panel edge seam
+                        pixel = c_glass_hi if y in (25, 26) and x % 6 == 0 else c_glass
+                elif y in (0, 105) or x in (0, 180):
+                    pixel = c_cream_sh
                 else:
                     pixel = c_cream
 
-            # 2. Front Cab Overhang & Windshield (0..72, 72..90)
-            elif 72 <= y <= 90 and 0 <= x <= 72:
-                if 76 <= y <= 86 and 10 <= x <= 62:
-                    if x in (35, 36) or y in (76, 86):
-                        pixel = c_chrome # Windshield central wiper & frame
+            # 2. Front Cab Overhang & Windshield (0..90, 106..135)
+            elif 106 <= y <= 135 and 0 <= x <= 90:
+                if 112 <= y <= 128 and 12 <= x <= 78:
+                    if x in (44, 45) or y in (112, 128):
+                        pixel = c_chrome # Windshield wiper & frame
                     else:
                         pixel = c_glass
                 else:
                     pixel = c_cream
 
-            # 3. Roof AC & Satellite Dish (64..150, 72..90)
-            elif 72 <= y <= 90 and 64 <= x <= 150:
-                if x >= 124: # Grandpa Max's Plumber Satellite Dish
-                    pixel = hex_to_rgba("#22c55e") if (x in (127, 128) and y in (78, 79)) else c_chrome
-                else: # AC Unit with cooling vents
-                    pixel = c_black if (x % 4 == 0 and 76 <= y <= 86) else c_chrome_sh
-
-            # 4. Front Chrome Bumper & Headlights (0..72, 92..102)
-            elif 92 <= y <= 102 and 0 <= x <= 72:
-                # Dual Round Headlights & Amber Indicators
-                if (8 <= x <= 14 or 58 <= x <= 64) and 94 <= y <= 98:
+            # 3. Front Heavy Bullbar Bumper & Quad Headlights (94..170, 106..135)
+            elif 106 <= y <= 135 and 94 <= x <= 170:
+                # Quad Round Headlights & Amber Indicators
+                if (102 <= x <= 112 or 152 <= x <= 162) and 114 <= y <= 122:
                     pixel = c_headlight
-                elif (16 <= x <= 19 or 53 <= x <= 56) and 95 <= y <= 97:
+                elif (114 <= x <= 118 or 146 <= x <= 150) and 116 <= y <= 120:
                     pixel = c_amber
-                elif 24 <= x <= 48 and y in (95, 96):
-                    pixel = c_black # Front grille
+                elif 124 <= x <= 140 and y in (116, 117):
+                    pixel = c_black # Front radiator grille
                 else:
                     pixel = c_chrome
 
-            # 5. Rear Ladder & Spare Tire Cover (66..110, 92..110)
-            elif 92 <= y <= 110 and 66 <= x <= 110:
-                dx = abs(x - 88)
-                dy = abs(y - 101)
-                if dx * dx + dy * dy <= 49:
-                    # Spare Tire with "RUST BUCKET" green core
-                    pixel = c_stripe_green if dx * dx + dy * dy <= 20 else c_tire
-                else:
-                    pixel = c_chrome # Tubular ladder
+            # 4. Roof AC Unit (0..90, 138..165)
+            elif 138 <= y <= 165 and 0 <= x <= 90:
+                pixel = c_black if (x % 4 == 0 and 144 <= y <= 158) else c_chrome_sh
 
-            # 6. RV Wheels (160..185, 0..25)
-            elif 0 <= y <= 25 and 160 <= x <= 185:
-                dx = abs(x - 172.5)
-                dy = abs(y - 12.5)
+            # 5. Plumber Satellite Radar Dish (94..130, 138..165)
+            elif 138 <= y <= 165 and 94 <= x <= 130:
+                pixel = hex_to_rgba("#22c55e") if (x in (110, 111, 112) and y in (148, 149, 150)) else c_chrome
+
+            # 6. Rear Exterior Ladder (136..150, 138..165)
+            elif 138 <= y <= 165 and 136 <= x <= 150:
+                pixel = c_chrome # Steel tubular ladder
+
+            # 7. Rear Spare Tire Mount (154..180, 138..165)
+            elif 138 <= y <= 165 and 154 <= x <= 180:
+                dx = abs(x - 167)
+                dy = abs(y - 151)
                 dist_sq = dx * dx + dy * dy
-                if dist_sq <= 120:
-                    if dist_sq <= 25:
+                if dist_sq <= 81:
+                    pixel = c_stripe_green if dist_sq <= 30 else c_tire
+                else:
+                    pixel = c_chrome
+
+            # 8. Heavy Underside Drive Chassis (0..180, 180..220)
+            elif 180 <= y <= 220 and 0 <= x <= 180:
+                pixel = c_black if (x + y) % 8 == 0 else hex_to_rgba("#1e293b")
+
+            # 9. Heavy Duty RV Wheels (180..220, 0..30)
+            elif 0 <= y <= 30 and 180 <= x <= 220:
+                dx = abs(x - 200)
+                dy = abs(y - 15)
+                dist_sq = dx * dx + dy * dy
+                if dist_sq <= 196:
+                    if dist_sq <= 36:
                         pixel = c_rim
-                    elif dist_sq <= 64:
+                    elif dist_sq <= 81:
                         pixel = c_black if int(dx + dy) % 3 == 0 else c_rim
                     else:
                         pixel = c_tire
@@ -322,6 +331,19 @@ def create_vilgax_texture():
                     pixel = c_gold # Gold kneecap & boot trim
                 else:
                     pixel = c_armor
+
+            # 9. Warlord Skull Horns (64..80, 0..15)
+            elif 0 <= y <= 15 and 64 <= x <= 80:
+                pixel = c_gold if y <= 4 else c_bronze
+
+            # 10. Cybernetic Respirator Harness & Tubes (0..40, 96..115)
+            elif 96 <= y <= 115 and 0 <= x <= 40:
+                if x in (8, 9, 28, 29) and y in (102, 103):
+                    pixel = c_ruby_glow # Filter intake nodes
+                elif y in (96, 115) or x in (0, 40):
+                    pixel = c_gold # Gold reinforcement frame
+                else:
+                    pixel = c_bronze # Heavy breathing tubes
 
             data[idx:idx+4] = bytes(pixel)
 

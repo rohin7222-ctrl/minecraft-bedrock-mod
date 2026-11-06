@@ -280,7 +280,7 @@ def write_bp_item(filename, identifier, icon, name, category="equipment", is_arm
         "minecraft:item": {
             "description": {"identifier": identifier, "menu_category": {"category": category}},
             "components": {
-                "minecraft:icon": icon,
+                "minecraft:icon": {"texture": icon},
                 "minecraft:display_name": {"value": name},
                 "minecraft:max_stack_size": 1,
                 "minecraft:hand_equipped": True,
@@ -302,7 +302,7 @@ def write_bp_item(filename, identifier, icon, name, category="equipment", is_arm
         "minecraft:item": {
             "description": {"identifier": identifier},
             "components": {
-                "minecraft:icon": icon
+                "minecraft:icon": {"texture": icon}
             }
         }
     }
@@ -382,15 +382,15 @@ bp_manifest = {
         "name": "Ben 10: Omnitrix Origins (BP)",
         "description": "9 Legendary Omnitrixes, 76 Aliens, Humungousaur Titan Growth, Ultimates & Dynamic Biomnitrix Fusions! Smooth 60 FPS Mobile Optimized.",
         "uuid": UUID_BP_HEADER,
-        "version": [3, 3, 0],
+        "version": [3, 4, 0],
         "min_engine_version": [1, 20, 80]
     },
     "modules": [
-        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 3, 0]},
-        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 3, 0], "entry": "scripts/main.js"}
+        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 4, 0]},
+        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 4, 0], "entry": "scripts/main.js"}
     ],
     "dependencies": [
-        {"uuid": UUID_RP_HEADER, "version": [3, 3, 0]},
+        {"uuid": UUID_RP_HEADER, "version": [3, 4, 0]},
         {"module_name": "@minecraft/server", "version": "1.11.0"},
         {"module_name": "@minecraft/server-ui", "version": "1.2.0"}
     ]
@@ -404,10 +404,10 @@ rp_manifest = {
         "name": "Ben 10: Omnitrix Origins (RP)",
         "description": "High performance textures, sound effects, Carnitrix horror effects, and alien models.",
         "uuid": UUID_RP_HEADER,
-        "version": [3, 3, 0],
+        "version": [3, 4, 0],
         "min_engine_version": [1, 20, 80]
     },
-    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 3, 0]}]
+    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 4, 0]}]
 }
 with open(os.path.join(RP_DIR, "manifest.json"), "w", encoding="utf-8") as f:
     json.dump(rp_manifest, f, indent=2)
@@ -432,6 +432,12 @@ WATCH_ALIENS["omnitrix_completed"] = ALL_ALIENS.filter(a => a.watch === "omnitri
 
 // Biomnitrix Dynamic Fusion Roster Pool
 export const FUSION_POOL = ALL_ALIENS.filter(a => a.watch === "omnitrix_classic" || a.watch === "omnitrix_recalibrated" || a.watch === "omnitrix_completed");
+
+// Galvan OS Series Playlists for Fast Dial Navigation
+export const PLAYLIST_CLASSIC = ALL_ALIENS.filter(a => a.watch === "omnitrix_classic");
+export const PLAYLIST_AF = ALL_ALIENS.filter(a => a.watch === "omnitrix_recalibrated");
+export const PLAYLIST_ULTIMATE = ALL_ALIENS.filter(a => a.watch === "omnitrix_ultimatrix");
+export const PLAYLIST_OMNIVERSE = ALL_ALIENS.filter(a => a.watch === "omnitrix_completed" || a.watch === "omnitrix_official");
 """
 with open(os.path.join(BP_DIR, "scripts", "aliens_data.js"), "w", encoding="utf-8") as f:
     f.write(aliens_data_code)

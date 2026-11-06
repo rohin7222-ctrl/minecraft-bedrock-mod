@@ -185,7 +185,7 @@ def build_custom_entities(BP_DIR, RP_DIR, texture_data):
                     "menu_category": {"category": "items", "group": "itemGroup.name.mobEgg"}
                 },
                 "components": {
-                    "minecraft:icon": spawner_item_id,
+                    "minecraft:icon": {"texture": spawner_item_id},
                     "minecraft:display_name": {"value": f"§e[Ben 10] §a{ent['item_name']}"},
                     "minecraft:max_stack_size": 64,
                     "minecraft:cooldown": {"category": "spawner", "duration": 1.0}
@@ -199,7 +199,7 @@ def build_custom_entities(BP_DIR, RP_DIR, texture_data):
             "format_version": "1.20.80",
             "minecraft:item": {
                 "description": {"identifier": f"ben10:{spawner_item_id}"},
-                "components": {"minecraft:icon": spawner_item_id}
+                "components": {"minecraft:icon": {"texture": spawner_item_id}}
             }
         }
         with open(os.path.join(RP_DIR, "items", f"{spawner_item_id}.json"), "w", encoding="utf-8") as f:
