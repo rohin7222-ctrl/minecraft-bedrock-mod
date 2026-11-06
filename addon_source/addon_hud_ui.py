@@ -158,9 +158,9 @@ def get_hud_screen_ui():
         "omnitrix_hud_bar": {
             "type": "panel",
             "size": [128, 32],
-            "anchor_from": "top_right",
-            "anchor_to": "top_right",
-            "offset": [-10, 10],
+            "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+            "offset": [0, 4],
             "controls": [
                 {
                     "hud_bg@common.image": {

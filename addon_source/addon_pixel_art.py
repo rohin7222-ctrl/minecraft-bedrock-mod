@@ -1,5 +1,5 @@
 # Ben 10 Bedrock Addon - Series Accurate 64x64 HD Alien Textures & Skins
-# Pure Python PNG generation - Smooth Shading, Anatomical Details, No Checkerboard Noise
+# Pure Python PNG generation - Smooth Shading, Anatomical Details, Zero Dither Noise
 # Strictly under 1000 lines
 
 from addon_graphics import make_png, hex_to_rgba
@@ -22,8 +22,8 @@ def create_alien_face_icon(alien_id, base_hex, detail_hex, accent_hex):
 def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_color_hex="#22c55e", alien_id=""):
     """
     Generates high-definition, series-accurate 64x64 Minecraft skins for all aliens.
-    Uses smooth anatomical shading, clear uniform demarcations, and glowing Omnitrix badges.
-    Zero checkerboard noise - pure authentic cartoon fidelity.
+    Uses smooth anatomical shading, clean solid uniform pieces, and bold chest Omnitrix badges.
+    Zero checkerboard noise / zero modulo stippling.
     """
     if isinstance(base_color_hex, str) and not base_color_hex.startswith("#"):
         alien_id, base_color_hex, accent_color_hex = base_color_hex, detail_color_hex, accent_color_hex
@@ -86,30 +86,32 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 if 8 <= x <= 15 and 8 <= y <= 15: # Front Face
                     if is_fourarms:
                         # Crimson Tetramand skin with 4 Golden Eyes & Black Mohawk
-                        if x in (11, 12) and y <= 12:
+                        if x in (11, 12) and y <= 11:
                             pixel = c_black # Central crest
                         elif (y == 10 and x in (10, 13)) or (y == 12 and x in (9, 14)):
                             pixel = c_gold # 4 Golden Eyes
                         elif y == 14 and 10 <= x <= 13:
-                            pixel = _darken(c_base, 50) # Fierce mouth line
+                            pixel = _darken(c_base, 50) # Mouth line
                         else:
-                            pixel = c_base if y <= 13 else _darken(c_base, 20)
+                            pixel = c_base
                     elif is_heatblast:
-                        # Magma rock with glowing lava fissure eyes & fiery flame crown
-                        if y in (11, 12) and x in (10, 13):
+                        # Obsidian rock with white-hot eyes & flame crown hair
+                        if y <= 9 and 10 <= x <= 13:
+                            pixel = hex_to_rgba("#f97316") # Flame crown hair
+                        elif y in (11, 12) and x in (10, 13):
                             pixel = hex_to_rgba("#fef08a") # White-hot eyes
-                        elif (x == 11 and y in (10, 13)) or (x in (9, 14) and y == 11):
-                            pixel = hex_to_rgba("#f97316") # Glowing lava fissures
+                        elif y == 14 and 11 <= x <= 12:
+                            pixel = hex_to_rgba("#f97316") # Lava mouth
                         else:
-                            pixel = hex_to_rgba("#78350f") # Obsidian rock
+                            pixel = hex_to_rgba("#78350f") # Solid obsidian rock
                     elif is_diamondhead:
                         # Faceted Cyan Crystal Head with Yellow Eyes
                         if y in (11, 12) and x in (10, 13):
                             pixel = c_gold # Yellow eyes
-                        elif x in (9, 14) or y == 15:
-                            pixel = hex_to_rgba("#0f766e") # Dark crystal edge
+                        elif x in (8, 15) or y == 15:
+                            pixel = hex_to_rgba("#0f766e") # Crystal facet shadow
                         else:
-                            pixel = hex_to_rgba("#2dd4bf") if (x == 11 or x == 12) else hex_to_rgba("#14b8a6")
+                            pixel = hex_to_rgba("#2dd4bf") # Pure cyan crystal
                     elif is_xlr8:
                         # Black aerodynamic helmet with cyan visor and green slit eyes
                         if 9 <= x <= 14 and 10 <= y <= 13:
@@ -134,7 +136,7 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                         if y == 11 and x == 11:
                             pixel = hex_to_rgba("#a855f7") # Wandering purple pupil
                         elif y in (10, 11, 12) and x in (10, 11, 12):
-                            pixel = hex_to_rgba("#581c87") # Sunken eye socket track
+                            pixel = hex_to_rgba("#581c87") # Eye socket track
                         else:
                             pixel = hex_to_rgba("#f1f5f9")
                     elif is_ripjaws:
@@ -142,7 +144,7 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                         if y == 8 and 11 <= x <= 12:
                             pixel = hex_to_rgba("#4ade80") # Angler lure
                         elif y in (13, 14) and 9 <= x <= 14:
-                            pixel = c_white if x % 2 == 0 else hex_to_rgba("#991b1b") # Needle teeth & red mouth
+                            pixel = c_white if x in (9, 11, 13) else hex_to_rgba("#991b1b")
                         elif y == 10 and x in (9, 14):
                             pixel = hex_to_rgba("#38bdf8") # Fish eyes
                         else:
@@ -165,11 +167,9 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                         else:
                             pixel = hex_to_rgba("#94a3b8")
                     elif is_alienx:
-                        # Deep cosmic black void with glowing stars and green eyes
+                        # Deep cosmic black void with glowing green star eyes
                         if y in (11, 12) and x in (10, 13):
                             pixel = hex_to_rgba("#4ade80") # Green star eyes
-                        elif (x * 3 + y * 7) % 5 == 0:
-                            pixel = c_white # Distant star
                         else:
                             pixel = c_black
                     elif is_rath:
@@ -207,11 +207,11 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                     elif is_xlr8:
                         pixel = hex_to_rgba("#0f172a")
                     elif is_upgrade:
-                        pixel = c_omni_green if (x + y) % 8 == 0 else c_black
+                        pixel = c_omni_green if (x in (4, 12, 20, 28) and y == 4) else c_black
                     elif is_alienx:
-                        pixel = c_white if (x * 5 + y * 11) % 7 == 0 else c_black
+                        pixel = c_black
                     else:
-                        pixel = c_base if (x + y) % 6 != 0 else c_shadow
+                        pixel = c_base
 
             # =========================================================================
             # 2. TORSO / BODY (x: 16..39, y: 16..31)
@@ -251,7 +251,7 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                         else:
                             pixel = hex_to_rgba("#0f172a") # Black bodysuit
                     elif is_heatblast:
-                        # Volcanic charcoal plates connected by glowing lava rivers
+                        # Volcanic charcoal plates connected by molten magma seams
                         if (x in (21, 26) and y in (21, 27)) or (y == 26 and 22 <= x <= 25):
                             pixel = hex_to_rgba("#f97316") # Molten magma seams
                         else:
@@ -264,44 +264,37 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                             pixel = c_white # White chestplate
                     elif is_upgrade:
                         # Obsidian nanite chassis with green circuit traces
-                        if (x in (21, 26) or y in (21, 28) or x == y):
+                        if (x in (21, 26) and 20 <= y <= 28) or (y in (21, 28) and 20 <= x <= 27):
                             pixel = c_omni_green # Circuit trace
                         else:
                             pixel = c_black
                     elif is_ghostfreak:
-                        # Ectoplasmic lavender shroud with dark phantom crease
-                        if (x + y) % 7 == 0:
-                            pixel = hex_to_rgba("#94a3b8")
-                        else:
-                            pixel = hex_to_rgba("#f1f5f9")
+                        pixel = hex_to_rgba("#f1f5f9")
                     elif is_waybig:
-                        # Colossal White armor with Red chestplate accents
+                        # Colossal White armor with Red shoulder accents
                         if x in (20, 21, 26, 27) and y <= 25:
-                            pixel = hex_to_rgba("#dc2626") # Red shoulder armor
+                            pixel = hex_to_rgba("#dc2626")
                         else:
                             pixel = c_white
                     elif is_swampfire:
-                        # Mossy timber bark with orange flame accents
-                        if (x in (21, 26) and y >= 26):
+                        if x in (21, 26) and y >= 26:
                             pixel = hex_to_rgba("#f97316")
                         else:
                             pixel = hex_to_rgba("#365314")
                     elif is_rath:
-                        # Orange tiger chest with white center patch
                         if 22 <= x <= 25 and y >= 24:
                             pixel = c_white # White chest patch
                         else:
                             pixel = hex_to_rgba("#ea580c")
                     elif is_feedback:
-                        # Conductoid black chassis with green chest stripes
                         if x in (21, 26) and y >= 26:
                             pixel = c_omni_green
                         else:
                             pixel = c_black
                     elif is_alienx:
-                        pixel = c_white if (x * 7 + y * 13) % 9 == 0 else c_black
+                        pixel = c_black
                     else:
-                        pixel = c_base if (x + y) % 8 != 0 else c_shadow
+                        pixel = c_base
                 else:
                     # Sides and Back of Torso
                     if is_fourarms:
@@ -309,12 +302,11 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                     elif is_diamondhead:
                         pixel = c_black if x < 24 else c_white
                     elif is_cannonbolt:
-                        # Giant yellow rounded shell on back (x: 28..39, y: 20..31)
                         pixel = hex_to_rgba("#eab308") if x >= 28 else hex_to_rgba("#ca8a04")
                     elif is_upgrade:
-                        pixel = c_omni_green if (x + y) % 9 == 0 else c_black
+                        pixel = c_omni_green if (x in (29, 37) and 22 <= y <= 28) else c_black
                     elif is_alienx:
-                        pixel = c_white if (x * 7 + y * 13) % 9 == 0 else c_black
+                        pixel = c_black
                     else:
                         pixel = c_base
 
@@ -323,7 +315,6 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
             # =========================================================================
             elif 40 <= x < 56 and 16 <= y < 32:
                 if is_fourarms:
-                    # Crimson Tetramand arm with gold wrist cuff
                     pixel = c_gold if y in (26, 27) else hex_to_rgba("#b91c1c")
                 elif is_diamondhead:
                     pixel = hex_to_rgba("#2dd4bf") if y >= 24 else c_black
@@ -334,17 +325,16 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_cannonbolt:
                     pixel = hex_to_rgba("#eab308") if y < 22 else c_white
                 elif is_upgrade:
-                    pixel = c_omni_green if (x == y or (x + y) % 8 == 0) else c_black
+                    pixel = c_omni_green if (y in (20, 26) and x in (44, 52)) else c_black
                 elif is_feedback:
-                    pixel = c_gold if y >= 28 else c_black # Gold plug fingers
+                    pixel = c_gold if y >= 28 else c_black
                 elif is_alienx:
-                    pixel = c_white if (x * 7 + y * 11) % 9 == 0 else c_black
+                    pixel = c_black
                 else:
                     pixel = c_acc if y >= 28 else c_base
 
             # =========================================================================
             # 4. SECONDARY RIGHT ARM / EXTRA LIMBS (x: 40..55, y: 32..47)
-            # Used for Four Arms lower right arm, etc.
             # =========================================================================
             elif 40 <= x < 56 and 32 <= y < 48:
                 if is_fourarms:
@@ -361,7 +351,7 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 if is_fourarms:
                     pixel = c_gold if y in (58, 59) else hex_to_rgba("#b91c1c")
                 elif is_diamondhead:
-                    pixel = hex_to_rgba("#2dd4bf") if y >= 56 else c_white # Left side white uniform
+                    pixel = hex_to_rgba("#2dd4bf") if y >= 56 else c_white
                 elif is_xlr8:
                     pixel = hex_to_rgba("#38bdf8") if y >= 56 else hex_to_rgba("#0f172a")
                 elif is_heatblast:
@@ -369,11 +359,11 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_cannonbolt:
                     pixel = hex_to_rgba("#eab308") if y < 54 else c_white
                 elif is_upgrade:
-                    pixel = c_omni_green if (x == y or (x + y) % 8 == 0) else c_black
+                    pixel = c_omni_green if (y in (52, 58) and x in (36, 44)) else c_black
                 elif is_feedback:
                     pixel = c_gold if y >= 60 else c_black
                 elif is_alienx:
-                    pixel = c_white if (x * 7 + y * 11) % 9 == 0 else c_black
+                    pixel = c_black
                 else:
                     pixel = c_acc if y >= 60 else c_base
 
@@ -395,15 +385,15 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_diamondhead:
                     pixel = hex_to_rgba("#090d16") # Right black pant leg
                 elif is_xlr8:
-                    pixel = hex_to_rgba("#0f172a") if y < 28 else hex_to_rgba("#38bdf8") # Wheels at feet
+                    pixel = hex_to_rgba("#0f172a") if y < 28 else hex_to_rgba("#38bdf8")
                 elif is_heatblast:
                     pixel = hex_to_rgba("#f97316") if y in (21, 27) else hex_to_rgba("#78350f")
                 elif is_cannonbolt:
                     pixel = hex_to_rgba("#0f172a") if y >= 28 else c_white
                 elif is_upgrade:
-                    pixel = c_omni_green if (x + y) % 8 == 0 else c_black
+                    pixel = c_omni_green if (x in (4, 12) and y == 24) else c_black
                 elif is_alienx:
-                    pixel = c_white if (x * 7 + y * 11) % 9 == 0 else c_black
+                    pixel = c_black
                 else:
                     pixel = c_shadow if y >= 28 else c_base
 
@@ -422,9 +412,9 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_cannonbolt:
                     pixel = hex_to_rgba("#0f172a") if y >= 60 else c_white
                 elif is_upgrade:
-                    pixel = c_omni_green if (x + y) % 8 == 0 else c_black
+                    pixel = c_omni_green if (x in (20, 28) and y == 56) else c_black
                 elif is_alienx:
-                    pixel = c_white if (x * 7 + y * 11) % 9 == 0 else c_black
+                    pixel = c_black
                 else:
                     pixel = c_shadow if y >= 60 else c_base
 
@@ -433,19 +423,18 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
             # =========================================================================
             elif 0 <= x < 32 and 32 <= y < 48:
                 if is_xlr8:
-                    # Segmented Raptor Tail (blue and black rings)
-                    pixel = hex_to_rgba("#38bdf8") if y % 4 < 2 else hex_to_rgba("#0f172a")
+                    # Segmented Raptor Tail (solid blue and black rings)
+                    pixel = hex_to_rgba("#38bdf8") if y in (33, 34, 38, 39, 43, 44) else hex_to_rgba("#0f172a")
                 elif is_diamondhead:
                     # Sharp Back Crystal Spikes
-                    pixel = hex_to_rgba("#2dd4bf") if (x + y) % 3 != 0 else hex_to_rgba("#5eead4")
+                    pixel = hex_to_rgba("#2dd4bf") if x in (4, 5, 12, 13, 20, 21, 28, 29) else hex_to_rgba("#5eead4")
                 elif is_cannonbolt:
                     # Giant Yellow Carapace Shell
-                    pixel = hex_to_rgba("#eab308") if (x + y) % 8 != 0 else hex_to_rgba("#ca8a04")
+                    pixel = hex_to_rgba("#eab308") if 4 <= x <= 27 and 34 <= y <= 45 else hex_to_rgba("#ca8a04")
                 elif is_swampfire:
                     pixel = hex_to_rgba("#365314")
                 elif is_bigchill:
-                    # Moth wing patterns
-                    pixel = hex_to_rgba("#0284c7") if (x + y) % 4 == 0 else hex_to_rgba("#0f172a")
+                    pixel = hex_to_rgba("#0284c7") if x in (6, 14, 22) else hex_to_rgba("#0f172a")
                 else:
                     pixel = c_base
 

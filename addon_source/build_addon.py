@@ -184,6 +184,7 @@ for w in WATCHES:
         "minecraft:attachable": {
             "description": {
                 "identifier": f"ben10:{w['id']}",
+                "item": {f"ben10:{w['id']}": "query.owner_identifier == 'minecraft:player'"},
                 "materials": {"default": "armor", "enchanted": "armor_enchanted"},
                 "textures": {"default": f"textures/models/armor/{w['id']}_wrist", "enchanted": "textures/misc/enchanted_actor_glint"},
                 "geometry": {"default": f"geometry.ben10.{w['id']}"},
@@ -220,6 +221,7 @@ attachable_fusion = {
     "minecraft:attachable": {
         "description": {
             "identifier": "ben10:biomnitrix_fusion_suit",
+            "item": {"ben10:biomnitrix_fusion_suit": "query.owner_identifier == 'minecraft:player'"},
             "materials": {"default": "armor", "enchanted": "armor_enchanted"},
             "textures": {"default": "textures/models/armor/biomnitrix_fusion_layer_1", "enchanted": "textures/misc/enchanted_actor_glint"},
             "geometry": {"default": "geometry.ben10.fourarms"},
@@ -253,13 +255,10 @@ for a in ALL_ALIENS:
         "minecraft:attachable": {
             "description": {
                 "identifier": f"ben10:{a['id']}_suit",
+                "item": {f"ben10:{a['id']}_suit": "query.owner_identifier == 'minecraft:player'"},
                 "materials": {"default": "armor", "enchanted": "armor_enchanted"},
                 "textures": {"default": f"textures/models/armor/{a['id']}_layer_1", "enchanted": "textures/misc/enchanted_actor_glint"},
                 "geometry": {"default": geo_id},
-                "scripts": {
-                    "initialize": ["variable.is_first_person = c.is_first_person;"],
-                    "pre_animation": ["variable.is_first_person = c.is_first_person;"]
-                },
                 "render_controllers": ["controller.render.ben10_alien"]
             }
         }

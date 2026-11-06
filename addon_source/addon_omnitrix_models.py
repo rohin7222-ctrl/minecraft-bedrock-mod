@@ -255,26 +255,31 @@ def create_omnitrix_model_texture(band_hex, bezel_hex, dial_hex, glow_hex, core_
             elif 20 <= x < 36 and 0 <= y < 10:
                 pixel = c_silver if (x in (20, 35) or y in (0, 9)) else c_bezel
 
-            # 3. Dial Face & Glowing Hourglass (20,10 to 35,25) -> EXACT 16x16 hourglass!
+            # 3. Dial Face & Glowing Hourglass (20,10 to 35,25) -> EXACT 16x16 BOLD Hourglass
             elif 20 <= x < 36 and 10 <= y < 26:
                 dx = (x - 27.5)
                 dy = (y - 17.5)
-                in_black_triangle = False
-                if dx < 0 and abs(dy) < -dx * 0.95:
-                    in_black_triangle = True
-                elif dx > 0 and abs(dy) < dx * 0.95:
-                    in_black_triangle = True
-
-                if in_black_triangle:
-                    pixel = c_black
+                dist = (dx * dx + dy * dy) ** 0.5
+                if dist > 7.2:
+                    pixel = c_black # Metallic outer dial border
                 else:
-                    dist = (dx * dx + dy * dy) ** 0.5
-                    if dist <= 2.2:
-                        pixel = c_core # Bright glowing center core
-                    elif dist <= 5.5:
-                        pixel = c_glow # Glowing hourglass wings
+                    is_black_wedge = False
+                    if dx < -0.8:
+                        if abs(dy) < (-dx * 0.88):
+                            is_black_wedge = True
+                    elif dx > 0.8:
+                        if abs(dy) < (dx * 0.88):
+                            is_black_wedge = True
+
+                    if is_black_wedge:
+                        pixel = c_black
                     else:
-                        pixel = c_dial
+                        if dist <= 2.2:
+                            pixel = c_core # Bright glowing center core
+                        elif dist <= 5.5:
+                            pixel = c_glow # Glowing hourglass wings
+                        else:
+                            pixel = _darken(c_glow, 20)
 
             # 4. Side Buttons & Rivets (0,20 to 10,26)
             elif 0 <= x < 10 and 20 <= y < 26:

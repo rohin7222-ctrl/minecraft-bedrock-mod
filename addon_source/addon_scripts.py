@@ -100,27 +100,27 @@ function openOmnitrixDialUI(player, state) {
   let hasDetransformBtn = false;
   // If transformed into modern watch, or master control, show Revert button at top!
   if (state.isTransformed && (!isClassic || state.transformSeconds <= 0 || state.masterControl)) {
-    form.button("§c§l[ ⚡ EMERGENCY MANUAL REVERT ⚡ ]\n§8Tap to return to normal Steve", "textures/items/detransform");
+    form.button("§c§l[ ⚡ EMERGENCY MANUAL REVERT ⚡ ]\n§8Tap to return to normal Steve", "textures/items/detransform.png");
     hasDetransformBtn = true;
   }
 
   // Master Control Mode Switch
   let hasMasterBtn = false;
   if (!state.isTransformed) {
-    form.button(`§b§l[ ⚡ MASTER CONTROL: ${state.masterControl ? "ON" : "OFF"} ⚡ ]\n§8Toggle Infinite Energy & Instant Morph`, "textures/items/omnitrix_activator");
+    form.button(`§b§l[ ⚡ MASTER CONTROL: ${state.masterControl ? "ON" : "OFF"} ⚡ ]\n§8Toggle Infinite Energy & Instant Morph`, "textures/items/omnitrix_activator.png");
     hasMasterBtn = true;
   }
 
   // Biomnitrix Dual Fusion Mode
   let hasFusionBtn = false;
   if (watchKey === "omnitrix_biomnitrix") {
-    form.button("§e§l[ 🧬 BIOMNITRIX DUAL FUSION MATRIX 🧬 ]\n§8Combine 2 Alien DNA Samples", "textures/items/biomnitrix_fusion_ability");
+    form.button("§e§l[ 🧬 BIOMNITRIX DUAL FUSION MATRIX 🧬 ]\n§8Combine 2 Alien DNA Samples", "textures/items/biomnitrix_fusion_ability.png");
     hasFusionBtn = true;
   }
 
   // List all series-accurate aliens for this Omnitrix with full stats
   for (const alien of alienList) {
-    const iconPath = `textures/items/${alien.id}_ability`;
+    const iconPath = `textures/items/${alien.id}_ability.png`;
     form.button(`§2§l${alien.name.toUpperCase()}\n§7[${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}]`, iconPath);
   }
 
@@ -244,6 +244,8 @@ function transformPlayer(player, alien, state) {
   for (const eff of alien.effects) {
     player.runCommandAsync(`effect @s ${eff.effect} ${state.masterControl ? 9999 : 65} ${eff.amplifier} true`);
   }
+  // Hide human Steve model so ONLY the authentic 3D alien morph renders!
+  player.runCommandAsync(`effect @s invisibility ${state.masterControl ? 9999 : 65} 1 true`);
 }
 
 function transformFusion(player, a1, a2, state) {
@@ -279,6 +281,8 @@ function transformFusion(player, a1, a2, state) {
   for (const eff of a2.effects) {
     player.runCommandAsync(`effect @s ${eff.effect} 75 ${eff.amplifier} true`);
   }
+  // Hide human model
+  player.runCommandAsync(`effect @s invisibility ${state.masterControl ? 9999 : 75} 1 true`);
 }
 
 function detransform(player, state) {
