@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Minecraft Bedrock Mod</string>
+    <string name="btn_install_ben10">BEN 10 MOD</string>
+    <string name="title_app">BEN 10 OMNITRIX MOD</string>
+    <string name="subtitle_app">Minecraft Bedrock Mobile Edition (1.20 - 1.21+)</string>
+    <string name="desc_app">Instant 1-Click Import into Minecraft Bedrock! Includes 9 Omnitrixes, 76 Aliens, Humungousaur Titan Growth, and Dynamic Biomnitrix Fusions.</string>
+    <string name="status_ready">Status: Ready to Import</string>
+    <string name="status_importing">Importing into Minecraft Bedrock...</string>
+    <string name="toast_importing">Opening Minecraft... Please wait for Import Started!</string>
+    <string name="toast_mc_not_found">Minecraft Bedrock not detected! Please install Minecraft PE.</string>
+</resources>
