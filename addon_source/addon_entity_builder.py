@@ -61,6 +61,8 @@ def create_spawner_icon(base_hex, glow_hex):
 def build_custom_entities(BP_DIR, RP_DIR, texture_data):
     """Assembles all 7 entities, models, textures, BP and RP definitions"""
     os.makedirs(os.path.join(BP_DIR, "entities"), exist_ok=True)
+    os.makedirs(os.path.join(BP_DIR, "items"), exist_ok=True)
+    os.makedirs(os.path.join(RP_DIR, "items"), exist_ok=True)
     os.makedirs(os.path.join(RP_DIR, "entity"), exist_ok=True)
     os.makedirs(os.path.join(RP_DIR, "textures", "entity"), exist_ok=True)
 
@@ -173,7 +175,7 @@ def build_custom_entities(BP_DIR, RP_DIR, texture_data):
             f.write(icon_bytes)
         texture_data[spawner_item_id] = {"textures": f"textures/items/{spawner_item_id}"}
 
-        # 6. Write BP Spawner Item
+        # 6. Write BP & RP Spawner Item
         item_bp = {
             "format_version": "1.20.80",
             "minecraft:item": {
@@ -182,7 +184,7 @@ def build_custom_entities(BP_DIR, RP_DIR, texture_data):
                     "menu_category": {"category": "items", "group": "itemGroup.name.mobEgg"}
                 },
                 "components": {
-                    "minecraft:icon": {"texture": spawner_item_id},
+                    "minecraft:icon": spawner_item_id,
                     "minecraft:display_name": {"value": f"§e[Ben 10] §a{ent['item_name']}"},
                     "minecraft:max_stack_size": 64,
                     "minecraft:cooldown": {"category": "spawner", "duration": 1.0}
@@ -191,3 +193,13 @@ def build_custom_entities(BP_DIR, RP_DIR, texture_data):
         }
         with open(os.path.join(BP_DIR, "items", f"{spawner_item_id}.json"), "w", encoding="utf-8") as f:
             json.dump(item_bp, f, indent=2)
+
+        item_rp = {
+            "format_version": "1.20.80",
+            "minecraft:item": {
+                "description": {"identifier": f"ben10:{spawner_item_id}"},
+                "components": {"minecraft:icon": spawner_item_id}
+            }
+        }
+        with open(os.path.join(RP_DIR, "items", f"{spawner_item_id}.json"), "w", encoding="utf-8") as f:
+            json.dump(item_rp, f, indent=2)

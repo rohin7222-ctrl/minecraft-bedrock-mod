@@ -35,6 +35,7 @@ os.makedirs(os.path.join(BP_DIR, "scripts"), exist_ok=True)
 os.makedirs(os.path.join(BP_DIR, "functions"), exist_ok=True)
 
 os.makedirs(os.path.join(RP_DIR, "attachables"), exist_ok=True)
+os.makedirs(os.path.join(RP_DIR, "items"), exist_ok=True)
 os.makedirs(os.path.join(RP_DIR, "textures", "items"), exist_ok=True)
 os.makedirs(os.path.join(RP_DIR, "textures", "models", "armor"), exist_ok=True)
 os.makedirs(os.path.join(RP_DIR, "models", "entity"), exist_ok=True)
@@ -272,14 +273,14 @@ build_custom_entities(BP_DIR, RP_DIR, texture_data)
 with open(os.path.join(RP_DIR, "textures", "item_texture.json"), "w", encoding="utf-8") as f:
     json.dump({"resource_pack_name": "ben10_rp", "texture_name": "atlas.items", "texture_data": texture_data}, f, indent=2)
 
-# 2. BP Items & Recipes
+# 2. BP & RP Items & Recipes
 def write_bp_item(filename, identifier, icon, name, category="equipment", is_armor=False, is_ability=False):
     item_json = {
         "format_version": "1.20.80",
         "minecraft:item": {
             "description": {"identifier": identifier, "menu_category": {"category": category}},
             "components": {
-                "minecraft:icon": {"texture": icon},
+                "minecraft:icon": icon,
                 "minecraft:display_name": {"value": name},
                 "minecraft:max_stack_size": 1,
                 "minecraft:hand_equipped": True,
@@ -295,6 +296,18 @@ def write_bp_item(filename, identifier, icon, name, category="equipment", is_arm
         item_json["minecraft:item"]["components"]["minecraft:cooldown"] = {"category": "ben10_power", "duration": 0.4}
     with open(os.path.join(BP_DIR, "items", filename), "w", encoding="utf-8") as f:
         json.dump(item_json, f, indent=2)
+
+    rp_item = {
+        "format_version": "1.20.80",
+        "minecraft:item": {
+            "description": {"identifier": identifier},
+            "components": {
+                "minecraft:icon": icon
+            }
+        }
+    }
+    with open(os.path.join(RP_DIR, "items", filename), "w", encoding="utf-8") as f:
+        json.dump(rp_item, f, indent=2)
 
 for w in WATCHES:
     write_bp_item(f"{w['id']}.json", f"ben10:{w['id']}", w["id"], f"item.ben10:{w['id']}.name", is_armor=False)
@@ -357,11 +370,11 @@ with open(os.path.join(RP_DIR, "texts", "languages.json"), "w", encoding="utf-8"
     json.dump(["en_US"], f)
 
 # 4. Manifests (Clean Universal Compatibility for Minecraft 1.20.80 - 1.21.x+)
-UUID_BP_HEADER = "a21b58f8-dc72-477f-b7e9-9856645b8629"
-UUID_BP_DATA = "4b758ad5-eae7-40ae-b0b5-023b4e0fe3ff"
-UUID_BP_SCRIPT = "fd374cda-6477-4c6a-908d-31d7df6707af"
-UUID_RP_HEADER = "41a98185-c42b-486a-91a5-cc335f1eb2e8"
-UUID_RP_MODULE = "99285d79-f2fb-44c7-9027-267659271a0b"
+UUID_BP_HEADER = "e4c3f248-5fd4-4fce-a16a-7f8278de7d59"
+UUID_BP_DATA = "dfa444ca-78a6-4ff2-adf9-ea98c642e6e7"
+UUID_BP_SCRIPT = "9902c22a-4507-459b-a465-bd0ccddcbae5"
+UUID_RP_HEADER = "9eb93634-3b0c-42e5-8007-4ccf37f306ba"
+UUID_RP_MODULE = "786a8dc5-ab73-45d8-9778-f55ee3bc92b1"
 
 bp_manifest = {
     "format_version": 2,
@@ -369,14 +382,15 @@ bp_manifest = {
         "name": "Ben 10: Omnitrix Origins (BP)",
         "description": "9 Legendary Omnitrixes, 76 Aliens, Humungousaur Titan Growth, Ultimates & Dynamic Biomnitrix Fusions! Smooth 60 FPS Mobile Optimized.",
         "uuid": UUID_BP_HEADER,
-        "version": [3, 0, 0],
+        "version": [3, 2, 0],
         "min_engine_version": [1, 20, 80]
     },
     "modules": [
-        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 0, 0]},
-        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 0, 0], "entry": "scripts/main.js"}
+        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 2, 0]},
+        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 2, 0], "entry": "scripts/main.js"}
     ],
     "dependencies": [
+        {"uuid": UUID_RP_HEADER, "version": [3, 2, 0]},
         {"module_name": "@minecraft/server", "version": "1.11.0"},
         {"module_name": "@minecraft/server-ui", "version": "1.2.0"}
     ]
@@ -390,10 +404,10 @@ rp_manifest = {
         "name": "Ben 10: Omnitrix Origins (RP)",
         "description": "High performance textures, sound effects, Carnitrix horror effects, and alien models.",
         "uuid": UUID_RP_HEADER,
-        "version": [3, 0, 0],
+        "version": [3, 2, 0],
         "min_engine_version": [1, 20, 80]
     },
-    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 0, 0]}]
+    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 2, 0]}]
 }
 with open(os.path.join(RP_DIR, "manifest.json"), "w", encoding="utf-8") as f:
     json.dump(rp_manifest, f, indent=2)
@@ -483,17 +497,10 @@ workspace_mcaddon = os.path.join(BASE_DIR, "Ben10_Bedrock_Mobile_Edition.mcaddon
 zip_folder(BP_DIR, bp_mcpack)
 zip_folder(RP_DIR, rp_mcpack)
 
+# Master .mcaddon bundles both standalone .mcpack files at root for rock-solid Android extraction
 with zipfile.ZipFile(mcaddon_file, 'w', zipfile.ZIP_DEFLATED) as addon_zip:
-    for root, _, files in os.walk(BP_DIR):
-        for file in files:
-            abs_path = os.path.join(root, file)
-            rel_path = os.path.join("Ben10_BP", os.path.relpath(abs_path, BP_DIR))
-            addon_zip.write(abs_path, rel_path)
-    for root, _, files in os.walk(RP_DIR):
-        for file in files:
-            abs_path = os.path.join(root, file)
-            rel_path = os.path.join("Ben10_RP", os.path.relpath(abs_path, RP_DIR))
-            addon_zip.write(abs_path, rel_path)
+    addon_zip.write(bp_mcpack, "Ben10_BP.mcpack")
+    addon_zip.write(rp_mcpack, "Ben10_RP.mcpack")
 
 shutil.copyfile(mcaddon_file, workspace_mcaddon)
 print(f"Build complete! 9 Watches & {len(ALL_ALIENS)} Aliens. Output at {workspace_mcaddon}")
