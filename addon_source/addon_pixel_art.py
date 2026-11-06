@@ -191,11 +191,19 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                         else:
                             pixel = c_black
                     else:
-                        # Default Alien Head: Clean species face with expressive eyes
-                        if y in (11, 12) and x in (10, 13):
-                            pixel = c_acc # Alien eyes
+                        # Rich Default Alien Head: Expressive eyes, brow highlight, jawline
+                        if y == 8 and 10 <= x <= 13:
+                            pixel = c_highlight # Forehead brow highlight
+                        elif y in (10, 11) and x in (10, 13):
+                            pixel = c_acc # Luminous alien eyes
+                        elif y in (10, 11) and x in (9, 14):
+                            pixel = c_shadow # Dark eye socket shadow
+                        elif y == 13 and x in (9, 14):
+                            pixel = c_highlight # Cheekbone highlight
                         elif y == 14 and 10 <= x <= 13:
-                            pixel = c_shadow # Mouth line
+                            pixel = _darken(c_base, 45) # Mouth line
+                        elif y == 15 and 11 <= x <= 12:
+                            pixel = c_shadow # Chin shadow
                         else:
                             pixel = c_base
                 else:
@@ -294,7 +302,19 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                     elif is_alienx:
                         pixel = c_black
                     else:
-                        pixel = c_base
+                        # Rich Default Torso: Pectoral contours, ab shading, collarbone highlight
+                        if y == 20:
+                            pixel = c_highlight # Collarbone highlight
+                        elif y == 24 and x in (21, 26):
+                            pixel = c_shadow # Pectoral contour
+                        elif 26 <= y <= 29 and x in (22, 25):
+                            pixel = c_shadow # Abdominal 6-pack line
+                        elif y in (30, 31):
+                            pixel = c_black if (is_carnitrix or is_ben23) else _darken(c_base, 35) # Belt/pants
+                        elif x in (20, 27):
+                            pixel = c_highlight # Deltoid highlight
+                        else:
+                            pixel = c_base
                 else:
                     # Sides and Back of Torso
                     if is_fourarms:
@@ -308,7 +328,12 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                     elif is_alienx:
                         pixel = c_black
                     else:
-                        pixel = c_base
+                        if x in (31, 32) and 20 <= y <= 29:
+                            pixel = c_shadow # Spine channel shadow
+                        elif y in (30, 31):
+                            pixel = _darken(c_base, 35)
+                        else:
+                            pixel = c_base
 
             # =========================================================================
             # 3. RIGHT ARM (x: 40..55, y: 16..31)
@@ -331,7 +356,14 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_alienx:
                     pixel = c_black
                 else:
-                    pixel = c_acc if y >= 28 else c_base
+                    if y in (16, 17):
+                        pixel = c_highlight # Deltoid highlight
+                    elif y in (27, 28):
+                        pixel = c_acc # Gauntlet / wrist bracer
+                    elif y >= 29:
+                        pixel = c_shadow # Hand claws
+                    else:
+                        pixel = c_base
 
             # =========================================================================
             # 4. SECONDARY RIGHT ARM / EXTRA LIMBS (x: 40..55, y: 32..47)
@@ -365,7 +397,14 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_alienx:
                     pixel = c_black
                 else:
-                    pixel = c_acc if y >= 60 else c_base
+                    if y in (48, 49):
+                        pixel = c_highlight # Deltoid highlight
+                    elif y in (59, 60):
+                        pixel = c_acc # Gauntlet / wrist bracer
+                    elif y >= 61:
+                        pixel = c_shadow # Hand claws
+                    else:
+                        pixel = c_base
 
             # =========================================================================
             # 6. SECONDARY LEFT ARM (x: 48..63, y: 48..63)
@@ -395,7 +434,14 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_alienx:
                     pixel = c_black
                 else:
-                    pixel = c_shadow if y >= 28 else c_base
+                    if y in (24, 25):
+                        pixel = c_shadow # Kneecap armor
+                    elif y >= 28:
+                        pixel = _darken(c_base, 45) # Armored combat boots
+                    elif x in (0, 15):
+                        pixel = c_shadow
+                    else:
+                        pixel = c_base
 
             # =========================================================================
             # 8. LEFT LEG (x: 16..31, y: 48..63)
@@ -416,7 +462,14 @@ def create_64x64_alien_skin(base_color_hex, detail_color_hex="#ffffff", accent_c
                 elif is_alienx:
                     pixel = c_black
                 else:
-                    pixel = c_shadow if y >= 60 else c_base
+                    if y in (56, 57):
+                        pixel = c_shadow # Kneecap armor
+                    elif y >= 60:
+                        pixel = _darken(c_base, 45) # Armored combat boots
+                    elif x in (16, 31):
+                        pixel = c_shadow
+                    else:
+                        pixel = c_base
 
             # =========================================================================
             # 9. EXTRA PARTS / TAIL / BACK SHELL (x: 0..31, y: 32..47)

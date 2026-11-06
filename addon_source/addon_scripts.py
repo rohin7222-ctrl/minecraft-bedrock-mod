@@ -117,17 +117,21 @@ function openOmnitrixDialUI(player, state) {
   const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
 
   const form = new ActionFormData();
-  form.title(`§2§l[ ⚡ OMNITRIX: ${watchName} ⚡ ]`);
+  form.title(`§2§l[ ⚡ GALVAN OS: ${watchName} ⚡ ]`);
 
-  let statusText = `§a● CORE SYSTEM: §fONLINE §8| §bUSER: §fBEN TENNYSON\n`;
-  statusText += `§e● STATUS: ${state.isTransformed ? "§eTRANSFORMED (" + state.currentAlien.name + ")" : "§bSTANDBY (HUMAN)"}\n`;
+  let statusText = `§2╔═══════════════════════════════════════╗\n`;
+  statusText += `§a  ● GALVAN CORE: §fONLINE §8| §bGALVAN PRIME: §aLINKED\n`;
+  statusText += `§6  ● DEVICE: §e${watchName} §8| §3BATTERY: §a100%\n`;
   if (state.isTransformed) {
-    statusText += `§e● ENERGY TIMER: §f${state.transformSeconds}s ${isClassic ? "§7[Prototype Countdown]" : "§a[Manual Revert Ready]"}\n`;
+    statusText += `§e  ● CURRENT MORPH: §a${state.currentAlien.name.toUpperCase()} §8[⏳ ${state.transformSeconds}s]\n`;
+  } else {
+    statusText += `§b  ● STATUS: §fSTANDBY §8(DNA MATRIX READY)\n`;
   }
   if (state.masterControl) {
-    statusText += `§b● MODE: §3MASTER CONTROL (UNLIMITED ENERGY)\n`;
+    statusText += `§3  ● PROTOCOL: §bMASTER CONTROL ACTIVE (UNLIMITED)\n`;
   }
-  statusText += `\n§7Touch any alien DNA matrix below to transform:`;
+  statusText += `§2╚═══════════════════════════════════════╝\n`;
+  statusText += `§7Touch any alien DNA matrix profile below to morph:`;
   form.body(statusText);
 
   let hasDetransformBtn = false;
@@ -154,7 +158,7 @@ function openOmnitrixDialUI(player, state) {
   // List all series-accurate aliens for this Omnitrix with full stats
   for (const alien of alienList) {
     const iconPath = `textures/items/${alien.id}_ability.png`;
-    form.button(`§2§l${alien.name.toUpperCase()}\n§7[${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}]`, iconPath);
+    form.button(`§a§l[ ⚡ ${alien.name.toUpperCase()} ⚡ ]\n§7${alien.species} • ⚔ ${alien.ability_type.replace('_', ' ').toUpperCase()}`, iconPath);
   }
 
   showActionFormSafe(player, form, (sel) => {
@@ -406,18 +410,23 @@ system.runInterval(() => {
         }
       }
 
-      // Live Actionbar HUD Display
+      // Live High-Tech Actionbar HUD Display with Dynamic Battery Gauge
       const name = state.isFusion && state.fusionAlien1 && state.fusionAlien2
         ? (state.fusionAlien1.id === "upgrade" || state.fusionAlien2.id === "upgrade"
             ? `Mecha-${(state.fusionAlien1.id === "upgrade" ? state.fusionAlien2 : state.fusionAlien1).name}`
             : `${state.fusionAlien1.name.slice(0, 4)}-${state.fusionAlien2.name.slice(0, 4)}`)
         : (state.currentAlien ? state.currentAlien.name : "ALIEN");
       const color = state.currentAlien ? state.currentAlien.color_code : "§a";
-      const timerStr = state.masterControl ? "§3[∞ MC]" : `§e[⏳ ${state.transformSeconds}s]`;
-      const revertHint = isClassic ? "§7(Timed Out)" : "§a(Tap Detransform to Revert)";
-      player.runCommandAsync(`title @s actionbar ${color}§l[ ${name.toUpperCase()} ] ${timerStr} ${revertHint}`);
+      const barsFilled = Math.max(0, Math.min(6, Math.ceil(state.transformSeconds / 10)));
+      const energyBar = "█".repeat(barsFilled) + "-".repeat(6 - barsFilled);
+      const timerStr = state.masterControl ? "§3[∞ MASTER CONTROL]" : `§e[⚡ ${energyBar} §f${state.transformSeconds}s§e]`;
+      const revertHint = isClassic ? "§7(Prototype Lock)" : "§c(Sneak+Punch to Revert)";
+      player.runCommandAsync(`title @s actionbar ${color}§l[ ${name.toUpperCase()} ] ${timerStr} §8| ${revertHint}`);
     } else if (state.rechargeSeconds > 0) {
-      player.runCommandAsync(`title @s actionbar §c§l[OMNITRIX COOLDOWN] §e⏳ ${state.rechargeSeconds}s Remaining`);
+      player.runCommandAsync(`title @s actionbar §c§l[ ⚠ RECHARGING ⚠ ] §e⏳ ${state.rechargeSeconds}s Remaining §8| §7Please Wait...`);
+    } else if (state.activeWatch) {
+      const activeName = state.activeWatch.replace("omnitrix_", "").replace("_", " ").toUpperCase();
+      player.runCommandAsync(`title @s actionbar §2[ ⚡ §a§lOMNITRIX: ${activeName} §r§2⚡ ] §8| §aTAP SCREEN TO OPEN DIAL`);
     }
   }
 }, 20);

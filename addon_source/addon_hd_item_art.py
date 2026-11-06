@@ -551,3 +551,151 @@ def create_hd_alien_badge_icon(alien_id, base_hex, detail_hex, accent_hex):
             data[idx:idx+4] = bytes(pixel)
 
     return make_png(w, h, bytes(data))
+
+def create_hd_spawner_icon(entity_id):
+    """
+    32x32 Hand-Crafted HD Pixel Art for Spawner Keys & Summon Beacons
+    """
+    w, h = 32, 32
+    data = bytearray(w * h * 4)
+    c_trans = [0, 0, 0, 0]
+
+    c_black = hex_to_rgba("#090d16")
+    c_white = hex_to_rgba("#ffffff")
+    c_silver = hex_to_rgba("#cbd5e1")
+    c_chrome = hex_to_rgba("#94a3b8")
+    c_gold = hex_to_rgba("#facc15")
+    c_brass = hex_to_rgba("#d97706")
+    c_green = hex_to_rgba("#16a34a")
+    c_omni_green = hex_to_rgba("#22c55e")
+    c_omni_glow = hex_to_rgba("#86efac")
+    c_red = hex_to_rgba("#dc2626")
+    c_red_glow = hex_to_rgba("#ef4444")
+    c_orange = hex_to_rgba("#ea580c")
+    c_cyan = hex_to_rgba("#2dd4bf")
+
+    cx, cy = 15.5, 15.5
+
+    for y in range(h):
+        for x in range(w):
+            idx = (y * w + x) * 4
+            pixel = c_trans
+            dx = x - cx
+            dy = y - cy
+            dist = (dx * dx + dy * dy) ** 0.5
+
+            if "kevin_car" in entity_id:
+                # Green Muscle Car Key with Remote Fob & Silver Key Blade
+                # Keyring at top (12..19, 2..8)
+                if 2 <= y <= 8 and 12 <= x <= 19:
+                    d_ring = ((x - 15.5)**2 + (y - 5.5)**2)**0.5
+                    if 2.0 <= d_ring <= 3.5:
+                        pixel = c_silver
+                # Remote Fob Body (10..21, 8..20)
+                elif 8 <= y <= 20 and 10 <= x <= 21:
+                    if x in (10, 21) or y in (8, 20):
+                        pixel = c_black # Black rubber casing
+                    elif 11 <= y <= 17 and 13 <= x <= 18:
+                        # Green Omnitrix remote button
+                        pixel = c_omni_glow if (x in (15, 16) and y in (13, 14)) else c_green
+                    else:
+                        pixel = hex_to_rgba("#1e293b")
+                # Silver Ignition Key Blade (14..17, 21..30)
+                elif 21 <= y <= 30 and 14 <= x <= 17:
+                    if x == 17 and y in (23, 26, 28):
+                        pixel = c_trans # Key blade teeth cutouts
+                    elif x in (14, 17) or y == 30:
+                        pixel = c_chrome
+                    else:
+                        pixel = c_silver
+
+            elif "rustbucket" in entity_id:
+                # Vintage Brass RV Key + Red/Green Camper Van Tag
+                # Brass Key (Top left to bottom right)
+                if 2 <= y <= 12 and 6 <= x <= 16:
+                    d_head = ((x - 11)**2 + (y - 7)**2)**0.5
+                    if d_head <= 4.5:
+                        pixel = c_trans if d_head <= 1.8 else (c_gold if d_head >= 3.5 else c_brass)
+                elif 11 <= y <= 22 and 10 <= x <= 13:
+                    pixel = c_trans if (x == 13 and y in (14, 18)) else c_brass
+                # Rust Bucket RV Camper Keychain Tag (14..29, 14..28)
+                elif 14 <= y <= 28 and 14 <= x <= 29:
+                    if x in (14, 29) or y in (14, 28):
+                        pixel = c_black
+                    elif 19 <= y <= 21:
+                        pixel = c_red # Red camper stripe
+                    elif 22 <= y <= 24:
+                        pixel = c_green # Green camper stripe
+                    else:
+                        pixel = c_white
+
+            elif "vilgax_spawner" in entity_id or "vilgax" in entity_id:
+                # Warlord Vilgax Seal: Alien Green Squid Skull with Crimson Eye
+                if dist <= 12.0:
+                    if dist >= 10.5:
+                        pixel = c_gold # Golden warlord border
+                    elif y <= 16 and 9 <= x <= 22:
+                        # Skull Dome & Eye
+                        if y in (12, 13) and x in (11, 12):
+                            pixel = c_red_glow # Glowing red cybernetic eye
+                        elif y in (14, 15) and 13 <= x <= 18:
+                            pixel = hex_to_rgba("#334155") # Respirator
+                        else:
+                            pixel = hex_to_rgba("#4d7c0f") # Alien green skin
+                    elif y > 16 and 10 <= x <= 21:
+                        # Tentacles
+                        t_mod = (x - 10) % 3
+                        pixel = hex_to_rgba("#14532d") if t_mod == 2 else hex_to_rgba("#4d7c0f")
+                    else:
+                        pixel = c_black
+
+            elif "battle_drone" in entity_id:
+                # Samurai Battle Droid Helmet with Crimson Laser Visor
+                if 6 <= y <= 26 and 6 <= x <= 25:
+                    if 14 <= y <= 17 and 10 <= x <= 21:
+                        pixel = c_red_glow # Horizontal Red Laser Eye Visor
+                    elif y in (6, 7, 25, 26) or x in (6, 7, 24, 25):
+                        pixel = c_orange # Orange hazard armor trim
+                    else:
+                        pixel = hex_to_rgba("#18181b")
+
+            elif "kevin11" in entity_id:
+                # Mutated Kevin 11 Amalgam Crest (Half Fourarms, Half Diamondhead)
+                if dist <= 12.0:
+                    if dist >= 10.5:
+                        pixel = c_black # Dark spiked border
+                    elif dx < 0:
+                        # Left Half: Four Arms Crimson Muscle & Black Stripe
+                        pixel = c_black if (abs(dx) <= 2) else c_red
+                    else:
+                        # Right Half: Diamondhead Cyan Crystal
+                        pixel = c_cyan if ((x + y) % 3 != 0) else hex_to_rgba("#0f766e")
+
+            elif "meteor_pod" in entity_id:
+                # Cracked Meteor Crash Pod with Glowing Green Galvanic Fissures
+                if dist <= 11.0:
+                    if dist <= 4.0:
+                        pixel = c_omni_glow # Glowing emerald core
+                    elif (x in (14, 15, 17) and 8 <= y <= 22) or (y in (15, 16) and 8 <= x <= 22):
+                        pixel = c_omni_green # Glowing fissure lines
+                    else:
+                        pixel = hex_to_rgba("#27272a") # Scorch meteor rock
+
+            elif "vilgax_ship" in entity_id:
+                # Alien Drone Battleship Beacon
+                if dist <= 12.0:
+                    if dist <= 3.5:
+                        pixel = c_red_glow # Red plasma bridge
+                    elif 7.0 <= dist <= 9.0:
+                        pixel = c_red # Plasma engine thruster ring
+                    else:
+                        pixel = hex_to_rgba("#1e293b")
+
+            else:
+                # Generic Spawner Key
+                if dist <= 10.0:
+                    pixel = c_omni_green if dist <= 3.0 else c_black
+
+            data[idx:idx+4] = bytes(pixel)
+
+    return make_png(w, h, bytes(data))

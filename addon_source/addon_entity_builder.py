@@ -33,6 +33,7 @@ from addon_entity_defs import (
     get_rp_client_entity
 )
 from addon_graphics import make_png, hex_to_rgba
+from addon_hd_item_art import create_hd_spawner_icon
 
 def create_spawner_icon(base_hex, glow_hex):
     """16x16 Spawner Key / Beacon Icon"""
@@ -168,9 +169,9 @@ def build_custom_entities(BP_DIR, RP_DIR, texture_data):
         with open(rp_path, "w", encoding="utf-8") as f:
             json.dump(rp_client, f, indent=2)
 
-        # 5. Spawner Item Icon & Texture
+        # 5. Hand-Crafted 32x32 HD Spawner Item Icon & Texture
         spawner_item_id = f"{ent['id']}_spawner"
-        icon_bytes = create_spawner_icon(ent["color_base"], ent["color_glow"])
+        icon_bytes = create_hd_spawner_icon(ent["id"])
         with open(os.path.join(RP_DIR, "textures", "items", f"{spawner_item_id}.png"), "wb") as f:
             f.write(icon_bytes)
         texture_data[spawner_item_id] = {"textures": f"textures/items/{spawner_item_id}"}

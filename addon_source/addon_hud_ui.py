@@ -152,34 +152,13 @@ def create_carousel_slider_texture():
     return make_png(w, h, bytes(data))
 
 def get_hud_screen_ui():
-    """Bedrock Custom UI for the Ben 10 Status HUD - Merged into in-game HUD"""
+    """Bedrock Custom UI for Ben 10 UI elements (Clean un-intrusive layout)"""
     return {
         "namespace": "ben10_hud",
         "omnitrix_hud_bar": {
             "type": "panel",
             "size": [128, 32],
-            "anchor_from": "top_middle",
-            "anchor_to": "top_middle",
-            "offset": [0, 4],
-            "controls": [
-                {
-                    "hud_bg@common.image": {
-                        "texture": "textures/ui/omnitrix_hud_frame",
-                        "size": [128, 32]
-                    }
-                }
-            ]
-        },
-        "hud_screen": {
-            "modifications": [
-                {
-                    "array_name": "root_panel_controls",
-                    "operation": "insert_back",
-                    "value": {
-                        "ben10_omnitrix_hud@ben10_hud.omnitrix_hud_bar": {}
-                    }
-                }
-            ]
+            "controls": []
         }
     }
 

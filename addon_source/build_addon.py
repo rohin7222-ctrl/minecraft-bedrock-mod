@@ -382,15 +382,15 @@ bp_manifest = {
         "name": "Ben 10: Omnitrix Origins (BP)",
         "description": "9 Legendary Omnitrixes, 76 Aliens, Humungousaur Titan Growth, Ultimates & Dynamic Biomnitrix Fusions! Smooth 60 FPS Mobile Optimized.",
         "uuid": UUID_BP_HEADER,
-        "version": [3, 2, 0],
+        "version": [3, 3, 0],
         "min_engine_version": [1, 20, 80]
     },
     "modules": [
-        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 2, 0]},
-        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 2, 0], "entry": "scripts/main.js"}
+        {"type": "data", "description": "Ben 10 Behavior Data", "uuid": UUID_BP_DATA, "version": [3, 3, 0]},
+        {"type": "script", "description": "Ben 10 Logic Script", "uuid": UUID_BP_SCRIPT, "version": [3, 3, 0], "entry": "scripts/main.js"}
     ],
     "dependencies": [
-        {"uuid": UUID_RP_HEADER, "version": [3, 2, 0]},
+        {"uuid": UUID_RP_HEADER, "version": [3, 3, 0]},
         {"module_name": "@minecraft/server", "version": "1.11.0"},
         {"module_name": "@minecraft/server-ui", "version": "1.2.0"}
     ]
@@ -404,10 +404,10 @@ rp_manifest = {
         "name": "Ben 10: Omnitrix Origins (RP)",
         "description": "High performance textures, sound effects, Carnitrix horror effects, and alien models.",
         "uuid": UUID_RP_HEADER,
-        "version": [3, 2, 0],
+        "version": [3, 3, 0],
         "min_engine_version": [1, 20, 80]
     },
-    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 2, 0]}]
+    "modules": [{"type": "resources", "description": "Ben 10 Assets", "uuid": UUID_RP_MODULE, "version": [3, 3, 0]}]
 }
 with open(os.path.join(RP_DIR, "manifest.json"), "w", encoding="utf-8") as f:
     json.dump(rp_manifest, f, indent=2)
