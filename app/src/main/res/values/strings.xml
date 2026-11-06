@@ -9,3 +9,4 @@
     <string name="toast_importing">Opening Minecraft... Please wait for Import Started!</string>
     <string name="toast_mc_not_found">Minecraft Bedrock not detected! Please install Minecraft PE.</string>
 </resources>
+

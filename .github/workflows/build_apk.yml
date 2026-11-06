@@ -7,6 +7,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,15 +23,19 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: 'gradle'
 
-      - name: Set up Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Accept Android Licenses
+        run: yes | sdkmanager --licenses || true
+
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew || true
+        run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
@@ -36,3 +43,24 @@ jobs:
           name: Minecraft-Bedrock-Ben10-Mod-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
+
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0-${{ github.run_number }}
+          name: Minecraft Bedrock Ben 10 Mod APK v1.0.${{ github.run_number }}
+          body: |
+            ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition)
+            - 9 Legendary Omnitrixes
+            - 76 Playable Aliens & Ultimates
+            - Humungousaur 60ft Titan Growth
+            - Biomnitrix Dynamic 2-Alien Fusion Engine
+            - Carnitrix Horror AU & Ben 23 Hero Watch
+            - Auto-Bypass Android 14/15/16+ Scoped Storage (MCPEDL 1-Click Import)
+            
+            ### 📥 Download:
+            Download the `app-debug.apk` file below and tap Install!
+          files: app/build/outputs/apk/debug/app-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
