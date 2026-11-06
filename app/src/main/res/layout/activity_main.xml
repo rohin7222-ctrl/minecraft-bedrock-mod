@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:lineSpacingExtra="5dp"
-                android:text="• ⌚ 9 Legendary Omnitrixes (Classic, AF, Ultimatrix, Omniverse, Biomnitrix, Ben 23, Reboot, Carnitrix, Albedo)\n• 👽 76 Playable Aliens &amp; Fan-Made Ultimates\n• ⚙️ Upgrade Machine Merge: Supercharge Iron Golems &amp; Iron Blocks into high-tech Galvanic weapons\n• 👅 Upchuck Eat &amp; Spit: Devour matter &amp; spit explosive green plasma bombs\n• 🦖 Humungousaur 60ft Titan Growth Mechanic\n• 🧬 Biomnitrix Dynamic 2-Alien Fusion Engine\n• ⚡ 60 FPS Engine (Smooth on 2GB-3GB RAM Phones)\n• 🔒 Auto-Bypass Android 14/15/16+ Scoped Storage"
+                android:text="• ⚡ Interactive Omnitrix Dial UI with @minecraft/server-ui\n• ⌚ 9 Series-Accurate 3D Omnitrixes (Classic with rivets, Ultimatrix with claws, Omniverse, Biomnitrix, Ben 23, Reboot, Carnitrix, Albedo)\n• 👽 17 Dedicated 3D Alien Geometries &amp; 76 Playable Aliens\n• 🚐 7 Custom 3D Entities &amp; Vehicles (Rust Bucket RV, Meteor Pod, Mutated Kevin 11 Boss, Kevin's Car, Vilgax, Ship, Drones)\n• 👁️ 1st-Person Camera Head Fix: 100% unobstructed view\n• 🦖 Humungousaur 60ft Titan Growth &amp; Spiked Tail\n• ⚙️ Upgrade Machine Merge &amp; Upchuck Matter Devour\n• 🧬 Biomnitrix Dynamic 2-Alien Fusion Engine\n• ⚡ 60 FPS Mobile Engine &amp; Scoped Storage Auto-Bypass"
                 android:textColor="#F1F5F9"
                 android:textSize="12.5sp" />
         </LinearLayout>
