@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/omnitrix_glow">
+    android:color="#86EFAC">
     <item>
         <shape android:shape="rectangle">
             <gradient
-                android:angle="45"
-                android:endColor="@color/omnitrix_green"
-                android:startColor="@color/omnitrix_green_dark" />
+                android:angle="0"
+                android:startColor="#15803D"
+                android:centerColor="#22C55E"
+                android:endColor="#16A34A" />
             <corners android:radius="28dp" />
             <stroke
                 android:width="2dp"
-                android:color="@color/omnitrix_glow" />
+                android:color="#86EFAC" />
         </shape>
     </item>
 </ripple>
-

@@ -1,127 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark"
-    android:padding="24dp">
+    android:background="#070B14"
+    android:fillViewport="true">
 
-    <!-- Top Badge / Header -->
-    <TextView
-        android:id="@+id/tvBadge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="#1E293B"
-        android:paddingStart="12dp"
-        android:paddingTop="6dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="6dp"
-        android:text="BEDROCK ADDON INSTALLER"
-        android:textColor="@color/omnitrix_green"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- App Title -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/title_app"
-        android:textColor="@color/text_white"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvBadge" />
-
-    <TextView
-        android:id="@+id/tvSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="@string/subtitle_app"
-        android:textColor="@color/text_gray"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
-
-    <!-- Feature Info Card -->
-    <LinearLayout
-        android:id="@+id/cardFeatures"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/card_background"
-        android:orientation="vertical"
-        android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+        android:padding="20dp">
 
+        <!-- Glowing Omnitrix Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/app_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Top Compatibility Badge -->
         <TextView
+            android:id="@+id/tvBadge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 Included Content:"
-            android:textColor="@color/omnitrix_glow"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="14dp"
+            android:background="#0F172A"
+            android:paddingStart="14dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="6dp"
+            android:text="🟢 BEDROCK 1.21.20+ READY (BETA APIS ONLY)"
+            android:textColor="#22C55E"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
+        <!-- App Main Title -->
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:lineSpacingExtra="4dp"
-            android:text="• 9 Legendary Omnitrixes (Classic to Omniverse)\n• 76 Playable Aliens &amp; Ultimates\n• Humungousaur 60ft Titan Growth Mechanic\n• Biomnitrix Dynamic 2-Alien Fusion Engine\n• Carnitrix Horror AU &amp; Ben 23 Hero Watch\n• Auto-Bypass Android 14/15/16+ Scoped Storage"
-            android:textColor="@color/text_white"
-            android:textSize="13sp" />
-    </LinearLayout>
+            android:layout_marginTop="12dp"
+            android:text="BEN 10: OMNITRIX ORIGINS"
+            android:textColor="#F8FAFC"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBadge" />
 
-    <!-- Progress Indicator -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/omnitrix_green"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/tvStatus" />
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Official Bedrock Mobile Addon Installer (1-Click)"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-    <!-- Status Text -->
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/status_ready"
-        android:textColor="@color/text_gray"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@id/btnInstall"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <!-- Feature Info Card -->
+        <LinearLayout
+            android:id="@+id/cardFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="18dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
 
-    <!-- The One Big Button requested by user -->
-    <Button
-        android:id="@+id/btnInstall"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_omnitrix_btn"
-        android:elevation="6dp"
-        android:text="@string/btn_install_ben10"
-        android:textColor="#090D16"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔥 Add-on Features &amp; Superpowers:"
+                android:textColor="#86EFAC"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="5dp"
+                android:text="• ⌚ 9 Legendary Omnitrixes (Classic, AF, Ultimatrix, Omniverse, Biomnitrix, Ben 23, Reboot, Carnitrix, Albedo)\n• 👽 76 Playable Aliens &amp; Fan-Made Ultimates\n• ⚙️ Upgrade Machine Merge: Supercharge Iron Golems &amp; Iron Blocks into high-tech Galvanic weapons\n• 👅 Upchuck Eat &amp; Spit: Devour matter &amp; spit explosive green plasma bombs\n• 🦖 Humungousaur 60ft Titan Growth Mechanic\n• 🧬 Biomnitrix Dynamic 2-Alien Fusion Engine\n• ⚡ 60 FPS Engine (Smooth on 2GB-3GB RAM Phones)\n• 🔒 Auto-Bypass Android 14/15/16+ Scoped Storage"
+                android:textColor="#F1F5F9"
+                android:textSize="12.5sp" />
+        </LinearLayout>
 
+        <!-- Progress Indicator -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#22C55E"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cardFeatures" />
+
+        <!-- Status Text -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="● Status: Ready to Import"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+        <!-- The One Big CTA Button requested by user -->
+        <Button
+            android:id="@+id/btnInstall"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/ic_omnitrix_btn"
+            android:elevation="8dp"
+            android:text="@string/btn_install_ben10"
+            android:textColor="#050B14"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStatus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
