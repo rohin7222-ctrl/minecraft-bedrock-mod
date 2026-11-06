@@ -66,15 +66,16 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Ben 10 Mod APK v1.0.${{ github.run_number }}
+          name: Minecraft Bedrock Ben 10 Mod APK v1.0.${{ github.run_number }} (100 Ideas Complete)
           body: |
-            ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition)
-            - 9 Legendary Omnitrixes
-            - 76 Playable Aliens & Ultimates
-            - Humungousaur 60ft Titan Growth
-            - Biomnitrix Dynamic 2-Alien Fusion Engine
-            - Carnitrix Horror AU & Ben 23 Hero Watch
-            - Auto-Bypass Android 14/15/16+ Scoped Storage (MCPEDL 1-Click Import)
+            ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition) - 100 Solutions Complete!
+            - **Classic Omnitrix Timer Lock**: Actionbar countdown timer; manual detransformation is locked (Prototype Error) and automatically reverts at 0s!
+            - **Modern Omnitrixes Manual Revert**: Dedicated hotbar button & Sneak+Tap chest-dial ability to return to human form anytime!
+            - **7 Custom 3D Entities**: Grandpa Max's Rust Bucket RV, Omnitrix Meteor Pod Capsule, Mutated Kevin 11 Boss, Kevin's Muscle Car, Vilgax, Vilgax Battle Cruiser, and Vilgax Chimerian Bio-Drones!
+            - **9 Legendary Omnitrixes & 76 Playable Aliens**: Classic, Recalibrated, Ultimatrix, Omniverse, Biomnitrix, Ben 23, Reboot, Carnitrix, Albedo!
+            - **Biomnitrix 2-Alien Fusion Engine**: Dynamic hybrid abilities!
+            - **Alien Shouts, Authentic Geometries & Magma/Nanite Textures**!
+            - **Auto-Bypass Android 14/15/16+ Scoped Storage (1-Click Import)**!
             
             ### 📥 Download:
             Download the `app-debug.apk` file below and tap Install!
