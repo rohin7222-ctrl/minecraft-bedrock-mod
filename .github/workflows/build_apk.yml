@@ -48,17 +48,20 @@ jobs:
             exit 1
           fi
 
-      - name: Verify and Copy APK
+      - name: Verify and Copy APK and MCADDON
         run: |
           mkdir -p apk_output
           find app/build -name "*.apk" -exec cp {} apk_output/ \;
+          cp app/src/main/assets/Ben10_Bedrock_Mobile_Edition.mcaddon apk_output/
           ls -la apk_output/
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Minecraft-Bedrock-Ben10-Mod-APK
-          path: apk_output/*.apk
+          path: |
+            apk_output/*.apk
+            apk_output/*.mcaddon
           retention-days: 30
 
       - name: Create GitHub Release
@@ -66,20 +69,23 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Ben 10 Mod APK v1.0.${{ github.run_number }} (HD Visual & UI Overhaul)
+          name: Minecraft Bedrock Ben 10 Mod APK & MCADDON v1.0.${{ github.run_number }}
           body: |
             ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition) - Masterpiece HD Overhaul!
             - **32x32 HD Item Art**: Crisp, high-definition shaded textures for all 9 Omnitrix watches, Holographic Activator, Detransform Emergency Badge, and 76 Alien Species Emblems!
             - **Series-Accurate 3D Omnitrix Wristbands**: Sleek customized wrist cuffs on player's left arm with 3D octagonal bezels, corner rivets, side pop-up buttons, and glowing cores!
             - **Alien Visual Overhaul**: Completely eliminated checkerboard noise! Replaced with authentic muscle shading, carapace armor plating, species contours, and chest Omnitrix badges!
-            - **Interactive In-Game UI**: High-tech ActionFormData Omnitrix Dial UI, Titanium HUD status capsule with digital energy bars, and dynamic actionbar indicators!
+            - **Interactive In-Game UI**: High-tech ActionFormData Omnitrix Dial UI with Galvan OS Playlists, Titanium HUD status capsule, and dynamic actionbar indicators!
             - **Classic Omnitrix Timer Lock**: Actionbar countdown timer; manual detransformation locked (Prototype Error) and auto-reverts at 0s!
             - **Modern Omnitrixes Manual Revert**: Dedicated hotbar button & Sneak+Tap chest dial ability to return to human form anytime!
             - **Biomnitrix 2-Alien Fusion Engine & Master Control Mode**!
             - **Auto-Bypass Android Scoped Storage (1-Click Import into Minecraft)**!
             
-            ### 📥 Direct APK Download:
-            Download the `app-debug.apk` file below and tap Install!
-          files: apk_output/*.apk
+            ### 📥 Direct Downloads:
+            - **Android 1-Click Installer**: Download `app-debug.apk` and tap Install!
+            - **Direct Minecraft Addon**: Download `Ben10_Bedrock_Mobile_Edition.mcaddon` and tap/double-click to import directly into Minecraft!
+          files: |
+            apk_output/*.apk
+            apk_output/*.mcaddon
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
