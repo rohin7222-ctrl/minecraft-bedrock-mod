@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:lineSpacingExtra="4dp"
-            android:text="• 9 Legendary Omnitrixes (Classic to Omniverse)\n• 76 Playable Aliens & Ultimates\n• Humungousaur 60ft Titan Growth Mechanic\n• Biomnitrix Dynamic 2-Alien Fusion Engine\n• Carnitrix Horror AU & Ben 23 Hero Watch\n• Auto-Bypass Android 14/15/16+ Scoped Storage"
+            android:text="• 9 Legendary Omnitrixes (Classic to Omniverse)\n• 76 Playable Aliens &amp; Ultimates\n• Humungousaur 60ft Titan Growth Mechanic\n• Biomnitrix Dynamic 2-Alien Fusion Engine\n• Carnitrix Horror AU &amp; Ben 23 Hero Watch\n• Auto-Bypass Android 14/15/16+ Scoped Storage"
             android:textColor="@color/text_white"
             android:textSize="13sp" />
     </LinearLayout>
