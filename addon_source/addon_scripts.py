@@ -426,6 +426,9 @@ system.runInterval(() => {
 function handleItemActivation(item, player) {
   if (!item || !player) return;
   const state = getPlayerState(player);
+  const now = Date.now();
+  if (now - state.lastTapTime < 250) return;
+  state.lastTapTime = now;
   const isClassic = !state.activeWatch || state.activeWatch === "omnitrix_classic";
 
   // 1. Omnitrix Watch Held: Tap screen to Synchronize AND open Dial UI immediately!

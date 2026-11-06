@@ -453,6 +453,19 @@ for a in ALL_ALIENS:
 with open(os.path.join(BP_DIR, "functions", "detransform.mcfunction"), "w", encoding="utf-8") as f:
     f.write("effect @s clear\nreplaceitem entity @s slot.armor.chest 0 air 1 0\ntitle @s actionbar §aDetransformed!\n")
 
+# 6.5 Write textures_list.json for optimal Bedrock texture caching
+textures_list = []
+for root, _, files in os.walk(os.path.join(RP_DIR, "textures")):
+    for file in files:
+        if file.endswith(".png"):
+            abs_path = os.path.join(root, file)
+            rel_path = os.path.relpath(abs_path, RP_DIR)
+            clean_path = rel_path.replace("\\", "/").replace(".png", "")
+            textures_list.append(clean_path)
+
+with open(os.path.join(RP_DIR, "textures", "textures_list.json"), "w", encoding="utf-8") as f:
+    json.dump(textures_list, f, indent=2)
+
 # 7. Zip packages
 def zip_folder(source_dir, target_zip):
     with zipfile.ZipFile(target_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
