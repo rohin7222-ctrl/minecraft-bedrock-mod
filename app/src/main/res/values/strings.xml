@@ -50,4 +50,14 @@
     <string name="mod_actualguns_badge">🔫 3D WEAPONS • RELOAD ANIMATIONS • ATTACHMENTS</string>
     <string name="mod_actualguns_desc">Ultra-detailed 3D firearms for Minecraft Bedrock! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!</string>
     <string name="btn_import_actualguns">🔫 IMPORT ACTUAL GUNS 2 🔫</string>
+
+    <string name="mod_basicvisuals_title">BASIC VISUALS V1.1 (ATMOSPHERE)</string>
+    <string name="mod_basicvisuals_badge">✨ AURORA BOREALIS • ENHANCED FOG • BIOME SHADING</string>
+    <string name="mod_basicvisuals_desc">Stunning visual enhancements! Realistic aurora borealis sky effects, volumetric atmospheric fog, dynamic biome color grading, and ambient lighting in smooth 60 FPS!</string>
+    <string name="btn_import_basicvisuals">✨ IMPORT BASIC VISUALS ✨</string>
+
+    <string name="mod_quirkborn_title">QUIRKBORN: MY HERO ACADEMIA V1.515</string>
+    <string name="mod_quirkborn_badge">⚡ ONE FOR ALL • EXPLOSION • HEROES VS VILLAINS</string>
+    <string name="mod_quirkborn_desc">Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, craft hero/villain gear, fight Nomus, and unlock custom super moves!</string>
+    <string name="btn_import_quirkborn">⚡ IMPORT QUIRKBORN MOD ⚡</string>
 </resources>

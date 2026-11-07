@@ -619,6 +619,122 @@
                 app:backgroundTint="@null" />
         </LinearLayout>
 
+        <!-- ========================================================================= -->
+        <!-- MOD CARD 10: BASIC VISUALS V1.1 (SHADERS & ATMOSPHERE) -->
+        <!-- ========================================================================= -->
+        <LinearLayout
+            android:id="@+id/cardBasicVisuals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/cardActualGuns">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#134E4A"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="3dp"
+                android:text="@string/mod_basicvisuals_badge"
+                android:textColor="#99F6E4"
+                android:textSize="10.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/mod_basicvisuals_title"
+                android:textColor="#F8FAFC"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/mod_basicvisuals_desc"
+                android:textColor="#94A3B8"
+                android:textSize="12.5sp" />
+
+            <Button
+                android:id="@+id/btnInstallVisuals"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/btn_visuals_teal"
+                android:elevation="6dp"
+                android:text="@string/btn_import_basicvisuals"
+                android:textColor="#042F2E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+        <!-- ========================================================================= -->
+        <!-- MOD CARD 11: QUIRKBORN: MY HERO ACADEMIA V1.515 -->
+        <!-- ========================================================================= -->
+        <LinearLayout
+            android:id="@+id/cardQuirkborn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/cardBasicVisuals">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#713F12"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="3dp"
+                android:text="@string/mod_quirkborn_badge"
+                android:textColor="#FEF08A"
+                android:textSize="10.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/mod_quirkborn_title"
+                android:textColor="#F8FAFC"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/mod_quirkborn_desc"
+                android:textColor="#94A3B8"
+                android:textSize="12.5sp" />
+
+            <Button
+                android:id="@+id/btnInstallQuirkborn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/btn_quirkborn_yellow"
+                android:elevation="6dp"
+                android:text="@string/btn_import_quirkborn"
+                android:textColor="#050B14"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
         <!-- Guide Footer Card -->
         <LinearLayout
             android:id="@+id/cardGuide"
@@ -630,7 +746,7 @@
             android:orientation="vertical"
             android:padding="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardActualGuns">
+            app:layout_constraintTop_toBottomOf="@id/cardQuirkborn">
 
             <TextView
                 android:layout_width="wrap_content"

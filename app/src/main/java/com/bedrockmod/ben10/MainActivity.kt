@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnInstallDragonEvo: Button
     private lateinit var btnInstallArise: Button
     private lateinit var btnInstallActualGuns: Button
+    private lateinit var btnInstallVisuals: Button
+    private lateinit var btnInstallQuirkborn: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var tvStatus: TextView
 
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         btnInstallDragonEvo = findViewById(R.id.btnInstallDragonEvo)
         btnInstallArise = findViewById(R.id.btnInstallArise)
         btnInstallActualGuns = findViewById(R.id.btnInstallActualGuns)
+        btnInstallVisuals = findViewById(R.id.btnInstallVisuals)
+        btnInstallQuirkborn = findViewById(R.id.btnInstallQuirkborn)
         progressBar = findViewById(R.id.progressBar)
         tvStatus = findViewById(R.id.tvStatus)
 
@@ -106,6 +110,20 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.mod_actualguns_title)
             )
         }
+
+        btnInstallVisuals.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_BASIC_VISUALS,
+                getString(R.string.mod_basicvisuals_title)
+            )
+        }
+
+        btnInstallQuirkborn.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_QUIRKBORN,
+                getString(R.string.mod_quirkborn_title)
+            )
+        }
     }
 
     private fun handleInstallMod(assetFileName: String, modTitle: String) {
@@ -139,6 +157,8 @@ class MainActivity : AppCompatActivity() {
         btnInstallDragonEvo.isEnabled = enabled
         btnInstallArise.isEnabled = enabled
         btnInstallActualGuns.isEnabled = enabled
+        btnInstallVisuals.isEnabled = enabled
+        btnInstallQuirkborn.isEnabled = enabled
     }
 
     override fun onRequestPermissionsResult(

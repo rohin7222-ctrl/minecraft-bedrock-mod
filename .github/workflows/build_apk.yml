@@ -69,10 +69,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (9 Epic Bedrock Addons Hub)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (11 Epic Bedrock Addons Hub)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub (9 Epic Addons 1-Click Installer)
-            Now includes 9 legendary Bedrock Addons with 1-Click direct Minecraft launching:
+            ## 🟢 Minecraft Bedrock Mod Hub (11 Epic Addons 1-Click Installer)
+            Now includes 11 legendary Bedrock Addons with 1-Click direct Minecraft launching:
             
             1. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien variants.
@@ -92,6 +92,10 @@ jobs:
                - Become the Shadow Monarch! Awaken custom hunter classes, conquer Red Gates & dungeons, extract defeated mobs as shadow soldiers, and level up stats!
             9. **🔫 Actual Guns 2: 3D Tactical**
                - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
+            10. **✨ Basic Visuals (v1.1 Atmospheric Shaders)**
+               - Realistic aurora borealis sky effects, volumetric fog, dynamic biome color grading, and ambient atmosphere in 60 FPS!
+            11. **⚡ Quirkborn: My Hero Academia (v1.515)**
+               - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
@@ -104,6 +108,8 @@ jobs:
             - **Direct Dragon Evolution Addon**: Download `Dragon_Evolution_v1.5.0.mcaddon`
             - **Direct Arise Solo Leveling Addon**: Download `Arise_Solo_Leveling_v12.mcaddon`
             - **Direct Actual Guns 2 Addon**: Download `Actual_Guns_2.mcaddon`
+            - **Direct Basic Visuals Addon**: Download `Basic_Visuals_v1.1.mcaddon`
+            - **Direct Quirkborn Addon**: Download `Quirkborn_v1.515.3.mcaddon`
           files: |
             apk_output/*.apk
             apk_output/*.mcaddon

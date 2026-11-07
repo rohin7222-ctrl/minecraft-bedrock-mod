@@ -21,6 +21,8 @@ object ModInstaller {
     const val ASSET_DRAGON_EVOLUTION = "Dragon_Evolution_v1.5.0.mcaddon"
     const val ASSET_ARISE = "Arise_Solo_Leveling_v12.mcaddon"
     const val ASSET_ACTUAL_GUNS = "Actual_Guns_2.mcaddon"
+    const val ASSET_BASIC_VISUALS = "Basic_Visuals_v1.1.mcaddon"
+    const val ASSET_QUIRKBORN = "Quirkborn_v1.515.3.mcaddon"
 
     fun installMod(
         context: Context,
