@@ -6,11 +6,6 @@
     <string name="status_ready">● Status: Ready to Import</string>
     <string name="status_importing">Exporting &amp; Launching Minecraft...</string>
 
-    <string name="mod_ben10_title">BEN 10: OMNITRIX ORIGINS</string>
-    <string name="mod_ben10_badge">🟢 9 WATCHES • 76 ALIENS • HD ENTITIES</string>
-    <string name="mod_ben10_desc">Complete series-accurate Ben 10 experience! 9 3D Omnitrix wristbands, 76 sculpted aliens, Kevin Levin\'s muscle car, Rust Bucket RV, Vilgax &amp; Drone bosses, Galvan OS Playlists UI.</string>
-    <string name="btn_import_ben10">⚡ IMPORT BEN 10 ORIGINS ⚡</string>
-
     <string name="mod_omni_title">BEN 10: OMNI EVOLUTION</string>
     <string name="mod_omni_badge">🧬 OMNI EVOLUTION BETA ADDON</string>
     <string name="mod_omni_desc">Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and extra alien variants.</string>

@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnInstallBen10: Button
     private lateinit var btnInstallOmni: Button
     private lateinit var btnInstallOnePiece: Button
     private lateinit var btnInstallTensura: Button
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnInstallBen10 = findViewById(R.id.btnInstallBen10)
         btnInstallOmni = findViewById(R.id.btnInstallOmni)
         btnInstallOnePiece = findViewById(R.id.btnInstallOnePiece)
         btnInstallTensura = findViewById(R.id.btnInstallTensura)
@@ -32,13 +30,6 @@ class MainActivity : AppCompatActivity() {
         // Check and prompt for permissions on startup
         if (!PermissionHelper.hasPermissions(this)) {
             PermissionHelper.requestPermissions(this)
-        }
-
-        btnInstallBen10.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_BEN10_ORIGINS,
-                getString(R.string.mod_ben10_title)
-            )
         }
 
         btnInstallOmni.setOnClickListener {
@@ -85,7 +76,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setButtonsEnabled(enabled: Boolean) {
-        btnInstallBen10.isEnabled = enabled
         btnInstallOmni.isEnabled = enabled
         btnInstallOnePiece.isEnabled = enabled
         btnInstallTensura.isEnabled = enabled
