@@ -52,7 +52,7 @@ jobs:
         run: |
           mkdir -p apk_output
           find app/build -name "*.apk" -exec cp {} apk_output/ \;
-          cp app/src/main/assets/Ben10_Bedrock_Mobile_Edition.mcaddon apk_output/
+          cp app/src/main/assets/*.mcaddon apk_output/
           ls -la apk_output/
 
       - name: Upload Debug APK Artifact
@@ -69,21 +69,23 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Ben 10 Mod APK & MCADDON v1.0.${{ github.run_number }}
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Ben 10 + Omni Evolution + One Piece)
           body: |
-            ## 🟢 Minecraft Bedrock Mod (Ben 10 Edition) - Masterpiece HD Overhaul!
-            - **32x32 HD Item Art**: Crisp, high-definition shaded textures for all 9 Omnitrix watches, Holographic Activator, Detransform Emergency Badge, and 76 Alien Species Emblems!
-            - **Series-Accurate 3D Omnitrix Wristbands**: Sleek customized wrist cuffs on player's left arm with 3D octagonal bezels, corner rivets, side pop-up buttons, and glowing cores!
-            - **Alien Visual Overhaul**: Completely eliminated checkerboard noise! Replaced with authentic muscle shading, carapace armor plating, species contours, and chest Omnitrix badges!
-            - **Interactive In-Game UI**: High-tech ActionFormData Omnitrix Dial UI with Galvan OS Playlists, Titanium HUD status capsule, and dynamic actionbar indicators!
-            - **Classic Omnitrix Timer Lock**: Actionbar countdown timer; manual detransformation locked (Prototype Error) and auto-reverts at 0s!
-            - **Modern Omnitrixes Manual Revert**: Dedicated hotbar button & Sneak+Tap chest dial ability to return to human form anytime!
-            - **Biomnitrix 2-Alien Fusion Engine & Master Control Mode**!
-            - **Auto-Bypass Android Scoped Storage (1-Click Import into Minecraft)**!
+            ## 🟢 Minecraft Bedrock Mod Hub (Multi-Mod 1-Click Installer)
+            Now includes 3 epic Bedrock Addons with 1-Click direct Minecraft launching:
+            
+            1. **⚡ Ben 10: Omnitrix Origins (HD Ultimate)**
+               - 9 Legendary 3D Omnitrixes, 76 Sculpted Aliens, Kevin Car (30x58), Rust Bucket RV (38x88), Galvan OS Playlists.
+            2. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+               - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and extra alien variants.
+            3. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+               - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
             
             ### 📥 Direct Downloads:
-            - **Android 1-Click Installer**: Download `app-debug.apk` and tap Install!
-            - **Direct Minecraft Addon**: Download `Ben10_Bedrock_Mobile_Edition.mcaddon` and tap/double-click to import directly into Minecraft!
+            - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
+            - **Direct Ben 10 Origins Addon**: Download `Ben10_Bedrock_Mobile_Edition.mcaddon`
+            - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
+            - **Direct One Piece Addon**: Download `OnePiece_Bedrock_Edition_v76.mcaddon`
           files: |
             apk_output/*.apk
             apk_output/*.mcaddon

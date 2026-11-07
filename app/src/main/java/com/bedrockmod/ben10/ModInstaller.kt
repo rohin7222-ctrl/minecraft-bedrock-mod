@@ -10,22 +10,30 @@ import java.io.InputStream
 
 object ModInstaller {
 
-    private const val MOD_ASSET_NAME = "Ben10_Bedrock_Mobile_Edition.mcaddon"
     private const val MINECRAFT_PACKAGE = "com.mojang.minecraftpe"
 
-    fun installMod(context: Context, onComplete: (Boolean, String) -> Unit) {
+    const val ASSET_BEN10_ORIGINS = "Ben10_Bedrock_Mobile_Edition.mcaddon"
+    const val ASSET_OMNI_EVOLUTION = "Omni-Evolution-Beta.mcaddon"
+    const val ASSET_ONE_PIECE = "OnePiece_Bedrock_Edition_v76.mcaddon"
+
+    fun installMod(
+        context: Context,
+        assetFileName: String,
+        modTitle: String,
+        onComplete: (Boolean, String) -> Unit
+    ) {
         Thread {
             try {
                 // 1. Prepare target file in cache directory
-                val targetFile = File(context.cacheDir, MOD_ASSET_NAME)
+                val targetFile = File(context.cacheDir, assetFileName)
                 if (targetFile.exists()) {
                     targetFile.delete()
                 }
 
                 // 2. Extract mcaddon from assets to cache
-                val inputStream: InputStream = context.assets.open(MOD_ASSET_NAME)
+                val inputStream: InputStream = context.assets.open(assetFileName)
                 val outputStream = FileOutputStream(targetFile)
-                val buffer = ByteArray(8192)
+                val buffer = ByteArray(16384)
                 var bytesRead: Int
                 while (inputStream.read(buffer).also { bytesRead = it } != -1) {
                     outputStream.write(buffer, 0, bytesRead)
@@ -54,14 +62,14 @@ object ModInstaller {
 
                 if (mcIntent.resolveActivity(packageManager) != null) {
                     context.startActivity(mcIntent)
-                    onComplete(true, "Launching Minecraft... Import Started!")
+                    onComplete(true, "Launching Minecraft... Importing $modTitle!")
                 } else if (intent.resolveActivity(packageManager) != null) {
                     // Fallback to open with chooser
                     val chooser = Intent.createChooser(intent, "Open with Minecraft").apply {
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
                     context.startActivity(chooser)
-                    onComplete(true, "Select Minecraft from the list to import!")
+                    onComplete(true, "Select Minecraft from the list to import $modTitle!")
                 } else {
                     // Minecraft is not installed
                     val playStoreIntent = Intent(
@@ -82,4 +90,3 @@ object ModInstaller {
         }.start()
     }
 }
-

@@ -11,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnInstall: Button
+    private lateinit var btnInstallBen10: Button
+    private lateinit var btnInstallOmni: Button
+    private lateinit var btnInstallOnePiece: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var tvStatus: TextView
 
@@ -19,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnInstall = findViewById(R.id.btnInstall)
+        btnInstallBen10 = findViewById(R.id.btnInstallBen10)
+        btnInstallOmni = findViewById(R.id.btnInstallOmni)
+        btnInstallOnePiece = findViewById(R.id.btnInstallOnePiece)
         progressBar = findViewById(R.id.progressBar)
         tvStatus = findViewById(R.id.tvStatus)
 
@@ -28,30 +32,53 @@ class MainActivity : AppCompatActivity() {
             PermissionHelper.requestPermissions(this)
         }
 
-        btnInstall.setOnClickListener {
-            handleInstallMod()
+        btnInstallBen10.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_BEN10_ORIGINS,
+                getString(R.string.mod_ben10_title)
+            )
+        }
+
+        btnInstallOmni.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_OMNI_EVOLUTION,
+                getString(R.string.mod_omni_title)
+            )
+        }
+
+        btnInstallOnePiece.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_ONE_PIECE,
+                getString(R.string.mod_onepiece_title)
+            )
         }
     }
 
-    private fun handleInstallMod() {
+    private fun handleInstallMod(assetFileName: String, modTitle: String) {
         if (!PermissionHelper.hasPermissions(this)) {
             PermissionHelper.requestPermissions(this)
             Toast.makeText(this, "Please allow permissions to import the mod!", Toast.LENGTH_SHORT).show()
             return
         }
 
-        btnInstall.isEnabled = false
+        setButtonsEnabled(false)
         progressBar.visibility = View.VISIBLE
-        tvStatus.text = getString(R.string.status_importing)
+        tvStatus.text = "● Status: Exporting $modTitle..."
 
-        ModInstaller.installMod(this) { success, message ->
+        ModInstaller.installMod(this, assetFileName, modTitle) { success, message ->
             runOnUiThread {
-                btnInstall.isEnabled = true
+                setButtonsEnabled(true)
                 progressBar.visibility = View.GONE
-                tvStatus.text = if (success) "Status: Import Launched!" else "Status: Error"
+                tvStatus.text = if (success) "● Status: Minecraft Launched ($modTitle)" else "● Status: Error"
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    private fun setButtonsEnabled(enabled: Boolean) {
+        btnInstallBen10.isEnabled = enabled
+        btnInstallOmni.isEnabled = enabled
+        btnInstallOnePiece.isEnabled = enabled
     }
 
     override fun onRequestPermissionsResult(
@@ -63,11 +90,10 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == PermissionHelper.REQUEST_CODE_STORAGE) {
             val allGranted = grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }
             if (allGranted) {
-                Toast.makeText(this, "Permission granted! Tap BEN 10 MOD to install.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permission granted! Tap any mod to install.", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Permission is required to import into Minecraft.", Toast.LENGTH_LONG).show()
             }
         }
     }
 }
-

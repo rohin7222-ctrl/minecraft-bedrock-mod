@@ -1,12 +1,23 @@
 <resources>
-    <string name="app_name">Minecraft Bedrock Mod</string>
-    <string name="btn_install_ben10">BEN 10 MOD</string>
-    <string name="title_app">BEN 10 OMNITRIX MOD</string>
-    <string name="subtitle_app">Minecraft Bedrock Mobile Edition (1.20 - 1.21+)</string>
-    <string name="desc_app">Instant 1-Click Import into Minecraft Bedrock! Includes 9 Omnitrixes, 76 Aliens, Humungousaur Titan Growth, and Dynamic Biomnitrix Fusions.</string>
-    <string name="status_ready">Status: Ready to Import</string>
-    <string name="status_importing">Importing into Minecraft Bedrock...</string>
-    <string name="toast_importing">Opening Minecraft... Please wait for Import Started!</string>
-    <string name="toast_mc_not_found">Minecraft Bedrock not detected! Please install Minecraft PE.</string>
-</resources>
+    <string name="app_name">Minecraft Bedrock Mod Hub</string>
+    <string name="title_app">MINECRAFT BEDROCK MOD HUB</string>
+    <string name="subtitle_app">Direct 1-Click Bedrock Addon Installer</string>
 
+    <string name="status_ready">● Status: Ready to Import</string>
+    <string name="status_importing">Exporting &amp; Launching Minecraft...</string>
+
+    <string name="mod_ben10_title">BEN 10: OMNITRIX ORIGINS</string>
+    <string name="mod_ben10_badge">🟢 9 WATCHES • 76 ALIENS • HD ENTITIES</string>
+    <string name="mod_ben10_desc">Complete series-accurate Ben 10 experience! 9 3D Omnitrix wristbands, 76 sculpted aliens, Kevin Levin\'s muscle car, Rust Bucket RV, Vilgax &amp; Drone bosses, Galvan OS Playlists UI.</string>
+    <string name="btn_import_ben10">⚡ IMPORT BEN 10 ORIGINS ⚡</string>
+
+    <string name="mod_omni_title">BEN 10: OMNI EVOLUTION</string>
+    <string name="mod_omni_badge">🧬 OMNI EVOLUTION BETA ADDON</string>
+    <string name="mod_omni_desc">Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and extra alien variants.</string>
+    <string name="btn_import_omni">🧬 IMPORT OMNI EVOLUTION 🧬</string>
+
+    <string name="mod_onepiece_title">ONE PIECE: BEDROCK EDITION</string>
+    <string name="mod_onepiece_badge">🏴‍☠️ DEVIL FRUITS • HAKI • GRAND LINE</string>
+    <string name="mod_onepiece_desc">Epic anime adventure! Legendary Devil Fruits with special moves, Busoshoku &amp; Kenbunshoku Haki, Marine &amp; Pirate mobs, legendary katanas (Yoru, Enma), and custom 3D bosses!</string>
+    <string name="btn_import_onepiece">⚔️ IMPORT ONE PIECE MOD ⚔️</string>
+</resources>
