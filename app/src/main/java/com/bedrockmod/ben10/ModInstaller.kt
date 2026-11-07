@@ -13,8 +13,14 @@ object ModInstaller {
     private const val MINECRAFT_PACKAGE = "com.mojang.minecraftpe"
 
     const val ASSET_OMNI_EVOLUTION = "Omni-Evolution-Beta.mcaddon"
+    const val ASSET_BEN10_V2 = "Ben10_Volume_2.mcaddon"
+    const val ASSET_OMNI_BOUND = "Omni_Bound_v1.5.2.mcaddon"
     const val ASSET_ONE_PIECE = "OnePiece_Bedrock_Edition_v76.mcaddon"
+    const val ASSET_NARUTO_CRAFT = "Naruto_Craft_v10.mcaddon"
     const val ASSET_TENSURA = "Tensura_Reincarnated_Requiem_v4.mcaddon"
+    const val ASSET_DRAGON_EVOLUTION = "Dragon_Evolution_v1.5.0.mcaddon"
+    const val ASSET_ARISE = "Arise_Solo_Leveling_v12.mcaddon"
+    const val ASSET_ACTUAL_GUNS = "Actual_Guns_2.mcaddon"
 
     fun installMod(
         context: Context,

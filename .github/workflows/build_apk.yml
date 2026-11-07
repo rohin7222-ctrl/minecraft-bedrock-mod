@@ -69,23 +69,41 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Omni Evolution + One Piece + Tensura)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (9 Epic Bedrock Addons Hub)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub (Multi-Mod 1-Click Installer)
-            Now includes 3 epic Bedrock Addons with 1-Click direct Minecraft launching:
+            ## 🟢 Minecraft Bedrock Mod Hub (9 Epic Addons 1-Click Installer)
+            Now includes 9 legendary Bedrock Addons with 1-Click direct Minecraft launching:
             
             1. **🧬 Ben 10: Omni Evolution (Beta Addon)**
-               - Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and extra alien variants.
-            2. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+               - Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien variants.
+            2. **⚡ Ben 10: Volume 2.3 (Fixed Edition)**
+               - Popular Ben 10 Volume 2.3! Full classic & AF transformation roster, Omnitrix sound FX, and alien special attacks.
+            3. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+               - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
+            4. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            3. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            5. **🍥 Naruto Craft: English Edition (v10)**
+               - Legendary Shinobi experience! Rasengan, Chidori, Rinnegan, Sharingan, summon Kurama & Tailed Beasts, and train chakra paths!
+            6. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
+            7. **🐉 Dragon Evolution (v1.5.0)**
+               - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
+            8. **🗡️ Arise: Solo Leveling (v12)**
+               - Become the Shadow Monarch! Awaken custom hunter classes, conquer Red Gates & dungeons, extract defeated mobs as shadow soldiers, and level up stats!
+            9. **🔫 Actual Guns 2: 3D Tactical**
+               - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
+            - **Direct Ben 10 Volume 2 Addon**: Download `Ben10_Volume_2.mcaddon`
+            - **Direct Omni Bound Addon**: Download `Omni_Bound_v1.5.2.mcaddon`
             - **Direct One Piece Addon**: Download `OnePiece_Bedrock_Edition_v76.mcaddon`
+            - **Direct Naruto Craft Addon**: Download `Naruto_Craft_v10.mcaddon`
             - **Direct Tensura Requiem Addon**: Download `Tensura_Reincarnated_Requiem_v4.mcaddon`
+            - **Direct Dragon Evolution Addon**: Download `Dragon_Evolution_v1.5.0.mcaddon`
+            - **Direct Arise Solo Leveling Addon**: Download `Arise_Solo_Leveling_v12.mcaddon`
+            - **Direct Actual Guns 2 Addon**: Download `Actual_Guns_2.mcaddon`
           files: |
             apk_output/*.apk
             apk_output/*.mcaddon

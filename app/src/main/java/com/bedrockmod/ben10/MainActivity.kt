@@ -12,8 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnInstallOmni: Button
+    private lateinit var btnInstallBen10V2: Button
+    private lateinit var btnInstallOmniBound: Button
     private lateinit var btnInstallOnePiece: Button
+    private lateinit var btnInstallNarutoCraft: Button
     private lateinit var btnInstallTensura: Button
+    private lateinit var btnInstallDragonEvo: Button
+    private lateinit var btnInstallArise: Button
+    private lateinit var btnInstallActualGuns: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var tvStatus: TextView
 
@@ -22,8 +28,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnInstallOmni = findViewById(R.id.btnInstallOmni)
+        btnInstallBen10V2 = findViewById(R.id.btnInstallBen10V2)
+        btnInstallOmniBound = findViewById(R.id.btnInstallOmniBound)
         btnInstallOnePiece = findViewById(R.id.btnInstallOnePiece)
+        btnInstallNarutoCraft = findViewById(R.id.btnInstallNarutoCraft)
         btnInstallTensura = findViewById(R.id.btnInstallTensura)
+        btnInstallDragonEvo = findViewById(R.id.btnInstallDragonEvo)
+        btnInstallArise = findViewById(R.id.btnInstallArise)
+        btnInstallActualGuns = findViewById(R.id.btnInstallActualGuns)
         progressBar = findViewById(R.id.progressBar)
         tvStatus = findViewById(R.id.tvStatus)
 
@@ -39,6 +51,20 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        btnInstallBen10V2.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_BEN10_V2,
+                getString(R.string.mod_ben10v2_title)
+            )
+        }
+
+        btnInstallOmniBound.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_OMNI_BOUND,
+                getString(R.string.mod_omnibound_title)
+            )
+        }
+
         btnInstallOnePiece.setOnClickListener {
             handleInstallMod(
                 ModInstaller.ASSET_ONE_PIECE,
@@ -46,10 +72,38 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        btnInstallNarutoCraft.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_NARUTO_CRAFT,
+                getString(R.string.mod_narutocraft_title)
+            )
+        }
+
         btnInstallTensura.setOnClickListener {
             handleInstallMod(
                 ModInstaller.ASSET_TENSURA,
                 getString(R.string.mod_tensura_title)
+            )
+        }
+
+        btnInstallDragonEvo.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_DRAGON_EVOLUTION,
+                getString(R.string.mod_dragonevo_title)
+            )
+        }
+
+        btnInstallArise.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_ARISE,
+                getString(R.string.mod_arise_title)
+            )
+        }
+
+        btnInstallActualGuns.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_ACTUAL_GUNS,
+                getString(R.string.mod_actualguns_title)
             )
         }
     }
@@ -77,8 +131,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setButtonsEnabled(enabled: Boolean) {
         btnInstallOmni.isEnabled = enabled
+        btnInstallBen10V2.isEnabled = enabled
+        btnInstallOmniBound.isEnabled = enabled
         btnInstallOnePiece.isEnabled = enabled
+        btnInstallNarutoCraft.isEnabled = enabled
         btnInstallTensura.isEnabled = enabled
+        btnInstallDragonEvo.isEnabled = enabled
+        btnInstallArise.isEnabled = enabled
+        btnInstallActualGuns.isEnabled = enabled
     }
 
     override fun onRequestPermissionsResult(
