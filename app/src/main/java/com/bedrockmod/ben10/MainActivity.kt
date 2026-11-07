@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnInstallActualGuns: Button
     private lateinit var btnInstallVisuals: Button
     private lateinit var btnInstallQuirkborn: Button
+    private lateinit var btnInstallIronMan: Button
+    private lateinit var btnInstallSpiderMan: Button
+    private lateinit var btnInstallMarvel: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var tvStatus: TextView
 
@@ -40,6 +43,9 @@ class MainActivity : AppCompatActivity() {
         btnInstallActualGuns = findViewById(R.id.btnInstallActualGuns)
         btnInstallVisuals = findViewById(R.id.btnInstallVisuals)
         btnInstallQuirkborn = findViewById(R.id.btnInstallQuirkborn)
+        btnInstallIronMan = findViewById(R.id.btnInstallIronMan)
+        btnInstallSpiderMan = findViewById(R.id.btnInstallSpiderMan)
+        btnInstallMarvel = findViewById(R.id.btnInstallMarvel)
         progressBar = findViewById(R.id.progressBar)
         tvStatus = findViewById(R.id.tvStatus)
 
@@ -124,6 +130,27 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.mod_quirkborn_title)
             )
         }
+
+        btnInstallIronMan.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_IRON_MAN,
+                getString(R.string.mod_ironman_title)
+            )
+        }
+
+        btnInstallSpiderMan.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_SPIDER_MAN,
+                getString(R.string.mod_spiderman_title)
+            )
+        }
+
+        btnInstallMarvel.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_MARVEL_PROJECT,
+                getString(R.string.mod_marvel_title)
+            )
+        }
     }
 
     private fun handleInstallMod(assetFileName: String, modTitle: String) {
@@ -159,6 +186,9 @@ class MainActivity : AppCompatActivity() {
         btnInstallActualGuns.isEnabled = enabled
         btnInstallVisuals.isEnabled = enabled
         btnInstallQuirkborn.isEnabled = enabled
+        btnInstallIronMan.isEnabled = enabled
+        btnInstallSpiderMan.isEnabled = enabled
+        btnInstallMarvel.isEnabled = enabled
     }
 
     override fun onRequestPermissionsResult(

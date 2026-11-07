@@ -60,4 +60,19 @@
     <string name="mod_quirkborn_badge">⚡ ONE FOR ALL • EXPLOSION • HEROES VS VILLAINS</string>
     <string name="mod_quirkborn_desc">Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, craft hero/villain gear, fight Nomus, and unlock custom super moves!</string>
     <string name="btn_import_quirkborn">⚡ IMPORT QUIRKBORN MOD ⚡</string>
+
+    <string name="mod_ironman_title">IRON MAN: ARMOR WARS ADDON</string>
+    <string name="mod_ironman_badge">🤖 MARK 1-85 SUITS • FLIGHT • REPULSORS • JARVIS</string>
+    <string name="mod_ironman_desc">Suit up as Tony Stark! Fly at supersonic speeds with custom animations, fire repulsor blasts &amp; unibeam, equip nano-tech armor, launch micro-missiles, and activate JARVIS HUD!</string>
+    <string name="btn_import_ironman">🤖 IMPORT IRON MAN MOD 🤖</string>
+
+    <string name="mod_spiderman_title">SPIDER-MAN: WEB OF SHADOWS ADDON</string>
+    <string name="mod_spiderman_badge">🕷️ WEB SLINGING • WALL CRAWL • 20+ SUITS</string>
+    <string name="mod_spiderman_desc">Become the Friendly Neighborhood Spider-Man! Fluid 3D web swinging through cities, wall climbing, Spider-Sense danger alerts, Symbiote &amp; Iron Spider suits, and battle iconic villains!</string>
+    <string name="btn_import_spiderman">🕷️ IMPORT SPIDER-MAN MOD 🕷️</string>
+
+    <string name="mod_marvel_title">MARVEL PROJECT: AVENGERS ASSEMBLE V3.0.1</string>
+    <string name="mod_marvel_badge">⭐ THOR • CAPTAIN AMERICA • WOLVERINE • THANOS</string>
+    <string name="mod_marvel_desc">The Ultimate Marvel Universe in Bedrock! Summon Mjolnir lightning, throw Cap\'s vibranium shield, unsheathe adamantium claws, open Doctor Strange portals, and wield the Infinity Gauntlet!</string>
+    <string name="btn_import_marvel">⭐ IMPORT MARVEL PROJECT ⭐</string>
 </resources>

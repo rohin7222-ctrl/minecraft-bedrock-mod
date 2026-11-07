@@ -23,6 +23,9 @@ object ModInstaller {
     const val ASSET_ACTUAL_GUNS = "Actual_Guns_2.mcaddon"
     const val ASSET_BASIC_VISUALS = "Basic_Visuals_v1.1.mcaddon"
     const val ASSET_QUIRKBORN = "Quirkborn_v1.515.3.mcaddon"
+    const val ASSET_IRON_MAN = "Iron_Man_Addon.mcaddon"
+    const val ASSET_SPIDER_MAN = "Spider_Man_Addon.mcaddon"
+    const val ASSET_MARVEL_PROJECT = "Marvel_Project_v3.0.1.mcaddon"
 
     fun installMod(
         context: Context,
