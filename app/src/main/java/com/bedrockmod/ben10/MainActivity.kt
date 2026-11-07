@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnInstallBen10: Button
     private lateinit var btnInstallOmni: Button
     private lateinit var btnInstallOnePiece: Button
+    private lateinit var btnInstallTensura: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var tvStatus: TextView
 
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         btnInstallBen10 = findViewById(R.id.btnInstallBen10)
         btnInstallOmni = findViewById(R.id.btnInstallOmni)
         btnInstallOnePiece = findViewById(R.id.btnInstallOnePiece)
+        btnInstallTensura = findViewById(R.id.btnInstallTensura)
         progressBar = findViewById(R.id.progressBar)
         tvStatus = findViewById(R.id.tvStatus)
 
@@ -50,6 +52,13 @@ class MainActivity : AppCompatActivity() {
             handleInstallMod(
                 ModInstaller.ASSET_ONE_PIECE,
                 getString(R.string.mod_onepiece_title)
+            )
+        }
+
+        btnInstallTensura.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_TENSURA,
+                getString(R.string.mod_tensura_title)
             )
         }
     }
@@ -79,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         btnInstallBen10.isEnabled = enabled
         btnInstallOmni.isEnabled = enabled
         btnInstallOnePiece.isEnabled = enabled
+        btnInstallTensura.isEnabled = enabled
     }
 
     override fun onRequestPermissionsResult(

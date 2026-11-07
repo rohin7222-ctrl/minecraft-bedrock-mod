@@ -15,6 +15,7 @@ object ModInstaller {
     const val ASSET_BEN10_ORIGINS = "Ben10_Bedrock_Mobile_Edition.mcaddon"
     const val ASSET_OMNI_EVOLUTION = "Omni-Evolution-Beta.mcaddon"
     const val ASSET_ONE_PIECE = "OnePiece_Bedrock_Edition_v76.mcaddon"
+    const val ASSET_TENSURA = "Tensura_Reincarnated_Requiem_v4.mcaddon"
 
     fun installMod(
         context: Context,

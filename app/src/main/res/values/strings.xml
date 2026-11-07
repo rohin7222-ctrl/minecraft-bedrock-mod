@@ -20,4 +20,9 @@
     <string name="mod_onepiece_badge">🏴‍☠️ DEVIL FRUITS • HAKI • GRAND LINE</string>
     <string name="mod_onepiece_desc">Epic anime adventure! Legendary Devil Fruits with special moves, Busoshoku &amp; Kenbunshoku Haki, Marine &amp; Pirate mobs, legendary katanas (Yoru, Enma), and custom 3D bosses!</string>
     <string name="btn_import_onepiece">⚔️ IMPORT ONE PIECE MOD ⚔️</string>
+
+    <string name="mod_tensura_title">TENSURA: REINCARNATED REQUIEM V4</string>
+    <string name="mod_tensura_badge">🔮 SLIME SKILLS • GREAT SAGE • DEMON LORDS</string>
+    <string name="mod_tensura_desc">That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!</string>
+    <string name="btn_import_tensura">🔮 IMPORT TENSURA MOD 🔮</string>
 </resources>
