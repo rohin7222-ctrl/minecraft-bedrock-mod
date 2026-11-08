@@ -12,15 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnInstallOmni: Button
-    private lateinit var btnInstallBen10V2: Button
     private lateinit var btnInstallOmniBound: Button
     private lateinit var btnInstallOnePiece: Button
-    private lateinit var btnInstallNarutoCraft: Button
     private lateinit var btnInstallTensura: Button
     private lateinit var btnInstallDragonEvo: Button
-    private lateinit var btnInstallArise: Button
     private lateinit var btnInstallActualGuns: Button
-    private lateinit var btnInstallVisuals: Button
     private lateinit var btnInstallQuirkborn: Button
     private lateinit var btnInstallIronMan: Button
     private lateinit var btnInstallSpiderMan: Button
@@ -33,15 +29,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnInstallOmni = findViewById(R.id.btnInstallOmni)
-        btnInstallBen10V2 = findViewById(R.id.btnInstallBen10V2)
         btnInstallOmniBound = findViewById(R.id.btnInstallOmniBound)
         btnInstallOnePiece = findViewById(R.id.btnInstallOnePiece)
-        btnInstallNarutoCraft = findViewById(R.id.btnInstallNarutoCraft)
         btnInstallTensura = findViewById(R.id.btnInstallTensura)
         btnInstallDragonEvo = findViewById(R.id.btnInstallDragonEvo)
-        btnInstallArise = findViewById(R.id.btnInstallArise)
         btnInstallActualGuns = findViewById(R.id.btnInstallActualGuns)
-        btnInstallVisuals = findViewById(R.id.btnInstallVisuals)
         btnInstallQuirkborn = findViewById(R.id.btnInstallQuirkborn)
         btnInstallIronMan = findViewById(R.id.btnInstallIronMan)
         btnInstallSpiderMan = findViewById(R.id.btnInstallSpiderMan)
@@ -61,13 +53,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        btnInstallBen10V2.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_BEN10_V2,
-                getString(R.string.mod_ben10v2_title)
-            )
-        }
-
         btnInstallOmniBound.setOnClickListener {
             handleInstallMod(
                 ModInstaller.ASSET_OMNI_BOUND,
@@ -79,13 +64,6 @@ class MainActivity : AppCompatActivity() {
             handleInstallMod(
                 ModInstaller.ASSET_ONE_PIECE,
                 getString(R.string.mod_onepiece_title)
-            )
-        }
-
-        btnInstallNarutoCraft.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_NARUTO_CRAFT,
-                getString(R.string.mod_narutocraft_title)
             )
         }
 
@@ -103,24 +81,10 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        btnInstallArise.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_ARISE,
-                getString(R.string.mod_arise_title)
-            )
-        }
-
         btnInstallActualGuns.setOnClickListener {
             handleInstallMod(
                 ModInstaller.ASSET_ACTUAL_GUNS,
                 getString(R.string.mod_actualguns_title)
-            )
-        }
-
-        btnInstallVisuals.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_BASIC_VISUALS,
-                getString(R.string.mod_basicvisuals_title)
             )
         }
 
@@ -176,15 +140,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setButtonsEnabled(enabled: Boolean) {
         btnInstallOmni.isEnabled = enabled
-        btnInstallBen10V2.isEnabled = enabled
         btnInstallOmniBound.isEnabled = enabled
         btnInstallOnePiece.isEnabled = enabled
-        btnInstallNarutoCraft.isEnabled = enabled
         btnInstallTensura.isEnabled = enabled
         btnInstallDragonEvo.isEnabled = enabled
-        btnInstallArise.isEnabled = enabled
         btnInstallActualGuns.isEnabled = enabled
-        btnInstallVisuals.isEnabled = enabled
         btnInstallQuirkborn.isEnabled = enabled
         btnInstallIronMan.isEnabled = enabled
         btnInstallSpiderMan.isEnabled = enabled

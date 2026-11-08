@@ -21,40 +21,20 @@
     <string name="mod_tensura_desc">That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!</string>
     <string name="btn_import_tensura">🔮 IMPORT TENSURA MOD 🔮</string>
 
-    <string name="mod_ben10v2_title">BEN 10: VOLUME 2.3</string>
-    <string name="mod_ben10v2_badge">🟢 CLASSIC &amp; AF ALIENS • FIXED EDITION</string>
-    <string name="mod_ben10v2_desc">Popular Ben 10 Volume 2.3 Fixed edition! Full roster of classic transformations, custom Omnitrix animations, alien special abilities, and sound FX.</string>
-    <string name="btn_import_ben10v2">⚡ IMPORT BEN 10 V2 ⚡</string>
-
     <string name="mod_omnibound_title">OMNI-BOUND: FASTER SWITCHING</string>
     <string name="mod_omnibound_badge">⚡ INSTANT ALIEN SWITCHING • 50+ ALIENS</string>
     <string name="mod_omnibound_desc">High-speed Omni-Bound v1.5.2! Instant quick-switch alien dials, ultimate forms, custom boss raids, drone attacks, and cinematic transformation sequences.</string>
     <string name="btn_import_omnibound">🛸 IMPORT OMNI BOUND 🛸</string>
-
-    <string name="mod_narutocraft_title">NARUTO CRAFT V10 [ENGLISH]</string>
-    <string name="mod_narutocraft_badge">🍥 NINJUTSU • SHARINGAN • TAILED BEASTS</string>
-    <string name="mod_narutocraft_desc">Legendary Shinobi experience! Master Rasengan, Chidori, Rinnegan, Sharingan, summon Kurama &amp; Tailed Beasts, and train custom chakra paths!</string>
-    <string name="btn_import_narutocraft">🍥 IMPORT NARUTO CRAFT 🍥</string>
 
     <string name="mod_dragonevo_title">DRAGON EVOLUTION V1.5.0</string>
     <string name="mod_dragonevo_badge">🐉 SAIYAN FORMS • KI BLASTS • CUSTOM BOSSES</string>
     <string name="mod_dragonevo_desc">Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha &amp; Final Flash ki attacks, custom dimensions, and battle epic anime bosses!</string>
     <string name="btn_import_dragonevo">🐉 IMPORT DRAGON EVOLUTION 🐉</string>
 
-    <string name="mod_arise_title">ARISE: SOLO LEVELING V12</string>
-    <string name="mod_arise_badge">🗡️ SHADOW MONARCH • DUNGEONS • HUNTER SYSTEM</string>
-    <string name="mod_arise_desc">Become the Shadow Monarch! Awaken custom hunter classes, conquer Red Gates &amp; dungeons, extract defeated mobs as loyal shadow soldiers, and level up stats!</string>
-    <string name="btn_import_arise">🗡️ IMPORT ARISE MOD 🗡️</string>
-
     <string name="mod_actualguns_title">ACTUAL GUNS 2 (3D TACTICAL)</string>
     <string name="mod_actualguns_badge">🔫 3D WEAPONS • RELOAD ANIMATIONS • ATTACHMENTS</string>
     <string name="mod_actualguns_desc">Ultra-detailed 3D firearms for Minecraft Bedrock! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!</string>
     <string name="btn_import_actualguns">🔫 IMPORT ACTUAL GUNS 2 🔫</string>
-
-    <string name="mod_basicvisuals_title">BASIC VISUALS V1.1 (ATMOSPHERE)</string>
-    <string name="mod_basicvisuals_badge">✨ AURORA BOREALIS • ENHANCED FOG • BIOME SHADING</string>
-    <string name="mod_basicvisuals_desc">Stunning visual enhancements! Realistic aurora borealis sky effects, volumetric atmospheric fog, dynamic biome color grading, and ambient lighting in smooth 60 FPS!</string>
-    <string name="btn_import_basicvisuals">✨ IMPORT BASIC VISUALS ✨</string>
 
     <string name="mod_quirkborn_title">QUIRKBORN: MY HERO ACADEMIA V1.515</string>
     <string name="mod_quirkborn_badge">⚡ ONE FOR ALL • EXPLOSION • HEROES VS VILLAINS</string>
