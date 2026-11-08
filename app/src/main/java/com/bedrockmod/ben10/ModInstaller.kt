@@ -22,6 +22,9 @@ object ModInstaller {
     const val ASSET_IRON_MAN = "Iron_Man_Addon.mcaddon"
     const val ASSET_SPIDER_MAN = "Spider_Man_Addon.mcaddon"
     const val ASSET_MARVEL_PROJECT = "Marvel_Project_v3.0.1.mcaddon"
+    const val ASSET_DRAGON_BALL_SPARK = "Dragon_Ball_Spark.mcaddon"
+    const val ASSET_ATTACK_ON_TITAN = "Attack_On_Titan.mcaddon"
+    const val ASSET_SOLO_LEVELING = "Solo_Leveling_v1.0.6.mcaddon"
 
     fun installMod(
         context: Context,

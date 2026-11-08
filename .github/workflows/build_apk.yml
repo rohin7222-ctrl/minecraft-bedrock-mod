@@ -69,10 +69,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (10 Epic Bedrock Addons Hub)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (13 Epic Bedrock Addons Hub)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub (10 Epic Addons 1-Click Installer)
-            Now includes 10 legendary Bedrock Addons with 1-Click direct Minecraft launching:
+            ## 🟢 Minecraft Bedrock Mod Hub (13 Epic Addons 1-Click Installer)
+            Now includes 13 legendary Bedrock Addons with 1-Click direct Minecraft launching:
             
             1. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien variants.
@@ -94,6 +94,12 @@ jobs:
                - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
             10. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
                - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
+            11. **💥 Dragon Ball: Sparking Addon**
+               - Super Saiyan transformations, energy charging ki aura, explosive Kamehameha & Spirit Bomb attacks, and custom DBZ warriors!
+            12. **⚔️ Attack on Titan: Wings of Freedom**
+               - High-speed 3D Maneuver (ODM) Gear, Thunder Spears, Titan shifters, defend the walls against Pure & Colossal Titans!
+            13. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+               - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
@@ -107,6 +113,9 @@ jobs:
             - **Direct Iron Man Addon**: Download `Iron_Man_Addon.mcaddon`
             - **Direct Spider-Man Addon**: Download `Spider_Man_Addon.mcaddon`
             - **Direct Marvel Project Addon**: Download `Marvel_Project_v3.0.1.mcaddon`
+            - **Direct Dragon Ball Spark Addon**: Download `Dragon_Ball_Spark.mcaddon`
+            - **Direct Attack on Titan Addon**: Download `Attack_On_Titan.mcaddon`
+            - **Direct Solo Leveling Addon**: Download `Solo_Leveling_v1.0.6.mcaddon`
           files: |
             apk_output/*.apk
             apk_output/*.mcaddon

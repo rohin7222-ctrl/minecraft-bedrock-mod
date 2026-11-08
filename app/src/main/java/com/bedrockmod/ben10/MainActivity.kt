@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnInstallIronMan: Button
     private lateinit var btnInstallSpiderMan: Button
     private lateinit var btnInstallMarvel: Button
+    private lateinit var btnInstallDragonBall: Button
+    private lateinit var btnInstallAoT: Button
+    private lateinit var btnInstallSoloLeveling: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var tvStatus: TextView
 
@@ -38,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         btnInstallIronMan = findViewById(R.id.btnInstallIronMan)
         btnInstallSpiderMan = findViewById(R.id.btnInstallSpiderMan)
         btnInstallMarvel = findViewById(R.id.btnInstallMarvel)
+        btnInstallDragonBall = findViewById(R.id.btnInstallDragonBall)
+        btnInstallAoT = findViewById(R.id.btnInstallAoT)
+        btnInstallSoloLeveling = findViewById(R.id.btnInstallSoloLeveling)
         progressBar = findViewById(R.id.progressBar)
         tvStatus = findViewById(R.id.tvStatus)
 
@@ -115,6 +121,27 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.mod_marvel_title)
             )
         }
+
+        btnInstallDragonBall.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_DRAGON_BALL_SPARK,
+                getString(R.string.mod_dragonball_title)
+            )
+        }
+
+        btnInstallAoT.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_ATTACK_ON_TITAN,
+                getString(R.string.mod_aot_title)
+            )
+        }
+
+        btnInstallSoloLeveling.setOnClickListener {
+            handleInstallMod(
+                ModInstaller.ASSET_SOLO_LEVELING,
+                getString(R.string.mod_sololeveling_title)
+            )
+        }
     }
 
     private fun handleInstallMod(assetFileName: String, modTitle: String) {
@@ -149,6 +176,9 @@ class MainActivity : AppCompatActivity() {
         btnInstallIronMan.isEnabled = enabled
         btnInstallSpiderMan.isEnabled = enabled
         btnInstallMarvel.isEnabled = enabled
+        btnInstallDragonBall.isEnabled = enabled
+        btnInstallAoT.isEnabled = enabled
+        btnInstallSoloLeveling.isEnabled = enabled
     }
 
     override fun onRequestPermissionsResult(

@@ -55,4 +55,19 @@
     <string name="mod_marvel_badge">⭐ THOR • CAPTAIN AMERICA • WOLVERINE • THANOS</string>
     <string name="mod_marvel_desc">The Ultimate Marvel Universe in Bedrock! Summon Mjolnir lightning, throw Cap\'s vibranium shield, unsheathe adamantium claws, open Doctor Strange portals, and wield the Infinity Gauntlet!</string>
     <string name="btn_import_marvel">⭐ IMPORT MARVEL PROJECT ⭐</string>
+
+    <string name="mod_dragonball_title">DRAGON BALL: SPARKING ADDON</string>
+    <string name="mod_dragonball_badge">💥 SAIYAN AWAKENING • KAMEHAMEHA • KI COMBAT</string>
+    <string name="mod_dragonball_desc">Dragon Ball Sparking in Minecraft Bedrock! Awaken Super Saiyan transformations, charge your ki aura, launch explosive Kamehameha blasts, and battle legendary DBZ warriors!</string>
+    <string name="btn_import_dragonball">💥 IMPORT DRAGON BALL SPARK 💥</string>
+
+    <string name="mod_aot_title">ATTACK ON TITAN: WINGS OF FREEDOM</string>
+    <string name="mod_aot_badge">⚔️ 3D MANEUVER GEAR • SHIFTERS • COLOSSAL TITAN</string>
+    <string name="mod_aot_desc">Dedicate your heart! Equip 3D Maneuver (ODM) Gear with fluid grapple mechanics, dual thunder spears, transform into the Attack Titan, and defend the Walls from Titans!</string>
+    <string name="btn_import_aot">⚔️ IMPORT ATTACK ON TITAN ⚔️</string>
+
+    <string name="mod_sololeveling_title">SOLO LEVELING V1.0.6 (SYSTEM AWAKENING)</string>
+    <string name="mod_sololeveling_badge">🗡️ SHADOW MONARCH • SYSTEM QUESTS • DUNGEON RAIDS</string>
+    <string name="mod_sololeveling_desc">Arise as the Shadow Monarch! Awaken Jinwoo\'s Hunter System, complete daily quests, level up stats, clear red gates &amp; dungeons, and extract defeated enemies as loyal Shadow Soldiers!</string>
+    <string name="btn_import_sololeveling">🗡️ IMPORT SOLO LEVELING 🗡️</string>
 </resources>
