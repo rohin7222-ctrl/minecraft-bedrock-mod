@@ -1,887 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#070B14"
-    android:fillViewport="true">
+    android:background="@color/bg_dark"
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- ========================================================================= -->
+    <!-- TOP APP BAR -->
+    <!-- ========================================================================= -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="18dp"
-        android:paddingTop="20dp"
-        android:paddingEnd="18dp"
-        android:paddingBottom="30dp">
+        android:background="@color/surface_dark"
+        android:elevation="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp">
 
-        <!-- Glowing Hub Logo -->
         <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="12dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/app_logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/app_logo" />
 
-        <!-- Top Compatibility Badge -->
-        <TextView
-            android:id="@+id/tvBadge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#0F172A"
-            android:paddingStart="14dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="6dp"
-            android:text="🟢 BEDROCK 1.20 - 1.21+ COMPATIBLE (1-CLICK IMPORT)"
-            android:textColor="#22C55E"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
-
-        <!-- App Main Title -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/title_app"
-            android:textColor="#F8FAFC"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvBadge" />
-
-        <TextView
-            android:id="@+id/tvSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/subtitle_app"
-            android:textColor="#94A3B8"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
-
-        <!-- Progress Indicator -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            android:indeterminateTint="#22C55E"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
-
-        <!-- Dynamic Status Text -->
-        <TextView
-            android:id="@+id/tvStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/status_ready"
-            android:textColor="#94A3B8"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/progressBar" />
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 1: BEN 10 OMNI EVOLUTION (BETA ADDON) -->
-        <!-- ========================================================================= -->
         <LinearLayout
-            android:id="@+id/cardOmniEvolution"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tvStatus">
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#0C4A6E"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_omni_badge"
-                android:textColor="#7DD3FC"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_omni_title"
-                android:textColor="#F8FAFC"
+                android:text="BEDROCK MOD HUB"
+                android:textColor="@color/text_white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvMinecraftStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_omni_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallOmni"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_omni_blue"
-                android:elevation="6dp"
-                android:text="@string/btn_import_omni"
-                android:textColor="#050B14"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 2: OMNI-BOUND: FASTER SWITCHING -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardOmniBound"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardOmniEvolution">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#14532D"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_omnibound_badge"
-                android:textColor="#BEF264"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_omnibound_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_omnibound_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallOmniBound"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_omnibound_lime"
-                android:elevation="6dp"
-                android:text="@string/btn_import_omnibound"
-                android:textColor="#050B14"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 4: ONE PIECE BEDROCK EDITION (v76.0.0) -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardOnePiece"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardOmniBound">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#7C2D12"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_onepiece_badge"
-                android:textColor="#FED7AA"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_onepiece_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_onepiece_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallOnePiece"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_onepiece_orange"
-                android:elevation="6dp"
-                android:text="@string/btn_import_onepiece"
-                android:textColor="#050B14"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 4: TENSURA: REINCARNATED REQUIEM V4 -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardTensura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardOnePiece">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#4A044E"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_tensura_badge"
-                android:textColor="#F0ABFC"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_tensura_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_tensura_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallTensura"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_tensura_purple"
-                android:elevation="6dp"
-                android:text="@string/btn_import_tensura"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 7: DRAGON EVOLUTION V1.5.0 -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardDragonEvo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardTensura">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#78350F"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_dragonevo_badge"
-                android:textColor="#FDE68A"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_dragonevo_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_dragonevo_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallDragonEvo"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_dragon_amber"
-                android:elevation="6dp"
-                android:text="@string/btn_import_dragonevo"
-                android:textColor="#050B14"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 6: ACTUAL GUNS 2 (3D TACTICAL) -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardActualGuns"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardDragonEvo">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#7F1D1D"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_actualguns_badge"
-                android:textColor="#FECACA"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_actualguns_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_actualguns_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallActualGuns"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_actualguns_red"
-                android:elevation="6dp"
-                android:text="@string/btn_import_actualguns"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 7: QUIRKBORN: MY HERO ACADEMIA V1.515 -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardQuirkborn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardActualGuns">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#713F12"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_quirkborn_badge"
-                android:textColor="#FEF08A"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_quirkborn_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_quirkborn_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallQuirkborn"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_quirkborn_yellow"
-                android:elevation="6dp"
-                android:text="@string/btn_import_quirkborn"
-                android:textColor="#050B14"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 8: IRON MAN: ARMOR WARS ADDON -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardIronMan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardQuirkborn">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#7F1D1D"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_ironman_badge"
-                android:textColor="#FDE68A"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_ironman_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_ironman_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallIronMan"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_ironman_goldred"
-                android:elevation="6dp"
-                android:text="@string/btn_import_ironman"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 9: SPIDER-MAN: WEB OF SHADOWS ADDON -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardSpiderMan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardIronMan">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#1E3A8A"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_spiderman_badge"
-                android:textColor="#BAE6FD"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_spiderman_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_spiderman_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallSpiderMan"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_spiderman_redblue"
-                android:elevation="6dp"
-                android:text="@string/btn_import_spiderman"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 10: MARVEL PROJECT: AVENGERS ASSEMBLE V3.0.1 -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardMarvel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardSpiderMan">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#581C87"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_marvel_badge"
-                android:textColor="#F472B6"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_marvel_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_marvel_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallMarvel"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_marvel_purple"
-                android:elevation="6dp"
-                android:text="@string/btn_import_marvel"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 11: DRAGON BALL: SPARKING ADDON -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardDragonBall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardMarvel">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#7C2D12"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_dragonball_badge"
-                android:textColor="#FED7AA"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_dragonball_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_dragonball_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallDragonBall"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_dragonball_orange"
-                android:elevation="6dp"
-                android:text="@string/btn_import_dragonball"
-                android:textColor="#050B14"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 12: ATTACK ON TITAN: WINGS OF FREEDOM -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardAoT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardDragonBall">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#14532D"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_aot_badge"
-                android:textColor="#BBF7D0"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_aot_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_aot_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallAoT"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_aot_green"
-                android:elevation="6dp"
-                android:text="@string/btn_import_aot"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- ========================================================================= -->
-        <!-- MOD CARD 13: SOLO LEVELING V1.0.6 (SYSTEM AWAKENING) -->
-        <!-- ========================================================================= -->
-        <LinearLayout
-            android:id="@+id/cardSoloLeveling"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cardAoT">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#3B0764"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/mod_sololeveling_badge"
-                android:textColor="#E9D5FF"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/mod_sololeveling_title"
-                android:textColor="#F8FAFC"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/mod_sololeveling_desc"
-                android:textColor="#94A3B8"
-                android:textSize="12.5sp" />
-
-            <Button
-                android:id="@+id/btnInstallSoloLeveling"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_sololeveling_darkpurple"
-                android:elevation="6dp"
-                android:text="@string/btn_import_sololeveling"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-        </LinearLayout>
-
-        <!-- Guide Footer Card -->
-        <LinearLayout
-            android:id="@+id/cardGuide"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/card_background"
-            android:orientation="vertical"
-            android:padding="14dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardSoloLeveling">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="💡 Minecraft Bedrock Setup Guide:"
-                android:textColor="#FACC15"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="1. Tap any mod above to launch Minecraft and start the automatic import.\n2. In Minecraft world settings, activate both Behavior Pack and Resource Pack.\n3. Under 'Experiments', turn ON: 'Beta APIs'.\n4. Enjoy the mods in 60 FPS!"
-                android:textColor="#CBD5E1"
+                android:layout_marginTop="2dp"
+                android:text="🟢 Checking Minecraft..."
+                android:textColor="@color/omnitrix_glow"
                 android:textSize="11.5sp" />
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Quick Launch Minecraft Button -->
+        <Button
+            android:id="@+id/btnQuickLaunchMc"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="@drawable/btn_header_mc"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="🎮 Open MC"
+            android:textColor="#042F2E"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
 
-</ScrollView>
+    </LinearLayout>
+
+    <!-- Global Progress Bar for background tasks -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/mainProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/omnitrix_green"
+        app:trackColor="@color/surface_dark" />
+
+    <!-- ========================================================================= -->
+    <!-- SEARCH & CATEGORY BAR -->
+    <!-- ========================================================================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="14dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="6dp">
+
+        <!-- Modern Search Box -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/search_box_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔍"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Search 13 mods (e.g. Goku, Titan, Spider, Gun)..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/text_white"
+                android:textColorHint="@color/text_muted"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/btnClearSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="✖"
+                android:textColor="@color/text_muted"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Category Horizontal Filter Tabs -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="🌟 All (13)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAnime"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎌 Anime (6)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSuperhero"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🦸 Superheroes (3)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAction"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚔️ Action &amp; Sci-Fi (4)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <!-- Empty search state -->
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="😕 No mods match your search."
+        android:textColor="@color/text_muted"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <!-- ========================================================================= -->
+    <!-- RECYCLERVIEW: 13 MOD CARDS (60 FPS SMOOTH SCROLL) -->
+    <!-- ========================================================================= -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMods"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingTop="6dp"
+        android:paddingBottom="16dp" />
+
+    <!-- ========================================================================= -->
+    <!-- BOTTOM FOOTER TOOLS & STATUS -->
+    <!-- ========================================================================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface_dark"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvBottomInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="💡 Enable 'Beta APIs' in Minecraft World Settings"
+            android:textColor="@color/text_gray"
+            android:textSize="11sp" />
+
+        <!-- Clear Cache Button -->
+        <Button
+            android:id="@+id/btnClearCache"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="🧹 Clean Cache"
+            android:textColor="@color/omnitrix_glow"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -69,7 +69,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (13 Epic Bedrock Addons Hub)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Ultimate UI/UX 13-Mod Grand Edition)
           body: |
             ## 🟢 Minecraft Bedrock Mod Hub (13 Epic Addons 1-Click Installer)
             Now includes 13 legendary Bedrock Addons with 1-Click direct Minecraft launching:

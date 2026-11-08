@@ -1,198 +1,167 @@
 package com.bedrockmod.ben10
 
-import android.content.pm.PackageManager
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
-import android.widget.ProgressBar
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.chip.ChipGroup
+import com.google.android.material.progressindicator.LinearProgressIndicator
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnInstallOmni: Button
-    private lateinit var btnInstallOmniBound: Button
-    private lateinit var btnInstallOnePiece: Button
-    private lateinit var btnInstallTensura: Button
-    private lateinit var btnInstallDragonEvo: Button
-    private lateinit var btnInstallActualGuns: Button
-    private lateinit var btnInstallQuirkborn: Button
-    private lateinit var btnInstallIronMan: Button
-    private lateinit var btnInstallSpiderMan: Button
-    private lateinit var btnInstallMarvel: Button
-    private lateinit var btnInstallDragonBall: Button
-    private lateinit var btnInstallAoT: Button
-    private lateinit var btnInstallSoloLeveling: Button
-    private lateinit var progressBar: ProgressBar
-    private lateinit var tvStatus: TextView
+    private lateinit var tvMinecraftStatus: TextView
+    private lateinit var btnQuickLaunchMc: Button
+    private lateinit var mainProgressBar: LinearProgressIndicator
+    private lateinit var etSearch: EditText
+    private lateinit var btnClearSearch: TextView
+    private lateinit var chipGroupCategories: ChipGroup
+    private lateinit var rvMods: RecyclerView
+    private lateinit var tvEmptyState: TextView
+    private lateinit var tvBottomInfo: TextView
+    private lateinit var btnClearCache: Button
+
+    private lateinit var modAdapter: ModAdapter
+    private var selectedCategory: ModCategory = ModCategory.ALL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnInstallOmni = findViewById(R.id.btnInstallOmni)
-        btnInstallOmniBound = findViewById(R.id.btnInstallOmniBound)
-        btnInstallOnePiece = findViewById(R.id.btnInstallOnePiece)
-        btnInstallTensura = findViewById(R.id.btnInstallTensura)
-        btnInstallDragonEvo = findViewById(R.id.btnInstallDragonEvo)
-        btnInstallActualGuns = findViewById(R.id.btnInstallActualGuns)
-        btnInstallQuirkborn = findViewById(R.id.btnInstallQuirkborn)
-        btnInstallIronMan = findViewById(R.id.btnInstallIronMan)
-        btnInstallSpiderMan = findViewById(R.id.btnInstallSpiderMan)
-        btnInstallMarvel = findViewById(R.id.btnInstallMarvel)
-        btnInstallDragonBall = findViewById(R.id.btnInstallDragonBall)
-        btnInstallAoT = findViewById(R.id.btnInstallAoT)
-        btnInstallSoloLeveling = findViewById(R.id.btnInstallSoloLeveling)
-        progressBar = findViewById(R.id.progressBar)
-        tvStatus = findViewById(R.id.tvStatus)
+        initViews()
+        setupRecyclerView()
+        setupSearchAndFilters()
+        setupMinecraftStatus()
+        setupCacheCleaner()
+    }
 
-        // Check and prompt for permissions on startup
-        if (!PermissionHelper.hasPermissions(this)) {
-            PermissionHelper.requestPermissions(this)
+    override fun onResume() {
+        super.onResume()
+        updateMinecraftStatus()
+    }
+
+    private fun initViews() {
+        tvMinecraftStatus = findViewById(R.id.tvMinecraftStatus)
+        btnQuickLaunchMc = findViewById(R.id.btnQuickLaunchMc)
+        mainProgressBar = findViewById(R.id.mainProgressBar)
+        etSearch = findViewById(R.id.etSearch)
+        btnClearSearch = findViewById(R.id.btnClearSearch)
+        chipGroupCategories = findViewById(R.id.chipGroupCategories)
+        rvMods = findViewById(R.id.rvMods)
+        tvEmptyState = findViewById(R.id.tvEmptyState)
+        tvBottomInfo = findViewById(R.id.tvBottomInfo)
+        btnClearCache = findViewById(R.id.btnClearCache)
+    }
+
+    private fun setupRecyclerView() {
+        val modList = ModRepository.getModList()
+        modAdapter = ModAdapter(modList) { mod ->
+            handleModInstall(mod)
         }
 
-        btnInstallOmni.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_OMNI_EVOLUTION,
-                getString(R.string.mod_omni_title)
-            )
-        }
-
-        btnInstallOmniBound.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_OMNI_BOUND,
-                getString(R.string.mod_omnibound_title)
-            )
-        }
-
-        btnInstallOnePiece.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_ONE_PIECE,
-                getString(R.string.mod_onepiece_title)
-            )
-        }
-
-        btnInstallTensura.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_TENSURA,
-                getString(R.string.mod_tensura_title)
-            )
-        }
-
-        btnInstallDragonEvo.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_DRAGON_EVOLUTION,
-                getString(R.string.mod_dragonevo_title)
-            )
-        }
-
-        btnInstallActualGuns.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_ACTUAL_GUNS,
-                getString(R.string.mod_actualguns_title)
-            )
-        }
-
-        btnInstallQuirkborn.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_QUIRKBORN,
-                getString(R.string.mod_quirkborn_title)
-            )
-        }
-
-        btnInstallIronMan.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_IRON_MAN,
-                getString(R.string.mod_ironman_title)
-            )
-        }
-
-        btnInstallSpiderMan.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_SPIDER_MAN,
-                getString(R.string.mod_spiderman_title)
-            )
-        }
-
-        btnInstallMarvel.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_MARVEL_PROJECT,
-                getString(R.string.mod_marvel_title)
-            )
-        }
-
-        btnInstallDragonBall.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_DRAGON_BALL_SPARK,
-                getString(R.string.mod_dragonball_title)
-            )
-        }
-
-        btnInstallAoT.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_ATTACK_ON_TITAN,
-                getString(R.string.mod_aot_title)
-            )
-        }
-
-        btnInstallSoloLeveling.setOnClickListener {
-            handleInstallMod(
-                ModInstaller.ASSET_SOLO_LEVELING,
-                getString(R.string.mod_sololeveling_title)
-            )
+        rvMods.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = modAdapter
+            setHasFixedSize(true)
         }
     }
 
-    private fun handleInstallMod(assetFileName: String, modTitle: String) {
-        if (!PermissionHelper.hasPermissions(this)) {
-            PermissionHelper.requestPermissions(this)
-            Toast.makeText(this, "Please allow permissions to import the mod!", Toast.LENGTH_SHORT).show()
-            return
+    private fun setupSearchAndFilters() {
+        // Live search text watcher
+        etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val query = s?.toString().orEmpty()
+                btnClearSearch.visibility = if (query.isNotEmpty()) View.VISIBLE else View.GONE
+                applyCurrentFilters()
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        btnClearSearch.setOnClickListener {
+            etSearch.text.clear()
         }
 
-        setButtonsEnabled(false)
-        progressBar.visibility = View.VISIBLE
-        tvStatus.text = "● Status: Exporting $modTitle..."
+        // Category Filter Chips
+        chipGroupCategories.setOnCheckedChangeListener { _, checkedId ->
+            selectedCategory = when (checkedId) {
+                R.id.chipAnime -> ModCategory.ANIME
+                R.id.chipSuperhero -> ModCategory.SUPERHERO
+                R.id.chipAction -> ModCategory.ACTION
+                else -> ModCategory.ALL
+            }
+            applyCurrentFilters()
+        }
+    }
 
-        ModInstaller.installMod(this, assetFileName, modTitle) { success, message ->
-            runOnUiThread {
-                setButtonsEnabled(true)
-                progressBar.visibility = View.GONE
-                tvStatus.text = if (success) "● Status: Minecraft Launched ($modTitle)" else "● Status: Error"
-                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    private fun applyCurrentFilters() {
+        val query = etSearch.text?.toString().orEmpty()
+        modAdapter.applyFilter(query, selectedCategory)
+        tvEmptyState.visibility = if (modAdapter.getDisplayedCount() == 0) View.VISIBLE else View.GONE
+    }
+
+    private fun setupMinecraftStatus() {
+        updateMinecraftStatus()
+
+        val launchAction = View.OnClickListener {
+            val launched = ModInstaller.launchMinecraft(this)
+            if (!launched) {
+                Toast.makeText(this, "Minecraft PE not detected. Opening Google Play...", Toast.LENGTH_SHORT).show()
             }
         }
+
+        btnQuickLaunchMc.setOnClickListener(launchAction)
+        tvMinecraftStatus.setOnClickListener(launchAction)
     }
 
-    private fun setButtonsEnabled(enabled: Boolean) {
-        btnInstallOmni.isEnabled = enabled
-        btnInstallOmniBound.isEnabled = enabled
-        btnInstallOnePiece.isEnabled = enabled
-        btnInstallTensura.isEnabled = enabled
-        btnInstallDragonEvo.isEnabled = enabled
-        btnInstallActualGuns.isEnabled = enabled
-        btnInstallQuirkborn.isEnabled = enabled
-        btnInstallIronMan.isEnabled = enabled
-        btnInstallSpiderMan.isEnabled = enabled
-        btnInstallMarvel.isEnabled = enabled
-        btnInstallDragonBall.isEnabled = enabled
-        btnInstallAoT.isEnabled = enabled
-        btnInstallSoloLeveling.isEnabled = enabled
+    private fun updateMinecraftStatus() {
+        val isInstalled = ModInstaller.isMinecraftInstalled(this)
+        if (isInstalled) {
+            tvMinecraftStatus.text = "🟢 Minecraft Bedrock Installed"
+            tvMinecraftStatus.setTextColor(0xFF34D399.toInt())
+            btnQuickLaunchMc.text = "🎮 Open MC"
+        } else {
+            tvMinecraftStatus.text = "⚠️ Minecraft PE Not Found (Tap to Get)"
+            tvMinecraftStatus.setTextColor(0xFFFBBF24.toInt())
+            btnQuickLaunchMc.text = "📥 Get MC"
+        }
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == PermissionHelper.REQUEST_CODE_STORAGE) {
-            val allGranted = grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }
-            if (allGranted) {
-                Toast.makeText(this, "Permission granted! Tap any mod to install.", Toast.LENGTH_SHORT).show()
+    private fun handleModInstall(mod: ModItem) {
+        mainProgressBar.visibility = View.VISIBLE
+        modAdapter.setImporting(mod.id)
+        tvBottomInfo.text = "⏳ Extracting & launching ${mod.title}..."
+
+        ModInstaller.installMod(
+            context = this,
+            assetFileName = mod.assetFileName,
+            modTitle = mod.title,
+            onProgress = { step ->
+                tvBottomInfo.text = "⏳ $step"
+            },
+            onComplete = { success, message ->
+                mainProgressBar.visibility = View.GONE
+                modAdapter.setImporting(null)
+                tvBottomInfo.text = "💡 Enable 'Beta APIs' in Minecraft World Settings"
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+            }
+        )
+    }
+
+    private fun setupCacheCleaner() {
+        btnClearCache.setOnClickListener {
+            val freed = ModInstaller.clearModCache(this)
+            val mb = freed / (1024.0 * 1024.0)
+            if (freed > 0) {
+                Toast.makeText(this, String.format("🧹 Cleared %.1f MB of cached mod files!", mb), Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Permission is required to import into Minecraft.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "🧹 Cache is already clean!", Toast.LENGTH_SHORT).show()
             }
         }
     }
