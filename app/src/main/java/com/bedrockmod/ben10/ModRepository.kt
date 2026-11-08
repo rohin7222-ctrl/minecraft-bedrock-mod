@@ -5,6 +5,18 @@ object ModRepository {
     fun getModList(): List<ModItem> {
         return listOf(
             ModItem(
+                id = "demon_slayer",
+                title = "DEMON SLAYER: CINEMATIC BREATHING",
+                category = ModCategory.ANIME,
+                badge = "🗡️ BREATHING STYLES • NICHIRIN BLADES",
+                desc = "Demon Slayer in Minecraft Bedrock! Master Sun, Water, Thunder & Flame Breathing, forge custom Nichirin swords, equip Demon Slayer Corps uniforms, and battle Muzan & Upper Moon Demons!",
+                sizeText = "💾 2.9 MB",
+                iconEmoji = "🗡️",
+                assetFileName = ModInstaller.ASSET_DEMON_SLAYER,
+                buttonBgRes = R.drawable.btn_demonslayer_crimson,
+                buttonText = "🔥 IMPORT DEMON SLAYER 🔥"
+            ),
+            ModItem(
                 id = "dragonball_spark",
                 title = "DRAGON BALL: SPARKING",
                 category = ModCategory.ANIME,
@@ -163,3 +175,4 @@ object ModRepository {
         )
     }
 }
+

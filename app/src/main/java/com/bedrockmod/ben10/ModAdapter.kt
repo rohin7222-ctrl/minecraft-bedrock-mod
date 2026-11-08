@@ -106,3 +106,4 @@ class ModAdapter(
 
     fun getDisplayedCount(): Int = displayedMods.size
 }
+
