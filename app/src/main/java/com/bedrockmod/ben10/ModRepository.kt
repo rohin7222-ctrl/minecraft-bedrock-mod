@@ -77,6 +77,18 @@ object ModRepository {
                 buttonText = "⚡ IMPORT BEN 10 V6 ⚡"
             ),
             ModItem(
+                id = "ben10_v7",
+                title = "BEN 10 ADDON V7 (ULTIMATRIX EDITION)",
+                category = ModCategory.BEN10,
+                badge = "⚡ 3D ULTIMATRIX GAUNTLET • HOLOGRAM DIAL",
+                desc = "Brand new v7 Ultimatrix Edition! Features custom 3D Ultimatrix forearm gauntlet model, holographic alien dial projections hovering over the dial face, modern Beta Script Engine, and full 1.20.80 - 1.21+ Bedrock compatibility!",
+                sizeText = "💾 2.5 MB",
+                iconEmoji = "🌌",
+                assetFileName = ModInstaller.ASSET_BEN10_V7,
+                buttonBgRes = R.drawable.btn_ben10_v7_neon,
+                buttonText = "🌌 IMPORT BEN 10 V7 🌌"
+            ),
+            ModItem(
                 id = "omni_evolution",
                 title = "BEN 10: OMNI EVOLUTION",
                 category = ModCategory.BEN10,
