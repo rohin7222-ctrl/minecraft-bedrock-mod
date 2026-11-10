@@ -33,13 +33,34 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BEDROCK MOD HUB"
-                android:textColor="@color/text_white"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BEDROCK MOD HUB"
+                    android:textColor="@color/text_white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/badge_size_background"
+                    android:paddingStart="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:text="15 MODS"
+                    android:textColor="@color/omnitrix_glow"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvMinecraftStatus"
@@ -112,7 +133,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="Search 14 mods (e.g. Tanjiro, Goku, Titan, Spider)..."
+                android:hint="Search 15 mods (e.g. Ben 10, Goku, Tanjiro, Spider)..."
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:maxLines="1"
@@ -152,7 +173,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="🌟 All (14)"
+                    android:text="🌟 All (15)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBen10"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👽 Ben 10 (3)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"
@@ -185,7 +217,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⚔️ Action &amp; Sci-Fi (4)"
+                    android:text="⚔️ Weapons &amp; Quirk (2)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"

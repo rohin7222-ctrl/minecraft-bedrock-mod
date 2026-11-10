@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         // Category Filter Chips
         chipGroupCategories.setOnCheckedChangeListener { _, checkedId ->
             selectedCategory = when (checkedId) {
+                R.id.chipBen10 -> ModCategory.BEN10
                 R.id.chipAnime -> ModCategory.ANIME
                 R.id.chipSuperhero -> ModCategory.SUPERHERO
                 R.id.chipAction -> ModCategory.ACTION
@@ -155,6 +156,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupCacheCleaner() {
+        tvBottomInfo.setOnClickListener {
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("💡 Minecraft Bedrock Setup Guide")
+                .setMessage("1. Tap any mod to export and launch Minecraft.\n2. In Minecraft World Settings:\n   • Activate Behavior Pack\n   • Activate Resource Pack\n3. Under 'Experiments', turn ON:\n   • Beta APIs\n4. Enjoy the mods in 60 FPS!")
+                .setPositiveButton("🎮 Got it!", null)
+                .show()
+        }
+
         btnClearCache.setOnClickListener {
             val freed = ModInstaller.clearModCache(this)
             val mb = freed / (1024.0 * 1024.0)

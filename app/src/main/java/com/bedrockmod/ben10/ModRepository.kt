@@ -53,9 +53,21 @@ object ModRepository {
                 buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
             ),
             ModItem(
+                id = "ben10_v6",
+                title = "BEN 10 ADDON V6 (FIXED EDITION)",
+                category = ModCategory.BEN10,
+                badge = "⚡ CLASSIC & AF ALIENS • V6 COMPLETE",
+                desc = "The legendary Ben 10 Addon v6! Full roster of classic and Alien Force transformations, authentic Omnitrix dial animations, custom alien combat abilities, and cinematic sound FX!",
+                sizeText = "💾 2.4 MB",
+                iconEmoji = "👽",
+                assetFileName = ModInstaller.ASSET_BEN10_V6,
+                buttonBgRes = R.drawable.btn_ben10_v6_neon,
+                buttonText = "⚡ IMPORT BEN 10 V6 ⚡"
+            ),
+            ModItem(
                 id = "omni_evolution",
                 title = "BEN 10: OMNI EVOLUTION",
-                category = ModCategory.ACTION,
+                category = ModCategory.BEN10,
                 badge = "🧬 OMNI EVOLUTION BETA",
                 desc = "Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and extra alien variants.",
                 sizeText = "💾 1.4 MB",
@@ -67,7 +79,7 @@ object ModRepository {
             ModItem(
                 id = "omni_bound",
                 title = "OMNI-BOUND: FASTER SWITCHING",
-                category = ModCategory.ACTION,
+                category = ModCategory.BEN10,
                 badge = "⚡ INSTANT SWITCHING • 50+ ALIENS",
                 desc = "High-speed Omni-Bound v1.5.2! Instant quick-switch alien dials, ultimate forms, custom boss raids, drone attacks, and cinematic transformation sequences.",
                 sizeText = "💾 18.4 MB",

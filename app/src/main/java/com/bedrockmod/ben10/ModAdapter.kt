@@ -63,7 +63,8 @@ class ModAdapter(
             mod.buttonBgRes == R.drawable.btn_quirkborn_yellow ||
             mod.buttonBgRes == R.drawable.btn_omnibound_lime ||
             mod.buttonBgRes == R.drawable.btn_onepiece_orange ||
-            mod.buttonBgRes == R.drawable.btn_omni_blue
+            mod.buttonBgRes == R.drawable.btn_omni_blue ||
+            mod.buttonBgRes == R.drawable.btn_ben10_v6_neon
         ) {
             holder.btnImport.setTextColor(0xFF050B14.toInt())
         } else {
