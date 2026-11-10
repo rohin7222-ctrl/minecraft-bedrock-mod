@@ -66,10 +66,10 @@ object ModRepository {
             ),
             ModItem(
                 id = "ben10_v6",
-                title = "BEN 10 ADDON V6 (FIXED EDITION)",
+                title = "BEN 10 ADDON V6 (MODERN BEDROCK)",
                 category = ModCategory.BEN10,
-                badge = "⚡ CLASSIC & AF ALIENS • V6 COMPLETE",
-                desc = "The legendary Ben 10 Addon v6! Full roster of classic and Alien Force transformations, authentic Omnitrix dial animations, custom alien combat abilities, and cinematic sound FX!",
+                badge = "⚡ MODERN 1.21+ • BETA APIS ONLY",
+                desc = "Upgraded for Minecraft Bedrock 1.20+ & 1.21+! Classic & Alien Force aliens, dial animations, alien combat abilities, sound FX, powered by modern Beta APIs with zero Holiday Creator Features needed!",
                 sizeText = "💾 2.4 MB",
                 iconEmoji = "👽",
                 assetFileName = ModInstaller.ASSET_BEN10_V6,

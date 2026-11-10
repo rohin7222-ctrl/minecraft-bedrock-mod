@@ -7,8 +7,8 @@
 
 1. **⚡ Ben 10: Omni NR (Rypelas Edition)**
    - The high-tech Ben 10 Omni NR addon! Transform into Heatblast, Diamondhead, XLR8, Shockrock, Stinkfly, fight Kevin boss & Mechadroids, powered by modern Bedrock Script API!
-2. **⚡ Ben 10: Addon v6 Fixed Edition (Complete)**
-   - The legendary Ben 10 Addon v6! Full roster of classic & Alien Force transformations, authentic Omnitrix dial animations, alien combat abilities, and sound FX!
+2. **⚡ Ben 10: Addon v6 (Modern Bedrock Edition)**
+   - The modernized Ben 10 Addon v6! Completely upgraded for Minecraft Bedrock 1.20+ & 1.21+ with Beta APIs (No Holiday Creator Features needed), modern command syntax, and Beta API scripting!
 3. **🔥 Demon Slayer: Cinematic Breathing (v1.0.15)**
    - Master Sun, Water, Thunder & Flame Breathing, craft custom Nichirin swords, equip Demon Slayer Corps uniforms, and battle Muzan & Upper Moon Demons!
 4. **🧬 Ben 10: Omni Evolution (Beta Addon)**
