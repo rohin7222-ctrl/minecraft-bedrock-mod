@@ -159,7 +159,7 @@ class MainActivity : AppCompatActivity() {
         tvBottomInfo.setOnClickListener {
             androidx.appcompat.app.AlertDialog.Builder(this)
                 .setTitle("💡 Minecraft Bedrock Setup Guide")
-                .setMessage("1. Tap any mod to export and launch Minecraft.\n2. In Minecraft World Settings:\n   • Activate Behavior Pack\n   • Activate Resource Pack\n3. Under 'Experiments', turn ON:\n   • Beta APIs\n4. Enjoy the mods in 60 FPS!")
+                .setMessage("1. Tap any mod to export and launch Minecraft.\n2. In Minecraft World Settings:\n   • Activate Behavior Pack\n   • Activate Resource Pack\n3. Under 'Experiments', turn ON:\n   • Beta APIs (Required for modern GameTest scripts)\n   *(Note: 'Holiday Creator Features' was removed by Mojang in modern Bedrock)*\n4. Enjoy the mods in 60 FPS!")
                 .setPositiveButton("🎮 Got it!", null)
                 .show()
         }

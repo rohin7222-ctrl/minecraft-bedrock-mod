@@ -53,6 +53,18 @@ object ModRepository {
                 buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
             ),
             ModItem(
+                id = "ben10_omni_nr",
+                title = "BEN 10: OMNI NR (RYPELAS)",
+                category = ModCategory.BEN10,
+                badge = "⚡ HEATBLAST • DIAMONDHEAD • XLR8",
+                desc = "The popular Omni NR Bedrock Addon by Rypelas! Transform into Heatblast, Diamondhead, XLR8, Shockrock, Stinkfly, fight Kevin & Mechadroids, powered by modern Bedrock Script API!",
+                sizeText = "💾 4.3 MB",
+                iconEmoji = "⚡",
+                assetFileName = ModInstaller.ASSET_BEN10_OMNI_NR,
+                buttonBgRes = R.drawable.btn_ben10_omni_nr_neon,
+                buttonText = "⚡ IMPORT OMNI NR ⚡"
+            ),
+            ModItem(
                 id = "ben10_v6",
                 title = "BEN 10 ADDON V6 (FIXED EDITION)",
                 category = ModCategory.BEN10,

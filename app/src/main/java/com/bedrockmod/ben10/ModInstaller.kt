@@ -31,6 +31,7 @@ object ModInstaller {
     const val ASSET_SOLO_LEVELING = "Solo_Leveling_v1.0.6.mcaddon"
     const val ASSET_DEMON_SLAYER = "Demon_Slayer.mcaddon"
     const val ASSET_BEN10_V6 = "Ben10_Addon_v6.mcaddon"
+    const val ASSET_BEN10_OMNI_NR = "Ben10_Omni_NR.mcaddon"
 
     private val mainHandler = Handler(Looper.getMainLooper())
 
