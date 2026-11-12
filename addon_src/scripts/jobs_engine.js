@@ -5,7 +5,7 @@
  * 6 Autonomous Job Roles:
  * 1. 🪓 Woodcutter (Smart axe tiering, tree felling, raw logs supply)
  * 2. ⛏️ Miner (Smart pickaxe tiering, stone & ore extraction for Crafter)
- * 3. 🔨 Crafter (Planks, sticks, tools, chests, and beds with wool)
+ * 3. 🔨 Crafter (Stone furnace/adupu crafting, ore smelting & tool forging)
  * 4. 📦 Storage Manager (Chest overflow expansion & physical placement)
  * 5. 🏗️ Builder (Cottage & bed construction, idle architectural upgrades)
  * 6. 🏹 Hunter & Shepherd (Sheep shearing & wool supply for beds)
@@ -26,6 +26,7 @@ import {
   constructResidentialCottage,
   executeVillageArchitecturalUpgrade,
   placeDepotExpansionChest,
+  placeDepotFurnace,
   getRandomArchitecturalThought
 } from "./architect_builder.js";
 
@@ -55,22 +56,12 @@ export function simulateCatchUp(terr, elapsedSeconds, dimension = null, player =
   sh.cobblestone = (sh.cobblestone || 0) + addedStone;
   sh.coal = (sh.coal || 0) + addedCoal;
 
-  let addedOres = 0;
   if ((sh.iron_pickaxes || 0) > 0) {
-    const addedIron = Math.floor(cycles * 0.8);
-    const addedRedstone = Math.floor(cycles * 0.3);
-    const addedDiamonds = Math.floor(cycles * 0.15);
-    sh.iron_ore = (sh.iron_ore || 0) + addedIron;
-    sh.redstone = (sh.redstone || 0) + addedRedstone;
-    sh.diamonds = (sh.diamonds || 0) + addedDiamonds;
-    addedOres = addedIron + addedDiamonds;
+    sh.iron_ore = (sh.iron_ore || 0) + Math.floor(cycles * 0.8);
+    sh.redstone = (sh.redstone || 0) + Math.floor(cycles * 0.3);
+    sh.diamonds = (sh.diamonds || 0) + Math.floor(cycles * 0.15);
   } else {
     sh.iron_ore = (sh.iron_ore || 0) + Math.floor(cycles * 0.3);
-    // Request Storage Manager to craft iron pickaxe if iron is available
-    if (sh.iron_ore >= 3 && sh.planks >= 2) {
-      sh.iron_ore -= 3;
-      sh.iron_pickaxes = (sh.iron_pickaxes || 0) + 1;
-    }
   }
 
   // 3. 🏹 Hunter & Shepherd Yields (6th AI)
@@ -79,16 +70,41 @@ export function simulateCatchUp(terr, elapsedSeconds, dimension = null, player =
   sh.wool = (sh.wool || 0) + addedWool;
   sh.food = (sh.food || 0) + addedFood;
 
-  // 4. 🔨 Crafter Conversions
+  // 4. 🔨 Crafter: Furnace (Adupu) Crafting & Ore Smelting
+  if ((sh.cobblestone || 0) >= 16 && (sh.furnacesPlaced || 1) < 2) {
+    sh.cobblestone -= 8;
+    sh.furnacesPlaced = (sh.furnacesPlaced || 1) + 1;
+    if (dimension) placeDepotFurnace(dimension, terr, sh.furnacesPlaced);
+  }
+
+  // Smelt raw iron ores into refined iron ingots
+  const smeltable = Math.min(Math.floor((sh.iron_ore || 0) / 2), (sh.coal || 0), Math.floor(cycles * 0.8));
+  if (smeltable > 0) {
+    sh.iron_ore -= smeltable * 2;
+    sh.coal -= smeltable;
+    sh.iron_ingots = (sh.iron_ingots || 0) + smeltable * 2;
+  }
+
+  // Saw logs into planks
   if (sh.logs >= 4) {
     const logsConverted = Math.min(Math.floor(sh.logs / 2), Math.floor(cycles * 1.5));
     sh.logs -= logsConverted * 2;
     sh.planks = (sh.planks || 0) + logsConverted * 8;
   }
 
-  // Reforge broken tools
-  sh.axes = Math.max(sh.axes || 0, 4);
-  sh.pickaxes = Math.max(sh.pickaxes || 0, 4);
+  // Forge advanced tools using refined iron ingots
+  if ((sh.iron_ingots || 0) >= 3) {
+    sh.iron_ingots -= 3;
+    sh.iron_pickaxes = (sh.iron_pickaxes || 0) + 1;
+  }
+  if ((sh.iron_ingots || 0) >= 3) {
+    sh.iron_ingots -= 3;
+    sh.iron_axes = (sh.iron_axes || 0) + 1;
+  }
+  if ((sh.iron_ingots || 0) >= 2) {
+    sh.iron_ingots -= 2;
+    sh.shears = (sh.shears || 0) + 1;
+  }
 
   // Craft Residential Kits with Beds using Wool
   if ((sh.wool || 0) >= 3 && (sh.planks || 0) >= 6 && (sh.cobblestone || 0) >= 6) {
@@ -101,11 +117,10 @@ export function simulateCatchUp(terr, elapsedSeconds, dimension = null, player =
 
   // 5. 📦 Storage Manager: Chest Expansion Check
   const totalItems = (sh.logs || 0) + (sh.planks || 0) + (sh.cobblestone || 0) +
-    (sh.iron_ore || 0) + (sh.coal || 0) + (sh.diamonds || 0) +
+    (sh.iron_ore || 0) + (sh.iron_ingots || 0) + (sh.coal || 0) + (sh.diamonds || 0) +
     (sh.redstone || 0) + (sh.wool || 0) + (sh.food || 0);
 
   const currentCap = sh.maxCapacity || 200;
-  let newChests = 0;
   if (totalItems >= currentCap) {
     const needed = Math.ceil((totalItems - currentCap) / 100) + 1;
     for (let c = 0; c < needed; c++) {
@@ -113,7 +128,6 @@ export function simulateCatchUp(terr, elapsedSeconds, dimension = null, player =
         sh.planks -= 8;
         sh.chestsPlaced = (sh.chestsPlaced || 1) + 1;
         sh.maxCapacity = (sh.maxCapacity || 200) + 100;
-        newChests++;
         if (dimension) {
           placeDepotExpansionChest(dimension, terr, sh.chestsPlaced);
         }
@@ -133,12 +147,12 @@ export function simulateCatchUp(terr, elapsedSeconds, dimension = null, player =
   sh.upgradesCompleted = (sh.upgradesCompleted || 0) + newUpgrades;
   sh.latestArchitecturalThought = getRandomArchitecturalThought();
 
-  sh.lastActivity = `Simulated Catch-up: Accrued ${addedLogs} logs, ${addedStone} stone, ${addedWool} wool, ${newCottages} cottages`;
+  sh.lastActivity = `Simulated Catch-up: Accrued ${addedLogs} logs, ${addedStone} stone, ${addedWool} wool, ${smeltable * 2} smelted ingots`;
 
   if (player && player.isValid()) {
     player.sendMessage(
       `§6🏛️ [Welcome to ${terr.name}!] §fSimulated Catch-Up (${Math.round(elapsedSeconds)}s away): ` +
-      `§a+${addedLogs} Logs§f, §e+${addedStone} Stone§f, §f+${addedWool} Wool§f, §b+${newCottages} Houses§f! 0% Battery Drain.`
+      `§a+${addedLogs} Logs§f, §e+${addedStone} Stone§f, §f+${addedWool} Wool§f, §b+${smeltable * 2} Iron Ingots§f! 0% Battery Drain.`
     );
   }
 }
@@ -151,6 +165,7 @@ export function initJobsEngine() {
   system.runInterval(() => {
     try {
       for (const player of world.getAllPlayers()) {
+        if (!player || !player.isValid()) continue;
         const villagers = getNearbyVillagers(player.dimension, player.location, 80);
 
         const terrVillagers = new Map();
@@ -210,9 +225,10 @@ export function initJobsEngine() {
         const sh = terr.storehouse;
         if (!sh) continue;
 
-        // Proximity detection
+        // Proximity detection (Overworld only for village settlements)
         let nearbyPlayer = null;
         for (const p of world.getAllPlayers()) {
+          if (!p || !p.isValid() || p.dimension.id !== "minecraft:overworld") continue;
           const dx = p.location.x - terr.centerX;
           const dz = p.location.z - terr.centerZ;
           if (Math.sqrt(dx * dx + dz * dz) <= terr.radius + 50) {
@@ -221,7 +237,6 @@ export function initJobsEngine() {
           }
         }
 
-        // If player just arrived after being away (>1000 blocks or offline), run instant Catch-up!
         if (nearbyPlayer) {
           if (terr.lastActiveTimestamp) {
             const elapsed = (currentTime - terr.lastActiveTimestamp) / 1000;
@@ -231,25 +246,59 @@ export function initJobsEngine() {
           }
           terr.lastActiveTimestamp = currentTime;
 
-          // Perform active incremental tick for local loaded village
+          // Local increment for loaded area
           sh.logs = (sh.logs || 0) + 2;
           sh.cobblestone = (sh.cobblestone || 0) + 3;
           sh.coal = (sh.coal || 0) + 1;
           sh.wool = (sh.wool || 0) + 2;
 
+          // 🔨 Crafter builds Stone Furnace (Adupu) with 8 Cobblestones
+          if ((sh.cobblestone || 0) >= 8 && (sh.furnacesPlaced || 1) < 2) {
+            sh.cobblestone -= 8;
+            sh.furnacesPlaced = (sh.furnacesPlaced || 1) + 1;
+            placeDepotFurnace(nearbyPlayer.dimension, terr, sh.furnacesPlaced);
+            sh.lastActivity = "Crafter constructed a Stone Furnace (Adupu) to smelt raw ores";
+          }
+
+          // 🔨 Crafter smelts raw iron ore into refined iron ingots using coal in furnace
+          if ((sh.iron_ore || 0) >= 2 && (sh.coal || 0) >= 1) {
+            sh.iron_ore -= 2;
+            sh.coal -= 1;
+            sh.iron_ingots = (sh.iron_ingots || 0) + 2;
+            sh.lastActivity = "Crafter smelted 2 Iron Ores into refined Iron Ingots using the Furnace";
+          }
+
+          // Forge refined iron tools
+          if ((sh.iron_ingots || 0) >= 3 && (sh.iron_pickaxes || 0) < 2 && (sh.planks || 0) >= 2) {
+            sh.iron_ingots -= 3;
+            sh.planks -= 2;
+            sh.iron_pickaxes = (sh.iron_pickaxes || 0) + 1;
+          }
+          if ((sh.iron_ingots || 0) >= 3 && (sh.iron_axes || 0) < 2 && (sh.planks || 0) >= 2) {
+            sh.iron_ingots -= 3;
+            sh.planks -= 2;
+            sh.iron_axes = (sh.iron_axes || 0) + 1;
+          }
+
+          // Convert logs to planks
           if (sh.logs >= 2) {
             sh.logs -= 2;
             sh.planks = (sh.planks || 0) + 8;
           }
 
+          // Housing Construction
           if (sh.building_kits > 0 && (sh.bedsPlaced || 2) < (sh.housesBuilt || 1) + 2) {
             const plotX = Math.floor(terr.centerX + (Math.random() * 24 - 12));
             const plotZ = Math.floor(terr.centerZ + (Math.random() * 24 - 12));
-            const safeY = findSafeElevation(nearbyPlayer.dimension, plotX, terr.centerY, plotZ);
-            constructResidentialCottage(nearbyPlayer.dimension, plotX, safeY, plotZ);
-            sh.building_kits -= 1;
-            sh.housesBuilt = (sh.housesBuilt || 1) + 1;
-            sh.bedsPlaced = (sh.bedsPlaced || 2) + 1;
+            const safeY = findSafeElevation(nearbyPlayer.dimension, plotX, terr.centerY, plotZ, false);
+            if (safeY !== null) {
+              const built = constructResidentialCottage(nearbyPlayer.dimension, plotX, safeY, plotZ);
+              if (built) {
+                sh.building_kits -= 1;
+                sh.housesBuilt = (sh.housesBuilt || 1) + 1;
+                sh.bedsPlaced = (sh.bedsPlaced || 2) + 1;
+              }
+            }
           } else {
             sh.latestArchitecturalThought = getRandomArchitecturalThought();
             if (Math.random() < 0.35) {

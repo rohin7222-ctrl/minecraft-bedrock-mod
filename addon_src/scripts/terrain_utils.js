@@ -35,7 +35,7 @@ export function isAirOrPassable(block) {
   return false;
 }
 
-export function findSafeElevation(dimension, x, startY, z) {
+export function findSafeElevation(dimension, x, startY, z, fallbackToStart = true) {
   const intX = Math.floor(x);
   const intZ = Math.floor(z);
   const baseY = Math.floor(startY);
@@ -52,7 +52,7 @@ export function findSafeElevation(dimension, x, startY, z) {
       }
     } catch (_) {}
   }
-  return startY;
+  return fallbackToStart ? startY : null;
 }
 
 export function getPlayerHeldItemName(player) {

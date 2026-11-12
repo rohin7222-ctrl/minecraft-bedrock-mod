@@ -11,8 +11,8 @@ android {
         applicationId "com.bedrockmod.ben10"
         minSdk 21
         targetSdk 34
-        versionCode 67
-        versionName "1.0.67"
+        versionCode 69
+        versionName "1.0.69"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

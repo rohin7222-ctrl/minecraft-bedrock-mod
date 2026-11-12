@@ -70,8 +70,9 @@ export function generateTopicDialogue(villager, player, topicKey) {
         );
       } else if (agent.jobRole.id === "crafter") {
         return (
-          `"Welcome to the workshop! As ${agent.jobRole.title}, I shape raw logs into planks and forge sturdy axes for Woodcutters and pickaxes for Miners. ` +
-          `I also assemble architectural kits with cozy beds for our Builder. Everything we craft flows directly into our communal storehouse!"` +
+          `"Welcome to the workshop! As ${agent.jobRole.title}, I craft stone furnaces (adupu) using 8 cobblestones, firing them with coal to smelt raw iron ores into refined iron ingots! ` +
+          `From these glowing ingots, I forge sturdy iron pickaxes for Miners, sharp axes for Woodcutters, and shears for Shepherds. ` +
+          `I also combine harvested wool and planks to assemble cozy beds for our Builder!"` +
           heldItemFlavor
         );
       } else if (agent.jobRole.id === "storage_manager") {
@@ -269,7 +270,9 @@ export async function openStorehouseLedgerView(player, villager) {
       `§6Executive Communal Inventory & Supply Chain:\n\n` +
       `§f• 🪵 Timber Logs: §a${sh.logs}§f | Planks: §a${sh.planks}§f\n` +
       `• 🪨 Cobblestone: §a${sh.cobblestone}§f | Coal: §8${sh.coal}§f\n` +
-      `• ⛏️ Iron Ore: §e${sh.iron_ore}§f | Diamonds: §b${sh.diamonds}§f | Redstone: §c${sh.redstone || 0}§f\n` +
+      `• ⛏️ Raw Iron Ore: §e${sh.iron_ore}§f | ⛓️ Refined Iron Ingots: §f${sh.iron_ingots || 0}§f\n` +
+      `• 🔥 Stone Furnaces (Adupu): §6${sh.furnacesPlaced || 1} Operational Smelting Hearths§f\n` +
+      `• 💎 Diamonds: §b${sh.diamonds}§f | Redstone: §c${sh.redstone || 0}§f\n` +
       `• 🧶 Harvested Wool: §f${sh.wool || 0}§f | Provisions: §f${sh.food || 0}§f (Supplied by Hunters)\n` +
       `• 🪓 Ready Axes: §a${sh.axes}§f | ⛏️ Ready Pickaxes: §a${sh.pickaxes}§f\n` +
       `• 📦 Depot Chests: §e${sh.chestsPlaced || 1} Placed§f | Capacity: §a${sh.maxCapacity || 200} Items§f\n` +
