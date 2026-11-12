@@ -5,64 +5,16 @@ object ModRepository {
     fun getModList(): List<ModItem> {
         return listOf(
             ModItem(
-                id = "demon_slayer",
-                title = "DEMON SLAYER: CINEMATIC BREATHING",
-                category = ModCategory.ANIME,
-                badge = "🗡️ BREATHING STYLES • NICHIRIN BLADES",
-                desc = "Demon Slayer in Minecraft Bedrock! Master Sun, Water, Thunder & Flame Breathing, forge custom Nichirin swords, equip Demon Slayer Corps uniforms, and battle Muzan & Upper Moon Demons!",
-                sizeText = "💾 2.9 MB",
-                iconEmoji = "🗡️",
-                assetFileName = ModInstaller.ASSET_DEMON_SLAYER,
-                buttonBgRes = R.drawable.btn_demonslayer_crimson,
-                buttonText = "🔥 IMPORT DEMON SLAYER 🔥"
-            ),
-            ModItem(
-                id = "dragonball_spark",
-                title = "DRAGON BALL: SPARKING",
-                category = ModCategory.ANIME,
-                badge = "💥 SAIYAN FORMS • KAMEHAMEHA",
-                desc = "Dragon Ball Sparking in Minecraft Bedrock! Awaken Super Saiyan transformations, charge your ki aura, launch explosive Kamehameha blasts, and battle legendary DBZ warriors!",
-                sizeText = "💾 2.0 MB",
-                iconEmoji = "💥",
-                assetFileName = ModInstaller.ASSET_DRAGON_BALL_SPARK,
-                buttonBgRes = R.drawable.btn_dragonball_orange,
-                buttonText = "💥 IMPORT DRAGON BALL SPARK 💥"
-            ),
-            ModItem(
-                id = "attack_on_titan",
-                title = "ATTACK ON TITAN: WINGS OF FREEDOM",
-                category = ModCategory.ANIME,
-                badge = "⚔️ 3D MANEUVER GEAR • SHIFTERS",
-                desc = "Dedicate your heart! Equip 3D Maneuver (ODM) Gear with fluid grapple mechanics, dual thunder spears, transform into the Attack Titan, and defend the Walls from Titans!",
-                sizeText = "💾 104 KB",
-                iconEmoji = "⚔️",
-                assetFileName = ModInstaller.ASSET_ATTACK_ON_TITAN,
-                buttonBgRes = R.drawable.btn_aot_green,
-                buttonText = "⚔️ IMPORT ATTACK ON TITAN ⚔️"
-            ),
-            ModItem(
-                id = "solo_leveling",
-                title = "SOLO LEVELING V1.0.6",
-                category = ModCategory.ANIME,
-                badge = "🗡️ SHADOW MONARCH • DUNGEONS",
-                desc = "Arise as the Shadow Monarch! Awaken Jinwoo's Hunter System, complete daily quests, level up stats, clear red gates & dungeons, and extract defeated enemies as loyal Shadow Soldiers!",
-                sizeText = "💾 4.2 MB",
-                iconEmoji = "🗡️",
-                assetFileName = ModInstaller.ASSET_SOLO_LEVELING,
-                buttonBgRes = R.drawable.btn_sololeveling_darkpurple,
-                buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
-            ),
-            ModItem(
-                id = "ben10_omni_nr",
-                title = "BEN 10: OMNI NR (RYPELAS)",
+                id = "ben10_v7",
+                title = "BEN 10 ADDON V7 (ULTIMATRIX EDITION)",
                 category = ModCategory.BEN10,
-                badge = "⚡ HEATBLAST • DIAMONDHEAD • XLR8",
-                desc = "The popular Omni NR Bedrock Addon by Rypelas! Transform into Heatblast, Diamondhead, XLR8, Shockrock, Stinkfly, fight Kevin & Mechadroids, powered by modern Bedrock Script API!",
-                sizeText = "💾 4.3 MB",
-                iconEmoji = "⚡",
-                assetFileName = ModInstaller.ASSET_BEN10_OMNI_NR,
-                buttonBgRes = R.drawable.btn_ben10_omni_nr_neon,
-                buttonText = "⚡ IMPORT OMNI NR ⚡"
+                badge = "⚡ 3D ULTIMATRIX GAUNTLET • HOLOGRAM DIAL",
+                desc = "Brand new v7 Ultimatrix Edition! Features custom 3D Ultimatrix forearm gauntlet model, holographic alien dial projections hovering over the dial face, modern Beta Script Engine, and full 1.20.80 - 1.21+ Bedrock compatibility!",
+                sizeText = "💾 2.5 MB",
+                iconEmoji = "🌌",
+                assetFileName = ModInstaller.ASSET_BEN10_V7,
+                buttonBgRes = R.drawable.btn_ben10_v7_neon,
+                buttonText = "🌌 IMPORT BEN 10 V7 🌌"
             ),
             ModItem(
                 id = "ben10_v6",
@@ -77,16 +29,28 @@ object ModRepository {
                 buttonText = "⚡ IMPORT BEN 10 V6 ⚡"
             ),
             ModItem(
-                id = "ben10_v7",
-                title = "BEN 10 ADDON V7 (ULTIMATRIX EDITION)",
-                category = ModCategory.BEN10,
-                badge = "⚡ 3D ULTIMATRIX GAUNTLET • HOLOGRAM DIAL",
-                desc = "Brand new v7 Ultimatrix Edition! Features custom 3D Ultimatrix forearm gauntlet model, holographic alien dial projections hovering over the dial face, modern Beta Script Engine, and full 1.20.80 - 1.21+ Bedrock compatibility!",
-                sizeText = "💾 2.5 MB",
-                iconEmoji = "🌌",
-                assetFileName = ModInstaller.ASSET_BEN10_V7,
-                buttonBgRes = R.drawable.btn_ben10_v7_neon,
-                buttonText = "🌌 IMPORT BEN 10 V7 🌌"
+                id = "dragonball_spark",
+                title = "DRAGON BALL: SPARKING",
+                category = ModCategory.ANIME,
+                badge = "💥 SAIYAN FORMS • KAMEHAMEHA",
+                desc = "Dragon Ball Sparking in Minecraft Bedrock! Awaken Super Saiyan transformations, charge your ki aura, launch explosive Kamehameha blasts, and battle legendary DBZ warriors!",
+                sizeText = "💾 2.0 MB",
+                iconEmoji = "💥",
+                assetFileName = ModInstaller.ASSET_DRAGON_BALL_SPARK,
+                buttonBgRes = R.drawable.btn_dragonball_orange,
+                buttonText = "💥 IMPORT DRAGON BALL SPARK 💥"
+            ),
+            ModItem(
+                id = "solo_leveling",
+                title = "SOLO LEVELING V1.0.6",
+                category = ModCategory.ANIME,
+                badge = "🗡️ SHADOW MONARCH • DUNGEONS",
+                desc = "Arise as the Shadow Monarch! Awaken Jinwoo's Hunter System, complete daily quests, level up stats, clear red gates & dungeons, and extract defeated enemies as loyal Shadow Soldiers!",
+                sizeText = "💾 4.2 MB",
+                iconEmoji = "🗡️",
+                assetFileName = ModInstaller.ASSET_SOLO_LEVELING,
+                buttonBgRes = R.drawable.btn_sololeveling_darkpurple,
+                buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
             ),
             ModItem(
                 id = "omni_evolution",
