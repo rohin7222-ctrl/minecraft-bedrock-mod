@@ -69,47 +69,38 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Ultimate UI/UX 14-Mod Edition)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Ultimate UI/UX 11-Mod Edition)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub (14 Epic Addons 1-Click Installer)
-            Now includes 14 legendary Bedrock Addons with 1-Click direct Minecraft launching:
+            ## 🟢 Minecraft Bedrock Mod Hub (11 Epic Addons 1-Click Installer)
+            Now includes 11 legendary Bedrock Addons with 1-Click direct Minecraft launching:
             
-            1. **🌌 Ben 10: Addon v7 (Ultimatrix Edition)**
-               - Brand new v7 Ultimatrix Edition! Features custom 3D Ultimatrix forearm gauntlet model, holographic alien dial projections hovering over the dial face, modern Beta Script Engine, alien powers, and full 1.20.80 - 1.21+ Bedrock compatibility!
-            2. **⚡ Ben 10: Addon v6 (Modern Bedrock Edition)**
-               - The modernized Ben 10 Addon v6! Completely upgraded for Minecraft Bedrock 1.20+ and 1.21+ with Beta APIs, zero Holiday Creator Features dependency, clean single-alien state transitions, working alien powers, and precision Beta API scripting!
-            3. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+            1. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien variants.
-            4. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+            2. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
                - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            5. **💥 Dragon Ball: Sparking Addon**
-               - Super Saiyan transformations, energy charging ki aura, explosive Kamehameha & Spirit Bomb attacks, and custom DBZ warriors!
-            6. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+            3. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
                - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            7. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+            4. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            8. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            5. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            9. **🐉 Dragon Evolution (v1.5.0)**
+            6. **🐉 Dragon Evolution (v1.5.0)**
                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            10. **🔫 Actual Guns 2: 3D Tactical**
+            7. **🔫 Actual Guns 2: 3D Tactical**
                - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            11. **⚡ Quirkborn: My Hero Academia (v1.515)**
+            8. **⚡ Quirkborn: My Hero Academia (v1.515)**
                - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            12. **🤖 Iron Man: Armor Wars Addon**
+            9. **🤖 Iron Man: Armor Wars Addon**
                - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            13. **🕷️ Spider-Man: Web of Shadows Addon**
-               - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            14. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
-               - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
+            10. **🕷️ Spider-Man: Web of Shadows Addon**
+                - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
+            11. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
+                - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
-            - **Direct Ben 10 v7 Ultimatrix Addon**: Download `Ben10_Addon_v7.mcaddon`
-            - **Direct Ben 10 v6 Addon**: Download `Ben10_Addon_v6.mcaddon`
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
             - **Direct Omni Bound Addon**: Download `Omni_Bound_v1.5.2.mcaddon`
-            - **Direct Dragon Ball Spark Addon**: Download `Dragon_Ball_Spark.mcaddon`
             - **Direct Solo Leveling Addon**: Download `Solo_Leveling_v1.0.6.mcaddon`
             - **Direct One Piece Addon**: Download `OnePiece_Bedrock_Edition_v76.mcaddon`
             - **Direct Tensura Requiem Addon**: Download `Tensura_Reincarnated_Requiem_v4.mcaddon`

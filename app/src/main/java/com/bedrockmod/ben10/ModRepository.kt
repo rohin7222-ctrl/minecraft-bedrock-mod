@@ -5,54 +5,6 @@ object ModRepository {
     fun getModList(): List<ModItem> {
         return listOf(
             ModItem(
-                id = "ben10_v7",
-                title = "BEN 10 ADDON V7 (ULTIMATRIX EDITION)",
-                category = ModCategory.BEN10,
-                badge = "⚡ 3D ULTIMATRIX GAUNTLET • HOLOGRAM DIAL",
-                desc = "Brand new v7 Ultimatrix Edition! Features custom 3D Ultimatrix forearm gauntlet model, holographic alien dial projections hovering over the dial face, modern Beta Script Engine, and full 1.20.80 - 1.21+ Bedrock compatibility!",
-                sizeText = "💾 2.5 MB",
-                iconEmoji = "🌌",
-                assetFileName = ModInstaller.ASSET_BEN10_V7,
-                buttonBgRes = R.drawable.btn_ben10_v7_neon,
-                buttonText = "🌌 IMPORT BEN 10 V7 🌌"
-            ),
-            ModItem(
-                id = "ben10_v6",
-                title = "BEN 10 ADDON V6 (MODERN BEDROCK)",
-                category = ModCategory.BEN10,
-                badge = "⚡ MODERN 1.21+ • BETA APIS ONLY",
-                desc = "Upgraded for Minecraft Bedrock 1.20+ & 1.21+! Classic & Alien Force aliens, dial animations, alien combat abilities, sound FX, powered by modern Beta APIs with zero Holiday Creator Features needed!",
-                sizeText = "💾 2.4 MB",
-                iconEmoji = "👽",
-                assetFileName = ModInstaller.ASSET_BEN10_V6,
-                buttonBgRes = R.drawable.btn_ben10_v6_neon,
-                buttonText = "⚡ IMPORT BEN 10 V6 ⚡"
-            ),
-            ModItem(
-                id = "dragonball_spark",
-                title = "DRAGON BALL: SPARKING",
-                category = ModCategory.ANIME,
-                badge = "💥 SAIYAN FORMS • KAMEHAMEHA",
-                desc = "Dragon Ball Sparking in Minecraft Bedrock! Awaken Super Saiyan transformations, charge your ki aura, launch explosive Kamehameha blasts, and battle legendary DBZ warriors!",
-                sizeText = "💾 2.0 MB",
-                iconEmoji = "💥",
-                assetFileName = ModInstaller.ASSET_DRAGON_BALL_SPARK,
-                buttonBgRes = R.drawable.btn_dragonball_orange,
-                buttonText = "💥 IMPORT DRAGON BALL SPARK 💥"
-            ),
-            ModItem(
-                id = "solo_leveling",
-                title = "SOLO LEVELING V1.0.6",
-                category = ModCategory.ANIME,
-                badge = "🗡️ SHADOW MONARCH • DUNGEONS",
-                desc = "Arise as the Shadow Monarch! Awaken Jinwoo's Hunter System, complete daily quests, level up stats, clear red gates & dungeons, and extract defeated enemies as loyal Shadow Soldiers!",
-                sizeText = "💾 4.2 MB",
-                iconEmoji = "🗡️",
-                assetFileName = ModInstaller.ASSET_SOLO_LEVELING,
-                buttonBgRes = R.drawable.btn_sololeveling_darkpurple,
-                buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
-            ),
-            ModItem(
                 id = "omni_evolution",
                 title = "BEN 10: OMNI EVOLUTION",
                 category = ModCategory.BEN10,
@@ -75,6 +27,18 @@ object ModRepository {
                 assetFileName = ModInstaller.ASSET_OMNI_BOUND,
                 buttonBgRes = R.drawable.btn_omnibound_lime,
                 buttonText = "🛸 IMPORT OMNI BOUND 🛸"
+            ),
+            ModItem(
+                id = "solo_leveling",
+                title = "SOLO LEVELING V1.0.6",
+                category = ModCategory.ANIME,
+                badge = "🗡️ SHADOW MONARCH • DUNGEONS",
+                desc = "Arise as the Shadow Monarch! Awaken Jinwoo's Hunter System, complete daily quests, level up stats, clear red gates & dungeons, and extract defeated enemies as loyal Shadow Soldiers!",
+                sizeText = "💾 4.2 MB",
+                iconEmoji = "🗡️",
+                assetFileName = ModInstaller.ASSET_SOLO_LEVELING,
+                buttonBgRes = R.drawable.btn_sololeveling_darkpurple,
+                buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
             ),
             ModItem(
                 id = "one_piece",
@@ -175,4 +139,3 @@ object ModRepository {
         )
     }
 }
-
