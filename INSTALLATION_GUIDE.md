@@ -43,12 +43,23 @@
 
 ## 🏛️ Civilization Addon (Masterpiece Bedrock Edition) - சிறப்பம்சங்கள்:
 
-1. **🏰 கிராம எல்லை & பாதுகாப்பு அமைப்பு (Terrain-Safe Village Territory Lockdown):**
+1. **🏰 கிராம எல்லை, வளர்ச்சி & பாதுகாப்பு அமைப்பு (Territory Lockdown, Village Levels & Mountain AI):**
+   - **🔔 மணி மையப்புள்ளி (Dynamic Bell Center Point):** கிராமத்தின் எல்லை மையப்புள்ளி கிராமத்தின் 'Bell' (`minecraft:bell`) பிளாக்குடன் இணைக்கப்பட்டுள்ளது. பிளேயர்கள் மணியை உடைத்து வேறு இடத்தில் வைத்தால், கிராமத்தின் எல்லை மையமும் தானாகவே புதிய இடத்திற்கு மாறிவிடும்!
+   - **📈 கிராம வளர்ச்சி & எல்லை விரிவாக்கம் (Village Level & Dynamic Border Expansion):**
+     - Villagers சுயமாகக் கற்றுக்கொள்ளும் அறிவின் அடிப்படையில் கிராமம் 4 நிலைகளாக வளர்ச்சி அடையும்:
+       - **Level 1 (Frontier Settlement):** 50 Blocks Radius (0-15 சொற்கள் கற்றல்)
+       - **Level 2 (Flourishing Township):** 75 Blocks Radius (16-35 சொற்கள் கற்றல்)
+       - **Level 3 (Grand Citadel / City):** 100 Blocks Radius (36-50 சொற்கள் கற்றல்)
+       - **Level 4 (Imperial Metropolis):** 130 Blocks Radius (51+ சொற்கள் கற்றல்)
+     - Villagers தலைக்கு மேல் அவர்களின் கிராமப் பெயர் மற்றும் Level தெரியும் (`§b🔔 Valoria (Lvl 2)`).
+   - **⛰️ மலை உச்சி & பள்ளப் பாதுகாப்பு AI (Alpine Mountain Safe-Return AI):**
+     - கிராமம் மலை உச்சியிலோ (Mountain Top / Jagged Cliffs) உருவானால், Villagers கீழே விழுந்து மாட்டிக்கொள்ளாமல் இருக்க Alpine AI கண்காணிக்கும்.
+     - மலை உச்சியிலிருந்து 8 பிளாக்குகளுக்குக் கீழே விழுந்தால் (`altitudeDrop > 8`), அவர்கள் பாதுகாப்பாக Bell உள்ள மலை உச்சிக்குத் திரும்பக் கொண்டுவரப்படுவார்கள் (Zero Fall Damage & Zero Suffocation).
    - **தனித்துவமான பெயர் (Unique Territory Name):** ஒவ்வொரு கிராமத்திற்கும் பிரம்மாண்டமான தனித்துவப் பெயர்கள் தானாகவே உருவாகும் (*The Kingdom of Valoria*, *Solaris Haven*, *The Sovereign Valley of Elysium*).
-   - **நிலவமைப்புக்கேற்ப பாதுகாப்பான எல்லை (Terrain-Safe Lockdown):** 50 blocks சுற்றளவில் எல்லை அமைக்கப்பட்டுள்ளது. மலைகள், பள்ளங்கள் இருந்தாலும் Villagers தரைப்பகுதியில் காலூன்றி நிற்கும் வகையில் Elevation Scanner மூலம் துல்லியமாக உள்ளேயே திருப்பப்படுவார்கள் (Suffocation அல்லது Fall Damage ஏற்படாது).
+   - **நிலவமைப்புக்கேற்ப பாதுகாப்பான எல்லை (Terrain-Safe Lockdown):** மலைகள், பள்ளங்கள் இருந்தாலும் Villagers தரைப்பகுதியில் காலூன்றி நிற்கும் வகையில் Elevation Scanner மூலம் துல்லியமாக உள்ளேயே திருப்பப்படுவார்கள்.
    - **தங்கள் எல்லைப் பெயரை அறிவார்கள் (Homeland Awareness):**
-     - தலைக்கு மேல் NameTag-ல் பெயர் மற்றும் கிராமப் பெயர் தெரியும் (`Arthur [Chief Scholar] | 🏛️ Kingdom of Valoria`).
-     - AI Terminal-ல் Official Territorial Charter மூலம் கிராமத்தின் எல்லை, மையப்பகுதி மற்றும் தூரத்தைப் பார்க்கலாம்.
+     - தலைக்கு மேல் NameTag-ல் பெயர், கிராமப் பெயர் மற்றும் Level தெரியும் (`Arthur [Chief Scholar] | §b🔔 Valoria (Lvl 2)`).
+     - AI Terminal-ல் Official Territorial Charter மூலம் கிராமத்தின் எல்லை, நிலை (Level), மையப்பகுதி மற்றும் தூரத்தைப் பார்க்கலாம்.
      - 🏛️ **[Ask about our Territory & Homeland]** பட்டன் மூலம் தங்கள் கிராமத்தின் சட்டங்கள் மற்றும் பெருமைகளைப் பற்றி பேசுவார்கள்!
 
 2. **⚡ மொபைல் Quick-Response Buttons & UI Crash Prevention:**
