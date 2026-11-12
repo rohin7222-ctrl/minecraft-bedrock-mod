@@ -6,7 +6,7 @@
 
 import { world, system } from "@minecraft/server";
 import { getAgent } from "./territory_manager.js";
-import { findSafeElevation } from "./terrain_utils.js";
+import { findSafeElevation, getNearbyVillagers } from "./terrain_utils.js";
 
 /**
  * Periodically verifies citizen elevation and boundary positions (Every 40 ticks / 2s):
@@ -22,11 +22,7 @@ export function initAlpineAI() {
       if (players.length === 0) return;
 
       for (const player of players) {
-        const villagers = player.dimension.getEntities({
-          type: "minecraft:villager",
-          location: player.location,
-          maxDistance: 48
-        });
+        const villagers = getNearbyVillagers(player.dimension, player.location, 48);
 
         for (const villager of villagers) {
           if (!villager || !villager.isValid()) continue;

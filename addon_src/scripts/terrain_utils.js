@@ -65,3 +65,22 @@ export function getPlayerHeldItemName(player) {
     return null;
   }
 }
+
+export function getNearbyVillagers(dimension, location, maxDistance = 64) {
+  if (!dimension || !location) return [];
+  try {
+    const list1 = dimension.getEntities({ type: "minecraft:villager", location, maxDistance }) || [];
+    const list2 = dimension.getEntities({ type: "minecraft:villager_v2", location, maxDistance }) || [];
+    const seen = new Set();
+    const result = [];
+    for (const v of [...list1, ...list2]) {
+      if (v && v.isValid() && !seen.has(v.id)) {
+        seen.add(v.id);
+        result.push(v);
+      }
+    }
+    return result;
+  } catch (_) {
+    return [];
+  }
+}

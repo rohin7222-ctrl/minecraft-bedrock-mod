@@ -21,7 +21,7 @@
 import { world, system } from "@minecraft/server";
 import { JOB_ROLES, MINER_TOOL_TIERS, WOODCUTTER_TOOL_TIERS } from "./config.js";
 import { territoryRegistry, getAgent, persistTerritory } from "./territory_manager.js";
-import { findSafeElevation } from "./terrain_utils.js";
+import { findSafeElevation, getNearbyVillagers } from "./terrain_utils.js";
 import {
   constructResidentialCottage,
   executeVillageArchitecturalUpgrade,
@@ -151,11 +151,7 @@ export function initJobsEngine() {
   system.runInterval(() => {
     try {
       for (const player of world.getAllPlayers()) {
-        const villagers = player.dimension.getEntities({
-          type: "minecraft:villager",
-          location: player.location,
-          maxDistance: 80
-        });
+        const villagers = getNearbyVillagers(player.dimension, player.location, 80);
 
         const terrVillagers = new Map();
         for (const v of villagers) {

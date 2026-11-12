@@ -11,8 +11,8 @@ def write_manifests(bp_dir: Path, rp_dir: Path):
     bp_manifest = {
         "format_version": 2,
         "header": {
-            "name": "Civilization AI Addon - Behavior Pack",
-            "description": "Part 5 Masterpiece: Autonomous Job AIs, Dynamic Territories & Mountain Safety",
+            "name": "Civilization AI Addon - Behavior Pack (Beta APIs)",
+            "description": "Part 5 Masterpiece: 6 Job AIs, Simulated Catch-Up & Dynamic Territories (Beta APIs)",
             "uuid": "c4a3b8d2-5e1f-4a7b-8c2d-9e0f1a2b3c4d",
             "version": [5, 0, 0],
             "min_engine_version": [1, 20, 80]
@@ -34,8 +34,8 @@ def write_manifests(bp_dir: Path, rp_dir: Path):
             }
         ],
         "dependencies": [
-            {"module_name": "@minecraft/server", "version": "1.11.0"},
-            {"module_name": "@minecraft/server-ui", "version": "1.2.0"},
+            {"module_name": "@minecraft/server", "version": "1.12.0-beta"},
+            {"module_name": "@minecraft/server-ui", "version": "1.3.0-beta"},
             {"uuid": "f7d6e1a5-8b4c-4d0e-1f5a-2b3c4d5e6f7a", "version": [5, 0, 0]}
         ]
     }
