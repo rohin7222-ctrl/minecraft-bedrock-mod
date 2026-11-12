@@ -1,11 +1,11 @@
 package com.bedrockmod.ben10
 
 enum class ModCategory(val displayName: String) {
-    ALL("🌟 All (11)"),
+    ALL("🌟 All (12)"),
     BEN10("👽 Ben 10 (2)"),
     ANIME("🎌 Anime (4)"),
     SUPERHERO("🦸 Superheroes (3)"),
-    ACTION("⚔️ Weapons & Quirk (2)")
+    ACTION("⚔️ Action & Civ (3)")
 }
 
 data class ModItem(

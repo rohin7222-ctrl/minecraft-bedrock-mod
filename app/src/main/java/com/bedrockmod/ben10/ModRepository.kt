@@ -101,6 +101,18 @@ object ModRepository {
                 buttonText = "⚡ IMPORT QUIRKBORN MOD ⚡"
             ),
             ModItem(
+                id = "civilization",
+                title = "CIVILIZATION: PEACEFUL WORLD",
+                category = ModCategory.ACTION,
+                badge = "🏛️ ZERO MONSTERS • PEACEFUL SURVIVAL",
+                desc = "Part 1 of Civilization Addon! Completely eliminates all 35+ hostile monsters (Zombies, Skeletons, Creepers, Wardens, Illagers, Phantoms, Endermen, Nether & End mobs) from spawns, dungeons, trial spawners, and raids, leaving only villagers and peaceful animals!",
+                sizeText = "💾 20 KB",
+                iconEmoji = "🏛️",
+                assetFileName = ModInstaller.ASSET_CIVILIZATION,
+                buttonBgRes = R.drawable.btn_civilization_emerald,
+                buttonText = "🏛️ IMPORT CIVILIZATION ADDON 🏛️"
+            ),
+            ModItem(
                 id = "iron_man",
                 title = "IRON MAN: ARMOR WARS",
                 category = ModCategory.SUPERHERO,
