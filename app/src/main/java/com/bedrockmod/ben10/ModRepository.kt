@@ -102,10 +102,10 @@ object ModRepository {
             ),
             ModItem(
                 id = "civilization",
-                title = "CIVILIZATION: AI VILLAGERS & WORLD",
+                title = "CIVILIZATION: AUTONOMOUS AI CITIZENS",
                 category = ModCategory.ACTION,
-                badge = "🏛️ TALKING AI VILLAGERS • ZERO MONSTERS",
-                desc = "Part 1 & 2 of the Civilization Addon! No more 'hmm' - Villagers talk in English with conversational AI, answer questions, and dynamically learn new words and definitions from you in a 100% monster-free world!",
+                badge = "🏛️ AUTONOMOUS AI • SELF-LEARNING • ZERO MONSTERS",
+                desc = "Part 1 & 2 of the Civilization Addon! Autonomous AI Villagers that learn English and discover scientific concepts on their own without player help! They observe crops, weather, and stars, have epiphanies, teach each other, and speak in full English in a 100% monster-free world!",
                 sizeText = "💾 1.6 MB",
                 iconEmoji = "🏛️",
                 assetFileName = ModInstaller.ASSET_CIVILIZATION,
