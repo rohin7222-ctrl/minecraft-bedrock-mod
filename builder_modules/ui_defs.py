@@ -45,9 +45,10 @@ def generate_ui_and_texts(rp_dir: Path):
     (ui_dir / "hud_screen.json").write_text(json.dumps(hud_screen, indent=2), encoding="utf-8")
 
     lang_content = (
-        "pack.name=Civilization RP (Part 5: 5 Job AIs & Economy)\n"
-        "pack.description=Living World Civilization with 5 Autonomous Job AIs, House & Bed Construction, "
-        "Dynamic Bell Center, Village Levels (50m-130m expansion), Mountain Safe-Return AI, "
-        "World Real-Time sync, and zero particles!\n"
+        "pack.name=Civilization RP (Part 5: 6 Job AIs & Economy)\n"
+        "pack.description=Living World Civilization with 6 Autonomous Job AIs (Hunter, Woodcutter, Miner, Crafter, "
+        "Storage Manager, Builder), Simulated Catch-up Engine, House & Bed Construction, Dynamic Bell Center, "
+        "Village Levels (50m-130m expansion), Mountain Safe-Return AI, World Real-Time sync, and zero particles!\n"
     )
     (texts_dir / "en_US.lang").write_text(lang_content, encoding="utf-8")
+

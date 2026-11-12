@@ -26,7 +26,31 @@ export const JOB_ROLES = [
   { id: "miner", title: "Master Miner", emoji: "⛏️", tool: "Pickaxe", desc: "Extracts stone, coal, iron, and minerals for metallurgy" },
   { id: "crafter", title: "Master Artisan Crafter", emoji: "🔨", tool: "Crafting Table", desc: "Processes timber and ores into tools, building kits, and beds" },
   { id: "storage_manager", title: "Grand Storage Manager", emoji: "📦", tool: "Communal Chest", desc: "Maintains the central depot and distributes tools and construction supplies" },
-  { id: "builder", title: "Chief Architect Builder", emoji: "🏗️", tool: "Trowel & Hammer", desc: "Constructs residential cottages with beds for new citizens and upgrades roads" }
+  { id: "builder", title: "Chief Architect Builder", emoji: "🏗️", tool: "Trowel & Hammer", desc: "Constructs residential cottages with beds for new citizens and upgrades roads" },
+  { id: "hunter", title: "Master Shepherd & Hunter", emoji: "🏹", tool: "Shears & Bow", desc: "Shears sheep for wool and supplies textiles to Crafter for bed manufacturing" }
+];
+
+export const MINER_TOOL_TIERS = {
+  wooden_pickaxe: { tier: 1, name: "Wooden Pickaxe", canMine: ["cobblestone", "coal"] },
+  stone_pickaxe: { tier: 2, name: "Stone Pickaxe", canMine: ["cobblestone", "coal", "iron_ore", "lapis"] },
+  iron_pickaxe: { tier: 3, name: "Iron Pickaxe", canMine: ["cobblestone", "coal", "iron_ore", "lapis", "gold", "redstone", "diamonds", "emeralds"] },
+  diamond_pickaxe: { tier: 4, name: "Diamond Pickaxe", canMine: ["cobblestone", "coal", "iron_ore", "lapis", "gold", "redstone", "diamonds", "emeralds", "obsidian"] }
+};
+
+export const WOODCUTTER_TOOL_TIERS = {
+  wooden_axe: { tier: 1, name: "Wooden Axe", yieldMultiplier: 1 },
+  stone_axe: { tier: 2, name: "Stone Axe", yieldMultiplier: 1.5 },
+  iron_axe: { tier: 3, name: "Iron Axe", yieldMultiplier: 2 },
+  diamond_axe: { tier: 4, name: "Diamond Axe", yieldMultiplier: 3 }
+};
+
+export const ARCHITECTURAL_DESIGNS = [
+  "Drafting blueprints for classical stone colonnades and pediments to elevate civic grandeur.",
+  "Calculating load-bearing stress for second-story residential balconies with decorative railings.",
+  "Evaluating compressive strength of polished andesite for durable public walkways.",
+  "Planning lantern-lit street lamp posts at every major village intersection.",
+  "Formulating vaulted archways to reinforce subterranean storage cellars and granaries.",
+  "Surveying open ground for symmetrical residential housing plots with garden terraces."
 ];
 
 export const BASE_VOCABULARY = {
@@ -66,6 +90,8 @@ export const AUTONOMOUS_DISCOVERY_POOL = [
   { word: "composting", topic: "agriculture", meaning: "The organic biological recycling of plant remnants into nutrient-rich soil humus." },
   { word: "horticulture", topic: "agriculture", meaning: "The cultivation of garden botanicals, medicinal plants, orchard fruits, and flowers." },
   { word: "microclimate", topic: "nature", meaning: "Local atmospheric conditions in a sheltered valley or mountain terrace distinct from surrounding zones." },
+  { word: "pastoralism", topic: "agriculture", meaning: "The branch of agriculture dedicated to the raising, care, and breeding of livestock and sheep." },
+  { word: "textiles", topic: "craft", meaning: "The art of spinning harvested wool and fibers into warm fabrics, rugs, and comfortable bedding." },
 
   // 3. Craft, Architecture & Engineering
   { word: "architecture", topic: "craft", meaning: "The art and engineering discipline of designing enduring, magnificent monuments and shelters." },
@@ -186,3 +212,4 @@ export const TERRITORY_ROOTS = [
   "Novaria", "Silverstone", "Borealis", "Arcadia", "Eldoria", "Sunspire",
   "Evergreen", "Highland", "Riverwood", "Dawnstar", "Mythglen", "Ironwood"
 ];
+

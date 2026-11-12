@@ -61,3 +61,4 @@ def write_manifests(bp_dir: Path, rp_dir: Path):
 
     (bp_dir / "manifest.json").write_text(json.dumps(bp_manifest, indent=2), encoding="utf-8")
     (rp_dir / "manifest.json").write_text(json.dumps(rp_manifest, indent=2), encoding="utf-8")
+

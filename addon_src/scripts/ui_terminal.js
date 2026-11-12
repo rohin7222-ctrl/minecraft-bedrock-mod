@@ -81,9 +81,16 @@ export function generateTopicDialogue(villager, player, topicKey) {
           heldItemFlavor
         );
       } else if (agent.jobRole.id === "builder") {
+        const thought = sh.latestArchitecturalThought ? ` Currently, I am contemplating: "${sh.latestArchitecturalThought}"` : "";
         return (
-          `"I am ${agent.name}, ${agent.jobRole.title}! My mission is expanding our town's architecture. ` +
-          `We have erected §a${sh.housesBuilt} complete residential cottages§f and installed §b${sh.bedsPlaced} beds§f! Whenever a new citizen joins our community, I immediately construct a new house with a warm bed for them!"` +
+          `"I am ${agent.name}, ${agent.jobRole.title}! My mission is upgrading our settlement's architecture. ` +
+          `We have erected §a${sh.housesBuilt} cottages§f with §b${sh.bedsPlaced} beds§f, and completed §6${sh.upgradesCompleted || 0} civic upgrades§f!${thought}"` +
+          heldItemFlavor
+        );
+      } else if (agent.jobRole.id === "hunter") {
+        return (
+          `"Greetings! As ${agent.jobRole.title}, I care for and shear our territory's sheep, gathering fresh wool and provisions! ` +
+          `Our storehouse reserves §f${sh.wool || 0} wool textiles§f and §f${sh.food || 0} food§f. I supply the Crafter with wool to assemble comfortable beds for new homes!"` +
           heldItemFlavor
         );
       }
@@ -254,21 +261,23 @@ export async function openStorehouseLedgerView(player, villager) {
   const agent = getAgent(villager);
   const sh = agent.territory.storehouse || createDefaultStorehouse();
 
+  const thought = sh.latestArchitecturalThought ? `\n§d🏛️ Builder's Architectural Vision: "${sh.latestArchitecturalThought}"\n` : "";
+
   const form = new ActionFormData()
     .title(`📦 ${agent.territory.name} Storehouse`)
     .body(
       `§6Executive Communal Inventory & Supply Chain:\n\n` +
-      `§f• 🪵 Timber Logs: §a${sh.logs}§f (Collected by Woodcutters)\n` +
-      `• 🪚 Processed Planks: §a${sh.planks}§f (Crafted by Crafters)\n` +
-      `• 🪨 Cobblestone: §a${sh.cobblestone}§f (Mined by Miners)\n` +
-      `• ⛏️ Iron Ore: §e${sh.iron_ore}§f | Coal: §8${sh.coal}§f | Diamonds: §b${sh.diamonds}§f\n` +
-      `• 🪓 Ready Woodcutter Axes: §a${sh.axes}§f\n` +
-      `• ⛏️ Ready Miner Pickaxes: §a${sh.pickaxes}§f\n` +
-      `• 📦 Architectural Building Kits: §e${sh.building_kits}§f\n` +
-      `• 🏡 Completed Cottages: §6${sh.housesBuilt} Houses Built§f\n` +
-      `• 🛏️ Total Placed Beds: §b${sh.bedsPlaced} Beds Installed§f\n\n` +
-      `§7Last Supply Activity: ${sh.lastActivity}\n` +
-      `All 5 Guilds actively supply and draw from this communal depot!`
+      `§f• 🪵 Timber Logs: §a${sh.logs}§f | Planks: §a${sh.planks}§f\n` +
+      `• 🪨 Cobblestone: §a${sh.cobblestone}§f | Coal: §8${sh.coal}§f\n` +
+      `• ⛏️ Iron Ore: §e${sh.iron_ore}§f | Diamonds: §b${sh.diamonds}§f | Redstone: §c${sh.redstone || 0}§f\n` +
+      `• 🧶 Harvested Wool: §f${sh.wool || 0}§f | Provisions: §f${sh.food || 0}§f (Supplied by Hunters)\n` +
+      `• 🪓 Ready Axes: §a${sh.axes}§f | ⛏️ Ready Pickaxes: §a${sh.pickaxes}§f\n` +
+      `• 📦 Depot Chests: §e${sh.chestsPlaced || 1} Placed§f | Capacity: §a${sh.maxCapacity || 200} Items§f\n` +
+      `• 📦 Building Kits: §e${sh.building_kits}§f | 🛏️ Total Placed Beds: §b${sh.bedsPlaced}§f\n` +
+      `• 🏡 Completed Cottages: §6${sh.housesBuilt} Houses§f | 🏛️ Upgrades: §6${sh.upgradesCompleted || 0}§f\n` +
+      thought +
+      `\n§7Last Activity: ${sh.lastActivity}\n` +
+      `All 6 Guilds actively supply and draw from this communal depot!`
     )
     .button("🪵 Donate 8 Wood Logs to Depot")
     .button("🪨 Donate 8 Cobblestone to Depot")

@@ -45,8 +45,9 @@ system.run(() => {
     initTerritoryManager();
     initJobsEngine();
     initAlpineAI();
-    console.warn("[Civilization AI] Part 5 Masterpiece Engine running. All 5 Autonomous Job AIs active.");
+    console.warn("[Civilization AI] Part 5 Masterpiece Engine running. All 6 Autonomous Job AIs & Simulated Catch-Up Engine active.");
   } catch (err) {
     console.warn(`[Civilization AI] Engine bootstrap error: ${err}`);
   }
 });
+

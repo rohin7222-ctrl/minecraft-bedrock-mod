@@ -39,3 +39,4 @@ def generate_spawn_rules(bp_dir: Path):
             }
         }
         (spawn_dir / f"{short_name}.json").write_text(json.dumps(rule, indent=2), encoding="utf-8")
+

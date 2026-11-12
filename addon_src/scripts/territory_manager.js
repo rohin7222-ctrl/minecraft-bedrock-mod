@@ -46,11 +46,20 @@ export function createDefaultStorehouse() {
     coal: 16,
     diamonds: 2,
     redstone: 8,
+    wool: 16,
+    food: 20,
     axes: 4,
     pickaxes: 4,
+    shears: 2,
+    iron_pickaxes: 1,
+    iron_axes: 1,
     building_kits: 3,
     housesBuilt: 1,
     bedsPlaced: 2,
+    chestsPlaced: 1,
+    chestsPending: 0,
+    maxCapacity: 200,
+    upgradesCompleted: 0,
     lastActivity: "Supply chain initialized"
   };
 }
@@ -71,6 +80,9 @@ export function persistTerritory(terr) {
       storehouse: terr.storehouse || createDefaultStorehouse()
     });
     world.setDynamicProperty(`civ_terr_${terr.id}`, rawData);
+
+    const keys = Array.from(territoryRegistry.keys());
+    world.setDynamicProperty("civ_known_territory_ids", JSON.stringify(keys));
   } catch (_) {}
 }
 
@@ -250,6 +262,62 @@ export function saveAgent(villager, agent) {
 }
 
 export function initTerritoryManager() {
+  // 1. Restore all persisted territories across entire world on startup
+  try {
+    const rawIds = world.getDynamicProperty("civ_known_territory_ids");
+    if (rawIds) {
+      const idList = JSON.parse(rawIds);
+      for (const tId of idList) {
+        if (!territoryRegistry.has(tId)) {
+          const rawTerr = world.getDynamicProperty(`civ_terr_${tId}`);
+          if (rawTerr) {
+            const parsed = JSON.parse(rawTerr);
+            territoryRegistry.set(tId, {
+              id: parsed.id,
+              name: parsed.name,
+              centerX: parsed.centerX,
+              centerY: parsed.centerY,
+              centerZ: parsed.centerZ,
+              radius: parsed.radius,
+              level: parsed.level,
+              levelName: parsed.levelName,
+              hasBellAnchor: parsed.hasBellAnchor,
+              conceptsMastered: new Set(parsed.conceptsMastered || []),
+              storehouse: parsed.storehouse || createDefaultStorehouse()
+            });
+          }
+        }
+      }
+    }
+  } catch (_) {}
+
+  // If no territories exist yet, seed initial world civilizations (including remote lands)
+  if (territoryRegistry.size === 0) {
+    const seeds = [
+      { id: "terr_origin_0", name: "The Kingdom of Valoria", x: 0, y: 64, z: 0 },
+      { id: "terr_remote_east", name: "The Sovereign Haven of Solaris", x: 800, y: 70, z: 800 },
+      { id: "terr_remote_west", name: "The Peaceful Realm of Elysium", x: -900, y: 72, z: 450 }
+    ];
+    for (const s of seeds) {
+      const lvl = calculateVillageLevel(15);
+      const seeded = {
+        id: s.id,
+        name: s.name,
+        centerX: s.x,
+        centerY: s.y,
+        centerZ: s.z,
+        radius: lvl.radius,
+        level: lvl.level,
+        levelName: lvl.name,
+        hasBellAnchor: true,
+        conceptsMastered: new Set(["civilization", "peaceful", "emerald", "architecture", "pastoralism", "metallurgy"]),
+        storehouse: createDefaultStorehouse()
+      };
+      territoryRegistry.set(s.id, seeded);
+      persistTerritory(seeded);
+    }
+  }
+
   // Clear agent cache if it exceeds 250 entities
   system.runInterval(() => {
     if (agentCache.size > 250) {
@@ -257,46 +325,37 @@ export function initTerritoryManager() {
     }
   }, 6000);
 
-  // Environmental Autonomous Learning (Epiphanies)
+  // Global Autonomous English Learning (Runs for EVERY territory in world, even 1000+ blocks away)
   system.runInterval(() => {
     try {
-      const players = world.getAllPlayers();
-      if (players.length === 0) return;
+      for (const [tId, terr] of territoryRegistry.entries()) {
+        if (!terr.conceptsMastered) terr.conceptsMastered = new Set();
+        const undiscovered = AUTONOMOUS_DISCOVERY_POOL.filter(item => !terr.conceptsMastered.has(item.word));
+        if (undiscovered.length > 0) {
+          const learned = undiscovered[Math.floor(Math.random() * undiscovered.length)];
+          terr.conceptsMastered.add(learned.word);
 
-      const randomPlayer = players[Math.floor(Math.random() * players.length)];
-      const nearbyVillagers = randomPlayer.dimension.getEntities({
-        type: "minecraft:villager",
-        location: randomPlayer.location,
-        maxDistance: 32
-      });
+          const totalCount = terr.conceptsMastered.size;
+          const oldLevel = terr.level;
+          const newLevelInfo = calculateVillageLevel(totalCount);
 
-      if (nearbyVillagers.length === 0) return;
+          if (newLevelInfo.level > oldLevel) {
+            terr.level = newLevelInfo.level;
+            terr.levelName = newLevelInfo.name;
+            terr.radius = newLevelInfo.radius;
 
-      const scholar = nearbyVillagers[Math.floor(Math.random() * nearbyVillagers.length)];
-      if (!scholar || !scholar.isValid()) return;
-
-      const agent = getAgent(scholar);
-      const known = new Set(Object.keys(agent.vocabulary));
-      const undiscovered = AUTONOMOUS_DISCOVERY_POOL.filter(item => !known.has(item.word));
-      if (undiscovered.length === 0) return;
-
-      const epiphany = undiscovered[Math.floor(Math.random() * undiscovered.length)];
-      agent.vocabulary[epiphany.word] = epiphany.meaning;
-      agent.dirty = true;
-      saveAgent(scholar, agent);
-
-      if (!agent.territory.conceptsMastered) agent.territory.conceptsMastered = new Set();
-      agent.territory.conceptsMastered.add(epiphany.word);
-
-      const totalCount = agent.territory.conceptsMastered.size;
-      const oldLevel = agent.territory.level;
-      const newLevelInfo = calculateVillageLevel(totalCount);
-
-      if (newLevelInfo.level > oldLevel) {
-        agent.territory.level = newLevelInfo.level;
-        agent.territory.levelName = newLevelInfo.name;
-        agent.territory.radius = newLevelInfo.radius;
-        persistTerritory(agent.territory);
+            for (const p of world.getAllPlayers()) {
+              const d = Math.sqrt((p.location.x - terr.centerX)**2 + (p.location.z - terr.centerZ)**2);
+              if (d <= terr.radius + 30) {
+                p.sendMessage(`§6🎉 [CIVILIZATION ADVANCEMENT] §b${terr.name}§f has advanced to §e${newLevelInfo.badge}§f! Territory perimeter expanded to §a${newLevelInfo.radius} Blocks§f!`);
+              }
+            }
+          }
+          persistTerritory(terr);
+        }
+      }
+    } catch (_) {}
+  }, 300);
 
         for (const p of world.getAllPlayers()) {
           const d = Math.sqrt((p.location.x - agent.territory.centerX)**2 + (p.location.z - agent.territory.centerZ)**2);
@@ -424,3 +483,4 @@ export function initTerritoryManager() {
     }
   });
 }
+

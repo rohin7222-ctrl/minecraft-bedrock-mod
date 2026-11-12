@@ -42,3 +42,4 @@ def package_mcaddon(base_dir: Path, output_file: Path):
                 arcname = p.relative_to(base_dir)
                 zf.write(p, arcname)
     print(f"[Bundler] Packaged {output_file.name} ({output_file.stat().st_size} bytes)")
+
