@@ -13,6 +13,19 @@
   - 100x Realistic Mobs, 11 Sun-Shadowed Trees, 360 Dynamic Sky, Caustic Water, 3D Ores & 110+ Items.
   - Low-End Mobile Smooth 64x (Locked 60 FPS) மற்றும் Ultra 128x HD modes.
 
+
+### 👑 பிளேயர் முழு அதிகாரம் & கூட்டாளி முறை (v1.0.78 Player Full Access & Companion Co-Op):
+1. **💎 டூல் நிலைகள் & ஆர்மர் முன்னேற்றம் (Tool Tier Progression):**
+   - Novice (Iron) -> Journeyman (Diamond Tools + Shield) -> Grandmaster (Netherite Tools + Totem of Undying)!
+   - கிராமத்தவர்கள் உழைத்து XP பெறும் போது அவர்களின் கையில் உள்ள கருவிகள் இரும்பிலிருந்து வைரம் மற்றும் நெதரைட்டாக நேரடியாக மேம்படும்!
+2. **🌟 மரணத்தைத் தடுக்கும் Totem of Undying:**
+   - ஆஃப்ஹேண்டில் (Offhand) Totem of Undying ஏந்தியிருப்பார்கள்; கொடிய காயம் அல்லது மரணம் ஏற்படும் போது Totem உடனடியாக உயிர்ப்பித்து (
+andom.totem), தற்காப்பு அரண்களை வழங்கி 100% மரணத்தை வெல்கிறது!
+3. **🏃 கூட்டாளி முறை (Companion Co-Op Follow Mode):**
+   - Villager Terminal-ல் உள்ள [👑 Player Orders & Full Access] வழியாக **'Follow Me'** கட்டளையிட்டால், உங்கள் பின்னால் உண்மையான மனித பிளேயர் போல உலகெங்கும் தொடர்வார்கள்!
+4. **🚪 கதவுகள் திறந்து செல்லுதல் (Door Navigation):**
+   - வீடுகளுக்குள் செல்லும் போது மரக்கதவுகளைத் திறந்து உள்ளே சென்று பின்னால் மூடுவார்கள்!
+
 ### 🌍 முழு உலக விழிப்புணர்வு & நிஜ பிளேயர் செயல்பாடுகள் (v1.0.77):
 1. **முழு உலக விழிப்புணர்வு (Full World Spatial Perception):**
    - Villagers தாங்கள் இருக்கும் Biome (Taiga, Plains, Desert, Jungle, Caves, Mountains), துல்லியமான Coordinates (X, Y, Z), Elevation Layer (Deepslate முதல் Alpine வரை), சூரிய/வான்வெளி வெளிச்சம் மற்றும் அருகிலுள்ள தாதுக்கள், மரங்கள், பயிர்களைத் துல்லியமாக உணர்கிறார்கள்.
