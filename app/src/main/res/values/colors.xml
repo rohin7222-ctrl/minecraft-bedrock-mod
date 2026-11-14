@@ -8,15 +8,16 @@
     <color name="accent_amber">#F59E0B</color>
     <color name="accent_violet">#8B5CF6</color>
     <color name="accent_rose">#F43F5E</color>
+    <color name="accent_indigo">#6366F1</color>
 
     <!-- Dark Gaming Theme Backgrounds -->
-    <color name="bg_dark">#080C14</color>
-    <color name="surface_dark">#0F172A</color>
-    <color name="card_dark">#131D31</color>
-    <color name="card_stroke">#1E293B</color>
-    <color name="card_stroke_glow">#2D3F5E</color>
-    <color name="search_bg">#111927</color>
-    <color name="search_stroke">#1F2937</color>
+    <color name="bg_dark">#070B14</color>
+    <color name="surface_dark">#0D1527</color>
+    <color name="card_dark">#111C33</color>
+    <color name="card_stroke">#1E2E4A</color>
+    <color name="card_stroke_glow">#334D77</color>
+    <color name="search_bg">#0F192E</color>
+    <color name="search_stroke">#1E2E4A</color>
 
     <!-- Typography -->
     <color name="text_white">#F8FAFC</color>
@@ -24,10 +25,14 @@
     <color name="text_muted">#64748B</color>
 
     <!-- Category Badges -->
+    <color name="cat_civ_bg">#064E3B</color>
+    <color name="cat_civ_text">#6EE7B7</color>
     <color name="cat_anime_bg">#431407</color>
     <color name="cat_anime_text">#FDBA74</color>
     <color name="cat_super_bg">#311042</color>
     <color name="cat_super_text">#F472B6</color>
-    <color name="cat_action_bg">#064E3B</color>
-    <color name="cat_action_text">#6EE7B7</color>
+    <color name="cat_action_bg">#1E1B4B</color>
+    <color name="cat_action_text">#A5B4FC</color>
+    <color name="cat_ben10_bg">#064E3B</color>
+    <color name="cat_ben10_text">#86EFAC</color>
 </resources>

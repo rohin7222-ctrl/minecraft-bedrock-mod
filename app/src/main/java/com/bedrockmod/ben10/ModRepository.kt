@@ -5,6 +5,30 @@ object ModRepository {
     fun getModList(): List<ModItem> {
         return listOf(
             ModItem(
+                id = "civilization",
+                title = "CIVILIZATION: AUTONOMOUS AI CITIZENS",
+                category = ModCategory.CIVILIZATION,
+                badge = "👑 7 AUTONOMOUS AIS • 4 RELIGIONS • FULL ARMOR",
+                desc = "Part 5 Living World Masterpiece v1.0.85! Villagers think and survive like real players: 4 Faith Pantheons, Sacred Altar Worship, Full Armor Suits (Iron->Diamond->Netherite), Redstone Piston Automations, Spawn-Proofing Sanctuary, and instant in-game !civ chat shortcuts! 100% offline 60 FPS locked!",
+                sizeText = "💾 0.5 MB",
+                iconEmoji = "🏛️",
+                assetFileName = ModInstaller.ASSET_CIVILIZATION,
+                buttonBgRes = R.drawable.btn_civilization_emerald,
+                buttonText = "🏛️ IMPORT CIVILIZATION ADDON 🏛️"
+            ),
+            ModItem(
+                id = "ultrareal_texture_pack",
+                title = "ULTRAREAL 100X HD TEXTURE PACK",
+                category = ModCategory.CIVILIZATION,
+                badge = "🎨 100X REALISTIC MOBS • 360 SKY • CAUSTIC WATER",
+                desc = "UltraReal 100x v2.0 HD Texture Pack! 100x Realistic Mobs, 11 sun-shadowed trees, 360 dynamic sky, caustic water, 3D ores, and 110+ HD items. Includes 64x Low-End Mobile 60 FPS mode and Ultra 128x mode. Tap to automatically open and import directly into Minecraft PE!",
+                sizeText = "💾 3.7 MB",
+                iconEmoji = "🎨",
+                assetFileName = ModInstaller.ASSET_ULTRAREAL,
+                buttonBgRes = R.drawable.btn_civilization_emerald,
+                buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨"
+            ),
+            ModItem(
                 id = "omni_evolution",
                 title = "BEN 10: OMNI EVOLUTION",
                 category = ModCategory.BEN10,
@@ -99,30 +123,6 @@ object ModRepository {
                 assetFileName = ModInstaller.ASSET_QUIRKBORN,
                 buttonBgRes = R.drawable.btn_quirkborn_yellow,
                 buttonText = "⚡ IMPORT QUIRKBORN MOD ⚡"
-            ),
-            ModItem(
-                id = "ultrareal_texture_pack",
-                title = "ULTRAREAL 100X HD TEXTURE PACK",
-                category = ModCategory.ACTION,
-                badge = "🎨 100X REALISTIC MOBS • 360 SKY • CAUSTIC WATER",
-                desc = "UltraReal 100x v2.0 HD Texture Pack! Realistic mobs, 11 sun-shadowed trees, 360 dynamic sky, caustic waters, 3D ores, and 110+ HD items. Includes 64x Low-End Mobile 60 FPS mode and Ultra 128x mode. Tap anywhere on this card to automatically open and import directly into Minecraft PE!",
-                sizeText = "💾 3.7 MB",
-                iconEmoji = "🎨",
-                assetFileName = ModInstaller.ASSET_ULTRAREAL,
-                buttonBgRes = R.drawable.btn_civilization_emerald,
-                buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨"
-            ),
-            ModItem(
-                id = "civilization",
-                title = "CIVILIZATION: AUTONOMOUS AI CITIZENS",
-                category = ModCategory.ACTION,
-                badge = "🏛️ FULL WORLD AWARENESS • REAL PLAYER BEHAVIORS • 3D STRAW HAT",
-                desc = "Part 5 Living World Masterpiece! Citizens now possess full world awareness (biomes, coordinates, elevation, daylight radar, flora/fauna) and genuine player behaviors: physical arm-swing mining/chopping, placing torches in dark caves/nights, crouch-hello greetings, realistic eating routines with food in hand, swimming in water, and looting dropped items into communal storage! 100% zero in-fighting brotherhood and silky-smooth 60 FPS mobile performance!",
-                sizeText = "💾 0.5 MB",
-                iconEmoji = "🏛️",
-                assetFileName = ModInstaller.ASSET_CIVILIZATION,
-                buttonBgRes = R.drawable.btn_civilization_emerald,
-                buttonText = "🏛️ IMPORT CIVILIZATION ADDON 🏛️"
             ),
             ModItem(
                 id = "iron_man",

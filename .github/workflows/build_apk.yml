@@ -71,39 +71,43 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Ultimate UI/UX 12-Mod Edition)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen UI/UX 13-Mod Edition)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub (12 Epic Addons 1-Click Installer)
-            Now includes 12 legendary Bedrock Addons with 1-Click direct Minecraft launching:
+            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (13 Epic Bedrock Mods & Next-Gen Cyberpunk UI)
+            Experience our completely revamped Android interface featuring a sleek cosmic dark UI, category filter tabs (Civilization, Ben 10, Anime, Superheroes, Action), live search counter, quick setup guide dialog, and 1-Tap auto-import!
             
-            1. **🏛️ Civilization: Autonomous AI Villagers (Part 5: 7 Autonomous AIs • In-Game XP Mastery & Shortage Intelligence)**
-               - Features 7 fully autonomous learning AIs (English Learning Scholar, Woodcutter, Miner, Hunter, Crafter, Storage Manager, Builder) that dynamically gain XP and level up through 5 Mastery Ranks (Novice to Grandmaster with star badges). Crafters build stone furnaces (adupu) to smelt raw iron ores into refined ingots for iron pickaxes/axes/shears, Hunters shear sheep for wool beds, Builders construct residential cottages, and Storage Managers auto-expand depots. If crafting supplies are insufficient, Crafter & Storage Manager detect the shortage and dispatch workers with 1.5x focused priority boosts until community equilibrium is achieved! Includes 0% CPU Simulated Catch-Up at 1000+ blocks distance, zero monster lag, and pure Beta APIs for 60 FPS mobile performance!
-            2. **🧬 Ben 10: Omni Evolution (Beta Addon)**
-               - Official Omni Evolution Beta Addon! Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien variants.
-            3. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+            ### 🏛️ 13 Legendary Bedrock Mods Included:
+            1. **🏛️ Civilization: Autonomous AI Villagers (v1.0.86 Masterpiece)**
+               - 100% Real Player AI Villagers with 4 Faith Religions, Sacred Altars, full Netherite/Diamond Armor, dynamic Redstone/Piston automation, Anti-Zombie Sanctuary spawn proofing, and distinct personality characteristics!
+            2. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
+               - Ultra-realistic 100x high-definition textures with PBR lighting reflections, realistic skies, crystal waters, and 60 FPS mobile optimization.
+            3. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+               - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
+            4. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
                - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            4. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+            5. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
                - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            5. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+            6. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            6. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            7. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            7. **🐉 Dragon Evolution (v1.5.0)**
+            8. **🐉 Dragon Evolution (v1.5.0)**
                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            8. **🔫 Actual Guns 2: 3D Tactical**
+            9. **🔫 Actual Guns 2: 3D Tactical**
                - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            9. **⚡ Quirkborn: My Hero Academia (v1.515)**
-               - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            10. **🤖 Iron Man: Armor Wars Addon**
+            10. **⚡ Quirkborn: My Hero Academia (v1.515)**
+                - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
+            11. **🤖 Iron Man: Armor Wars Addon**
                 - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            11. **🕷️ Spider-Man: Web of Shadows Addon**
+            12. **🕷️ Spider-Man: Web of Shadows Addon**
                 - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            12. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
+            13. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
                 - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
-            - **Direct Civilization Addon**: Download `Civilization.mcaddon`
+            - **Direct Civilization Addon**: Download `Civilization.mcaddon` (Auto-opens in Minecraft!)
+            - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
             - **Direct Omni Bound Addon**: Download `Omni_Bound_v1.5.2.mcaddon`
             - **Direct Solo Leveling Addon**: Download `Solo_Leveling_v1.0.6.mcaddon`
@@ -115,7 +119,6 @@ jobs:
             - **Direct Iron Man Addon**: Download `Iron_Man_Addon.mcaddon`
             - **Direct Spider-Man Addon**: Download `Spider_Man_Addon.mcaddon`
             - **Direct Marvel Project Addon**: Download `Marvel_Project_v3.0.1.mcaddon`
-            - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Tap to auto-open in Minecraft!)
           files: |
             apk_output/*.apk
             apk_output/*.mcaddon

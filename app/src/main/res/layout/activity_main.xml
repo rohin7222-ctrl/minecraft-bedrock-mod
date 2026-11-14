@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/surface_dark"
-        android:elevation="6dp"
+        android:elevation="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="16dp"
@@ -22,8 +22,8 @@
         android:paddingBottom="12dp">
 
         <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/app_logo" />
 
         <LinearLayout
@@ -52,11 +52,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/badge_size_background"
-                    android:paddingStart="6dp"
+                    android:paddingStart="7dp"
                     android:paddingTop="2dp"
-                    android:paddingEnd="6dp"
+                    android:paddingEnd="7dp"
                     android:paddingBottom="2dp"
-                    android:text="12 MODS"
+                    android:text="v1.0.86 PRO"
                     android:textColor="@color/omnitrix_glow"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -76,11 +76,12 @@
         <Button
             android:id="@+id/btnQuickLaunchMc"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="40dp"
             android:background="@drawable/btn_header_mc"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="🎮 Open MC"
+            android:elevation="4dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="🎮 Launch MC"
             android:textColor="#042F2E"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -92,7 +93,7 @@
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/mainProgressBar"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="3.5dp"
         android:indeterminate="true"
         android:visibility="gone"
         app:indicatorColor="@color/omnitrix_green"
@@ -108,17 +109,17 @@
         android:paddingStart="14dp"
         android:paddingTop="10dp"
         android:paddingEnd="14dp"
-        android:paddingBottom="6dp">
+        android:paddingBottom="4dp">
 
-        <!-- Modern Search Box -->
+        <!-- Modern Stadium Search Box -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="46dp"
             android:background="@drawable/search_box_background"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp">
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,10 +131,10 @@
                 android:id="@+id/etSearch"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="Search 12 mods (e.g. Civilization, Ben 10, Iron Man, Solo)..."
+                android:hint="Search 13 mods (Civilization, Ben 10, Solo Leveling, UltraReal)..."
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:maxLines="1"
@@ -145,7 +146,7 @@
                 android:id="@+id/btnClearSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
+                android:padding="6dp"
                 android:text="✖"
                 android:textColor="@color/text_muted"
                 android:textSize="14sp"
@@ -173,7 +174,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="🌟 All (12)"
+                    android:text="🌟 All (13)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCiv"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏛️ Civilization &amp; HD (2)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"
@@ -195,7 +207,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🎌 Anime (4)"
+                    android:text="🎌 Anime Legends (4)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"
@@ -217,7 +229,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⚔️ Action &amp; Civ (3)"
+                    android:text="⚔️ Action &amp; Guns (2)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"
@@ -226,6 +238,36 @@
             </com.google.android.material.chip.ChipGroup>
 
         </HorizontalScrollView>
+
+        <!-- Result Count & Spotlight Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvResultCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Showing 13 Mods Available"
+                android:textColor="@color/text_gray"
+                android:textSize="11.5sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ 1-Tap Auto-Import"
+                android:textColor="@color/omnitrix_glow"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -252,7 +294,7 @@
         android:clipToPadding="false"
         android:overScrollMode="never"
         android:paddingTop="6dp"
-        android:paddingBottom="16dp" />
+        android:paddingBottom="12dp" />
 
     <!-- ========================================================================= -->
     <!-- BOTTOM FOOTER TOOLS & STATUS -->
@@ -261,12 +303,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/surface_dark"
-        android:elevation="8dp"
+        android:elevation="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="16dp"
+        android:paddingStart="14dp"
         android:paddingTop="8dp"
-        android:paddingEnd="16dp"
+        android:paddingEnd="14dp"
         android:paddingBottom="8dp">
 
         <TextView
@@ -274,9 +316,24 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="💡 Enable 'Beta APIs' in Minecraft World Settings"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="💡 Pro Tip: Turn ON 'Beta APIs' in World Settings!"
             android:textColor="@color/text_gray"
             android:textSize="11sp" />
+
+        <!-- Setup Guide Button -->
+        <Button
+            android:id="@+id/btnQuickGuide"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="📖 Setup Guide"
+            android:textColor="@color/omnitrix_glow"
+            android:textSize="11sp"
+            android:textStyle="bold" />
 
         <!-- Clear Cache Button -->
         <Button
@@ -284,10 +341,11 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:text="🧹 Clean Cache"
-            android:textColor="@color/omnitrix_glow"
-            android:textSize="11sp"
-            android:textStyle="bold" />
+            android:textColor="@color/text_muted"
+            android:textSize="11sp" />
 
     </LinearLayout>
 

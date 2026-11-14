@@ -1,17 +1,34 @@
-# 🟢 Minecraft Bedrock Mod Hub (12-in-1 Ultimate Edition)
-### 📱 12 Legendary Bedrock Addons | 1-Click Direct Minecraft Launch | Low-End Mobile 60 FPS Optimized
+# 🟢 Minecraft Bedrock Mod Hub (13-in-1 Next-Gen Pro Edition v1.0.86)
+### 📱 13 Legendary Bedrock Addons | Modern Cyberpunk UI | 1-Click Direct Minecraft Launch | 60 FPS Locked
 
 ---
 
-## 🌟 அடங்கியுள்ள 12 பிரம்மாண்ட Bedrock Addon-கள்:
+## 🎨 செயலியின் புத்தம் புதிய இடைமுகம் (Revamped Next-Gen UI/UX):
+1. **🌌 நவீன டார்க் தீம் & கார்டுகள் (Cosmic Dark & Emerald Cyberpunk Theme):**
+   - ஆப் முழுவதும் அதிநவீன டார்க் பிரீமியம் தோற்றம் (`#070B14`, `#0D1527`, `#111C33`), 18dp வளைந்த விளிம்புகள் மற்றும் எமரால்டு/நியான் வண்ண சிறப்பம்சங்கள்.
+2. **🏷️ வகை வாரியான வடிகட்டிப் பட்டைகள் (Smart Category Chips):**
+   - **🌟 All (13):** அனைத்து 13 மோட்களையும் ஒரே திரையில் காண்க.
+   - **🏛️ Civilization & HD (2):** நாகரிக AI கிராமத்தவர்கள் மற்றும் 100x UltraReal HD டெக்ஸ்சர் பேக்.
+   - **👽 Ben 10 (2):** Omni Evolution & Omni-Bound.
+   - **🎌 Anime Legends (4):** Solo Leveling, One Piece, Tensura, Dragon Evolution.
+   - **🦸 Superheroes (3):** Iron Man, Spider-Man, Marvel Avengers.
+   - **⚔️ Action & Guns (2):** Actual Guns 2, Quirkborn MHA.
+3. **🔍 நேரடி தேடல் & மோட் எண்ணிக்கை (Live Stadium Search & Counter):**
+   - தட்டச்சு செய்யும்போது உடனடியாக மோட்களை வடிகட்டி, எத்தனை மோட்கள் உள்ளன என்பதை உடனுக்குடன் (e.g., `Showing 13 of 13 Mods Available`) தெளிவாகக் காட்டுகிறது.
+4. **📖 விரைவு அமைவு வழிகாட்டி (1-Tap Quick Setup Guide Dialog):**
+   - திரையின் கீழேயுள்ள `📖 Setup Guide` பட்டனைத் தொட்டால் Minecraft-ல் "Beta APIs" எவ்வாறு ஆன் செய்ய வேண்டும் என்பதை எளிய 3 படிகளில் விளக்கும் பாப்-அப் திறக்கும்.
+5. **🧹 கேச் க்ளீனர் & நிலை விவரங்கள் (Clean Cache & Live Minecraft Status):**
+   - ஃபோனில் உள்ள தேவையற்ற கேச் கோப்புகளை ஒரே தொடுதலில் நீக்கி ஃபோனின் நினைவகத்தை மிச்சப்படுத்தும் பட்டன் மற்றும் Minecraft உள்ளதா என்பதைத் தெரிவிக்கும் நேரடிப் பலகை.
 
-### 🏛️ Civilization & RPG (1 Mod)
+---
 
-### 🎨 UltraReal 100x HD Texture Pack (Bedrock Edition)
-- **நேரடி ஆட்டோமேட்டிக் இம்போர்ட் (One-Tap Automatic Minecraft Open):**
-  - ஆப்-ல் உள்ள UltraReal Texture Pack கார்டை அல்லது பட்டனைத் தொட்டாலே போதும்; Minecraft Bedrock தானாகவே திறந்து Texture Pack-ஐ உடனே Import செய்துவிடும்!
-  - 100x Realistic Mobs, 11 Sun-Shadowed Trees, 360 Dynamic Sky, Caustic Water, 3D Ores & 110+ Items.
-  - Low-End Mobile Smooth 64x (Locked 60 FPS) மற்றும் Ultra 128x HD modes.
+## 🌟 அடங்கியுள்ள 13 பிரம்மாண்ட Bedrock Addon-கள்:
+
+### 🏛️ Civilization & HD (2 Mods)
+1. **🏛️ Civilization: Autonomous AI Villagers (v1.0.86 Masterpiece)**
+   - 100% உண்மையான பிளேயர்கள் போல வாழும் AI கிராமத்தவர்கள்: 4 மதங்கள், புனித பலிபீடம், முழு நெதரைட்/வைரக் கவசங்கள், ரெட்ஸ்டோன்/பிஸ்டன் ஆட்டோமேஷன், ஜோம்பி வராமல் தடுக்கும் சரணாலயம்!
+2. **🎨 UltraReal 100x HD Texture Pack (Bedrock Edition)**
+   - ஆப்-ல் உள்ள கார்டைத் தொட்டாலே Minecraft தானாகத் திறந்து இம்போர்ட் ஆகிவிடும்! 100x உயர்தர கிராபிக்ஸ் மற்றும் 60 FPS மொபைல் டியூனிங்!
 
 
 

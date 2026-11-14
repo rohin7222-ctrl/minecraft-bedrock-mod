@@ -22,9 +22,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etSearch: EditText
     private lateinit var btnClearSearch: TextView
     private lateinit var chipGroupCategories: ChipGroup
+    private lateinit var tvResultCount: TextView
     private lateinit var rvMods: RecyclerView
     private lateinit var tvEmptyState: TextView
     private lateinit var tvBottomInfo: TextView
+    private lateinit var btnQuickGuide: Button
     private lateinit var btnClearCache: Button
 
     private lateinit var modAdapter: ModAdapter
@@ -53,9 +55,11 @@ class MainActivity : AppCompatActivity() {
         etSearch = findViewById(R.id.etSearch)
         btnClearSearch = findViewById(R.id.btnClearSearch)
         chipGroupCategories = findViewById(R.id.chipGroupCategories)
+        tvResultCount = findViewById(R.id.tvResultCount)
         rvMods = findViewById(R.id.rvMods)
         tvEmptyState = findViewById(R.id.tvEmptyState)
         tvBottomInfo = findViewById(R.id.tvBottomInfo)
+        btnQuickGuide = findViewById(R.id.btnQuickGuide)
         btnClearCache = findViewById(R.id.btnClearCache)
     }
 
@@ -70,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             adapter = modAdapter
             setHasFixedSize(true)
         }
+        applyCurrentFilters()
     }
 
     private fun setupSearchAndFilters() {
@@ -91,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         // Category Filter Chips
         chipGroupCategories.setOnCheckedChangeListener { _, checkedId ->
             selectedCategory = when (checkedId) {
+                R.id.chipCiv -> ModCategory.CIVILIZATION
                 R.id.chipBen10 -> ModCategory.BEN10
                 R.id.chipAnime -> ModCategory.ANIME
                 R.id.chipSuperhero -> ModCategory.SUPERHERO
@@ -104,7 +110,9 @@ class MainActivity : AppCompatActivity() {
     private fun applyCurrentFilters() {
         val query = etSearch.text?.toString().orEmpty()
         modAdapter.applyFilter(query, selectedCategory)
-        tvEmptyState.visibility = if (modAdapter.getDisplayedCount() == 0) View.VISIBLE else View.GONE
+        val count = modAdapter.getDisplayedCount()
+        tvEmptyState.visibility = if (count == 0) View.VISIBLE else View.GONE
+        tvResultCount.text = "Showing $count of ${ModRepository.getModList().size} Mods Available"
     }
 
     private fun setupMinecraftStatus() {
@@ -156,13 +164,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupCacheCleaner() {
-        tvBottomInfo.setOnClickListener {
-            androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("💡 Minecraft Bedrock Setup Guide")
-                .setMessage("1. Tap any mod to export and launch Minecraft.\n2. In Minecraft World Settings:\n   • Activate Behavior Pack\n   • Activate Resource Pack\n3. Under 'Experiments', turn ON:\n   • Beta APIs (Required for modern GameTest scripts)\n   *(Note: 'Holiday Creator Features' was removed by Mojang in modern Bedrock)*\n4. Enjoy the mods in 60 FPS!")
-                .setPositiveButton("🎮 Got it!", null)
-                .show()
+        val guideListener = View.OnClickListener {
+            showSetupGuideDialog()
         }
+
+        tvBottomInfo.setOnClickListener(guideListener)
+        btnQuickGuide.setOnClickListener(guideListener)
 
         btnClearCache.setOnClickListener {
             val freed = ModInstaller.clearModCache(this)
@@ -173,5 +180,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "🧹 Cache is already clean!", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun showSetupGuideDialog() {
+        androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("💡 Minecraft Bedrock Setup Guide")
+            .setMessage("1. Tap any mod card to export and launch Minecraft automatically.\n\n2. In Minecraft World Settings:\n   • Go to Behavior Packs -> Activate the Mod\n   • Go to Resource Packs -> Activate the Mod\n\n3. Under 'Experiments' Settings:\n   • Turn ON 'Beta APIs' (Required for modern GameTest AI scripts)\n   *(Note: 'Holiday Creator Features' was removed by Mojang in modern Bedrock versions)*\n\n4. Experience smooth 60 FPS gameplay!")
+            .setPositiveButton("🎮 Got it!", null)
+            .show()
     }
 }
