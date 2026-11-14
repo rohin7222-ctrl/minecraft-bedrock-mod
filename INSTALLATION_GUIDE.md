@@ -14,6 +14,28 @@
   - Low-End Mobile Smooth 64x (Locked 60 FPS) மற்றும் Ultra 128x HD modes.
 
 
+
+### 🪓 நிஜ பிளேயர் வேலை சுழற்சி (v1.0.79 Real Player Work Engine):
+1. **🌲 மரம் வெட்டுதலும் தானியங்கி மரக்கன்று நடுதலும் (Sustainable Tree Felling):**
+   - Woodcutter மரங்களை நிஜ பிளேயர் போல கோடாரியால் வெட்டி மரக்கட்டைகளைச் சேகரிக்கிறார்.
+   - மரம் வெட்டப்பட்ட மண்ணில் தானாகவே ஓக் மரக்கன்றை (oak_sapling) நட்டு காட்டைப் பாதுகாக்கிறார்!
+2. **⛏️ சுரங்கத் தொழிலும் டார்ச் ஒளியேற்றலும் (Quarrying & Mine Shaft Lighting):**
+   - Miner பாறைகள் மற்றும் தாதுக்களை உடைத்து, இருண்ட சுரங்கங்களில் தானாகவே சுவர்களில் டார்ச் நட்டு ஒளியூட்டுகிறார்!
+3. **🔥 கல் அடுப்பில் உருக்குதலும் புகையும் (Smelting with Smoke Particles):**
+   - Crafter கல் அடுப்பில் (Adupu) இரும்பை உருக்கும் போது நிஜமான புகை துகள்கள் (campfire_smoke_particle) எழுந்து வியக்க வைக்கிறது!
+4. **🌾 பயிர் அறுவடையும் மறுவிதைப்பும் (Farming & Replanting):**
+   - முதிர்ந்த கோதுமை, கேரட் பயிர்களை அறுவடை செய்து உணவு சேமிப்பதுடன், உடனே புதிய விதைகளை நிலத்தில் மறுவிதைப்பு செய்கிறார்!
+5. **💤 இரவில் படுக்கையில் உறங்குதல் (Nighttime Bed Sleep Routine):**
+   - இரவு நேரத்தில் வேலைகளை நிறுத்திவிட்டு, வீடுகளில் உள்ள படுக்கைகளுக்குச் சென்று உறங்கி (nimation.villager.get_in_bed) விடியற்காலையில் புத்துணர்ச்சியுடன் எழுகிறார்!
+6. **🏷️ நேரடி வேலை நிலை NameTags (Dynamic Player Activity NameTags):**
+   - ஒவ்வொரு கிராமத்தவரும் என்ன வேலை செய்கிறார் என்பதை தலைக்கு மேல் தெளிவாகக் காட்டும்:
+     - §a[🪓 Chopping Tree]
+     - §b[⛏️ Quarrying Ore]
+     - §d[🔨 Crafting & Smelting]
+     - §6[🏗️ Building House]
+     - §e[🏹 Shearing & Farming]
+     - §9[💤 Sleeping in Bed]
+
 ### 👑 பிளேயர் முழு அதிகாரம் & கூட்டாளி முறை (v1.0.78 Player Full Access & Companion Co-Op):
 1. **💎 டூல் நிலைகள் & ஆர்மர் முன்னேற்றம் (Tool Tier Progression):**
    - Novice (Iron) -> Journeyman (Diamond Tools + Shield) -> Grandmaster (Netherite Tools + Totem of Undying)!
