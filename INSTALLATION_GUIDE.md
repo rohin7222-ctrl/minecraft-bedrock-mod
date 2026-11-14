@@ -15,6 +15,20 @@
 
 
 
+### 🛡️ முழு கவச உடைகள், தனித்துவ அரட்டை & போர்த்திறன் (v1.0.83 Full Armor Suits, Personality Chat & Resilient Combat):
+1. **🛡️ 4-பகுதி முழு கவச உடைகள் (Full 4-Piece Armor Suits Progression):**
+   - அனுபவம் மற்றும் நிலைக்கு (XP Tier) ஏற்ப தலைக்கவசம், மார்புக் கவசம், காற்சட்டை, காலணிகள் (Helmet, Chestplate, Leggings, Boots) தானாகவே அணிகின்றனர்!
+   - தொடக்க நிலையில் முழு இரும்புக் கவசம் (Full Iron Armor), நடுநிலையில் வைரக் கவசம் (Full Diamond Armor), உயர்நிலையில் நெதரைட் கவசம் (Full Netherite Armor) அணிந்து உண்மையான பிளேயர்கள் போலவே கம்பீரமாக வலம் வருகின்றனர்!
+   - கவசங்களால் எதிரிகளின் தாக்குதல்களைத் தாங்கும் அபாரமான எதிர்ப்பு ஆற்றல் (Armor Protection) பெறுகின்றனர்!
+2. **💬 குணாதிசய முத்திரையுடன் கூடிய உலக அரட்டை (Personality-Infused World Chat):**
+   - Minecraft உலக அரட்டையில் கிராமத்தவர்கள் பேசும் போது அவர்களது தனித்துவமான குணம் மற்றும் பட்டங்கள் (Archetype Emoji & Title) பளிச்சிடும்:
+     - `§6<⚙️ Murugan (Redstone Mechanist)> According to my circuit calculations, Piston Harvester is operational!`
+     - `§6<🛡️ Gopi (Valiant Sentinel)> By my blade and honor, Hostile ZOMBIE spotted! Drawing blade and engaging!`
+     - `§6<🏰 Ramesh (Master Architect)> Behold this architectural geometry: Commencing Defensive Watchtower!`
+     - `§6<🌾 Lakshmi (Eco-Botanist Farmer)> May fertile soil grant abundance; Harvested ripe wheat & replanted!`
+3. **⚔️ பலப்படுத்தப்பட்ட பிழை இல்லாத போர் முறை (Resilient Universal Combat Engine):**
+   - அனைத்து Minecraft Bedrock பதிப்புகளிலும் தங்குதடையின்றி வேலை செய்யும் மெலீ அடி, ஜம்ப் கிரிட்டிக்கல் மற்றும் வில் அம்பு தாக்குதல்கள்!
+
 ### ⚙️ ரெட்ஸ்டோன் இயந்திரங்கள், சோம்பி தடுப்பு & தனித்துவ குணங்கள் (v1.0.82 Redstone, Anti-Zombie & Personalities):
 1. **⚙️ ரெட்ஸ்டோன் & பிஸ்டன் தானியங்கி இயந்திரங்கள் (Redstone & Piston Automations):**
    - **பிஸ்டன் பயிர் அறுவடை இயந்திரம் (Automated Piston Crop Harvester):** பிஸ்டன்கள், ரெட்ஸ்டோன் ஒயரிங், லிவர் மற்றும் நீர் பாய்ச்சல் மூலம் முதிர்ந்த பயிர்களை ஒரே நொடியில் தானாக அறுவடை செய்யும் மெக்கானிசம்!
