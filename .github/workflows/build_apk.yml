@@ -52,7 +52,8 @@ jobs:
         run: |
           mkdir -p apk_output
           find app/build -name "*.apk" -exec cp {} apk_output/ \;
-          cp app/src/main/assets/*.mcaddon apk_output/
+          cp app/src/main/assets/*.mcaddon apk_output/ 2>/dev/null || true
+          cp app/src/main/assets/*.mcpack apk_output/ 2>/dev/null || true
           ls -la apk_output/
 
       - name: Upload Debug APK Artifact
@@ -62,6 +63,7 @@ jobs:
           path: |
             apk_output/*.apk
             apk_output/*.mcaddon
+            apk_output/*.mcpack
           retention-days: 30
 
       - name: Create GitHub Release
@@ -113,8 +115,10 @@ jobs:
             - **Direct Iron Man Addon**: Download `Iron_Man_Addon.mcaddon`
             - **Direct Spider-Man Addon**: Download `Spider_Man_Addon.mcaddon`
             - **Direct Marvel Project Addon**: Download `Marvel_Project_v3.0.1.mcaddon`
+            - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Tap to auto-open in Minecraft!)
           files: |
             apk_output/*.apk
             apk_output/*.mcaddon
+            apk_output/*.mcpack
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

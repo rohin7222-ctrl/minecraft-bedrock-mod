@@ -75,6 +75,9 @@ class ModAdapter(
         holder.btnImport.setOnClickListener {
             onModClick(mod)
         }
+        holder.itemView.setOnClickListener {
+            onModClick(mod)
+        }
     }
 
     override fun getItemCount(): Int = displayedMods.size

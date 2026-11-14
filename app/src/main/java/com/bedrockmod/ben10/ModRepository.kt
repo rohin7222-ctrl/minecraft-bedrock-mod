@@ -101,11 +101,23 @@ object ModRepository {
                 buttonText = "⚡ IMPORT QUIRKBORN MOD ⚡"
             ),
             ModItem(
+                id = "ultrareal_texture_pack",
+                title = "ULTRAREAL 100X HD TEXTURE PACK",
+                category = ModCategory.ACTION,
+                badge = "🎨 100X REALISTIC MOBS • 360 SKY • CAUSTIC WATER",
+                desc = "UltraReal 100x v2.0 HD Texture Pack! Realistic mobs, 11 sun-shadowed trees, 360 dynamic sky, caustic waters, 3D ores, and 110+ HD items. Includes 64x Low-End Mobile 60 FPS mode and Ultra 128x mode. Tap anywhere on this card to automatically open and import directly into Minecraft PE!",
+                sizeText = "💾 3.7 MB",
+                iconEmoji = "🎨",
+                assetFileName = ModInstaller.ASSET_ULTRAREAL,
+                buttonBgRes = R.drawable.btn_civilization_emerald,
+                buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨"
+            ),
+            ModItem(
                 id = "civilization",
                 title = "CIVILIZATION: AUTONOMOUS AI CITIZENS",
                 category = ModCategory.ACTION,
-                badge = "🏛️ NATURAL MINECRAFT TIME • UNRESTRICTED ROAMING • SOLO PLAYER COGNITION",
-                desc = "Part 5 Living World Masterpiece! Natural Minecraft daylight cycle (gamerule dodaylightcycle true) with all borders and restrictions eliminated. Every citizen operates as an independent player across the boundless world: smart tool equipping in mainhand, auto-healing with depot provisions, full access to chests/crafting tables/beds, and adaptive survival reflexes! Absolute brotherhood peace guarantees 100% friendly fire immunity with zero in-fighting. Features custom 3D Straw Hat Anime model, visible step-by-step actions, universal touch UI, and silky-smooth 60 FPS mobile performance!",
+                badge = "🏛️ FULL WORLD AWARENESS • REAL PLAYER BEHAVIORS • 3D STRAW HAT",
+                desc = "Part 5 Living World Masterpiece! Citizens now possess full world awareness (biomes, coordinates, elevation, daylight radar, flora/fauna) and genuine player behaviors: physical arm-swing mining/chopping, placing torches in dark caves/nights, crouch-hello greetings, realistic eating routines with food in hand, swimming in water, and looting dropped items into communal storage! 100% zero in-fighting brotherhood and silky-smooth 60 FPS mobile performance!",
                 sizeText = "💾 0.5 MB",
                 iconEmoji = "🏛️",
                 assetFileName = ModInstaller.ASSET_CIVILIZATION,

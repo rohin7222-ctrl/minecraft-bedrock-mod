@@ -28,6 +28,7 @@ object ModInstaller {
     const val ASSET_MARVEL_PROJECT = "Marvel_Project_v3.0.1.mcaddon"
     const val ASSET_SOLO_LEVELING = "Solo_Leveling_v1.0.6.mcaddon"
     const val ASSET_CIVILIZATION = "Civilization.mcaddon"
+    const val ASSET_ULTRAREAL = "UltraReal_100x_HD_v2.mcpack"
 
     private val mainHandler = Handler(Looper.getMainLooper())
 
@@ -186,8 +187,13 @@ object ModInstaller {
                         postComplete(onComplete, true, "Select Minecraft from the list to import $modTitle!")
                     }
                     else -> {
-                        launchMinecraft(context)
-                        postComplete(onComplete, false, "Minecraft Bedrock not found. Please install Minecraft PE!")
+                        try {
+                            context.startActivity(mcIntent)
+                            postComplete(onComplete, true, "🎮 Launching Minecraft... Importing $modTitle!")
+                        } catch (e: Exception) {
+                            launchMinecraft(context)
+                            postComplete(onComplete, false, "Minecraft Bedrock not found. Please install Minecraft PE!")
+                        }
                     }
                 }
 

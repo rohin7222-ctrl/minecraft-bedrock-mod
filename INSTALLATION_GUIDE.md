@@ -6,6 +6,25 @@
 ## 🌟 அடங்கியுள்ள 12 பிரம்மாண்ட Bedrock Addon-கள்:
 
 ### 🏛️ Civilization & RPG (1 Mod)
+
+### 🎨 UltraReal 100x HD Texture Pack (Bedrock Edition)
+- **நேரடி ஆட்டோமேட்டிக் இம்போர்ட் (One-Tap Automatic Minecraft Open):**
+  - ஆப்-ல் உள்ள UltraReal Texture Pack கார்டை அல்லது பட்டனைத் தொட்டாலே போதும்; Minecraft Bedrock தானாகவே திறந்து Texture Pack-ஐ உடனே Import செய்துவிடும்!
+  - 100x Realistic Mobs, 11 Sun-Shadowed Trees, 360 Dynamic Sky, Caustic Water, 3D Ores & 110+ Items.
+  - Low-End Mobile Smooth 64x (Locked 60 FPS) மற்றும் Ultra 128x HD modes.
+
+### 🌍 முழு உலக விழிப்புணர்வு & நிஜ பிளேயர் செயல்பாடுகள் (v1.0.77):
+1. **முழு உலக விழிப்புணர்வு (Full World Spatial Perception):**
+   - Villagers தாங்கள் இருக்கும் Biome (Taiga, Plains, Desert, Jungle, Caves, Mountains), துல்லியமான Coordinates (X, Y, Z), Elevation Layer (Deepslate முதல் Alpine வரை), சூரிய/வான்வெளி வெளிச்சம் மற்றும் அருகிலுள்ள தாதுக்கள், மரங்கள், பயிர்களைத் துல்லியமாக உணர்கிறார்கள்.
+   - UI Terminal-ல் [🌍 World & Biome Perception] மெனு மூலமாக இதை முழுமையாகக் காணலாம்.
+2. **நிஜ பிளேயர் நடத்தைகள் (Authentic Player Behaviors):**
+   - **கையை வீசி உடைத்தல் (Arm Swing Mining/Chopping):** வேலை செய்யும் போது கையை நிஜ பிளேயர் போல வீசி கோடாரி/பிக்காக்ஸ் கொண்டு வேலை செய்கிறார்கள்.
+   - **இருண்ட இடங்களில் டார்ச் நடுதல் (Placing Torches in Dark Caves):** இரவு அல்லது குகைகளில் தானாகவே டார்ச் நட்டு வெளிச்சம் ஏற்படுத்துகிறார்கள்.
+   - **நிஜ உணவு உண்ணுதல் (Realistic Eating Routine):** கையில் ரொட்டி ஏந்தி, குனிந்து நின்று மெல்லும் சத்தத்துடன் உண்டு உயிர் பிழைக்கிறார்கள்.
+   - **Crouch-Hello வணக்கம்:** பிளேயர் குனிந்தால் கிராமத்தவரும் குனிந்து மகிழ்ச்சி ஒலி எழுப்புகிறார்.
+   - **பொருட்களைப் பொறுக்குதல் (Looting Items):** தரையில் விழும் மரக்கட்டை, கற்களை எடுத்து கிடங்கில் சேர்க்கிறார்கள்.
+   - **நீச்சல் (Swimming):** நீரில் மூழ்காமல் நீச்சலடித்து கரைக்கு வருகிறார்கள்.
+
 1. **🏛️ Civilization: AI Villagers & Peaceful World Addon (Bedrock Edition)**
    - New Custom Bedrock Addon! Eliminates all 35+ monsters, and upgrades Villagers with conversational AI, full English speech (no more "hmm"!), dynamic vocabulary learning, friendship levels, and custom Bedrock dialogue UI!
 
