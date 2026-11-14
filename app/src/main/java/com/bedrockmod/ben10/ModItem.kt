@@ -4,10 +4,9 @@ enum class ModCategory(val displayName: String) {
     ALL("🌟 All (14)"),
     FAVORITES("⭐ Starred"),
     CIVILIZATION("🏛️ Civilization & HD (2)"),
-    VEHICLES("🏎️ Vehicles (1)"),
     BEN10("👽 Ben 10 (2)"),
     ANIME("🎌 Anime (4)"),
-    SUPERHERO("🦸 Superheroes (3)"),
+    SUPERHERO("🦸 Superheroes (4)"),
     ACTION("⚔️ Action & Guns (2)")
 }
 

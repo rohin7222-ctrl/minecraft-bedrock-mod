@@ -31,19 +31,6 @@ object ModRepository {
                 guideInfo = "🎨 UltraReal HD In-Game Guide:\n• Activate under Global Resources or World Resource Packs.\n• Features 100x HD Mobs, 360 dynamic skybox, caustic waters, and 3D ore blocks.\n• Locked 60 FPS mobile optimization with zero frame drops."
             ),
             ModItem(
-                id = "world_vehicles",
-                title = "WORLD ALL VEHICLES 2026",
-                category = ModCategory.VEHICLES,
-                badge = "🏎️ 40 REAL VEHICLES • SUPERCARS • JETS • SUBS",
-                desc = "Ultimate 2026 Real-World Vehicle Addon! 40 Driveable, Flyable, Submersible vehicles: Bugatti Tourbillon, Ferrari F80, Koenigsegg Jesko, F-22 Raptor Jet, Apache Heli, Boeing 787, Cybertruck, Ninja H2R, Luxury Superyacht, Nuclear Sub, and SpaceX Starship! 60 FPS mobile optimized, zero experiment toggles needed!",
-                sizeText = "💾 1.0 MB",
-                iconEmoji = "🏎️",
-                assetFileName = ModInstaller.ASSET_WORLD_VEHICLES,
-                buttonBgRes = R.drawable.btn_vehicles_nitro,
-                buttonText = "🏎️ IMPORT ALL VEHICLES ADDON 🏎️",
-                guideInfo = "🏎️ World Vehicles In-Game Guide:\n• 40 driveable, flyable, and submersible vehicles!\n• Creative Spawn Eggs or commands: '/summon world:bugatti_tourbillon', '/summon world:f22_raptor_jet', '/summon world:m1a2_abrams_tank'.\n• Zero experiment toggles required - drive immediately!"
-            ),
-            ModItem(
                 id = "omni_evolution",
                 title = "BEN 10: OMNI EVOLUTION",
                 category = ModCategory.BEN10,
@@ -185,6 +172,19 @@ object ModRepository {
                 buttonBgRes = R.drawable.btn_marvel_purple,
                 buttonText = "⭐ IMPORT MARVEL PROJECT ⭐",
                 guideInfo = "⭐ Marvel Project Guide:\n• Summon Thor's Mjolnir and call down thunder.\n• Throw Captain America's Vibranium shield which ricochets.\n• Collect all 6 Infinity Stones to snap enemies out of existence."
+            ),
+            ModItem(
+                id = "green_lantern",
+                title = "GREEN LANTERN: CORPS UNIVERSE",
+                category = ModCategory.SUPERHERO,
+                badge = "🟢 7 LANTERN CORPS • 21 SUITS • RING CONSTRUCTS",
+                desc = "Green Lantern v3.9.1 Masterpiece! 7 Lantern Corps (Willpower Green, Sinestro Yellow, Red Rage, Blue Hope, Indigo Tribe, Orange Greed, Star Sapphire Pink, White Life, Black Death), Power Batteries, 21 Split Suits, Ring Builder with 6 Blueprints, Custom Energy Constructs, Supersonic Ring Flight, and Oa Quests!",
+                sizeText = "💾 13.9 MB",
+                iconEmoji = "🟢",
+                assetFileName = ModInstaller.ASSET_GREEN_LANTERN,
+                buttonBgRes = R.drawable.btn_green_lantern_emerald,
+                buttonText = "🟢 IMPORT GREEN LANTERN 🟢",
+                guideInfo = "🟢 Green Lantern In-Game Guide:\n• Craft Power Batteries & Lantern Rings at the Ring Builder workbench.\n• 7 Corps: Willpower (Green), Fear (Yellow), Rage (Red), Hope (Blue), Compassion (Indigo), Greed (Orange), Love (Pink), Life (White), Death (Black).\n• Ring Constructs: Hold ring to project energy shields, giant fists, swords, chains, and cannons.\n• Supersonic Flight: Double-jump while wearing ring and Lantern suit to fly!"
             )
         )
     }

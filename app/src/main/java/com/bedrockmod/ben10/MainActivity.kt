@@ -127,7 +127,6 @@ class MainActivity : AppCompatActivity() {
             selectedCategory = when (checkedId) {
                 R.id.chipFavorites -> ModCategory.FAVORITES
                 R.id.chipCiv -> ModCategory.CIVILIZATION
-                R.id.chipVehicles -> ModCategory.VEHICLES
                 R.id.chipBen10 -> ModCategory.BEN10
                 R.id.chipAnime -> ModCategory.ANIME
                 R.id.chipSuperhero -> ModCategory.SUPERHERO

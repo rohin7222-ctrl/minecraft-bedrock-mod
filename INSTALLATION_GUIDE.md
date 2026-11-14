@@ -1,66 +1,68 @@
-# 🟢 Minecraft Bedrock Mod Hub (14-in-1 Next-Gen Pro Suite v1.0.88)
-### 📱 14 Legendary Bedrock Addons | Starred Favorites | System Diagnostics Hub | 60 FPS Locked
+# 🟢 Minecraft Bedrock Mod Hub (14-in-1 Next-Gen Pro Suite v1.0.89)
+### 📱 14 Legendary Bedrock Addons | Green Lantern Corps | Starred Favorites | 60 FPS Locked
 
 ---
 
-## 🚀 v1.0.88 புத்தம் புதிய அட்வான்ஸ்டு அம்சங்கள் (Next-Gen Pro Suite Features):
-1. **⭐ விருப்பமான மோட்கள் சேமிப்பு (Persistent Starred Favorites & Filter):**
+## 🚀 v1.0.89 புத்தம் புதிய அட்வான்ஸ்டு அம்சங்கள் (Next-Gen Pro Suite Features):
+1. **🟢 கிரீன் லான்டர்ன் மோட் சேர்க்கை (Green Lantern 3.9.1 Addon Added):**
+   - 7 லான்டர்ன் படைகள் (7 Lantern Corps), 21 தனித்துவ சூட்கள் (Split Suits), ஆற்றல் வளையங்கள் (Power Rings) மற்றும் சக்தி வாய்ந்த கன்ஸ்ட்ரக்ட்கள் (Energy Constructs) கொண்ட பிரம்மாண்ட மோட் இணைக்கப்பட்டுள்ளது.
+2. **⭐ விருப்பமான மோட்கள் சேமிப்பு (Persistent Starred Favorites & Filter):**
    - ஒவ்வொரு மோட் கார்டின் வலது மேல் மூலையிலும் உள்ள நட்சத்திரத் தொடுதலைத் தொட்டு (`⭐`), உங்களுக்கு மிகவும் பிடித்த மோட்களை "Starred" செய்துகொள்ளலாம்.
    - மேலே உள்ள `⭐ Starred` பட்டனைத் தொட்டால் உங்களுக்குப் பிடித்த மோட்கள் மட்டுமே தனியாகப் பிரிக்கப்பட்டுத் தோன்றும். ஃபோன் சுவிட்ச் ஆஃப் ஆனாலும் இந்தத் தேர்வு அழியாது!
-2. **📖 விரிவான மோட் வழிகாட்டி & விவரங்கள் (In-Depth Mod Guide & Details Sheet):**
+3. **📖 விரிவான மோட் வழிகாட்டி & விவரங்கள் (In-Depth Mod Guide & Details Sheet):**
    - கார்டில் உள்ள `📖 Guide` பட்டனையோ அல்லது கார்டையோ தொட்டால், அந்த மோடின் முழு விவரங்கள், விளையாட்டுக்குள் இயங்கும் கமாண்டுகள் (Chat Commands - e.g. `!civ`, `!religion`), ஸ்பான் முட்டைகள் மற்றும் சிறப்பு விதிகள் திரையில் தோன்றும்!
    - அங்கிருந்தபடியே நேரடியாக `🚀 Import & Launch` பட்டனைத் தொட்டு விளையாடலாம்.
-3. **⚙️ கணினி & நினைவக ஆய்வு மையம் (Bedrock System & Diagnostics Hub):**
+4. **⚙️ கணினி & நினைவக ஆய்வு மையம் (Bedrock System & Diagnostics Hub):**
    - திரையின் மேல் உள்ள Minecraft நிலை பலகையைத் தொட்டால்:
      - 🎮 Minecraft Bedrock பதிப்பு & இயங்குநிலை.
      - 💾 ஃபோனில் மீதமுள்ள இலவச மெமரி இடம் (Free Internal Space in GB).
      - ⚡ 60 FPS லாக் செய்யப்பட்ட மொபைல் என்ஜின் & பேட்டரி விவரங்கள் நேரலையாகக் காட்டப்படும்!
-4. **⚡ 4-வழி வரிசைப்படுத்துதல் (4-Way Dynamic Sorting):**
+5. **⚡ 4-வழி வரிசைப்படுத்துதல் (4-Way Dynamic Sorting):**
    - `⚡ Sort: Featured ▼` பட்டனைத் தொட்டு 4 வழிகளில் மோட்களை வரிசைப்படுத்தலாம்:
      - **Featured:** முதன்மைப் பரிந்துரை வரிசை.
      - **A to Z:** அகரவரிசைப் படி.
      - **Smallest:** குறைந்த மெகாபைட் (MB) அளவுள்ளவை முதலில்.
      - **Starred First:** நீங்கள் விரும்பிய மோட்கள் முதலில்!
-5. **📳 விரல் தொடு அதிர்வு (Tactile Haptic Feedback):**
+6. **📳 விரல் தொடு அதிர்வு (Tactile Haptic Feedback):**
    - ஒவ்வொரு பட்டன், பில்டர் சிப் மற்றும் ஸ்டார் தொடுதலுக்கும் இயல்பான ஹாப்டிக் அதிர்வு சேர்க்கப்பட்டு மிக உயர்தர AAA செயலியாக மேம்படுத்தப்பட்டுள்ளது.
-6. **🌌 நவீன டார்க் தீம் & கார்டுகள் (Cosmic Dark & Emerald Cyberpunk Theme):**
+7. **🌌 நவீன டார்க் தீம் & கார்டுகள் (Cosmic Dark & Emerald Cyberpunk Theme):**
    - ஆப் முழுவதும் அதிநவீன டார்க் பிரீமியம் தோற்றம் (`#070B14`, `#0D1527`, `#111C33`), 18dp வளைந்த விளிம்புகள் மற்றும் எமரால்டு/நியான் வண்ண சிறப்பம்சங்கள்.
-7. **🏷️ வகை வாரியான வடிகட்டிப் பட்டைகள் (Smart Category Chips):**
+8. **🏷️ வகை வாரியான வடிகட்டிப் பட்டைகள் (Smart Category Chips):**
    - **🌟 All (14):** அனைத்து 14 மோட்களையும் ஒரே திரையில் காண்க.
    - **⭐ Starred:** நீங்கள் விரும்பிய மோட்கள் மட்டும்.
-   - **🏎️ Vehicles (1):** உலக வாகனம் மோட் (40 நிஜ உலக சூப்பர்கார்கள், ஜெட்கள், நீர்மூழ்கிக் கப்பல்கள்).
    - **🏛️ Civilization & HD (2):** நாகரிக AI கிராமத்தவர்கள் மற்றும் 100x UltraReal HD டெக்ஸ்சர் பேக்.
    - **👽 Ben 10 (2):** Omni Evolution & Omni-Bound.
    - **🎌 Anime Legends (4):** Solo Leveling, One Piece, Tensura, Dragon Evolution.
-   - **🦸 Superheroes (3):** Iron Man, Spider-Man, Marvel Avengers.
+   - **🦸 Superheroes (4):** Iron Man, Spider-Man, Marvel Avengers, Green Lantern.
    - **⚔️ Action & Guns (2):** Actual Guns 2, Quirkborn MHA.
-8. **🔍 நேரடி தேடல் & மோட் எண்ணிக்கை (Live Stadium Search & Counter):**
+9. **🔍 நேரடி தேடல் & மோட் எண்ணிக்கை (Live Stadium Search & Counter):**
    - தட்டச்சு செய்யும்போது உடனடியாக மோட்களை வடிகட்டி, எத்தனை மோட்கள் உள்ளன என்பதை உடனுக்குடன் (e.g., `Showing 14 of 14 Mods Available`) தெளிவாகக் காட்டுகிறது.
-9. **📖 விரைவு அமைவு வழிகாட்டி (1-Tap Quick Setup Guide Dialog):**
-   - திரையின் கீழேயுள்ள `📖 Setup Guide` பட்டனைத் தொட்டால் Minecraft-ல் "Beta APIs" எவ்வாறு ஆன் செய்ய வேண்டும் என்பதை எளிய 3 படிகளில் விளக்கும் பாப்-அப் திறக்கும்.
-10. **🧹 கேச் க்ளீனர் (Clean Cache Tool):**
+10. **📖 விரைவு அமைவு வழிகாட்டி (1-Tap Quick Setup Guide Dialog):**
+    - திரையின் கீழேயுள்ள `📖 Setup Guide` பட்டனைத் தொட்டால் Minecraft-ல் "Beta APIs" எவ்வாறு ஆன் செய்ய வேண்டும் என்பதை எளிய 3 படிகளில் விளக்கும் பாப்-அப் திறக்கும்.
+11. **🧹 கேச் க்ளீனர் (Clean Cache Tool):**
     - ஃபோனில் உள்ள தேவையற்ற கேச் கோப்புகளை ஒரே தொடுதலில் நீக்கி ஃபோனின் நினைவகத்தை மிச்சப்படுத்தும் பட்டன்.
 
 ---
 
 ## 🌟 அடங்கியுள்ள 14 பிரம்மாண்ட Bedrock Addon-கள்:
 
-### 🏎️ World All Vehicles 2026 (40 நிஜ உலக வாகனங்கள் - நிலம், வான், கடல்):
-- **🏎️ அதிவேக சூப்பர்கார்கள் (Hypercars & Supercars):**
-  - Bugatti Tourbillon, Ferrari F80, Koenigsegg Jesko, Lamborghini Revuelto, Porsche 911 GT3 RS, Nissan GT-R Nismo, Toyota Supra MK5, Formula 1 2026, Tesla Roadster 2026, Rolls-Royce Spectre.
-- **🛻 ஆஃப்-ரோடு & ட்ரக்குகள் (Off-Road & Trucks):**
-  - Tesla Cybertruck, Ford F-150 Raptor, Mercedes G63 AMG, Toyota Land Cruiser.
-- **🏍️ சூப்பர்பைக்குகள் (Superbikes & Cycles):**
-  - Kawasaki Ninja H2R, Ducati Panigale V4R, BMW S1000RR, KTM Dirt Bike, Harley Cruiser, Mountain Bicycle, Road Racing Cycle, BMX Freestyle.
-- **✈️ விமானங்கள் & ஹெலிகாப்டர்கள் (Aviation & Aerospace):**
-  - F-22 Raptor Jet, Boeing 787 Airliner, Apache AH-64 Attack Heli, Cessna Skyhawk, Rescue Helicopter, eVTOL Air Taxi 2026, FPV Drone, SpaceX Starship 2026!
-- **🛥️ கப்பல்கள் & நீர்மூழ்கிகள் (Maritime & Submersibles):**
-  - Luxury Superyacht, Racing Speedboat, Yamaha Jet Ski, Seabob Diver Scooter, Triton Deep Submersible, Virginia Nuclear Submarine.
-- **🛡️ ராணுவம் & அவசர சேவை (Military & Emergency):**
-  - M1A2 Abrams Tank, Police Interceptor, Ambulance Van, Fire Rescue Truck.
-- **⚡ சிறப்பம்சங்கள்:**
-  - சுழலும் சக்கரங்கள், அனிமேஷன் செய்யப்பட்ட இறக்கைகள், 60 FPS மொபைல் ஆப்டிமைசேஷன்.
-  - எவ்வித Experimental Toggles-ம் இன்றி 100% உடனடியாக இயங்கும் வசதி!
+### 🟢 Green Lantern: Corps Universe (v3.9.1 Masterpiece Addon):
+- **🌌 7 லான்டர்ன் படைகள் & மோதிரங்கள் (7 Lantern Corps & Emotional Spectrum):**
+  - **பச்சை (Green - Willpower):** மன உறுதியின் ஆற்றல்; ஆற்றல் கவசங்கள், குத்துகள், வாள்கள் உருவாக்குதல்.
+  - **மஞ்சள் (Yellow - Sinestro Fear):** எதிரிகளுக்கு பயம் விளைவிக்கும் சினெஸ்ட்ரோ படை.
+  - **சிவப்பு (Red - Atrocitus Rage):** கட்டுக்கடங்காத கோபத்தின் சிவப்பு நெருப்பு திரவத் தாக்குதல்.
+  - **நீலம் (Blue - Saint Walker Hope):** நம்பிக்கை மற்றும் பச்சை மோதிரங்களை அதிவேகமாக ரீசார்ஜ் செய்யும் திறன்.
+  - **இண்டிகோ (Indigo - Compassion):** கருணையின் ஆற்றல் மற்றும் தொலைதூர இடப்பெயர்வு (Teleportation).
+  - **ஆரஞ்சு (Orange - Larfleeze Greed):** பேராசையின் ஆரஞ்சு பேய் உருவங்களை உருவாக்குதல்.
+  - **பிங்க் (Pink - Star Sapphire Love), வெள்ளை (White - Life), கருப்பு (Black - Death).**
+- **⚡ ரிங் பில்டர் & பவர் பேட்டரி (Ring Builder & Power Batteries):**
+  - சொந்தமாக மோதிரங்களை உருவாக்குதல் மற்றும் பவர் பேட்டரிகளில் மோதிரத்திற்கு சார்ஜ் ஏற்றுதல்!
+- **✈️ அதிவேக சூப்பர்சோனிக் பறக்கும் திறன் (Supersonic Ring Flight):**
+  - சூட் மற்றும் மோதிரத்தை அணிந்து காற்றில் இரட்டைத் தாவல் (Double Jump) செய்தால் ஒலியை விட வேகமாகப் பறக்கலாம்!
+- **🗡️ ஆற்றல் கன்ஸ்ட்ரக்ட்கள் (Energy Constructs):**
+  - ராட்சத பச்சை முஷ்டிகள் (Giant Fists), கவசங்கள், துப்பாக்கிகள், செயின்கள் மற்றும் பீரங்கிகள்!
+- **🪐 ஓவா கிரகப் பணிகள் (Oa Quests & Missions):**
+  - கார்டியன்ஸ் ஆஃப் தி யுனிவர்ஸ் வழங்கும் கிரகப் பாதுகாப்பு பணிகள்!
 
 ### 🏛️ Civilization & HD (2 Mods)
 1. **🏛️ Civilization: Autonomous AI Villagers (v1.0.86 Masterpiece)**

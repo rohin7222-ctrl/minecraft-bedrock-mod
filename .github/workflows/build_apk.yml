@@ -71,12 +71,13 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen Pro Suite v1.0.88)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Green Lantern & Pro Suite v1.0.89)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen Pro Suite v1.0.88)
-            Ultimate upgrade for the Android Bedrock Mod Hub! Now featuring an interactive Mod Details & In-Game Guide sheet, persistent Starred Favorites bookmarking, real-time System & Storage Diagnostics Hub, tactile haptic feedback, 4-Way dynamic sorting (Featured, A-Z, Smallest, Starred First), and 14 epic Bedrock addons with 1-Tap direct Minecraft auto-launching!
+            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Green Lantern Corps Edition & Pro Suite v1.0.89)
+            Added Green Lantern 3.9.1 Addon with all 7 Lantern Corps, 21 Split Suits, and Ring Constructs! Removed old vehicle mods as requested. Features persistent favorites bookmarking, in-depth mod guide sheets, system diagnostics hub, tactile haptic feedback, 4-Way dynamic sorting, and 14 epic Bedrock addons with 1-Tap direct Minecraft auto-launching!
             
-            ### 🌟 v1.0.88 Pro Upgrade Features:
+            ### 🌟 v1.0.89 Upgrade Highlights:
+            - **🟢 Green Lantern 3.9.1 Masterpiece**: 7 Lantern Corps (Willpower Green, Sinestro Yellow, Red Rage, Blue Hope, Indigo, Orange, Star Sapphire Pink, White Life, Black Death), Power Batteries, 21 Split Suits, Ring Builder with 6 Blueprints, Custom Energy Constructs, Supersonic Ring Flight, and Oa Quests!
             - **⭐ Persistent Favorites & Starred Filter**: Star your favorite mods and filter them with one tap (`⭐ Starred`).
             - **📖 In-Depth Mod Guide & Details Sheet**: Tap '📖 Guide' or any mod card for in-depth lore, spawn eggs, and in-game chat commands.
             - **⚙️ Bedrock System & Diagnostics Hub**: Tap the top status bar for live device telemetry, free storage space (GB), and 60 FPS performance monitoring.
@@ -88,8 +89,8 @@ jobs:
                - 100% Real Player AI Villagers with 4 Faith Religions, Sacred Altars, full Netherite/Diamond Armor, dynamic Redstone/Piston automation, Anti-Zombie Sanctuary spawn proofing, and distinct personality characteristics!
             2. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
                - Ultra-realistic 100x high-definition textures with PBR lighting reflections, realistic skies, crystal waters, and 60 FPS mobile optimization.
-            3. **🏎️ World All Vehicles 2026 (v2.11.14 Master Fleet Addon)**
-               - 40 Driveable, Flyable, and Submersible Real-World Vehicles: Bugatti Tourbillon, Ferrari F80, Koenigsegg Jesko, F-22 Raptor Jet, Apache AH-64 Heli, Boeing 787 Airliner, Cybertruck, Ninja H2R, Luxury Superyacht, Nuclear Submarine, and SpaceX Starship! 60 FPS mobile optimized, zero experiment toggles needed!
+            3. **🟢 Green Lantern: Corps Universe (v3.9.1 Masterpiece Addon)**
+               - 7 Lantern Corps, Power Batteries, 21 Split Suits, Ring Builder, Energy Constructs (Shields, Fists, Swords, Cannons), Supersonic Ring Flight, and Oa Missions!
             4. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
             5. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
@@ -115,7 +116,7 @@ jobs:
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
-            - **Direct World All Vehicles 2026 Addon**: Download `World_All_Vehicles_2026.mcaddon` (Auto-opens in Minecraft!)
+            - **Direct Green Lantern Addon**: Download `Green_Lantern_3_9_1.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Civilization Addon**: Download `Civilization.mcaddon` (Auto-opens in Minecraft!)
             - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
