@@ -2,6 +2,7 @@ package com.bedrockmod.ben10
 
 enum class ModCategory(val displayName: String) {
     ALL("🌟 All (14)"),
+    FAVORITES("⭐ Starred"),
     CIVILIZATION("🏛️ Civilization & HD (2)"),
     VEHICLES("🏎️ Vehicles (1)"),
     BEN10("👽 Ben 10 (2)"),
@@ -20,5 +21,6 @@ data class ModItem(
     val iconEmoji: String,
     val assetFileName: String,
     val buttonBgRes: Int,
-    val buttonText: String
+    val buttonText: String,
+    val guideInfo: String = ""
 )

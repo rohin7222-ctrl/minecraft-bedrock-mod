@@ -5,19 +5,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.progressindicator.LinearProgressIndicator
 
 class ModAdapter(
     private val allMods: List<ModItem>,
-    private val onModClick: (ModItem) -> Unit
+    private val favoritesManager: FavoritesManager,
+    private val onModClick: (ModItem) -> Unit,
+    private val onDetailsClick: (ModItem) -> Unit,
+    private val onFavoriteToggled: (ModItem, Boolean) -> Unit
 ) : RecyclerView.Adapter<ModAdapter.ModViewHolder>() {
 
     private val displayedMods = ArrayList<ModItem>(allMods)
     private var currentQuery: String = ""
     private var currentCategory: ModCategory = ModCategory.ALL
     private var activeImportingId: String? = null
+    private var currentSortMode: Int = 0 // 0: Featured, 1: A-Z, 2: Size, 3: Starred First
 
     class ModViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvEmoji: TextView = itemView.findViewById(R.id.tvModEmoji)
@@ -25,7 +28,9 @@ class ModAdapter(
         val tvBadge: TextView = itemView.findViewById(R.id.tvModBadge)
         val tvSize: TextView = itemView.findViewById(R.id.tvModSize)
         val tvDesc: TextView = itemView.findViewById(R.id.tvModDesc)
+        val btnFavorite: TextView = itemView.findViewById(R.id.btnFavorite)
         val cardProgress: LinearProgressIndicator = itemView.findViewById(R.id.cardProgress)
+        val btnModDetails: Button = itemView.findViewById(R.id.btnModDetails)
         val btnImport: Button = itemView.findViewById(R.id.btnImportMod)
     }
 
@@ -43,14 +48,33 @@ class ModAdapter(
         holder.tvSize.text = mod.sizeText
         holder.tvDesc.text = mod.desc
 
-        // Button background & text
+        // Favorite Star
+        val isFav = favoritesManager.isFavorite(mod.id)
+        holder.btnFavorite.text = if (isFav) "⭐" else "☆"
+        holder.btnFavorite.setOnClickListener {
+            it.performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
+            val newState = favoritesManager.toggleFavorite(mod.id)
+            holder.btnFavorite.text = if (newState) "⭐" else "☆"
+            onFavoriteToggled(mod, newState)
+            if (currentCategory == ModCategory.FAVORITES) {
+                applyFilter(currentQuery, currentCategory)
+            }
+        }
+
+        // Details Guide Button
+        holder.btnModDetails.setOnClickListener {
+            it.performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
+            onDetailsClick(mod)
+        }
+
+        // Import Button styling & state
         holder.btnImport.setBackgroundResource(mod.buttonBgRes)
         val isImporting = (activeImportingId == mod.id)
         val isAnyImporting = (activeImportingId != null)
 
         if (isImporting) {
             holder.cardProgress.visibility = View.VISIBLE
-            holder.btnImport.text = "⏳ EXPORTING & LAUNCHING..."
+            holder.btnImport.text = "⏳ EXPORTING..."
             holder.btnImport.isEnabled = false
         } else {
             holder.cardProgress.visibility = View.GONE
@@ -73,10 +97,12 @@ class ModAdapter(
         }
 
         holder.btnImport.setOnClickListener {
+            it.performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
             onModClick(mod)
         }
         holder.itemView.setOnClickListener {
-            onModClick(mod)
+            it.performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
+            onDetailsClick(mod)
         }
     }
 
@@ -87,13 +113,23 @@ class ModAdapter(
         notifyDataSetChanged()
     }
 
+    fun setSortMode(sortMode: Int) {
+        currentSortMode = sortMode
+        applySort()
+        notifyDataSetChanged()
+    }
+
     fun applyFilter(query: String, category: ModCategory) {
         currentQuery = query.trim().lowercase()
         currentCategory = category
 
         displayedMods.clear()
         for (mod in allMods) {
-            val matchesCategory = (category == ModCategory.ALL || mod.category == category)
+            val matchesCategory = when (category) {
+                ModCategory.ALL -> true
+                ModCategory.FAVORITES -> favoritesManager.isFavorite(mod.id)
+                else -> mod.category == category
+            }
             val matchesQuery = if (currentQuery.isEmpty()) {
                 true
             } else {
@@ -106,9 +142,30 @@ class ModAdapter(
                 displayedMods.add(mod)
             }
         }
+        applySort()
         notifyDataSetChanged()
+    }
+
+    private fun applySort() {
+        when (currentSortMode) {
+            1 -> displayedMods.sortBy { it.title }
+            2 -> displayedMods.sortBy { extractSizeMb(it.sizeText) }
+            3 -> displayedMods.sortByDescending { favoritesManager.isFavorite(it.id) }
+            else -> {
+                // Featured: Keep order from allMods
+                displayedMods.sortBy { allMods.indexOf(it) }
+            }
+        }
+    }
+
+    private fun extractSizeMb(sizeText: String): Float {
+        return try {
+            val num = sizeText.replace(Regex("[^0-9.]"), "").toFloat()
+            if (sizeText.contains("KB", ignoreCase = true)) num / 1024f else num
+        } catch (e: Exception) {
+            0f
+        }
     }
 
     fun getDisplayedCount(): Int = displayedMods.size
 }
-

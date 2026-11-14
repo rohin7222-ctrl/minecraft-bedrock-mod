@@ -71,10 +71,17 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen 14-Mod Fleet Edition)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen Pro Suite v1.0.88)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (14 Epic Bedrock Mods & Next-Gen Cyberpunk UI)
-            Experience our completely revamped Android interface featuring a sleek cosmic dark UI, category filter tabs (Civilization, Vehicles, Ben 10, Anime, Superheroes, Action), live search counter, quick setup guide dialog, and 1-Tap auto-import!
+            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen Pro Suite v1.0.88)
+            Ultimate upgrade for the Android Bedrock Mod Hub! Now featuring an interactive Mod Details & In-Game Guide sheet, persistent Starred Favorites bookmarking, real-time System & Storage Diagnostics Hub, tactile haptic feedback, 4-Way dynamic sorting (Featured, A-Z, Smallest, Starred First), and 14 epic Bedrock addons with 1-Tap direct Minecraft auto-launching!
+            
+            ### 🌟 v1.0.88 Pro Upgrade Features:
+            - **⭐ Persistent Favorites & Starred Filter**: Star your favorite mods and filter them with one tap (`⭐ Starred`).
+            - **📖 In-Depth Mod Guide & Details Sheet**: Tap '📖 Guide' or any mod card for in-depth lore, spawn eggs, and in-game chat commands.
+            - **⚙️ Bedrock System & Diagnostics Hub**: Tap the top status bar for live device telemetry, free storage space (GB), and 60 FPS performance monitoring.
+            - **⚡ 4-Way Dynamic Sorting**: Toggle between Featured, Alphabetical (A-Z), File Size (Smallest First), and Starred First.
+            - **📳 Tactile Haptic Feedback**: Native vibration feedback on button presses and star toggles.
             
             ### 🏛️ 14 Legendary Bedrock Mods Included:
             1. **🏛️ Civilization: Autonomous AI Villagers (v1.0.86 Masterpiece)**

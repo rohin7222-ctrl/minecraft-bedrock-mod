@@ -9,12 +9,13 @@ object ModRepository {
                 title = "CIVILIZATION: AUTONOMOUS AI CITIZENS",
                 category = ModCategory.CIVILIZATION,
                 badge = "👑 7 AUTONOMOUS AIS • 4 RELIGIONS • FULL ARMOR",
-                desc = "Part 5 Living World Masterpiece v1.0.85! Villagers think and survive like real players: 4 Faith Pantheons, Sacred Altar Worship, Full Armor Suits (Iron->Diamond->Netherite), Redstone Piston Automations, Spawn-Proofing Sanctuary, and instant in-game !civ chat shortcuts! 100% offline 60 FPS locked!",
+                desc = "Part 5 Living World Masterpiece v1.0.86! Villagers think and survive like real players: 4 Faith Pantheons, Sacred Altar Worship, Full Armor Suits (Iron->Diamond->Netherite), Redstone Piston Automations, Spawn-Proofing Sanctuary, and instant in-game !civ chat shortcuts! 100% offline 60 FPS locked!",
                 sizeText = "💾 0.5 MB",
                 iconEmoji = "🏛️",
                 assetFileName = ModInstaller.ASSET_CIVILIZATION,
                 buttonBgRes = R.drawable.btn_civilization_emerald,
-                buttonText = "🏛️ IMPORT CIVILIZATION ADDON 🏛️"
+                buttonText = "🏛️ IMPORT CIVILIZATION ADDON 🏛️",
+                guideInfo = "🎮 Civilization In-Game Guide:\n• Chat Commands: Type '!civ' for Civilization Codex, '!religion' for Faith & Altar Codex, '!help' for guide.\n• 4 Faiths: Sol (Sun/Health), Deep Bedrock (Haste/Shield), Emerald Grove (Crops/Satiation), Redstone Spark (Speed/Repairs).\n• Combat & Armor: Villagers equip Iron -> Diamond -> Netherite based on XP.\n• Experiments: Turn ON 'Beta APIs'."
             ),
             ModItem(
                 id = "ultrareal_texture_pack",
@@ -26,7 +27,8 @@ object ModRepository {
                 iconEmoji = "🎨",
                 assetFileName = ModInstaller.ASSET_ULTRAREAL,
                 buttonBgRes = R.drawable.btn_civilization_emerald,
-                buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨"
+                buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨",
+                guideInfo = "🎨 UltraReal HD In-Game Guide:\n• Activate under Global Resources or World Resource Packs.\n• Features 100x HD Mobs, 360 dynamic skybox, caustic waters, and 3D ore blocks.\n• Locked 60 FPS mobile optimization with zero frame drops."
             ),
             ModItem(
                 id = "world_vehicles",
@@ -38,7 +40,8 @@ object ModRepository {
                 iconEmoji = "🏎️",
                 assetFileName = ModInstaller.ASSET_WORLD_VEHICLES,
                 buttonBgRes = R.drawable.btn_vehicles_nitro,
-                buttonText = "🏎️ IMPORT ALL VEHICLES ADDON 🏎️"
+                buttonText = "🏎️ IMPORT ALL VEHICLES ADDON 🏎️",
+                guideInfo = "🏎️ World Vehicles In-Game Guide:\n• 40 driveable, flyable, and submersible vehicles!\n• Creative Spawn Eggs or commands: '/summon world:bugatti_tourbillon', '/summon world:f22_raptor_jet', '/summon world:m1a2_abrams_tank'.\n• Zero experiment toggles required - drive immediately!"
             ),
             ModItem(
                 id = "omni_evolution",
@@ -50,7 +53,8 @@ object ModRepository {
                 iconEmoji = "🧬",
                 assetFileName = ModInstaller.ASSET_OMNI_EVOLUTION,
                 buttonBgRes = R.drawable.btn_omni_blue,
-                buttonText = "🧬 IMPORT OMNI EVOLUTION 🧬"
+                buttonText = "🧬 IMPORT OMNI EVOLUTION 🧬",
+                guideInfo = "🧬 Omni Evolution Guide:\n• Craft the Omnitrix or find it in a fallen meteor!\n• Sneak/crouch to rotate aliens, jump to select.\n• Battle Vilgax, transform into Alien X, Heatblast, Diamondhead, and XLR8."
             ),
             ModItem(
                 id = "omni_bound",
@@ -62,7 +66,8 @@ object ModRepository {
                 iconEmoji = "🛸",
                 assetFileName = ModInstaller.ASSET_OMNI_BOUND,
                 buttonBgRes = R.drawable.btn_omnibound_lime,
-                buttonText = "🛸 IMPORT OMNI BOUND 🛸"
+                buttonText = "🛸 IMPORT OMNI BOUND 🛸",
+                guideInfo = "🛸 Omni-Bound Guide:\n• Fast quick-switch alien selection wheel.\n• Ultimate alien forms with custom superpowers and energy meters.\n• Battle alien invasion drones."
             ),
             ModItem(
                 id = "solo_leveling",
@@ -74,7 +79,8 @@ object ModRepository {
                 iconEmoji = "🗡️",
                 assetFileName = ModInstaller.ASSET_SOLO_LEVELING,
                 buttonBgRes = R.drawable.btn_sololeveling_darkpurple,
-                buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️"
+                buttonText = "🗡️ IMPORT SOLO LEVELING 🗡️",
+                guideInfo = "🗡️ Solo Leveling Guide:\n• Defeat dungeon bosses to level up stats (STR, AGI, INT).\n• Stand over fallen enemies and activate 'Arise' to extract loyal Shadow Soldiers!\n• Daily penalty zone quests and Red Gate portals."
             ),
             ModItem(
                 id = "one_piece",
@@ -86,7 +92,8 @@ object ModRepository {
                 iconEmoji = "🏴‍☠️",
                 assetFileName = ModInstaller.ASSET_ONE_PIECE,
                 buttonBgRes = R.drawable.btn_onepiece_orange,
-                buttonText = "🏴‍☠️ IMPORT ONE PIECE MOD 🏴‍☠️"
+                buttonText = "🏴‍☠️ IMPORT ONE PIECE MOD 🏴‍☠️",
+                guideInfo = "🏴‍☠️ One Piece Guide:\n• Find Devil Fruits in pirate treasure chests.\n• Awaken Armament, Observation, and Conqueror's Haki.\n• Dual-wield legendary katanas and fight Sea Kings."
             ),
             ModItem(
                 id = "tensura",
@@ -98,7 +105,8 @@ object ModRepository {
                 iconEmoji = "🔮",
                 assetFileName = ModInstaller.ASSET_TENSURA,
                 buttonBgRes = R.drawable.btn_tensura_purple,
-                buttonText = "🔮 IMPORT TENSURA MOD 🔮"
+                buttonText = "🔮 IMPORT TENSURA MOD 🔮",
+                guideInfo = "🔮 Tensura Guide:\n• Great Sage HUD communicates with you in real-time.\n• Devour mobs using Predator skill to gain their attributes.\n• Awaken Demon Lord magicules transformation."
             ),
             ModItem(
                 id = "dragon_evolution",
@@ -110,7 +118,8 @@ object ModRepository {
                 iconEmoji = "🐉",
                 assetFileName = ModInstaller.ASSET_DRAGON_EVOLUTION,
                 buttonBgRes = R.drawable.btn_dragon_amber,
-                buttonText = "🐉 IMPORT DRAGON EVOLUTION 🐉"
+                buttonText = "🐉 IMPORT DRAGON EVOLUTION 🐉",
+                guideInfo = "🐉 Dragon Evolution Guide:\n• Train ki energy to awaken Super Saiyan 1, 2, 3, God, and Blue.\n• Fire Kamehameha, Spirit Bomb, and Final Flash blasts.\n• Travel to custom Dragon dimensions and collect Dragon Balls."
             ),
             ModItem(
                 id = "actual_guns",
@@ -122,7 +131,8 @@ object ModRepository {
                 iconEmoji = "🔫",
                 assetFileName = ModInstaller.ASSET_ACTUAL_GUNS,
                 buttonBgRes = R.drawable.btn_actualguns_red,
-                buttonText = "🔫 IMPORT ACTUAL GUNS 2 🔫"
+                buttonText = "🔫 IMPORT ACTUAL GUNS 2 🔫",
+                guideInfo = "🔫 Actual Guns 2 Guide:\n• Craft weapons at the Custom Weapon Bench.\n• Reload ammo by holding magazine in offhand and sneaking.\n• Aim down sights (ADS) with sniper scopes and holographic reticles."
             ),
             ModItem(
                 id = "quirkborn",
@@ -134,7 +144,8 @@ object ModRepository {
                 iconEmoji = "⚡",
                 assetFileName = ModInstaller.ASSET_QUIRKBORN,
                 buttonBgRes = R.drawable.btn_quirkborn_yellow,
-                buttonText = "⚡ IMPORT QUIRKBORN MOD ⚡"
+                buttonText = "⚡ IMPORT QUIRKBORN MOD ⚡",
+                guideInfo = "⚡ Quirkborn Guide:\n• Test your DNA to awaken a random Quirk.\n• Train Quirk mastery by battling villains.\n• Craft hero support items and battle multi-quirk Nomus."
             ),
             ModItem(
                 id = "iron_man",
@@ -146,7 +157,8 @@ object ModRepository {
                 iconEmoji = "🤖",
                 assetFileName = ModInstaller.ASSET_IRON_MAN,
                 buttonBgRes = R.drawable.btn_ironman_goldred,
-                buttonText = "🤖 IMPORT IRON MAN MOD 🤖"
+                buttonText = "🤖 IMPORT IRON MAN MOD 🤖",
+                guideInfo = "🤖 Iron Man Guide:\n• Build the Stark Armor Station.\n• Equip Arc Reactor in chest slot to power flight and weapons.\n• Double jump to engage supersonic flight."
             ),
             ModItem(
                 id = "spider_man",
@@ -158,7 +170,8 @@ object ModRepository {
                 iconEmoji = "🕷️",
                 assetFileName = ModInstaller.ASSET_SPIDER_MAN,
                 buttonBgRes = R.drawable.btn_spiderman_redblue,
-                buttonText = "🕷️ IMPORT SPIDER-MAN MOD 🕷️"
+                buttonText = "🕷️ IMPORT SPIDER-MAN MOD 🕷️",
+                guideInfo = "🕷️ Spider-Man Guide:\n• Equip web shooters to swing across buildings and lasso enemies.\n• Walk directly against vertical walls to climb them.\n• Spider-Sense warning flashes when mobs target you."
             ),
             ModItem(
                 id = "marvel_project",
@@ -170,7 +183,8 @@ object ModRepository {
                 iconEmoji = "⭐",
                 assetFileName = ModInstaller.ASSET_MARVEL_PROJECT,
                 buttonBgRes = R.drawable.btn_marvel_purple,
-                buttonText = "⭐ IMPORT MARVEL PROJECT ⭐"
+                buttonText = "⭐ IMPORT MARVEL PROJECT ⭐",
+                guideInfo = "⭐ Marvel Project Guide:\n• Summon Thor's Mjolnir and call down thunder.\n• Throw Captain America's Vibranium shield which ricochets.\n• Collect all 6 Infinity Stones to snap enemies out of existence."
             )
         )
     }
