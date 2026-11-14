@@ -15,6 +15,25 @@
 
 
 
+### ⚔️ நிஜ பிளேயர் போர், அரட்டை & கோட்டைக் கட்டுமானம் (v1.0.81 Real Player Combat, Chat & Fortresses):
+1. **⚔️ அரக்கர்களுடன் உண்மையான போர் (Real Monster Battles):**
+   - ஜோம்பிகள், எலும்புக்கூடுகள், சிலந்திகள், க்ரீப்பர்கள் வரும் போது தப்பியோடி அலறாமல், கையில் வைரம்/நெதரைட் வாள் (Sword) அல்லது வில் (Bow) ஏந்தி நேருக்கு நேர் போரிடுகின்றனர்!
+   - எதிரியின் தாக்குதல்களை ஆஃப்ஹேண்ட் கேடயத்தால் (Shield Block) தடுத்து சத்தம் (`item.shield.block`) எழுப்புகின்றனர்; ஜம்ப்-அட்டாக் மூலம் கிரிட்டிக்கல் அடி (`minecraft:crit`) கொடுக்கின்றனர்!
+   - வெடிக்கும் க்ரீப்பர்களைக் கண்டால் உடனடியாகக் கேடயத்தை உயர்த்தி 4 கட்டைகள் பின்வாங்கி தற்காத்துக் கொள்கின்றனர்!
+   - அரக்கர்களை வீழ்த்தியதும் வெற்றியைக் கொண்டாடி (`random.levelup`), எலும்புகள், இரும்பு போன்ற பொருட்களைத் தங்கள் பையில் சேகரிக்கின்றனர்!
+2. **💬 உலக அரட்டையில் நிஜ பிளேயர் உரையாடல் (Multiplayer World Chat Callouts):**
+   - Minecraft உலக அரட்டைப் பெட்டியில் (In-Game Chat) நிஜ மல்டிபிளேயர் பிளேயர்கள் போலவே கிராமத்தவர்கள் மெசேஜ்களை அனுப்புகின்றனர்:
+     - `<⚔️ Gopi> Hostile ZOMBIE spotted! Drawing blade and engaging!`
+     - `<🛡️ Gopi> Raised Offhand Shield! Blocked incoming strike!`
+     - `<🏆 Gopi> ZOMBIE defeated! Area secured. Collected mob spoils.`
+     - `<⛏️ Murugan> DIAMONDS DISCOVERED at Y: -54! Extracting with Fortune pickaxe!`
+     - `<🏗️ Ramesh> Commencing construction of Defensive Watchtower at [120, -45]!`
+     - `<👋 Kavitha> Greetings Commander! Village defenses standing strong!`
+3. **🏰 தற்காப்புக் கோபுரங்கள் & மதில் சுவர்கள் கட்டுதல் (Tactical Fortress Construction):**
+   - **காப்பரண் கோபுரம் (Defensive Watchtower):** 4x4 செங்கல் அடித்தளம், மரத்தூண்கள், ஏணி, உச்சி தளம், மற்றும் டார்ச்சுகளுடன் கூடிய வில்லாளிகள் காப்பரண்!
+   - **பாதுகாப்பு மதில் சுவர் (Palisade Wall):** கிராம எல்லையை அரக்கர்கள் நுழையாதபடி பாதுகாக்கும் பலமான கல்/மர மதில் சுவர்கள்!
+   - **ஆற்றுப் பாலம் (Stream Bridge):** ஆறுகள் மற்றும் பள்ளங்களைக் கடக்க மர வேலிகள் கொண்ட நடைபாலங்கள்!
+
 ### 🧠 உண்மையான AI அமைப்பு (v1.0.80 Real Autonomous Cognitive AI Engine):
 1. **🎯 GOAP & Utility AI இலக்கு நிர்ணயம் (Goal-Oriented Action Planning):**
    - பெயருக்கு மட்டுமே 'AI' என்றில்லாமல், ஒவ்வொரு கிராமத்தவரும் உலகத்தின் சூழ்நிலைகளை உணர்ந்து தனக்கான முன்னுரிமையை (Utility Score) தானாகவே கணக்கிட்டு தீர்மானிக்கிறார்!
