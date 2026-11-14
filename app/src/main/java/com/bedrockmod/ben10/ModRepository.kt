@@ -29,6 +29,18 @@ object ModRepository {
                 buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨"
             ),
             ModItem(
+                id = "world_vehicles",
+                title = "WORLD ALL VEHICLES 2026",
+                category = ModCategory.VEHICLES,
+                badge = "🏎️ 40 REAL VEHICLES • SUPERCARS • JETS • SUBS",
+                desc = "Ultimate 2026 Real-World Vehicle Addon! 40 Driveable, Flyable, Submersible vehicles: Bugatti Tourbillon, Ferrari F80, Koenigsegg Jesko, F-22 Raptor Jet, Apache Heli, Boeing 787, Cybertruck, Ninja H2R, Luxury Superyacht, Nuclear Sub, and SpaceX Starship! 60 FPS mobile optimized, zero experiment toggles needed!",
+                sizeText = "💾 1.0 MB",
+                iconEmoji = "🏎️",
+                assetFileName = ModInstaller.ASSET_WORLD_VEHICLES,
+                buttonBgRes = R.drawable.btn_vehicles_nitro,
+                buttonText = "🏎️ IMPORT ALL VEHICLES ADDON 🏎️"
+            ),
+            ModItem(
                 id = "omni_evolution",
                 title = "BEN 10: OMNI EVOLUTION",
                 category = ModCategory.BEN10,

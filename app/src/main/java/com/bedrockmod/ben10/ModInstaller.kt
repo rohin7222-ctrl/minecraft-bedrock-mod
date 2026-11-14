@@ -29,6 +29,7 @@ object ModInstaller {
     const val ASSET_SOLO_LEVELING = "Solo_Leveling_v1.0.6.mcaddon"
     const val ASSET_CIVILIZATION = "Civilization.mcaddon"
     const val ASSET_ULTRAREAL = "UltraReal_100x_HD_v2.mcpack"
+    const val ASSET_WORLD_VEHICLES = "World_All_Vehicles_2026.mcaddon"
 
     private val mainHandler = Handler(Looper.getMainLooper())
 

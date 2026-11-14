@@ -71,41 +71,44 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen UI/UX 13-Mod Edition)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Next-Gen 14-Mod Fleet Edition)
           body: |
-            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (13 Epic Bedrock Mods & Next-Gen Cyberpunk UI)
-            Experience our completely revamped Android interface featuring a sleek cosmic dark UI, category filter tabs (Civilization, Ben 10, Anime, Superheroes, Action), live search counter, quick setup guide dialog, and 1-Tap auto-import!
+            ## 🟢 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (14 Epic Bedrock Mods & Next-Gen Cyberpunk UI)
+            Experience our completely revamped Android interface featuring a sleek cosmic dark UI, category filter tabs (Civilization, Vehicles, Ben 10, Anime, Superheroes, Action), live search counter, quick setup guide dialog, and 1-Tap auto-import!
             
-            ### 🏛️ 13 Legendary Bedrock Mods Included:
+            ### 🏛️ 14 Legendary Bedrock Mods Included:
             1. **🏛️ Civilization: Autonomous AI Villagers (v1.0.86 Masterpiece)**
                - 100% Real Player AI Villagers with 4 Faith Religions, Sacred Altars, full Netherite/Diamond Armor, dynamic Redstone/Piston automation, Anti-Zombie Sanctuary spawn proofing, and distinct personality characteristics!
             2. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
                - Ultra-realistic 100x high-definition textures with PBR lighting reflections, realistic skies, crystal waters, and 60 FPS mobile optimization.
-            3. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+            3. **🏎️ World All Vehicles 2026 (v2.11.14 Master Fleet Addon)**
+               - 40 Driveable, Flyable, and Submersible Real-World Vehicles: Bugatti Tourbillon, Ferrari F80, Koenigsegg Jesko, F-22 Raptor Jet, Apache AH-64 Heli, Boeing 787 Airliner, Cybertruck, Ninja H2R, Luxury Superyacht, Nuclear Submarine, and SpaceX Starship! 60 FPS mobile optimized, zero experiment toggles needed!
+            4. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
-            4. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+            5. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
                - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            5. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+            6. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
                - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            6. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+            7. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            7. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            8. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            8. **🐉 Dragon Evolution (v1.5.0)**
+            9. **🐉 Dragon Evolution (v1.5.0)**
                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            9. **🔫 Actual Guns 2: 3D Tactical**
-               - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            10. **⚡ Quirkborn: My Hero Academia (v1.515)**
+            10. **🔫 Actual Guns 2: 3D Tactical**
+                - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
+            11. **⚡ Quirkborn: My Hero Academia (v1.515)**
                 - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            11. **🤖 Iron Man: Armor Wars Addon**
+            12. **🤖 Iron Man: Armor Wars Addon**
                 - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            12. **🕷️ Spider-Man: Web of Shadows Addon**
+            13. **🕷️ Spider-Man: Web of Shadows Addon**
                 - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            13. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
+            14. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
                 - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
+            - **Direct World All Vehicles 2026 Addon**: Download `World_All_Vehicles_2026.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Civilization Addon**: Download `Civilization.mcaddon` (Auto-opens in Minecraft!)
             - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`

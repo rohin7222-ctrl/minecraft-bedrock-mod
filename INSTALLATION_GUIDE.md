@@ -1,5 +1,5 @@
-# 🟢 Minecraft Bedrock Mod Hub (13-in-1 Next-Gen Pro Edition v1.0.86)
-### 📱 13 Legendary Bedrock Addons | Modern Cyberpunk UI | 1-Click Direct Minecraft Launch | 60 FPS Locked
+# 🟢 Minecraft Bedrock Mod Hub (14-in-1 Next-Gen Pro Edition v1.0.87)
+### 📱 14 Legendary Bedrock Addons | Modern Cyberpunk UI | 1-Click Direct Minecraft Launch | 60 FPS Locked
 
 ---
 
@@ -7,14 +7,15 @@
 1. **🌌 நவீன டார்க் தீம் & கார்டுகள் (Cosmic Dark & Emerald Cyberpunk Theme):**
    - ஆப் முழுவதும் அதிநவீன டார்க் பிரீமியம் தோற்றம் (`#070B14`, `#0D1527`, `#111C33`), 18dp வளைந்த விளிம்புகள் மற்றும் எமரால்டு/நியான் வண்ண சிறப்பம்சங்கள்.
 2. **🏷️ வகை வாரியான வடிகட்டிப் பட்டைகள் (Smart Category Chips):**
-   - **🌟 All (13):** அனைத்து 13 மோட்களையும் ஒரே திரையில் காண்க.
+   - **🌟 All (14):** அனைத்து 14 மோட்களையும் ஒரே திரையில் காண்க.
+   - **🏎️ Vehicles (1):** உலக வாகனம் மோட் (40 நிஜ உலக சூப்பர்கார்கள், ஜெட்கள், நீர்மூழ்கிக் கப்பல்கள்).
    - **🏛️ Civilization & HD (2):** நாகரிக AI கிராமத்தவர்கள் மற்றும் 100x UltraReal HD டெக்ஸ்சர் பேக்.
    - **👽 Ben 10 (2):** Omni Evolution & Omni-Bound.
    - **🎌 Anime Legends (4):** Solo Leveling, One Piece, Tensura, Dragon Evolution.
    - **🦸 Superheroes (3):** Iron Man, Spider-Man, Marvel Avengers.
    - **⚔️ Action & Guns (2):** Actual Guns 2, Quirkborn MHA.
 3. **🔍 நேரடி தேடல் & மோட் எண்ணிக்கை (Live Stadium Search & Counter):**
-   - தட்டச்சு செய்யும்போது உடனடியாக மோட்களை வடிகட்டி, எத்தனை மோட்கள் உள்ளன என்பதை உடனுக்குடன் (e.g., `Showing 13 of 13 Mods Available`) தெளிவாகக் காட்டுகிறது.
+   - தட்டச்சு செய்யும்போது உடனடியாக மோட்களை வடிகட்டி, எத்தனை மோட்கள் உள்ளன என்பதை உடனுக்குடன் (e.g., `Showing 14 of 14 Mods Available`) தெளிவாகக் காட்டுகிறது.
 4. **📖 விரைவு அமைவு வழிகாட்டி (1-Tap Quick Setup Guide Dialog):**
    - திரையின் கீழேயுள்ள `📖 Setup Guide` பட்டனைத் தொட்டால் Minecraft-ல் "Beta APIs" எவ்வாறு ஆன் செய்ய வேண்டும் என்பதை எளிய 3 படிகளில் விளக்கும் பாப்-அப் திறக்கும்.
 5. **🧹 கேச் க்ளீனர் & நிலை விவரங்கள் (Clean Cache & Live Minecraft Status):**
@@ -22,7 +23,24 @@
 
 ---
 
-## 🌟 அடங்கியுள்ள 13 பிரம்மாண்ட Bedrock Addon-கள்:
+## 🌟 அடங்கியுள்ள 14 பிரம்மாண்ட Bedrock Addon-கள்:
+
+### 🏎️ World All Vehicles 2026 (40 நிஜ உலக வாகனங்கள் - நிலம், வான், கடல்):
+- **🏎️ அதிவேக சூப்பர்கார்கள் (Hypercars & Supercars):**
+  - Bugatti Tourbillon, Ferrari F80, Koenigsegg Jesko, Lamborghini Revuelto, Porsche 911 GT3 RS, Nissan GT-R Nismo, Toyota Supra MK5, Formula 1 2026, Tesla Roadster 2026, Rolls-Royce Spectre.
+- **🛻 ஆஃப்-ரோடு & ட்ரக்குகள் (Off-Road & Trucks):**
+  - Tesla Cybertruck, Ford F-150 Raptor, Mercedes G63 AMG, Toyota Land Cruiser.
+- **🏍️ சூப்பர்பைக்குகள் (Superbikes & Cycles):**
+  - Kawasaki Ninja H2R, Ducati Panigale V4R, BMW S1000RR, KTM Dirt Bike, Harley Cruiser, Mountain Bicycle, Road Racing Cycle, BMX Freestyle.
+- **✈️ விமானங்கள் & ஹெலிகாப்டர்கள் (Aviation & Aerospace):**
+  - F-22 Raptor Jet, Boeing 787 Airliner, Apache AH-64 Attack Heli, Cessna Skyhawk, Rescue Helicopter, eVTOL Air Taxi 2026, FPV Drone, SpaceX Starship 2026!
+- **🛥️ கப்பல்கள் & நீர்மூழ்கிகள் (Maritime & Submersibles):**
+  - Luxury Superyacht, Racing Speedboat, Yamaha Jet Ski, Seabob Diver Scooter, Triton Deep Submersible, Virginia Nuclear Submarine.
+- **🛡️ ராணுவம் & அவசர சேவை (Military & Emergency):**
+  - M1A2 Abrams Tank, Police Interceptor, Ambulance Van, Fire Rescue Truck.
+- **⚡ சிறப்பம்சங்கள்:**
+  - சுழலும் சக்கரங்கள், அனிமேஷன் செய்யப்பட்ட இறக்கைகள், 60 FPS மொபைல் ஆப்டிமைசேஷன்.
+  - எவ்வித Experimental Toggles-ம் இன்றி 100% உடனடியாக இயங்கும் வசதி!
 
 ### 🏛️ Civilization & HD (2 Mods)
 1. **🏛️ Civilization: Autonomous AI Villagers (v1.0.86 Masterpiece)**

@@ -134,7 +134,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="Search 13 mods (Civilization, Ben 10, Solo Leveling, UltraReal)..."
+                android:hint="Search 14 mods (Vehicles, Civilization, Ben 10, Solo Leveling)..."
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:maxLines="1"
@@ -174,7 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="🌟 All (13)"
+                    android:text="🌟 All (14)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"
@@ -186,6 +186,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🏛️ Civilization &amp; HD (2)"
+                    android:textColor="@color/text_white"
+                    app:chipBackgroundColor="@color/card_dark"
+                    app:chipStrokeColor="@color/card_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipVehicles"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏎️ Vehicles (1)"
                     android:textColor="@color/text_white"
                     app:chipBackgroundColor="@color/card_dark"
                     app:chipStrokeColor="@color/card_stroke"
@@ -251,7 +262,7 @@
                 android:id="@+id/tvResultCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Showing 13 Mods Available"
+                android:text="Showing 14 Mods Available"
                 android:textColor="@color/text_gray"
                 android:textSize="11.5sp" />
 
