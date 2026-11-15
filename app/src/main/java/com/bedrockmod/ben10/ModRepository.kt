@@ -8,14 +8,14 @@ object ModRepository {
                 id = "minecraft_ai_edition",
                 title = "MINECRAFT AI EDITION (S.H.A.D.O.W.)",
                 category = ModCategory.AI,
-                badge = "🤖 PROF. ROHIN • DRONE 3D • CRAFTING",
-                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack with custom 3D S.H.A.D.O.W AI Drone companion, Chirp Music Disc crafting, Blue Screen onboarding sequence, custom world loading screen UI, and high-res cyber title logo!",
+                badge = "🤖 3D COMBAT DRONE • TAMING • REVIVE SYSTEM",
+                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack with custom 3D S.H.A.D.O.W AI Drone companion, Chirp taming & revive system, laser combat against hostile mobs, Sit/Stand power modes, custom world loading UI, and high-res cyber title logo!",
                 sizeText = "💾 3.9 MB",
                 iconEmoji = "🤖",
                 assetFileName = ModInstaller.ASSET_MINECRAFT_AI_EDITION,
                 buttonBgRes = R.drawable.btn_ai_cyan,
                 buttonText = "🤖 IMPORT MINECRAFT AI EDITION 🤖",
-                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• 1. Craft Chirp Music Disc: Top [Copper, Gold, Copper], Mid [Gold, Redstone, Gold], Bot [Copper, Gold, Copper].\n• 2. Craft S.H.A.D.O.W AI Drone: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Disc, Iron], Bot [Redstone, Iron, Empty].\n• 3. Deploy Drone: Right-click/hold the Drone item to spawn your custom 3D flying AI Guardian that follows and defends you!\n• 4. Blue Screen Onboarding: Interactive Professor Rohin welcome form and player identity calibration on world join!\n• 5. Type '!ai' in chat anytime to re-trigger the calibration interface!"
+                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• 1. Craft Chirp Music Disc: Top [Copper, Gold, Copper], Mid [Gold, Redstone, Gold], Bot [Copper, Gold, Copper].\n• 2. Craft S.H.A.D.O.W AI Drone: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Disc, Iron], Bot [Redstone, Iron, Empty].\n• 3. Taming & Flying: Tame the grounded drone with 'Chirp' -> activates hovering/flying & follow owner mode!\n• 4. Laser Combat: Autonomous laser cannons target Zombies, Skeletons & Creepers within 15 blocks of owner!\n• 5. Sit / Stand: Interact with the drone to Power Down (Sit on ground) or Power Up (Stand & protect)!\n• 6. Revive System: When health drops to 0, it enters a Downed state instead of dying. Interact with 'Chirp' to reboot and restore full 50 HP!\n• 7. Type '!ai' in chat anytime to re-trigger the calibration interface!"
             ),
             ModItem(
                 id = "mythos",
