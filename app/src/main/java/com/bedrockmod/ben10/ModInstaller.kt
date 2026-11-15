@@ -145,58 +145,63 @@ object ModInstaller {
                     targetFile
                 )
 
-                // Explicitly grant read URI permissions to target packages
+                // Explicitly grant read & write URI permissions to Minecraft
+                val permFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
                 try {
-                    context.grantUriPermission(
-                        MINECRAFT_PACKAGE,
-                        contentUri,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION
-                    )
-                    context.grantUriPermission(
-                        MINECRAFT_TRIAL_PACKAGE,
-                        contentUri,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION
-                    )
+                    context.grantUriPermission(MINECRAFT_PACKAGE, contentUri, permFlags)
+                    context.grantUriPermission(MINECRAFT_TRIAL_PACKAGE, contentUri, permFlags)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
 
-                // Primary intent targeting Minecraft
-                val intent = Intent(Intent.ACTION_VIEW).apply {
-                    setDataAndType(contentUri, "application/octet-stream")
-                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                // 1. Primary: Direct launch targeting official Minecraft Bedrock
+                try {
+                    val mcIntent = Intent(Intent.ACTION_VIEW).apply {
+                        setDataAndType(contentUri, "*/*")
+                        setPackage(MINECRAFT_PACKAGE)
+                        addFlags(permFlags)
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    }
+                    context.startActivity(mcIntent)
+                    postComplete(onComplete, true, "🎮 Launching Minecraft... Importing $modTitle!")
+                    return@Thread
+                } catch (e1: Exception) {
+                    // Fall through to trial or chooser
                 }
 
-                val packageManager = context.packageManager
-                val mcIntent = Intent(intent).setPackage(MINECRAFT_PACKAGE)
-                val trialIntent = Intent(intent).setPackage(MINECRAFT_TRIAL_PACKAGE)
+                // 2. Secondary: Launch targeting Minecraft Trial Edition
+                try {
+                    val trialIntent = Intent(Intent.ACTION_VIEW).apply {
+                        setDataAndType(contentUri, "*/*")
+                        setPackage(MINECRAFT_TRIAL_PACKAGE)
+                        addFlags(permFlags)
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    }
+                    context.startActivity(trialIntent)
+                    postComplete(onComplete, true, "🎮 Launching Minecraft Trial... Importing $modTitle!")
+                    return@Thread
+                } catch (e2: Exception) {
+                    // Fall through to system chooser
+                }
 
-                when {
-                    mcIntent.resolveActivity(packageManager) != null -> {
-                        context.startActivity(mcIntent)
-                        postComplete(onComplete, true, "🎮 Launching Minecraft... Importing $modTitle!")
+                // 3. Tertiary: System App Chooser for Minecraft or custom Bedrock variants
+                try {
+                    val genericIntent = Intent(Intent.ACTION_VIEW).apply {
+                        setDataAndType(contentUri, "*/*")
+                        addFlags(permFlags)
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
-                    trialIntent.resolveActivity(packageManager) != null -> {
-                        context.startActivity(trialIntent)
-                        postComplete(onComplete, true, "🎮 Launching Minecraft Trial... Importing $modTitle!")
+                    val chooser = Intent.createChooser(genericIntent, "Open with Minecraft").apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
-                    intent.resolveActivity(packageManager) != null -> {
-                        val chooser = Intent.createChooser(intent, "Open with Minecraft").apply {
-                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        }
-                        context.startActivity(chooser)
-                        postComplete(onComplete, true, "Select Minecraft from the list to import $modTitle!")
-                    }
-                    else -> {
-                        try {
-                            context.startActivity(mcIntent)
-                            postComplete(onComplete, true, "🎮 Launching Minecraft... Importing $modTitle!")
-                        } catch (e: Exception) {
-                            launchMinecraft(context)
-                            postComplete(onComplete, false, "Minecraft Bedrock not found. Please install Minecraft PE!")
-                        }
-                    }
+                    context.startActivity(chooser)
+                    postComplete(onComplete, true, "Select Minecraft from the list to import $modTitle!")
+                } catch (e3: Exception) {
+                    // 4. Fallback: Prompt user to install Minecraft PE
+                    launchMinecraft(context)
+                    postComplete(onComplete, false, "Minecraft Bedrock not found. Please install Minecraft PE!")
                 }
 
             } catch (e: Exception) {

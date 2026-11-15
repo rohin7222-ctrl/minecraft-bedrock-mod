@@ -7,8 +7,15 @@
 
     <queries>
         <package android:name="com.mojang.minecraftpe" />
+        <package android:name="com.mojang.minecrafttrialpe" />
         <intent>
             <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="content" />
+            <data android:mimeType="*/*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="file" />
             <data android:mimeType="*/*" />
         </intent>
     </queries>
