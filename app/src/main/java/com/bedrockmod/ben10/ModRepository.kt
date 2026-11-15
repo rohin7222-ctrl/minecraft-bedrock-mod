@@ -8,14 +8,14 @@ object ModRepository {
                 id = "minecraft_ai_edition",
                 title = "MINECRAFT AI EDITION (S.H.A.D.O.W.)",
                 category = ModCategory.AI,
-                badge = "🤖 PROF. ROHIN • BLUE UI • S.H.A.D.O.W. AI",
-                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack with @minecraft/server & @minecraft/server-ui scripting: Blue Screen onboarding sequence, interactive Professor Rohin introduction, player name calibration modal, custom world loading screen UI, and high-res cyber title logo!",
+                badge = "🤖 PROF. ROHIN • DRONE 3D • CRAFTING",
+                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack with custom 3D S.H.A.D.O.W AI Drone companion, Chirp Music Disc crafting, Blue Screen onboarding sequence, custom world loading screen UI, and high-res cyber title logo!",
                 sizeText = "💾 3.9 MB",
                 iconEmoji = "🤖",
                 assetFileName = ModInstaller.ASSET_MINECRAFT_AI_EDITION,
                 buttonBgRes = R.drawable.btn_ai_cyan,
                 buttonText = "🤖 IMPORT MINECRAFT AI EDITION 🤖",
-                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• Behavior & Resource Pack automatically load upon world entry!\n• Blue Screen Onboarding: When joining, Professor Rohin greets you with the S.H.A.D.O.W. AI Welcome Form.\n• Identity Calibration: Enter your name in the Modal form to initialize the quantum matrix.\n• Completion: The blue screen completely vanishes and broadcasts 'System Initialized. Welcome, [Your Name]!'\n• Type '!ai' in chat anytime to re-trigger the calibration interface!"
+                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• 1. Craft Chirp Music Disc: Top [Copper, Gold, Copper], Mid [Gold, Redstone, Gold], Bot [Copper, Gold, Copper].\n• 2. Craft S.H.A.D.O.W AI Drone: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Disc, Iron], Bot [Redstone, Iron, Empty].\n• 3. Deploy Drone: Right-click/hold the Drone item to spawn your custom 3D flying AI Guardian that follows and defends you!\n• 4. Blue Screen Onboarding: Interactive Professor Rohin welcome form and player identity calibration on world join!\n• 5. Type '!ai' in chat anytime to re-trigger the calibration interface!"
             ),
             ModItem(
                 id = "mythos",

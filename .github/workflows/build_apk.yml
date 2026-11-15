@@ -71,17 +71,18 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Professor Rohin S.H.A.D.O.W. AI Suite v1.0.93)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Drone & 3D Crafting Edition v1.0.94)
           body: |
-            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Professor Rohin S.H.A.D.O.W. AI Suite v1.0.93)
-            Complete Behavior & Resource Pack overhaul with @minecraft/server & @minecraft/server-ui scripting! Features Professor Rohin's interactive Blue Screen onboarding sequence, custom player name registration modal, seamless screen disappearance, custom world loading screen UI, high-res cyberpunk title logo, and 15 legendary Bedrock addons!
+            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Drone & 3D Crafting Edition v1.0.94)
+            Major feature update by Professor Rohin! Introduces the craftable 3D S.H.A.D.O.W AI Drone companion, survival craftable Chirp Music Disc, custom procedural pixel-art item sprite, spinning rotor animations, flying guardian AI, and the full interactive Blue Screen onboarding sequence!
             
-            ### 🤖 What's New in v1.0.93:
-            - **🧠 Interactive S.H.A.D.O.W. AI Behavior Pack**: Built with `@minecraft/server` (1.15.0) and `@minecraft/server-ui` (1.3.0).
-            - **🔵 Step 1 (Welcome Screen)**: World join triggers a full-screen atmospheric blue effect with Professor Rohin's welcome greeting and 'Next' button.
-            - **📝 Step 2 (Modal Registration)**: Opens `ModalFormData` asking the player to type their name with an 'OK' button.
-            - **✨ Step 3 (Quantum Initialization)**: When 'OK' is clicked, the blue screen completely vanishes, broadcasting 'System Initialized. Welcome, [Player Name]!' with celebratory audio FX!
-            - **📦 Complete .mcaddon Packaging**: Installs both Behavior and Resource packs in a single tap!
+            ### 🤖 What's New in v1.0.94:
+            - **🚁 Craftable S.H.A.D.O.W AI Drone**: Shaped crafting recipe: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Music Disc, Iron], Bot [Redstone Dust, Iron, Empty] yields `shadow:ai_drone`!
+            - **🎵 Craftable Chirp Music Disc**: Survival recipe: Top [Copper, Gold, Copper], Mid [Gold, Redstone Dust, Gold], Bot [Copper, Gold, Copper] yields `minecraft:music_disc_chirp`!
+            - **🎨 Pure Pixel-Art Custom Item Sprite**: Clean 64x64/128x128 drone item texture created from scratch with transparent alpha channel and no background artifacts!
+            - **✨ 3D Drone Model & Flying AI Companion**: Features Bedrock 3D geometry (`geometry.shadow_ai_drone`), quad spinning rotors, glowing ruby-red optical visor, and tactical guardian AI that follows and protects its owner!
+            - **🔵 Full Blue Screen Server-UI Onboarding**: Professor Rohin's Welcome Form -> Player Name Modal -> Seamless Screen Disappearance & Chat Broadcast!
+            - **📦 Complete .mcaddon Unified Archive**: Installs both Behavior Pack and Resource Pack in 1-Click!
             - **🌟 15 Legendary Bedrock Addons**: Now includes AI Edition, MYTHOS: Ascension v7.16.0, UltraReal 100x HD, Green Lantern 3.9.1, Ben 10, Anime Legends, and Marvel Superheroes!
             - **📐 Pixel-Perfect Alignment Overhaul**: Synchronized 46dp buttons, unified 22dp pill badges, centered search and header elements, and responsive mobile footer!
             
