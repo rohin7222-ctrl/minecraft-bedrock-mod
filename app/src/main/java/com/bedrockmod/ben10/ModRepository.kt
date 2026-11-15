@@ -8,14 +8,14 @@ object ModRepository {
                 id = "minecraft_ai_edition",
                 title = "MINECRAFT AI EDITION (S.H.A.D.O.W.)",
                 category = ModCategory.AI,
-                badge = "🤖 AUTO-HUNT & FEED • MEDICAL AI • 3D DRONE",
-                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack with custom 3D S.H.A.D.O.W AI Drone, Auto-Hunt & Cook delivery (starvation defense), Emergency Medical Support (<30% HP), Safe Combat, chunk flight tracking, and custom UI!",
-                sizeText = "💾 3.9 MB",
+                badge = "🤖 3D DRONE & MECH • AUTO-HUNT • DUAL SHIELD",
+                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack featuring the 3D S.H.A.D.O.W AI Drone & Crawler Grenade Launcher Mech! Includes Dual Shield/Health bars, Redstone boundary containment, obstacle step-crossing, Auto-Hunt & Cook delivery, Medical Support, and custom UI!",
+                sizeText = "💾 4.1 MB",
                 iconEmoji = "🤖",
                 assetFileName = ModInstaller.ASSET_MINECRAFT_AI_EDITION,
                 buttonBgRes = R.drawable.btn_ai_cyan,
                 buttonText = "🤖 IMPORT MINECRAFT AI EDITION 🤖",
-                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• 1. Craft Chirp Music Disc: Top [Copper, Gold, Copper], Mid [Gold, Redstone, Gold], Bot [Copper, Gold, Copper].\n• 2. Craft S.H.A.D.O.W AI Drone: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Disc, Iron], Bot [Redstone, Iron, Empty].\n• 3. Taming & Flying: Tame the grounded drone with 'Chirp' -> activates hovering/flying & follow owner mode!\n• 4. Auto-Hunt & Feed: When hunger drops to 4 and reaches 1, drone activates Hunt Mode, attacks nearby livestock (cow/pig/sheep/chicken), bypasses raw meat, and delivers hot cooked food to you!\n• 5. Emergency Medical Support: Drone continuously tracks health; if <30%, fires nanite healing lasers at owner!\n• 6. Safe Shooting: Drone lasers hitting owner deal 0 damage and grant Regeneration + Instant Health!\n• 7. No Teleport Flight Tracking: When owner respawns, drone physically flies across world chunks to rendezvous with you!\n• 8. Type '!hunt' in chat to trigger hunting manually, or '!status' to check system vitals!"
+                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• 1. Craft Chirp Music Disc: Top [Copper, Gold, Copper], Mid [Gold, Redstone, Gold], Bot [Copper, Gold, Copper].\n• 2. Craft S.H.A.D.O.W AI Drone: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Disc, Iron], Bot [Redstone, Iron, Empty].\n• 3. Craft S.H.A.D.O.W AI Mech: Top [Iron Block, Dispenser, Iron Block], Mid [Gold, Chirp Disc, Gold], Bot [Redstone Block, Iron Ingot, Redstone Block].\n• 4. AI Mech (Crawler Grenade Launcher): Spawns inactive; tame with 'Chirp' to activate random stroll patrol! Targets spiders, zombies, skeletons, and creepers within 30 blocks with explosive grenades. Features Dual Shield & Health bar, stays strictly inside Redstone wire boundaries, and detects/crosses 1-block obstacles without clipping!\n• 5. Revive & Recharge: Interacting with 'Chirp' restores Mech's Shield & Health to 100/100!\n• 6. Auto-Hunt & Feed: When hunger reaches critical levels, Drone attacks livestock (cow/pig/sheep/chicken), bypasses raw meat, and delivers hot cooked food to you!\n• 7. Emergency Medical Support: Drone continuously tracks player health; if <30%, fires nanite healing lasers at owner!\n• 8. Safe Shooting: Drone lasers hitting owner deal 0 damage and grant Regeneration + Instant Health!\n• 9. Type '!hunt' in chat to trigger hunting manually, or '!status' to check system vitals!"
             ),
             ModItem(
                 id = "mythos",

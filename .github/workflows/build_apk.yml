@@ -71,18 +71,23 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Drone Auto-Hunt & Feed Edition v1.0.98)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Mech & Drone Edition v1.0.99)
           body: |
-            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Drone Auto-Hunt & Feed Edition v1.0.98)
-            Major AI companion upgrade! Introduces the autonomous Auto-Hunt & Feed system to prevent player starvation, cooked food delivery bypassing raw meat drops, emergency rations synthesis, high-performance multiplayer optimization, and 1-Click direct Minecraft auto-import!
+            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Mech & Drone Edition v1.0.99)
+            Groundbreaking AI companion expansion! Introduces the **S.H.A.D.O.W AI Mech (Crawler Grenade Launcher)** alongside the AI Drone, featuring 3D custom crawler geometry, Dual Shield & Health bars, Redstone boundary containment, obstacle step-crossing navigation, and Chirp revival!
             
-            ### 🤖 What's New in v1.0.98:
-            - **🍖 Hunger Monitor & Hunt Mode**: Drone monitors tamed owner's food level; warns at hunger <= 4, and triggers 'Hunt Mode' upon reaching <= 1 (critical starvation)!
-            - **🎯 Autonomous Fauna Hunting**: Scans for nearby livestock (`minecraft:cow`, `minecraft:pig`, `minecraft:sheep`, `minecraft:chicken`), targets with thermal plasma beams, and neutralizes them!
-            - **🔥 Zero Raw Drop Clutter & Cooked Delivery**: Bypasses raw meat drops; directly generates and delivers hot cooked food (`cooked_beef`, `cooked_porkchop`, `cooked_mutton`, `cooked_chicken`) directly to the player's inventory or at their feet!
-            - **🧪 Emergency Ration Synthesis**: If no wild livestock is nearby (e.g. underground or desert), synthesized steak rations are created on the spot!
-            - **⚡ Multiplayer Optimization & Zero Lag**: Refactored event listeners, debounced scanning loops, and cached spatial queries for smooth 60 FPS multiplayer performance!
-            - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline targeting `com.mojang.minecraftpe` and `com.mojang.minecrafttrialpe` with full `FLAG_GRANT_READ_URI_PERMISSION` and `FLAG_ACTIVITY_CLEAR_TOP`!
+            ### 🤖 What's New in v1.0.99:
+            - **🦾 S.H.A.D.O.W AI Mech (Crawler Grenade Launcher)**: Heavy tactical ground robot crafted via [Iron Blocks, Dispenser, Gold, Chirp Disc, Redstone Blocks].
+            - **🎮 3D Crawler Geometry & Animations**: Authentic 3D quad-legged crawler model converted directly from Blockbench GLB, featuring dynamic crawling walk cycles, idle hydraulic sway, and powered-down rest pose!
+            - **🛡️ Dual Shield & Health System**: Custom HUD nametag with dual dynamic bars (`[██████████] 100 🛡️ | [██████████] 100 ❤️`). Incoming attacks deplete the Shield first; health is only damaged when shield reaches 0!
+            - **❤️ Downed State & Chirp Revival**: When health drops to 0, the Mech enters an offline 'downed' state instead of dying. Interacting with 'Chirp' fully restores both Shield (100/100) and Health (100/100) and reactivates the Mech!
+            - **💣 30-Block Tactical Grenade Launcher**: Targets Spiders, Zombies, Skeletons, and Creepers within 30 blocks with explosive arched grenade projectiles!
+            - **⚡ Redstone Wire Boundary Containment**: Script API continuously monitors blocks around the Mech; if redstone wire is detected, pathfinding is restricted so the Mech stays strictly inside the designated perimeter!
+            - **🧗 Obstacle Step-Crossing & Anti-Phasing**: Equipped with collision physics, `can_climb`, and script-assisted terrain detection so the Mech smoothly climbs 1-block steps, slabs, and hills without clipping or phasing into solid blocks!
+            - **🍖 Hunger Monitor & Auto-Hunt**: Drone monitors hunger; automatically hunts livestock and delivers cooked food!
+            - **🚑 Emergency Medical Support**: Drone fires healing nanite lasers when player health drops below 30%!
+            - **🧭 No-Teleport Flight Tracking**: Drone physical chunk navigation to rendezvous upon respawn!
+            - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline for instant import!
             - **💖 Safe Shooting & Heal On Accident**: Drone lasers colliding with owner deal 0 damage and automatically apply Regeneration II and Instant Health!
             - **⚔️ Combat Triggers (Protect Owner)**: If a mob attacks player or player attacks a mob, drone instantly locks on and engages that specific target!
             - **🚑 Emergency Medical Support**: Drone continuously monitors owner health; when health drops below 30%, drone fires nanite healing laser beams directly at the owner until safe!
