@@ -1,145 +1,137 @@
-# 🔮 Minecraft Bedrock Mod Hub (14-in-1 Next-Gen Pro Suite v1.0.90)
-### 📱 14 Legendary Bedrock Addons | Mythos: Ascension v7.16.0 | Green Lantern Corps | Starred Favorites | 60 FPS Locked
+# 🤖 Minecraft Bedrock Mod Hub (15-in-1 Next-Gen Pro Suite v1.0.99)
+### 📱 15 Legendary Bedrock Addons | S.H.A.D.O.W. AI Drone & Mech Edition | Mythos: Ascension v7.16.0 | Green Lantern Corps | 60 FPS Locked
 
 ---
 
-## 🚀 v1.0.90 புத்தம் புதிய அட்வான்ஸ்டு அம்சங்கள் (Next-Gen Pro Suite Features):
-1. **🔮 மைதோஸ் அசென்ஷன் மோட் சேர்க்கை (MYTHOS: Ascension v7.16.0 RPG Masterpiece Added):**
-   - 6 தெய்வீக வகுப்புகள் (6 Ascendant Classes), மானசக்தி & மந்திரங்கள் (Mana & Spell-casting), ஒமேகா கோட்டை நிலவறைகள் (Omega Fortress Dungeons), மற்றும் 3 அசுர உலக பாஸ்கள் (World Bosses) கொண்ட புகழ்பெற்ற Bedrock RPG மோட் வெற்றிகரமாக இணைக்கப்பட்டுள்ளது!
-2. **🗑️ சிவிலைசேஷன் மோட் நிரந்தர நீக்கம் (Civilization Addon Permanently Removed):**
-   - பயனரின் கோரிக்கையின்படி, பழைய Civilization Addon (`Civilization.mcaddon`), அதனுடன் தொடர்புடைய ஸ்கிரிப்ட்கள், மாடல்கள் மற்றும் வளங்கள் அனைத்தும் ஆப் மற்றும் களஞ்சியத்திலிருந்து நிரந்தரமாக முழுமையாக நீக்கப்பட்டுள்ளன.
-3. **🟢 கிரீன் லான்டர்ன் மோட் (Green Lantern 3.9.1 Addon Included):**
-   - 7 லான்டர்ன் படைகள் (7 Lantern Corps), 21 தனித்துவ சூட்கள் (Split Suits), ஆற்றல் வளையங்கள் (Power Rings) மற்றும் சக்தி வாய்ந்த கன்ஸ்ட்ரக்ட்கள் (Energy Constructs) கொண்ட பிரம்மாண்ட மோட் முழுமையாகச் செயல்படுகிறது.
-4. **⭐ விருப்பமான மோட்கள் சேமிப்பு (Persistent Starred Favorites & Filter):**
-   - ஒவ்வொரு மோட் கார்டின் வலது மேல் மூலையிலும் உள்ள நட்சத்திரத் தொடுதலைத் தொட்டு (`⭐`), உங்களுக்கு மிகவும் பிடித்த மோட்களை "Starred" செய்துகொள்ளலாம்.
-   - மேலே உள்ள `⭐ Starred` பட்டனைத் தொட்டால் உங்களுக்குப் பிடித்த மோட்கள் மட்டுமே தனியாகப் பிரிக்கப்பட்டுத் தோன்றும். ஃபோன் சுவிட்ச் ஆஃப் ஆனாலும் இந்தத் தேர்வு அழியாது!
-5. **📖 விரிவான மோட் வழிகாட்டி & விவரங்கள் (In-Depth Mod Guide & Details Sheet):**
-   - கார்டில் உள்ள `📖 Guide` பட்டனையோ அல்லது கார்டையோ தொட்டால், அந்த மோடின் முழு விவரங்கள், விளையாட்டுக்குள் இயங்கும் கமாண்டுகள் (Chat Commands - e.g. `!mythos`, `!class`), ஸ்பான் முட்டைகள் மற்றும் சிறப்பு விதிகள் திரையில் தோன்றும்!
-   - அங்கிருந்தபடியே நேரடியாக `🚀 Import & Launch` பட்டனைத் தொட்டு விளையாடலாம்.
-6. **⚙️ கணினி & நினைவக ஆய்வு மையம் (Bedrock System & Diagnostics Hub):**
-   - திரையின் மேல் உள்ள Minecraft நிலை பலகையைத் தொட்டால்:
-     - 🎮 Minecraft Bedrock பதிப்பு & இயங்குநிலை.
-     - 💾 ஃபோனில் மீதமுள்ள இலவச மெமரி இடம் (Free Internal Space in GB).
-     - ⚡ 60 FPS லாக் செய்யப்பட்ட மொபைல் என்ஜின் & பேட்டரி விவரங்கள் நேரலையாகக் காட்டப்படும்!
-7. **⚡ 4-வழி வரிசைப்படுத்துதல் (4-Way Dynamic Sorting):**
-     - **Featured:** முதன்மைப் பரிந்துரை வரிசை.
-     - **A to Z:** அகரவரிசைப் படி.
-     - **Smallest:** குறைந்த மெகாபைட் (MB) அளவுள்ளவை முதலில்.
-     - **Starred First:** நீங்கள் விரும்பிய மோட்கள் முதலில்!
-8. **📳 விரல் தொடு அதிர்வு (Tactile Haptic Feedback):**
-   - ஒவ்வொரு பட்டன், பில்டர் சிப் மற்றும் ஸ்டார் தொடுதலுக்கும் இயல்பான ஹாப்டிக் அதிர்வு சேர்க்கப்பட்டு மிக உயர்தர AAA செயலியாக மேம்படுத்தப்பட்டுள்ளது.
-9. **🏷️ வகை வாரியான வடிகட்டிப் பட்டைகள் (Smart Category Chips):**
-   - **🌟 All (14):** அனைத்து 14 மோட்களையும் ஒரே திரையில் காண்க.
-   - **⭐ Starred:** நீங்கள் விரும்பிய மோட்கள் மட்டும்.
-   - **🔮 Mythos & HD (2):** Mythos: Ascension v7.16.0 மற்றும் 100x UltraReal HD டெக்ஸ்சர் பேக்.
-   - **👽 Ben 10 (2):** Omni Evolution & Omni-Bound.
-   - **🎌 Anime Legends (4):** Solo Leveling, One Piece, Tensura, Dragon Evolution.
-   - **🦸 Superheroes (4):** Green Lantern, Iron Man, Spider-Man, Marvel Avengers.
-   - **⚔️ Action & Guns (2):** Actual Guns 2, Quirkborn MHA.
-10. **🔍 நேரடி தேடல் & மோட் எண்ணிக்கை (Live Stadium Search & Counter):**
-    - தட்டச்சு செய்யும்போது உடனடியாக மோட்களை வடிகட்டி, எத்தனை மோட்கள் உள்ளன என்பதை உடனுக்குடன் (e.g., `Showing 14 of 14 Mods Available`) தெளிவாகக் காட்டுகிறது.
-11. **📱 பட்ஜெட் மொபைல் 60 FPS ஆப்டிமைசேஷன் (Low-End Mobile Smoothness):**
-    - 2GB / 3GB / 4GB RAM மொபைல்களிலும் எவ்வித லேக்கும் (No Frame Drops) இன்றி 60 FPS-ல் வெண்ணெய் போல இயங்கும்!
+## 🚀 v1.0.99 புத்தம் புதிய அம்சங்கள் (What's New in v1.0.99):
+
+> [!IMPORTANT]
+> **புதிய ஃபிளாக்ஷிப் மோட்: MINECRAFT AI EDITION (S.H.A.D.O.W. AI Suite)**
+> பேராசிரியர் ரோஹின் அவர்களின் பிரத்யேக S.H.A.D.O.W AI கம்பேனியன் சூட் வெற்றிகரமாக இணைக்கப்பட்டுள்ளது! இதில் **3D ஏரியல் ட்ரோன் (Aerial Drone)** மற்றும் **கிராலர் கிரெனேட் லாஞ்சர் மெக் (Crawler Grenade Launcher Mech)** ஆகிய இரண்டு மேம்பட்ட AI ரோபோக்கள் உள்ளன.
+
+1. **🦾 S.H.A.D.O.W AI Mech (கிராலர் கிரெனேட் லாஞ்சர் ரோபோ):**
+   - 3D குவாட்-லெக் கிராலர் வடிவம் (`geometry.shadow_ai_mech`), தத்ரூபமான நடை அனிமேஷன் மற்றும் ஹைட்ராலிக் சஸ்பென்ஷன்.
+   - **Distance-Based Dual-Combat:** 16 முதல் 30 பிளாக் தூரத்தில் உள்ள எதிரிகள் மீது வெடிக்கும் கிரெனேட் குண்டுகளையும் (`shadow:mech_grenade`), 15 பிளாக்கிற்குள் வரும் எதிரிகள் மீது அதிவேக லேசர் குண்டுகளையும் (`shadow:laser_bullet`) தானாக மாற்றித் தாக்கும்!
+   - **Dual Shield & Health System:** எதிரிகள் தாக்கும் போது முதலில் Shield உடையும்; அதன்பின்னர் தான் Health குறையும். Health 0 ஆனால் சாகாமல் Downed மோடுக்குச் செல்லும். 'Chirp' மூலம் 100/100 ரீசார்ஜ் செய்யலாம்.
+   - **Redstone Boundary Rule:** தரையில் ரெட்ஸ்டோன் வயரால் எல்லை வகுத்தால், மெக் அந்த எல்லைக்குள்ளேயே சுற்றி வரும்; ஒருபோதும் வெளியே தாண்டாது (ட்ரோனுக்கு இந்த கட்டுப்பாடு கிடையாது).
+   - **Obstacle Step-Crossing:** 1-பிளாக் உயரமுள்ள மேடுகள், படிக்கட்டுகளை கால்களால் ஏறித் தாண்டிச் செல்லும்; பிளாக்குகளுக்குள் மாட்டிக் கொள்ளாது.
+
+2. **🤖 S.H.A.D.O.W AI Drone (ஏரியல் கம்பேனியன்):**
+   - **Dynamic Respawn Logic:** பிளேயர் இறந்து 50 மீட்டருக்குள் மீண்டும் தோன்றினால் (Respawn <= 50m) ட்ரோன் உடனடியாக டெலிபோர்ட் ஆகும். 50 மீட்டருக்கு மேல் இருந்தால் 15 நொடிகள் கழித்து வானத்தின் உச்சியிலிருந்து (Sky Limit) ராக்கெட் போல இறங்கி வரும் (Cinematic Sky Drop).
+   - **Auto-Hunt & Feed:** பசி 4-க்குக் குறைந்து 1 (Critical Starvation) ஆகும் போது, ட்ரோன் தானாகவே பசு, பன்றி, செம்மறி ஆடு அல்லது கோழியை வேட்டையாடி, சமைத்த உணவாக மாற்றி பிளேயரின் காலடியில் தரும்!
+   - **Emergency Medical Support:** பிளேயரின் HP 30%-க்குக் கீழ் குறைந்தால் நானோ மெடிக்கல் லேசர்களைப் பாய்ச்சி உயிரைக் காப்பாற்றும்.
+   - **Safe Shooting:** ட்ரோன் லேசர்கள் பிளேயர் மீது பட்டால் அடிபடாது; மாறாக Regeneration & Instant Health கிடைக்கும்!
+
+3. **⚡ Zero-Lag Multiplayer Performance Optimization:**
+   - அனைத்து ஸ்கேனிங் ஸ்கிரிப்ட்களும் (பசி, ரத்த அளவு, ரெட்ஸ்டோன் எல்லை, தூரம்) துல்லியமாக **20 Ticks (1 வினாடி)** இடைவெளியில் மட்டுமே இயங்கும்.
+   - திரையை மறைக்கும் கனமான UI பாப்-அப்களுக்குப் பதிலாக, மெல்லிய **Actionbar HUD** மூலம் Shield & HP தகவல்கள் உடனுக்குடன் காட்டப்படும்.
+
+4. **🚀 நேரடி 1-Click Minecraft Launch & Auto-Import:**
+   - ஆண்ட்ராய்டு செயலியில் `IMPORT` கொடுத்தால் தானாகவே Minecraft PE திறந்து Add-on உடனே Import ஆகிவிடும்!
 
 ---
 
-## 🔮 MYTHOS: Ascension (v7.16.0 RPG Masterpiece) - முழு விவரங்கள்:
+## 🤖 MINECRAFT AI EDITION - விரிவான விளையாட்டு வழிகாட்டி:
 
-### 🌟 1. 6 தெய்வீக வகுப்புகள் (6 Ascendant Classes):
-- **⚔️ போர்வீரன் (Warrior - Berserker & Shield Guardian):**
-  - கனரக வாள்கள் (Heavy Greatswords) மற்றும் பிரம்மாண்ட கேடயங்கள் ஏந்தி முன்னணியில் போரிடும் வர்க்கம்.
-  - சிறப்புத் திறன்கள்: *Iron Will* (பாதுகாப்பு அதிகரிப்பு), *Shield Slam* (எதிரிகளைத் திகைக்க வைத்தல்), *Berserker Cleave* (சுற்றி இருக்கும் அனைத்து எதிரிகளையும் அழிக்கும் சுழல் வெட்டு).
-- **🧙‍♂️ மந்திரவாதி (Mage - Arcane Sorcerer & Elemental Evoker):**
-  - இயற்கை சக்திகளையும் மனோரத மந்திரங்களையும் கையாளுபவர்.
-  - சிறப்புத் திறன்கள்: *Arcane Missile* (ஆற்றல் குண்டுகள்), *Pyroclastic Burst* (ராட்சத தீப்பந்து), *Frost Nova* (எதிரிகளை உறைய வைத்தல்), *Blink* (நொடியில் டெலிபோர்ட் ஆகுதல்).
-- **🗡️ நிழல் வேட்டைக்காரன் (Rogue - Shadow Assassin):**
-  - இருளில் மறைந்து அதிவேக கத்தித் தாக்குதல் நடத்தும் நிழல் வீரன்.
-  - சிறப்புத் திறன்கள்: *Shadow Stealth* (கண்ணுக்குத் தெரியாமல் மறைதல்), *Backstab Critical* (முதுகில் குத்தி 5x மடங்கு சேதம் விளைவித்தல்), *Venom Dagger* (நச்சுத் தாக்குதல்).
-- **🛡️ புனிதப் போராளி (Paladin - Holy Crusader & Radiant Defender):**
-  - ஒளி மற்றும் நீதியின் ஆற்றல் கொண்ட புனித வீரன்.
-  - சிறப்புத் திறன்கள்: *Holy Smite* (தெய்வீக ஒளி இடித் தாக்குதல்), *Aura of Restoration* (தானாகவும் நண்பர்களுக்கும் ஆரோக்கியம் மீளுதல்), *Divine Aegis* (முழு அழியாமைப் பாதுகாப்பு).
-- **💀 மரண வித்தைக்காரன் (Necromancer - Soul Harvester):**
-  - இருண்ட ஆவிகள் மற்றும் எலும்புக்கூடுகளை வரவழைக்கும் மரண ஞானி.
-  - சிறப்புத் திறன்கள்: *Raise Undead* (போராட ஆட்களை உருவாக்குதல்), *Soul Drain* (எதிரிகளின் உயிரை உறிஞ்சுதல்), *Death Cloud* (எதிரிகளைச் சூழ்ந்து மூச்சுத் திணற வைக்கும் நச்சு மேகம்).
-- **🏹 வில்லாளி (Ranger - Deadeye Marksman):**
-  - துல்லியமாகத் தொலைவிலிருந்து அம்புகளைப் பொழியும் காட்டு வீரன்.
-  - சிறப்புத் திறன்கள்: *Arrow Rain* (வானிலிருந்து அம்பு மழை), *Snare Trap* (எதிரிகளை நகரவிடாமல் பிடிக்கும் பொறி), *Wind Runner* (காற்றை விட வேகமான ஓட்டம்).
+### 🔨 1. Crafting Recipes (உருவாக்கும் முறைகள்):
 
-### ⚡ 2. மனோரத மானசக்தி & மந்திர அமைப்பு (Dynamic Mana & Spell System):
-- திரையில் புதிய நீல நிற Mana Bar இயங்கும்.
-- ஒவ்வொரு மந்திரத்திற்கும் குறிப்பிட்ட Mana செலவாகும்; ஓய்வெடுக்கும் போது தானாகவே ரீசார்ஜ் ஆகும்.
-- மந்திரப் புத்தகங்கள் (Grimoires) மற்றும் சுருள்கள் (Spell Scrolls) மூலம் புதிய மந்திரங்களைக் கற்கலாம்!
-
-### 🏰 3. ஒமேகா கோட்டை நிலவறைகள் (Omega Fortress & Dungeons):
-- மைன்கிராஃப்ட் உலகில் தானாகவே உருவாகும் பிரம்மாண்ட பழங்கால நிலவறைகள் (Ancient Labyrinths & Dungeons).
-- ரகசிய பொக்கிஷப் பெட்டிகள், கொடிய பொறிகள் மற்றும் காவலாளிகள்!
-
-### 👹 4. 3 அசுர உலக பாஸ்கள் (3 Epic Mythic World Bosses):
-1. **☀️ விடியலின் சக்கரவர்த்தி (Dawn Sovereign):** வானிலிருந்து சூரியக் கதிர்களையும் மின்னலையும் வீசும் சூரிய அரக்கன்.
-2. **🌌 வெற்றிடக் காவலன் (Void Warden):** கருந்துளைகள் (Black Holes) உருவாக்கி பிளேயரை இழுத்து நொறுக்கும் விண்வெளி அரக்கன்.
-3. **🩸 இரத்தப் பேரரசன் (Blood Emperor):** நிலவறையின் ஆழத்தில் வாழும் இரத்தத்தை உறிஞ்சும் கொடூர பாஸ்!
-
-### 🛡️ 5. ஈஜிஸ் புனிதக் கவசங்கள் & புராண ஆயுதங்கள் (Aegis Mythic Gear & Relics):
-- நெதரைட்டை விட 10 மடங்கு சக்தி வாய்ந்த *Aegis Artifact Armor*.
-- *Celestial Greatsword*, *Archmage Staff*, மற்றும் *Soul Reaver Scythe*.
-
-### 💬 6. விளையாட்டுக்குள் இயங்கும் கமாண்டுகள் (In-Game Chat Commands):
-- **`!mythos`** - Mythos முதன்மை மெனுவை நேரடியாகத் திறக்கும்.
-- **`!class`** - உங்கள் வகுப்பை (Class) மாற்றும் அல்லது மேம்படுத்தும்.
-- **`!spells`** - நீங்கள் கற்றுக்கொண்ட மந்திரங்களின் பட்டியலைக் காட்டும்.
-- **`!mana`** - தற்போதைய மானசக்தியின் நிலையைச் சரிபார்க்கும்.
+| ஐட்டம் | கிராஃப்டிங் முறை (Crafting Table 3x3) | பயன் |
+| :--- | :--- | :--- |
+| **🎵 Music Disc - Chirp** | **மேல்:** Copper \| Gold \| Copper<br>**நடு:** Gold \| Redstone \| Gold<br>**கீழ்:** Copper \| Gold \| Copper | ட்ரோன் மற்றும் மெக்கை டேம் செய்யவும், ரிவைவ் செய்யவும் பயன்படும் முக்கிய சாவி. |
+| **🤖 S.H.A.D.O.W AI Drone** | **மேல்:** Iron Ingot \| Red Concrete \| Iron Ingot<br>**நடு:** Iron Ingot \| Music Disc (Chirp) \| Iron Ingot<br>**கீழ்:** Redstone Block \| Iron Ingot \| Empty | காற்றில் பறந்து பாதுகாக்கும் AI ஏரியல் ட்ரோனைத் தோற்றுவிக்கும். |
+| **🦾 S.H.A.D.O.W AI Mech** | **மேல்:** Iron Block \| Dispenser \| Iron Block<br>**நடு:** Gold Ingot \| Music Disc (Chirp) \| Gold Ingot<br>**கீழ்:** Redstone Block \| Iron Ingot \| Redstone Block | தரையில் ரோந்து சுற்றி கிரெனேட் மற்றும் லேசர் வீசும் மெக் ரோபோவைத் தோற்றுவிக்கும். |
 
 ---
 
-## 🌟 அடங்கியுள்ள மற்ற 13 பிரம்மாண்ட Bedrock Addon-கள்:
+### 🎮 2. கம்பேனியன்களை இயக்கும் முறை:
 
-### 🟢 Green Lantern: Corps Universe (v3.9.1 Masterpiece Addon):
-- **🌌 7 லான்டர்ன் படைகள் (7 Lantern Corps):** Green (Willpower), Yellow (Fear), Red (Rage), Blue (Hope), Indigo (Compassion), Orange (Greed), Star Sapphire Pink (Love), White (Life), Black (Death).
-- **⚡ ரிங் பில்டர் & பவர் பேட்டரி:** சொந்தமாக மோதிரங்களை உருவாக்குதல் மற்றும் பேட்டரிகளில் சார்ஜ் ஏற்றுதல்!
-- **✈️ அதிவேக சூப்பர்சோனிக் பறக்கும் திறன்:** காற்றில் இரட்டைத் தாவல் (Double Jump) செய்து ஒலியை விட வேகமாகப் பறக்கலாம்!
-- **🗡️ எனர்ஜி கன்ஸ்ட்ரக்ட்கள்:** ராட்சத பச்சை முஷ்டிகள் (Giant Fists), கவசங்கள், துப்பாக்கிகள் மற்றும் பீரங்கிகள்!
+1. **S.H.A.D.O.W AI Drone-ஐப் பழக்குதல் (Taming):**
+   - ட்ரோனை ஸ்பான் செய்தவுடன் அது தரையில் ஓய்வெடுக்கும்.
+   - கையில் **Chirp** டிஸ்க்கை வைத்துக்கொண்டு ட்ரோனைத் தொட்டால், அது டேம் ஆகி காற்றில் மிதந்து உங்கள் தலைக்கு மேல் பாதுகாப்பாகப் பறக்கத் தொடங்கும்.
+   - வெறும் கையால் தொட்டால் **Power Down (Sit)** ஆகி தரையில் அமரும்; மீண்டும் தொட்டால் **Power Up (Stand)** ஆகி பறக்கும்.
 
-### 💎 UltraReal 100x HD Realistic Textures (v2.0):
-- 100x அல்ட்ரா-ரியலிஸ்டிக் கிராபிக்ஸ், PBR ஒளி பிரதிபலிப்புகள், பளிங்கு போன்ற நீர், மற்றும் 60 FPS மொபைல் ஆப்டிமைசேஷன்.
+2. **S.H.A.D.O.W AI Mech-ஐப் பழக்குதல் & ரோந்து:**
+   - மெக் ஸ்பான் ஆனதும் அசைவற்று இருக்கும்.
+   - **Chirp** டிஸ்க்கை மெக்கிற்கு ஊட்டினால் உடனே அது உயிர்ப்பித்து சுதந்திரமாக (`random_stroll`) ரோந்து சுற்றத் தொடங்கும்.
+   - நிலத்தில் ரெட்ஸ்டோன் ஒயரால் ஒரு கோடு வரைந்து வைத்தால், மெக் அந்த எல்லையைத் தாண்டாமல் உள்ளேயே சுற்றும்.
 
-### 👽 Ben 10 Mods (2 Mods):
-1. **🧬 Ben 10: Omni Evolution (Beta Addon):** Custom evolution dimension, Vilgax boss animations, alien transformations.
-2. **🛸 Omni-Bound: Faster Switching (v1.5.2):** Instant quick-dial switching, 50+ alien forms, ultimate evolutions, sound FX.
+3. **இரட்டை ஆயுத தாக்குதல் (Dual-Combat):**
+   - எதிரி 16 முதல் 30 பிளாக் தள்ளி இருந்தால்: மெக் வெடிக்கும் **கிரெனேட் குண்டுகளை** வீசும்.
+   - எதிரி 15 பிளாக்கிற்குள் நெருங்கி வந்தால்: தானாகவே **அதிவேக லேசருக்கு** மாறி எதிரிகளை அழிக்கும்.
 
-### 🎌 Anime Legends (4 Mods):
-1. **🗡️ Solo Leveling (v1.0.6 System Awakening):** Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-2. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0):** Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-3. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52):** Slime Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Demon Lord abilities!
-4. **🐉 Dragon Evolution (v1.5.0):** Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-
-### 🦸 Superheroes (3 Mods):
-1. **🤖 Iron Man: Armor Wars Addon:** Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, JARVIS HUD!
-2. **🕷️ Spider-Man: Web of Shadows Addon:** Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits, and classic villain fights!
-3. **⭐ Marvel Project: Avengers Assemble (v3.0.1):** Mjolnir lightning, Cap's shield, Wolverine claws, Doctor Strange mystic portals, and Infinity Gauntlet!
-
-### ⚔️ Action & Guns (2 Mods):
-1. **🔫 Actual Guns 2: 3D Tactical:** 3D firearms, custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles!
-2. **⚡ Quirkborn: My Hero Academia (v1.515):** One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear!
+4. **ரீபூட் மற்றும் ரிவைவ் (Downed & Revive):**
+   - ட்ரோன் அல்லது மெக்கின் ரத்தம் 0 ஆனால் அவை அழியாது; 'Downed' மோடுக்குச் சென்று பவர் ஆஃப் ஆகிவிடும்.
+   - கையில் **Chirp** டிஸ்க்கை வைத்துக்கொண்டு டவுன் ஆன ரோபோவைத் தொட்டால், உடனடி முழு சார்ஜ் ஏறி மீண்டும் போருக்குத் தயாராகும்.
 
 ---
 
-## 🎮 பயன்படுத்தும் முறை (How to Use):
+## 🔮 MYTHOS: Ascension (v7.16.0 RPG Masterpiece)
 
-### வழிமுறை 1: Android App வழியாக (1-Click Launch)
-1. GitHub Releases-லிருந்து **`app-debug.apk`**-ஐ download செய்து install செய்யவும்.
-2. App-ஐ திறந்து **`MYTHOS: ASCENSION RPG`** கார்டில் உள்ள `🚀 IMPORT & LAUNCH` பட்டனைத் தொடவும்.
-3. Minecraft Bedrock தானாகவே திறந்து Add-on உடனே import ஆகிவிடும்!
+### 🌟 6 தெய்வீக வகுப்புகள் (6 Ascendant Classes):
+- **⚔️ போர்வீரன் (Warrior):** கனரக வாள்கள் (Heavy Greatswords) மற்றும் பிரம்மாண்ட கேடயங்கள் ஏந்தி முன்னணியில் போரிடும் வர்க்கம்.
+- **🧙‍♂️ மந்திரவாதி (Mage):** மனோரத மந்திரங்கள் மற்றும் வானிலை ஆற்றல்களைக் கையாளும் வித்தகர்.
+- **🗡️ நிழல் வேட்டைக்காரன் (Rogue):** கண்ணுக்குத் தெரியாமல் மறைந்து அதிவேக கத்தித் தாக்குதல் நடத்தும் நிழல் வீரன்.
+- **🛡️ புனிதப் போராளி (Paladin):** தெய்வீக ஒளி மற்றும் நீதியின் ஆற்றல் கொண்ட புனித வீரன்.
+- **💀 மரண வித்தைக்காரன் (Necromancer):** இருண்ட ஆவிகள் மற்றும் எலும்புக்கூடுகளை வரவழைக்கும் மரண ஞானி.
+- **🏹 வில்லாளி (Ranger):** துல்லியமாகத் தொலைவிலிருந்து அம்புகளைப் பொழியும் காட்டு வீரன்.
 
-### வழிமுறை 2: நேரடி Addon Download (.mcaddon)
-1. GitHub Releases பக்கத்திலிருந்து **`MYTHOS_Ascension_v7_16_0.mcaddon`** கோப்பை நேரடியாகப் பதிவிறக்கலாம்.
-2. பதிவிறக்கிய கோப்பை ஒருமுறை tap செய்தாலே Minecraft Bedrock தானாகத் திறந்து Addon-ஐ import செய்துவிடும்!
+### 🏰 நிலவறைகள் & பாஸ்கள்:
+- **Omega Fortress & Ancient Labyrinths:** நிலவறையின் ஆழத்தில் ஒளிந்திருக்கும் புதையல்கள்.
+- **3 World Bosses:** Dawn Sovereign (சூரிய அரக்கன்), Void Warden (கருந்துளை அரக்கன்), Blood Emperor (இரத்த பாஸ்).
 
 ---
 
-## ⚙️ Minecraft World Settings:
-1. புதிய உலகத்தை உருவாக்கும் போது (அல்லது ஏற்கனவே உள்ள உலகத்தின் Settings-ல்):
-   - **Behavior Pack** பிரிவில் mod-ஐ Activate செய்யவும்.
-   - **Resource Pack** பிரிவில் mod-ஐ Activate செய்யவும்.
-2. **Experiments** பிரிவின் கீழ்:
-   - **`Beta APIs`**-ஐ கட்டாயமாக **ON** செய்யவும்.
-3. உலகத்தைத் திறந்து 60 FPS-ல் விளையாடி மகிழுங்கள்! 🔥
+## 🌟 அடங்கியுள்ள 15 பிரம்மாண்ட Bedrock Addon-கள்:
+
+1. **🤖 Minecraft AI Edition (v1.0.99):** S.H.A.D.O.W AI Drone & Crawler Mech Suite.
+2. **🔮 MYTHOS: Ascension (v7.16.0):** 6 Classes, Mana, Dungeons, World Bosses.
+3. **💎 UltraReal 100x HD Textures (v2.0):** 100x யதார்த்தமான கிராபிக்ஸ், PBR ஒளி பிரதிபலிப்புகள், 60 FPS.
+4. **🟢 Green Lantern: Corps Universe (v3.9.1):** 7 படைகள், 21 சூட்கள், எனர்ஜி கன்ஸ்ட்ரக்ட்கள், பறக்கும் மோதிரங்கள்.
+5. **🧬 Ben 10: Omni Evolution (Beta):** ஏலியன் பரிணாமங்கள், Vilgax பாஸ் போர்கள்.
+6. **🛸 Omni-Bound: Faster Switching (v1.5.2):** அதிவேக ஏலியன் சுவிட்ச், 50+ ஏலியன்கள்.
+7. **🗡️ Solo Leveling (v1.0.6):** ஷேடோ மாநார்க், தினசரி குவெஸ்ட்கள், 'Arise' நிழல் வீரர்கள்.
+8. **🏴‍☠️ One Piece Bedrock Edition (v76.0.0):** டெவில் ஃப்ரூட்ஸ், ஹாக்கி, மரீன் & பைரேட்ஸ்.
+9. **🔮 Tensura: Reincarnated Requiem (v4):** ஸ்லைம் திறன்கள், Great Sage HUD, பிரிடேட்டர்.
+10. **🐉 Dragon Evolution (v1.5.0):** சூப்பர் சாயன், காமேஹாமேஹா, டிராகன் பால்ஸ்.
+11. **🔫 Actual Guns 2 (3D Tactical):** 3D துப்பாக்கிகள், ரீலோட் அனிமேஷன்கள், ஸ்கோப்.
+12. **⚡ Quirkborn (My Hero Academia):** One For All, Explosion, Half-Cold Half-Hot திறன்கள்.
+13. **🤖 Iron Man: Armor Wars:** மார்க் 1-85 சூட்கள், சூப்பர்சோனிக் ஃப்ளைட், ஜார்விஸ் HUD.
+14. **🕷️ Spider-Man: Web of Shadows:** வலை வீசுதல், சுவர் ஏறுதல், 20+ சினிமா சூட்கள்.
+15. **⭐ Marvel Project: Avengers (v3.0.1):** தோரின் சுத்தியல், கேப்டனின் கேடயம், இன்ஃபினிட்டி காண்ட்லெட்.
+
+---
+
+## 🎮 நிறுவும் முறை (Installation Methods):
+
+### முறை 1: Android Multi-Mod App வழியாக (பரிந்துரைக்கப்படுவது)
+1. GitHub Releases பக்கத்திலிருந்து **`app-debug.apk`**-ஐ பதிவிறக்கம் செய்து மொபைலில் நிறுவவும்.
+2. செயலியைத் திறந்து, உங்களுக்குத் தேவையான மோட் கார்டில் உள்ள **`IMPORT`** பட்டனைத் தொடவும்.
+3. Minecraft Bedrock தானாகவே திறந்து மோட் உடனே Import ஆகிவிடும்!
+
+### முறை 2: நேரடி `.mcaddon` / `.mcpack` வழியாக
+1. GitHub Releases பக்கத்திலிருந்து **`Minecraft_AI_Edition_v1.0.0.mcaddon`** கோப்பைப் பதிவிறக்கவும்.
+2. உங்கள் மொபைல் File Manager-ல் அந்தக் கோப்பை ஒருமுறை தொட்டால், Minecraft PE தானாகவே திறந்து Import செய்துவிடும்.
+
+---
+
+## ⚙️ Minecraft World Settings (கட்டாய அமைப்புகள்):
+
+புதிய உலகத்தை உருவாக்கும் போது அல்லது ஏற்கனவே உள்ள உலகத்தின் பென்சில் ஐகானைத் தொட்டு:
+
+1. **Behavior Packs:**
+   - `Minecraft AI Edition (S.H.A.D.O.W. Behavior Pack)`-ஐ **Activate** செய்யவும்.
+2. **Resource Packs:**
+   - `Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack)`-ஐ **Activate** செய்யவும்.
+3. **Experiments Settings (மிக முக்கியம்):**
+   - **`Beta APIs`** -> **ON**
+   - **`Holiday Creator Features`** -> **ON**
+   - **`Upcoming Creator Features`** -> **ON**
+4. உலகத்தைத் திறந்து லேக் இல்லாமல் (60 FPS) விளையாடி மகிழுங்கள்! 🔥
+
+---
+
+### 💬 விளையாட்டுக்குள் இயங்கும் கமாண்டுகள் (In-Game Commands):
+- **`!status`** - ரோபோக்களின் தற்போதைய நிலை மற்றும் சிஸ்டம் தகவல்களைக் காட்டும்.
+- **`!hunt`** - பசி எடுக்கும் வரை காத்திருக்காமல், உடனே வேட்டையாட ட்ரோனுக்கு உத்தரவிடும்.
+- **`!help`** அல்லது **`!ai`** - AI கம்பேனியன் கட்டளை வழிகாட்டியைத் திரையில் காட்டும்.
+- **`!mythos`** - மைதோஸ் RPG மெனுவைத் திறக்கும்.
