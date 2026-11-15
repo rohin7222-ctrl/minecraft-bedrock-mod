@@ -71,21 +71,24 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Direct Minecraft 1-Click Import & AI Drone v1.0.97)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Drone Auto-Hunt & Feed Edition v1.0.98)
           body: |
-            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Direct Minecraft 1-Click Import & AI Drone v1.0.97)
-            Seamless 1-Click Import integration! Tapping 'IMPORT' on Minecraft AI Edition (S.H.A.D.O.W.) or any mod now automatically launches Minecraft Bedrock PE, triggers native file delivery via Android FileProvider, and initiates the in-game 'Import started...' sequence automatically!
+            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Drone Auto-Hunt & Feed Edition v1.0.98)
+            Major AI companion upgrade! Introduces the autonomous Auto-Hunt & Feed system to prevent player starvation, cooked food delivery bypassing raw meat drops, emergency rations synthesis, high-performance multiplayer optimization, and 1-Click direct Minecraft auto-import!
             
-            ### 🤖 What's New in v1.0.97:
+            ### 🤖 What's New in v1.0.98:
+            - **🍖 Hunger Monitor & Hunt Mode**: Drone monitors tamed owner's food level; warns at hunger <= 4, and triggers 'Hunt Mode' upon reaching <= 1 (critical starvation)!
+            - **🎯 Autonomous Fauna Hunting**: Scans for nearby livestock (`minecraft:cow`, `minecraft:pig`, `minecraft:sheep`, `minecraft:chicken`), targets with thermal plasma beams, and neutralizes them!
+            - **🔥 Zero Raw Drop Clutter & Cooked Delivery**: Bypasses raw meat drops; directly generates and delivers hot cooked food (`cooked_beef`, `cooked_porkchop`, `cooked_mutton`, `cooked_chicken`) directly to the player's inventory or at their feet!
+            - **🧪 Emergency Ration Synthesis**: If no wild livestock is nearby (e.g. underground or desert), synthesized steak rations are created on the spot!
+            - **⚡ Multiplayer Optimization & Zero Lag**: Refactored event listeners, debounced scanning loops, and cached spatial queries for smooth 60 FPS multiplayer performance!
             - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline targeting `com.mojang.minecraftpe` and `com.mojang.minecrafttrialpe` with full `FLAG_GRANT_READ_URI_PERMISSION` and `FLAG_ACTIVITY_CLEAR_TOP`!
-            - **📦 Certified .mcaddon Dual Modules**: BP manifest upgraded with official `data` module (for entities, items, recipes) alongside `script` engine, ensuring 100% flawless Bedrock addon registration!
             - **💖 Safe Shooting & Heal On Accident**: Drone lasers colliding with owner deal 0 damage and automatically apply Regeneration II and Instant Health!
             - **⚔️ Combat Triggers (Protect Owner)**: If a mob attacks player or player attacks a mob, drone instantly locks on and engages that specific target!
             - **🚑 Emergency Medical Support**: Drone continuously monitors owner health; when health drops below 30%, drone fires nanite healing laser beams directly at the owner until safe!
             - **🧭 No-Teleport Flight Tracking**: Drone never teleports on owner death. Upon respawn, drone calculates long-range coordinates and physically navigates across world chunks with thruster particle FX to rendezvous with the player!
             - **🛡️ Collision Physics & Grounded Rest**: Equipped with `minecraft:collision_box` to prevent block-phasing; rests peacefully on the ground upon spawning.
             - **🎵 Chirp Taming & Hover Propulsion**: Tame the wild drone using 'Chirp' (`minecraft:music_disc_chirp`) to activate `minecraft:movement.hover`, `flying_speed`, and `follow_owner` navigation!
-            - **💥 Autonomous Laser Combat Cannon**: Attacks hostile monsters (Zombies, Skeletons, Creepers) within a 15-block radius of its owner using high-speed laser projectiles (`shadow:laser_bullet`)!
             - **🔋 Sit / Stand Power Controls**: Owner can tap/interact with the drone to Power Down (Sit/land on ground, stop moving) or Power Up (Stand/float and protect)!
             - **❤️ Visible Health Bar & Downed State**: Displays an on-screen boss health bar. Upon taking fatal damage, the drone does NOT die; it drops to the ground in a 'downed' inactive state!
             - **⚡ Chirp Reboot & Revive System**: Interacting with a downed drone using 'Chirp' reboots and restores it to full 50 HP floating combat readiness!
