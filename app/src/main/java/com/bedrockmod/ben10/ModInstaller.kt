@@ -27,7 +27,7 @@ object ModInstaller {
     const val ASSET_SPIDER_MAN = "Spider_Man_Addon.mcaddon"
     const val ASSET_MARVEL_PROJECT = "Marvel_Project_v3.0.1.mcaddon"
     const val ASSET_SOLO_LEVELING = "Solo_Leveling_v1.0.6.mcaddon"
-    const val ASSET_CIVILIZATION = "Civilization.mcaddon"
+    const val ASSET_MYTHOS = "MYTHOS_Ascension_v7_16_0.mcaddon"
     const val ASSET_ULTRAREAL = "UltraReal_100x_HD_v2.mcpack"
     const val ASSET_GREEN_LANTERN = "Green_Lantern_3_9_1.mcaddon"
 

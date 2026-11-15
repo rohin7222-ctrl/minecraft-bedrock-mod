@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         chipGroupCategories.setOnCheckedChangeListener { _, checkedId ->
             selectedCategory = when (checkedId) {
                 R.id.chipFavorites -> ModCategory.FAVORITES
-                R.id.chipCiv -> ModCategory.CIVILIZATION
+                R.id.chipMythos -> ModCategory.MYTHOS
                 R.id.chipBen10 -> ModCategory.BEN10
                 R.id.chipAnime -> ModCategory.ANIME
                 R.id.chipSuperhero -> ModCategory.SUPERHERO

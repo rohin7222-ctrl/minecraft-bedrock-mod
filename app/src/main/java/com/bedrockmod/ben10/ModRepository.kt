@@ -5,28 +5,28 @@ object ModRepository {
     fun getModList(): List<ModItem> {
         return listOf(
             ModItem(
-                id = "civilization",
-                title = "CIVILIZATION: AUTONOMOUS AI CITIZENS",
-                category = ModCategory.CIVILIZATION,
-                badge = "👑 7 AUTONOMOUS AIS • 4 RELIGIONS • FULL ARMOR",
-                desc = "Part 5 Living World Masterpiece v1.0.86! Villagers think and survive like real players: 4 Faith Pantheons, Sacred Altar Worship, Full Armor Suits (Iron->Diamond->Netherite), Redstone Piston Automations, Spawn-Proofing Sanctuary, and instant in-game !civ chat shortcuts! 100% offline 60 FPS locked!",
-                sizeText = "💾 0.5 MB",
-                iconEmoji = "🏛️",
-                assetFileName = ModInstaller.ASSET_CIVILIZATION,
-                buttonBgRes = R.drawable.btn_civilization_emerald,
-                buttonText = "🏛️ IMPORT CIVILIZATION ADDON 🏛️",
-                guideInfo = "🎮 Civilization In-Game Guide:\n• Chat Commands: Type '!civ' for Civilization Codex, '!religion' for Faith & Altar Codex, '!help' for guide.\n• 4 Faiths: Sol (Sun/Health), Deep Bedrock (Haste/Shield), Emerald Grove (Crops/Satiation), Redstone Spark (Speed/Repairs).\n• Combat & Armor: Villagers equip Iron -> Diamond -> Netherite based on XP.\n• Experiments: Turn ON 'Beta APIs'."
+                id = "mythos",
+                title = "MYTHOS: ASCENSION RPG",
+                category = ModCategory.MYTHOS,
+                badge = "🔮 CLASSES • MANA • DUNGEONS • BOSSES",
+                desc = "MYTHOS: Ascension v7.16.0 Masterpiece! The ultimate fantasy RPG addon for Bedrock: 6 Ascendant Classes, Mana & Skill trees, epic Dungeons, Boss Phases (Dawn Sovereign, Void Warden, Blood Emperor), Omega Fortress, and Aegis Mythic Armor!",
+                sizeText = "💾 12.4 MB",
+                iconEmoji = "🔮",
+                assetFileName = ModInstaller.ASSET_MYTHOS,
+                buttonBgRes = R.drawable.btn_mythos_arcane,
+                buttonText = "🔮 IMPORT MYTHOS ASCENSION 🔮",
+                guideInfo = "🔮 Mythos: Ascension In-Game Guide:\n• Choose your Ascendant Class at the Prime Codex altar.\n• Mana & Skills: Unlock active spellcasts, elemental bursts, and passive talent trees.\n• Dungeons & Raids: Locate Omega Fortress and conquer multi-phase world bosses (Void Warden, Blood Emperor, Dawn Sovereign).\n• Aegis Relics: Forge Mythic Aegis Armor and ascend to Godhood!"
             ),
             ModItem(
                 id = "ultrareal_texture_pack",
                 title = "ULTRAREAL 100X HD TEXTURE PACK",
-                category = ModCategory.CIVILIZATION,
+                category = ModCategory.MYTHOS,
                 badge = "🎨 100X REALISTIC MOBS • 360 SKY • CAUSTIC WATER",
                 desc = "UltraReal 100x v2.0 HD Texture Pack! 100x Realistic Mobs, 11 sun-shadowed trees, 360 dynamic sky, caustic water, 3D ores, and 110+ HD items. Includes 64x Low-End Mobile 60 FPS mode and Ultra 128x mode. Tap to automatically open and import directly into Minecraft PE!",
                 sizeText = "💾 3.7 MB",
                 iconEmoji = "🎨",
                 assetFileName = ModInstaller.ASSET_ULTRAREAL,
-                buttonBgRes = R.drawable.btn_civilization_emerald,
+                buttonBgRes = R.drawable.btn_ultrareal_hd,
                 buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨",
                 guideInfo = "🎨 UltraReal HD In-Game Guide:\n• Activate under Global Resources or World Resource Packs.\n• Features 100x HD Mobs, 360 dynamic skybox, caustic waters, and 3D ore blocks.\n• Locked 60 FPS mobile optimization with zero frame drops."
             ),

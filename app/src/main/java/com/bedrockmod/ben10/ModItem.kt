@@ -3,7 +3,7 @@ package com.bedrockmod.ben10
 enum class ModCategory(val displayName: String) {
     ALL("🌟 All (14)"),
     FAVORITES("⭐ Starred"),
-    CIVILIZATION("🏛️ Civilization & HD (2)"),
+    MYTHOS("🔮 Mythos & HD (2)"),
     BEN10("👽 Ben 10 (2)"),
     ANIME("🎌 Anime (4)"),
     SUPERHERO("🦸 Superheroes (4)"),
