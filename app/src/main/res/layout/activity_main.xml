@@ -24,13 +24,16 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/app_logo" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
             <LinearLayout
@@ -42,6 +45,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
                     android:text="BEDROCK MOD HUB"
                     android:textColor="@color/text_white"
                     android:textSize="17sp"
@@ -52,11 +56,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/badge_size_background"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
                     android:paddingStart="7dp"
-                    android:paddingTop="2dp"
+                    android:paddingTop="3dp"
                     android:paddingEnd="7dp"
-                    android:paddingBottom="2dp"
-                    android:text="v1.0.88 PRO"
+                    android:paddingBottom="3dp"
+                    android:text="v1.0.90 PRO"
                     android:textColor="@color/omnitrix_glow"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -66,19 +72,26 @@
                 android:id="@+id/tvMinecraftStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
                 android:text="🟢 Checking Minecraft..."
                 android:textColor="@color/omnitrix_glow"
-                android:textSize="11.5sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <!-- Quick Launch Minecraft Button -->
         <Button
             android:id="@+id/btnQuickLaunchMc"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="38dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:android:insetTop="0dp"
+            android:android:insetBottom="0dp"
             android:background="@drawable/btn_header_mc"
             android:elevation="4dp"
+            android:gravity="center"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:text="🎮 Launch MC"
@@ -100,7 +113,7 @@
         app:trackColor="@color/surface_dark" />
 
     <!-- ========================================================================= -->
-    <!-- SEARCH & CATEGORY BAR -->
+    <!-- SEARCH BAR -->
     <!-- ========================================================================= -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,7 +122,7 @@
         android:paddingStart="14dp"
         android:paddingTop="10dp"
         android:paddingEnd="14dp"
-        android:paddingBottom="4dp">
+        android:paddingBottom="2dp">
 
         <!-- Modern Stadium Search Box -->
         <LinearLayout
@@ -119,11 +132,14 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="14dp"
-            android:paddingEnd="14dp">
+            android:paddingEnd="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:includeFontPadding="false"
                 android:text="🔍"
                 android:textSize="16sp" />
 
@@ -134,10 +150,13 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="Search 14 mods (Mythos Ascension, Green Lantern, Ben 10)..."
+                android:gravity="center_vertical"
+                android:hint="Search 14 mods (Mythos, Green Lantern, Ben 10)..."
                 android:imeOptions="actionSearch"
+                android:includeFontPadding="false"
                 android:inputType="text"
                 android:maxLines="1"
+                android:padding="0dp"
                 android:textColor="@color/text_white"
                 android:textColorHint="@color/text_muted"
                 android:textSize="13.5sp" />
@@ -146,146 +165,165 @@
                 android:id="@+id/btnClearSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="6dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="8dp"
                 android:text="✖"
                 android:textColor="@color/text_muted"
                 android:textSize="14sp"
                 android:visibility="gone" />
         </LinearLayout>
+    </LinearLayout>
 
-        <!-- Category Horizontal Filter Tabs -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
+    <!-- Category Horizontal Filter Tabs -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupCategories"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:overScrollMode="never"
-            android:scrollbars="none">
+            app:chipSpacingHorizontal="8dp"
+            app:singleLine="true"
+            app:singleSelection="true">
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroupCategories"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:singleLine="true"
-                app:singleSelection="true">
+                android:checked="true"
+                android:minHeight="36dp"
+                android:text="🌟 All (14)"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="@color/card_stroke"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipAll"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="🌟 All (14)"
-                    android:textColor="@color/text_white"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="@color/card_stroke"
-                    app:chipStrokeWidth="1dp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFavorites"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="⭐ Starred (0)"
+                android:textColor="#FDE047"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="#CA8A04"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFavorites"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⭐ Starred (0)"
-                    android:textColor="#FDE047"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="#CA8A04"
-                    app:chipStrokeWidth="1dp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMythos"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="🔮 Mythos &amp; HD (2)"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="@color/card_stroke"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipMythos"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🔮 Mythos &amp; HD (2)"
-                    android:textColor="@color/text_white"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="@color/card_stroke"
-                    app:chipStrokeWidth="1dp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBen10"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="👽 Ben 10 (2)"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="@color/card_stroke"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipBen10"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="👽 Ben 10 (2)"
-                    android:textColor="@color/text_white"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="@color/card_stroke"
-                    app:chipStrokeWidth="1dp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAnime"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="🎌 Anime Legends (4)"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="@color/card_stroke"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipAnime"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🎌 Anime Legends (4)"
-                    android:textColor="@color/text_white"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="@color/card_stroke"
-                    app:chipStrokeWidth="1dp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSuperhero"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="🦸 Superheroes (4)"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="@color/card_stroke"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipSuperhero"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🦸 Superheroes (4)"
-                    android:textColor="@color/text_white"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="@color/card_stroke"
-                    app:chipStrokeWidth="1dp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAction"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="⚔️ Action &amp; Guns (2)"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="@color/card_stroke"
+                app:chipStrokeWidth="1dp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipAction"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⚔️ Action &amp; Guns (2)"
-                    android:textColor="@color/text_white"
-                    app:chipBackgroundColor="@color/card_dark"
-                    app:chipStrokeColor="@color/card_stroke"
-                    app:chipStrokeWidth="1dp" />
+        </com.google.android.material.chip.ChipGroup>
 
-            </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
 
-        </HorizontalScrollView>
+    <!-- Result Count & Sort Mode Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <!-- Result Count & Spotlight Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvResultCount"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:includeFontPadding="false"
+            android:text="Showing 14 Mods Available"
+            android:textColor="@color/text_gray"
+            android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/tvResultCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Showing 14 Mods Available"
-                android:textColor="@color/text_gray"
-                android:textSize="11.5sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/btnSortMode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/badge_size_background"
-                android:paddingStart="9dp"
-                android:paddingTop="3dp"
-                android:paddingEnd="9dp"
-                android:paddingBottom="3dp"
-                android:text="⚡ Sort: Featured ▼"
-                android:textColor="@color/omnitrix_glow"
-                android:textSize="10.5sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/btnSortMode"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/badge_size_background"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingStart="11dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="4dp"
+            android:text="⚡ Sort: Featured ▼"
+            android:textColor="@color/omnitrix_glow"
+            android:textSize="11sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- Empty search state -->
@@ -293,15 +331,17 @@
         android:id="@+id/tvEmptyState"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
-        android:text="😕 No mods match your search."
+        android:lineSpacingExtra="4dp"
+        android:padding="24dp"
+        android:text="🔍 No mods match your search.\nTry another keyword or tap '🌟 All'."
         android:textColor="@color/text_muted"
-        android:textSize="15sp"
+        android:textSize="14.5sp"
         android:visibility="gone" />
 
     <!-- ========================================================================= -->
-    <!-- RECYCLERVIEW: 13 MOD CARDS (60 FPS SMOOTH SCROLL) -->
+    <!-- RECYCLERVIEW: 14 MOD CARDS (60 FPS SMOOTH SCROLL) -->
     <!-- ========================================================================= -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMods"
@@ -311,7 +351,7 @@
         android:clipToPadding="false"
         android:overScrollMode="never"
         android:paddingTop="6dp"
-        android:paddingBottom="12dp" />
+        android:paddingBottom="8dp" />
 
     <!-- ========================================================================= -->
     <!-- BOTTOM FOOTER TOOLS & STATUS -->
@@ -324,45 +364,61 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="14dp"
-        android:paddingTop="8dp"
+        android:paddingTop="10dp"
         android:paddingEnd="14dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="10dp">
 
         <TextView
             android:id="@+id/tvBottomInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
             android:maxLines="1"
             android:text="💡 Pro Tip: Turn ON 'Beta APIs' in World Settings!"
             android:textColor="@color/text_gray"
-            android:textSize="11sp" />
+            android:textSize="11.5sp" />
 
         <!-- Setup Guide Button -->
         <Button
             android:id="@+id/btnQuickGuide"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:text="📖 Setup Guide"
+            android:layout_height="34dp"
+            android:layout_marginEnd="6dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:android:insetTop="0dp"
+            android:android:insetBottom="0dp"
+            android:background="@drawable/btn_footer_tool"
+            android:gravity="center"
+            android:paddingStart="11dp"
+            android:paddingEnd="11dp"
+            android:text="📖 Guide"
             android:textColor="@color/omnitrix_glow"
             android:textSize="11sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
 
         <!-- Clear Cache Button -->
         <Button
             android:id="@+id/btnClearCache"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:text="🧹 Clean Cache"
+            android:layout_height="34dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:android:insetTop="0dp"
+            android:android:insetBottom="0dp"
+            android:background="@drawable/btn_footer_tool"
+            android:gravity="center"
+            android:paddingStart="11dp"
+            android:paddingEnd="11dp"
+            android:text="🧹 Cache"
             android:textColor="@color/text_muted"
-            android:textSize="11sp" />
+            android:textSize="11sp"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 

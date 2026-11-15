@@ -8,7 +8,7 @@
     android:layout_marginBottom="12dp"
     app:cardBackgroundColor="@color/card_dark"
     app:cardCornerRadius="18dp"
-    app:cardElevation="5dp"
+    app:cardElevation="4dp"
     app:strokeColor="@color/card_stroke"
     app:strokeWidth="1.2dp">
 
@@ -18,7 +18,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Top Header: Icon + Title + Badges -->
+        <!-- Top Header: Icon + Title + Badges + Favorite Star -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,6 +29,7 @@
             <FrameLayout
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/icon_circle_background">
 
                 <TextView
@@ -36,7 +37,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="🏛️"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="🔮"
                     android:textSize="24sp" />
             </FrameLayout>
 
@@ -44,17 +47,23 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvModTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="1.5dp"
+                    android:maxLines="2"
                     android:text="MYTHOS: ASCENSION RPG"
                     android:textColor="@color/text_white"
-                    android:textSize="16.5sp"
+                    android:textSize="15.5sp"
                     android:textStyle="bold" />
 
                 <!-- Badges Row -->
@@ -69,12 +78,12 @@
                     <TextView
                         android:id="@+id/tvModBadge"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#4A044E"
+                        android:layout_height="22dp"
+                        android:background="@drawable/badge_category_background"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
                         android:paddingStart="8dp"
-                        android:paddingTop="2dp"
                         android:paddingEnd="8dp"
-                        android:paddingBottom="2dp"
                         android:text="MYTHOS ASCENSION"
                         android:textColor="#F0ABFC"
                         android:textSize="10sp"
@@ -84,28 +93,29 @@
                     <TextView
                         android:id="@+id/tvModSize"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="22dp"
                         android:layout_marginStart="6dp"
                         android:background="@drawable/badge_size_background"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
                         android:paddingStart="7dp"
-                        android:paddingTop="2dp"
                         android:paddingEnd="7dp"
-                        android:paddingBottom="2dp"
-                        android:text="💾 0.5 MB"
+                        android:text="💾 12.4 MB"
                         android:textColor="#CBD5E1"
                         android:textSize="10sp"
                         android:textStyle="bold" />
 
                     <!-- 60 FPS Locked Badge -->
                     <TextView
+                        android:id="@+id/tvModFps"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="22dp"
                         android:layout_marginStart="6dp"
                         android:background="@drawable/badge_size_background"
-                        android:paddingStart="6dp"
-                        android:paddingTop="2dp"
-                        android:paddingEnd="6dp"
-                        android:paddingBottom="2dp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingStart="7dp"
+                        android:paddingEnd="7dp"
                         android:text="⚡ 60 FPS"
                         android:textColor="@color/omnitrix_glow"
                         android:textSize="9.5sp"
@@ -117,11 +127,12 @@
             <!-- Favorite Star Button -->
             <TextView
                 android:id="@+id/btnFavorite"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/badge_size_background"
                 android:gravity="center"
+                android:includeFontPadding="false"
                 android:text="☆"
                 android:textColor="#FDE047"
                 android:textSize="20sp" />
@@ -134,8 +145,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:lineSpacingExtra="3.5dp"
-            android:text="Part 5 Living World Masterpiece! Autonomous villagers think and survive like real players: 4 Faith Pantheons, Sacred Altar Worship, Full Armor Suits, and Redstone Automations!"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.25"
+            android:maxLines="4"
+            android:text="Masterpiece RPG experience! 6 Ascendant Classes, Mana &amp; Spell-casting, Omega Fortress Dungeons, and Mythic World Bosses!"
             android:textColor="@color/text_gray"
             android:textSize="12.5sp" />
 
@@ -150,7 +163,7 @@
             app:indicatorColor="@color/omnitrix_green"
             app:trackColor="@color/surface_dark" />
 
-        <!-- Action Row: Guide + Import -->
+        <!-- Action Row: Guide + Import (Pixel-Perfect 46dp Height Alignment) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,29 +173,48 @@
 
             <Button
                 android:id="@+id/btnModDetails"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="46dp"
                 android:layout_marginEnd="8dp"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:android:insetTop="0dp"
+                android:android:insetBottom="0dp"
+                android:android:insetLeft="0dp"
+                android:android:insetRight="0dp"
+                android:background="@drawable/btn_mod_guide_outline"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:text="📖 Guide"
                 android:textColor="@color/omnitrix_glow"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:strokeColor="@color/card_stroke"
-                app:strokeWidth="1.2dp" />
+                app:backgroundTint="@null" />
 
             <Button
                 android:id="@+id/btnImportMod"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="46dp"
                 android:layout_weight="1"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:android:insetTop="0dp"
+                android:android:insetBottom="0dp"
+                android:android:insetLeft="0dp"
+                android:android:insetRight="0dp"
                 android:background="@drawable/btn_mythos_arcane"
                 android:elevation="4dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:singleLine="true"
                 android:text="🔮 IMPORT MYTHOS ASCENSION 🔮"
                 android:textColor="#FFFFFF"
-                android:textSize="13sp"
+                android:textSize="12.5sp"
                 android:textStyle="bold"
                 app:backgroundTint="@null" />
         </LinearLayout>

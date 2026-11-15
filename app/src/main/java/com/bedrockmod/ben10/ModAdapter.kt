@@ -48,6 +48,34 @@ class ModAdapter(
         holder.tvSize.text = mod.sizeText
         holder.tvDesc.text = mod.desc
 
+        // Category Badge Tinting for Visual Alignment
+        when (mod.category) {
+            ModCategory.MYTHOS -> {
+                holder.tvBadge.setTextColor(0xFFF0ABFC.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF4A044E.toInt())
+            }
+            ModCategory.BEN10 -> {
+                holder.tvBadge.setTextColor(0xFF86EFAC.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF064E3B.toInt())
+            }
+            ModCategory.ANIME -> {
+                holder.tvBadge.setTextColor(0xFFFDBA74.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF431407.toInt())
+            }
+            ModCategory.SUPERHERO -> {
+                holder.tvBadge.setTextColor(0xFFF472B6.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF311042.toInt())
+            }
+            ModCategory.ACTION -> {
+                holder.tvBadge.setTextColor(0xFFA5B4FC.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF1E1B4B.toInt())
+            }
+            else -> {
+                holder.tvBadge.setTextColor(0xFFCBD5E1.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF1E293B.toInt())
+            }
+        }
+
         // Favorite Star
         val isFav = favoritesManager.isFavorite(mod.id)
         holder.btnFavorite.text = if (isFav) "⭐" else "☆"

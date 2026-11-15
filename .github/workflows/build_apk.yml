@@ -71,19 +71,18 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Mythos Ascension Edition v1.0.90)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Pixel-Perfect Alignment Edition v1.0.91)
           body: |
-            ## 🔮 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Mythos Ascension Edition & Pro Suite v1.0.90)
-            Permanently removed Civilization addon and integrated **MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**! Features 6 Ascendant Classes, Mana & Spellcasting, Omega Fortress Dungeons, Mythic World Bosses, persistent favorites bookmarking, in-depth mod guide sheets, system diagnostics hub, tactile haptic feedback, 4-Way dynamic sorting, and 14 epic Bedrock addons with 1-Tap direct Minecraft auto-launching!
+            ## 🎨 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Pixel-Perfect Alignment Edition & Pro Suite v1.0.91)
+            Fixed and refined all layout alignment defects across the entire Android app! Features synchronized 46dp action buttons with zero insets, unified 22dp rounded pill badges, vertical centering for search and header elements, expanded footer tools with no text truncation, and 14 legendary Bedrock addons including MYTHOS: Ascension v7.16.0!
             
-            ### 🌟 v1.0.90 Upgrade Highlights:
-            - **🔮 MYTHOS: Ascension 7.16.0 Masterpiece**: 6 Ascendant Classes (Warrior, Mage, Rogue, Paladin, Necromancer, Ranger), dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses (Dawn Sovereign, Void Warden, Blood Emperor), and Aegis Mythic Artifacts!
-            - **🟢 Green Lantern 3.9.1 Masterpiece**: 7 Lantern Corps (Willpower Green, Sinestro Yellow, Red Rage, Blue Hope, Indigo, Orange, Star Sapphire Pink, White Life, Black Death), Power Batteries, 21 Split Suits, Ring Builder with 6 Blueprints, Custom Energy Constructs, Supersonic Ring Flight, and Oa Quests!
-            - **⭐ Persistent Favorites & Starred Filter**: Star your favorite mods and filter them with one tap (`⭐ Starred`).
-            - **📖 In-Depth Mod Guide & Details Sheet**: Tap '📖 Guide' or any mod card for in-depth lore, spawn eggs, and in-game chat commands.
-            - **⚙️ Bedrock System & Diagnostics Hub**: Tap the top status bar for live device telemetry, free storage space (GB), and 60 FPS performance monitoring.
-            - **⚡ 4-Way Dynamic Sorting**: Toggle between Featured, Alphabetical (A-Z), File Size (Smallest First), and Starred First.
-            - **📳 Tactile Haptic Feedback**: Native vibration feedback on button presses and star toggles.
+            ### 📐 v1.0.91 Layout & Alignment Overhaul:
+            - **📏 Synchronized 46dp Action Row Buttons**: `btnModDetails` ('📖 Guide') and `btnImportMod` now share identical 46dp visual height, 14dp rounded corners, zero Material insets, and perfect vertical baseline alignment.
+            - **🏷️ Unified 22dp Category Pill Badges**: All badges (Category, File Size, 60 FPS) now feature consistent 22dp height, matching 6dp rounded corners, and dynamic category-specific theme tinting (Mythos, Ben 10, Anime, Superhero, Action).
+            - **🔍 Vertically Centered Search & Header**: Fixed `etSearch` baseline alignment with `🔍` search icon and `btnClearSearch`; adjusted `btnQuickLaunchMc` with zero insets to align with the 40dp app logo.
+            - **🧹 Spacious Footer Layout**: Re-engineered footer with compact 34dp tactile pill buttons (`📖 Guide`, `🧹 Cache`), preventing pro tip text truncation on narrow mobile screens.
+            - **🔮 MYTHOS: Ascension 7.16.0 Masterpiece**: 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, and Aegis Mythic Artifacts!
+            - **🟢 Green Lantern 3.9.1 Masterpiece**: 7 Lantern Corps, Power Batteries, 21 Split Suits, Ring Builder, and Energy Constructs!
             
             ### 🔮 14 Legendary Bedrock Mods Included:
             1. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
