@@ -1,8 +1,9 @@
 package com.bedrockmod.ben10
 
 enum class ModCategory(val displayName: String) {
-    ALL("🌟 All (14)"),
+    ALL("🌟 All (15)"),
     FAVORITES("⭐ Starred"),
+    AI("🤖 AI Edition (1)"),
     MYTHOS("🔮 Mythos & HD (2)"),
     BEN10("👽 Ben 10 (2)"),
     ANIME("🎌 Anime (4)"),

@@ -149,7 +149,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:gravity="center_vertical"
-                android:hint="Search 14 mods (Mythos, Green Lantern, Ben 10)..."
+                android:hint="Search 15 mods (AI Edition, Mythos, Green Lantern)..."
                 android:imeOptions="actionSearch"
                 android:includeFontPadding="false"
                 android:inputType="text"
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:minHeight="36dp"
-                android:text="🌟 All (14)"
+                android:text="🌟 All (15)"
                 android:textColor="@color/text_white"
                 app:chipBackgroundColor="@color/card_dark"
                 app:chipStrokeColor="@color/card_stroke"
@@ -215,6 +215,18 @@
                 android:textColor="#FDE047"
                 app:chipBackgroundColor="@color/card_dark"
                 app:chipStrokeColor="#CA8A04"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAiEdition"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:text="🤖 AI Edition (1)"
+                android:textColor="#22D3EE"
+                app:chipBackgroundColor="@color/card_dark"
+                app:chipStrokeColor="#0891B2"
                 app:chipStrokeWidth="1dp" />
 
             <com.google.android.material.chip.Chip

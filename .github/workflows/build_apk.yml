@@ -71,51 +71,51 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Pixel-Perfect Alignment Edition v1.0.91)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Minecraft AI Edition Suite v1.0.92)
           body: |
-            ## 🎨 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Pixel-Perfect Alignment Edition & Pro Suite v1.0.91)
-            Fixed and refined all layout alignment defects across the entire Android app! Features synchronized 46dp action buttons with zero insets, unified 22dp rounded pill badges, vertical centering for search and header elements, expanded footer tools with no text truncation, and 14 legendary Bedrock addons including MYTHOS: Ascension v7.16.0!
+            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Minecraft AI Edition Suite & Pro Suite v1.0.92)
+            Added official Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack) featuring custom futuristic 'Minecraft AI Edition' world loading screen UI, high-res cyberpunk title logo, glowing cyan progress matrix, and 15 legendary Bedrock addons!
             
-            ### 📐 v1.0.91 Layout & Alignment Overhaul:
-            - **📏 Synchronized 46dp Action Row Buttons**: `btnModDetails` ('📖 Guide') and `btnImportMod` now share identical 46dp visual height, 14dp rounded corners, zero Material insets, and perfect vertical baseline alignment.
-            - **🏷️ Unified 22dp Category Pill Badges**: All badges (Category, File Size, 60 FPS) now feature consistent 22dp height, matching 6dp rounded corners, and dynamic category-specific theme tinting (Mythos, Ben 10, Anime, Superhero, Action).
-            - **🔍 Vertically Centered Search & Header**: Fixed `etSearch` baseline alignment with `🔍` search icon and `btnClearSearch`; adjusted `btnQuickLaunchMc` with zero insets to align with the 40dp app logo.
-            - **🧹 Spacious Footer Layout**: Re-engineered footer with compact 34dp tactile pill buttons (`📖 Guide`, `🧹 Cache`), preventing pro tip text truncation on narrow mobile screens.
-            - **🔮 MYTHOS: Ascension 7.16.0 Masterpiece**: 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, and Aegis Mythic Artifacts!
-            - **🟢 Green Lantern 3.9.1 Masterpiece**: 7 Lantern Corps, Power Batteries, 21 Split Suits, Ring Builder, and Energy Constructs!
+            ### 🤖 What's New in v1.0.92:
+            - **🤖 Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack)**: Overhauls world loading screen UI (`ui/progress_screen.json`) and start screen title (`ui/start_screen.json`) with custom high-resolution 'Minecraft AI Edition' logo, cybernetic neon background, and glowing cyan progress bars!
+            - **🌟 15 Legendary Bedrock Addons**: Now includes AI Edition, MYTHOS: Ascension v7.16.0, UltraReal 100x HD, Green Lantern 3.9.1, Ben 10, Anime Legends, and Marvel Superheroes!
+            - **📐 Pixel-Perfect Alignment Overhaul**: Synchronized 46dp buttons, unified 22dp pill badges, centered search and header elements, and responsive mobile footer!
             
-            ### 🔮 14 Legendary Bedrock Mods Included:
-            1. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
-               - 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses (Dawn Sovereign, Void Warden, Blood Emperor), Aegis Artifact Armor, and 60 FPS mobile performance!
-            2. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
+            ### 🔮 15 Legendary Bedrock Mods Included:
+            1. **🤖 Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack)**
+               - Futuristic cyberpunk loading screen UI, custom high-resolution 'Minecraft AI Edition' title logo, animated glowing cyan progress matrix, and cybernetic AI companion theme!
+            2. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
+               - 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, Aegis Artifact Armor, and 60 FPS mobile performance!
+            3. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
                - Ultra-realistic 100x high-definition textures with PBR lighting reflections, realistic skies, crystal waters, and 60 FPS mobile optimization.
-            3. **🟢 Green Lantern: Corps Universe (v3.9.1 Masterpiece Addon)**
+            4. **🟢 Green Lantern: Corps Universe (v3.9.1 Masterpiece Addon)**
                - 7 Lantern Corps, Power Batteries, 21 Split Suits, Ring Builder, Energy Constructs (Shields, Fists, Swords, Cannons), Supersonic Ring Flight, and Oa Missions!
-            4. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+            5. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
-            5. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+            6. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
                - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            6. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+            7. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
                - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            7. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+            8. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            8. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            9. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            9. **🐉 Dragon Evolution (v1.5.0)**
+            10. **🐉 Dragon Evolution (v1.5.0)**
                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            10. **🔫 Actual Guns 2: 3D Tactical**
+            11. **🔫 Actual Guns 2: 3D Tactical**
                 - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            11. **⚡ Quirkborn: My Hero Academia (v1.515)**
+            12. **⚡ Quirkborn: My Hero Academia (v1.515)**
                 - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            12. **🤖 Iron Man: Armor Wars Addon**
+            13. **🤖 Iron Man: Armor Wars Addon**
                 - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            13. **🕷️ Spider-Man: Web of Shadows Addon**
+            14. **🕷️ Spider-Man: Web of Shadows Addon**
                 - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            14. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
+            15. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
                 - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
+            - **Direct Minecraft AI Edition Pack**: Download `Minecraft_AI_Edition_v1.0.0.mcpack` (Auto-opens in Minecraft!)
             - **Direct Mythos Ascension Addon**: Download `MYTHOS_Ascension_v7_16_0.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Green Lantern Addon**: Download `Green_Lantern_3_9_1.mcaddon` (Auto-opens in Minecraft!)
             - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)

@@ -50,6 +50,10 @@ class ModAdapter(
 
         // Category Badge Tinting for Visual Alignment
         when (mod.category) {
+            ModCategory.AI -> {
+                holder.tvBadge.setTextColor(0xFF67E8F9.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF083344.toInt())
+            }
             ModCategory.MYTHOS -> {
                 holder.tvBadge.setTextColor(0xFFF0ABFC.toInt())
                 holder.tvBadge.background?.mutate()?.setTint(0xFF4A044E.toInt())
