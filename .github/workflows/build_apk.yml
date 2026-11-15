@@ -71,13 +71,17 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Minecraft AI Edition Suite v1.0.92)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Professor Rohin S.H.A.D.O.W. AI Suite v1.0.93)
           body: |
-            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Minecraft AI Edition Suite & Pro Suite v1.0.92)
-            Added official Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack) featuring custom futuristic 'Minecraft AI Edition' world loading screen UI, high-res cyberpunk title logo, glowing cyan progress matrix, and 15 legendary Bedrock addons!
+            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Professor Rohin S.H.A.D.O.W. AI Suite v1.0.93)
+            Complete Behavior & Resource Pack overhaul with @minecraft/server & @minecraft/server-ui scripting! Features Professor Rohin's interactive Blue Screen onboarding sequence, custom player name registration modal, seamless screen disappearance, custom world loading screen UI, high-res cyberpunk title logo, and 15 legendary Bedrock addons!
             
-            ### 🤖 What's New in v1.0.92:
-            - **🤖 Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack)**: Overhauls world loading screen UI (`ui/progress_screen.json`) and start screen title (`ui/start_screen.json`) with custom high-resolution 'Minecraft AI Edition' logo, cybernetic neon background, and glowing cyan progress bars!
+            ### 🤖 What's New in v1.0.93:
+            - **🧠 Interactive S.H.A.D.O.W. AI Behavior Pack**: Built with `@minecraft/server` (1.15.0) and `@minecraft/server-ui` (1.3.0).
+            - **🔵 Step 1 (Welcome Screen)**: World join triggers a full-screen atmospheric blue effect with Professor Rohin's welcome greeting and 'Next' button.
+            - **📝 Step 2 (Modal Registration)**: Opens `ModalFormData` asking the player to type their name with an 'OK' button.
+            - **✨ Step 3 (Quantum Initialization)**: When 'OK' is clicked, the blue screen completely vanishes, broadcasting 'System Initialized. Welcome, [Player Name]!' with celebratory audio FX!
+            - **📦 Complete .mcaddon Packaging**: Installs both Behavior and Resource packs in a single tap!
             - **🌟 15 Legendary Bedrock Addons**: Now includes AI Edition, MYTHOS: Ascension v7.16.0, UltraReal 100x HD, Green Lantern 3.9.1, Ben 10, Anime Legends, and Marvel Superheroes!
             - **📐 Pixel-Perfect Alignment Overhaul**: Synchronized 46dp buttons, unified 22dp pill badges, centered search and header elements, and responsive mobile footer!
             
@@ -115,7 +119,8 @@ jobs:
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
-            - **Direct Minecraft AI Edition Pack**: Download `Minecraft_AI_Edition_v1.0.0.mcpack` (Auto-opens in Minecraft!)
+            - **Direct Minecraft AI Edition Addon**: Download `Minecraft_AI_Edition_v1.0.0.mcaddon` (Installs BP + RP in 1-Click!)
+            - **Direct Minecraft AI Edition Resource Pack**: Download `Minecraft_AI_Edition_v1.0.0.mcpack`
             - **Direct Mythos Ascension Addon**: Download `MYTHOS_Ascension_v7_16_0.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Green Lantern Addon**: Download `Green_Lantern_3_9_1.mcaddon` (Auto-opens in Minecraft!)
             - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)

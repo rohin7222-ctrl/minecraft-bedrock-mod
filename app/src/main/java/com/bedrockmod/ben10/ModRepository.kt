@@ -6,16 +6,16 @@ object ModRepository {
         return listOf(
             ModItem(
                 id = "minecraft_ai_edition",
-                title = "MINECRAFT AI EDITION",
+                title = "MINECRAFT AI EDITION (S.H.A.D.O.W.)",
                 category = ModCategory.AI,
-                badge = "🤖 S.H.A.D.O.W. AI • CYBER UI • CUSTOM LOGO",
-                desc = "Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack)! Futuristic cyberpunk loading screen UI, custom high-resolution 'Minecraft AI Edition' title logo, animated glowing cyan progress matrix, and cybernetic AI companion theme!",
-                sizeText = "💾 3.4 MB",
+                badge = "🤖 PROF. ROHIN • BLUE UI • S.H.A.D.O.W. AI",
+                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack with @minecraft/server & @minecraft/server-ui scripting: Blue Screen onboarding sequence, interactive Professor Rohin introduction, player name calibration modal, custom world loading screen UI, and high-res cyber title logo!",
+                sizeText = "💾 3.9 MB",
                 iconEmoji = "🤖",
                 assetFileName = ModInstaller.ASSET_MINECRAFT_AI_EDITION,
                 buttonBgRes = R.drawable.btn_ai_cyan,
-                buttonText = "🤖 IMPORT AI EDITION RESOURCE PACK 🤖",
-                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• Activate under Global Resources or World Resource Packs.\n• Replaces default world loading screen with custom high-tech 'Minecraft AI Edition' logo and cybernetic background!\n• Sleek cyan HUD matrix, glowing progress bars, and futuristic start screen title!"
+                buttonText = "🤖 IMPORT MINECRAFT AI EDITION 🤖",
+                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• Behavior & Resource Pack automatically load upon world entry!\n• Blue Screen Onboarding: When joining, Professor Rohin greets you with the S.H.A.D.O.W. AI Welcome Form.\n• Identity Calibration: Enter your name in the Modal form to initialize the quantum matrix.\n• Completion: The blue screen completely vanishes and broadcasts 'System Initialized. Welcome, [Your Name]!'\n• Type '!ai' in chat anytime to re-trigger the calibration interface!"
             ),
             ModItem(
                 id = "mythos",
