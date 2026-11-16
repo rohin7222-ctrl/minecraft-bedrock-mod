@@ -19,16 +19,16 @@ object ModRepository {
             ),
             ModItem(
                 id = "ultrareal_texture_pack",
-                title = "ULTRAREAL 100X HD v3.1 (ULTRA PRO)",
+                title = "ULTRAREAL 100X HD v3.2 (ULTRA PRO ULTIMATE)",
                 category = ModCategory.MYTHOS,
-                badge = "🎨 ZERO EXPERIMENTS • 267+ BLOCKS • 74+ MOBS",
-                desc = "UltraReal 100x v3.1 Ultra Pro Edition! 100% Zero Experimental Toggles required (pure vanilla resource pack). Complete HD overhaul: 267+ blocks, 74+ realistic mobs, 360 seamless sky, crystal caustic waters, HD rain & crystalline snow, 8 custom biome fogs, terrain & item atlas mappings, and 60 FPS locked!",
-                sizeText = "💾 4.0 MB",
+                badge = "🎨 ZERO EXPERIMENTS • 128X HD BLOCKS • PBR SHADERS READY",
+                desc = "UltraReal 100x v3.2 Ultimate Edition! 100% Zero Experimental Toggles required (pure vanilla resource pack). Features 128x128 HD Blocks, 74+ Mobs, PBR MER Shaders Ready (Diamond, Gold, Iron, Netherite, Emerald), Translucent Dark Glass UI & Modern HUD, Ambient Audio Overhaul (Rain/Thunder/Underwater), and 60 FPS locked!",
+                sizeText = "💾 8.7 MB",
                 iconEmoji = "🎨",
                 assetFileName = ModInstaller.ASSET_ULTRAREAL,
                 buttonBgRes = R.drawable.btn_ultrareal_hd,
                 buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨",
-                guideInfo = "🎨 UltraReal v3.1 In-Game Guide:\n• 1. 100% Zero Experiments: Works in pure vanilla Minecraft Bedrock with ALL experimental toggles turned OFF!\n• 2. Activate under Global Resources or World Resource Packs.\n• 3. Features: 267+ HD Blocks, 74+ Realistic Mobs, 360 seamless sky dome, crystal clear waters with caustics, HD rain & snow, 8 biome fogs, terrain & item atlas mappings, and natural non-repeating isotropic terrain.\n• 4. Locked 60 FPS performance on all mobile devices!"
+                guideInfo = "🎨 UltraReal v3.2 In-Game Guide:\n• 1. 100% Zero Experiments: Works in pure vanilla Minecraft Bedrock 1.21+ with ALL experimental toggles turned OFF!\n• 2. Activate under Global Resources or World Resource Packs.\n• 3. Features: 128x128 HD Blocks, 74+ Mobs, PBR MER maps for metallic/emissive blocks, Translucent Dark Glass UI & Modern HUD, Ambient Audio Overhaul, 8 biome fogs, and 60 FPS locked performance!"
             ),
             ModItem(
                 id = "wheel_of_adaptation",

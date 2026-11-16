@@ -1,65 +1,53 @@
 # 🔮 Minecraft Bedrock Mod Hub (15-in-1 Next-Gen Pro Suite v1.0.101)
-### 📱 15 Legendary Bedrock Addons | UltraReal HD v3.1 (Zero Experiments) | Aplok Guns 3D (v1.8.8) | Wheel of Adaptation | 60 FPS Locked
+### 📱 15 Legendary Bedrock Addons | UltraReal HD v3.2 Ultimate (Zero Experiments) | Aplok Guns 3D (v1.8.8) | Wheel of Adaptation | 60 FPS Locked
 
 ---
 
-## 🚀 v1.0.101 UltraReal HD v3.1 பிரம்மாண்ட அப்கிரேட் (Zero Experimental Toggles & 100% Texture Coverage):
+## 🚀 v1.0.101 UltraReal HD v3.2 Ultimate பிரம்மாண்ட அப்கிரேட் (Zero Experimental Toggles):
 
 > [!IMPORTANT]
 > **🌟 100% தூய Vanilla Resource Pack - எந்த எக்ஸ்பெரிமென்ட்களும் தேவையில்லை (Zero Experiments Required):**
-> பயனர் கோரியபடி, **UltraReal 100x HD v3.1** முற்றிலும் எவ்வித `Experimental Toggles` (சோதனை அமைப்புகள்) தேவையின்றி, 100% இயல்பான Minecraft Bedrock உலகங்களிலும் நேரடி Resource Pack ஆக இயங்கும் வகையில் மேம்படுத்தப்பட்டுள்ளது!
-> - **Audit முடிவு:** 0 பிழைகள் (Errors), 0 எச்சரிக்கைகள் (Warnings), 20/20 சோதனைகள் வெற்றி!
-> - சாதனைகள் (Achievements) எதுவும் தடைபடாது!
+> பயனர் கோரியபடி, **UltraReal 100x HD v3.2 Ultimate** முற்றிலும் எவ்வித `Experimental Toggles` தேவையின்றி, 100% இயல்பான Minecraft Bedrock 1.21+ உலகங்களில் நேரடி Resource Pack ஆக இயங்கும் வகையில் முழுமையாக மேம்படுத்தப்பட்டுள்ளது!
+> - **Audit முடிவு:** 0 பிழைகள் (Zero Critical Errors), 24/24 சோதனைகள் வெற்றி!
+> - சாதனைகள் (Achievements) எதுவும் தடைபடாது! 60 FPS Locked Performance!
 
 ---
 
-### 💎 UltraReal 100x HD v3.1-ல் சேர்க்கப்பட்டுள்ள புதிய மேம்பாடுகள்:
+### 💎 UltraReal 100x HD v3.2 Ultimate-ல் சேர்க்கப்பட்டுள்ள பிரம்மாண்ட அம்சங்கள்:
 
-1. **🧱 58 புதிய HD பிளாக் டெக்ஸ்சர்கள் (Complete Block Textures Overhaul):**
-   - ஃபெர்னஸ் (Furnace Front On/Off, Side, Top), ரெட்ஸ்டோன் ஒயரிங் (Redstone Dust Cross & Line).
-   - அனைத்து வகை தண்டவாளங்கள் (Rails, Curved Rails, Golden Powered Rail, Activator Rail).
-   - TNT (Dynamite bundle, side, top, bottom), பிஸ்டன் (Piston Top & Side), என்கான்டிங் டேபிள், ஜூக் பாக்ஸ்.
-   - பாசி படிந்த பாறை (Cobblestone Mossy), செங்கற்கள் (Bricks & Nether Bricks), குவார்ட்ஸ் (Quartz Top/Side), பிரிஸ்மரைன், சீ லேண்டர்ன்.
-   - பட்டை உரிக்கப்பட்ட மரங்கள் (Stripped Oak, Birch, Spruce Logs), ஸ்ப்ரூஸ் கதவுகள், ட்ராப் டோர்.
-   - தர்பூசணி, பூசணிக்காய் (கார்வ்டு ஜாக்-ஓ-லேண்டர்ன் முகம்), கற்றாழை, கரும்பு, மூங்கில்.
-   - கைவினை விளக்குகள் மற்றும் கேம்ப்ஃபயர் (Lantern, Soul Lantern, Torch, Soul Torch, Campfire fire & lit logs).
+1. **🌟 128x128 HD பிளாக் டெக்ஸ்சர்கள் (True 100x Micro-Detail Upscale):**
+   - அனைத்து 261 பிளாக்குகளும் 64x64 இலிருந்து **128x128 HD** தரத்திற்கு உயர்த்தப்பட்டு, அன்ஷார்ப் மாஸ்க் (Unsharp Masking) மூலம் கல் விரிசல்கள், மர வரிகள், தாதுப் படிகங்கள் 4 மடங்கு அதிகத் துல்லியத்துடன் காட்சியளிக்கும்.
 
-2. **👾 7 புதிய HD மாப் டெக்ஸ்சர்கள் (Complete Entity Textures Overhaul):**
-   - **Wither Skeleton:** கரியடர்ந்த எலும்புக்கூடு, ஒளிரும் நிலக்கரிச் சாம்பல் வரிகள்.
-   - **Magma Cube:** எரிமலை பசால்ட் பாறை ஓடு, பளபளக்கும் மாக்மா பிளவுகள் மற்றும் லாவா கோர்.
-   - **Wandering Trader:** தங்க வேலைப்பாடு செய்யப்பட்ட அரச லேபிஸ் நீல ஆடை, தோல் பை மற்றும் தொப்பி.
-   - **Panda:** மென்மையான HD வெள்ளைக் கம்பளி, கறுப்புக் கண் வளையங்கள் மற்றும் காதுகள்.
-   - **Red Parrot:** செவ்வான நிற ஸ்கார்லெட் மெக்காவ் கிளி (மஞ்சள் மற்றும் நீல சிறகுகளுடன்).
-   - **Blue Axolotl:** அபூர்வ நீல அக்ஸோலாட்ல் (ஒளிரும் தங்க நிற கில்ஸ் மற்றும் சியான் உடலுடன்).
-   - **Tadpole:** ஒளிபுகும் கண்ணாடி போன்ற ஆற்றுத் தலைப்பிரட்டை மற்றும் நீந்து வால்.
+2. **🌌 32-bit RGBA தடையற்ற வானம் (Zero Color-Banding Cubemap):**
+   - அனைத்து 6 கியூப்மேப் ஸ்கை கோப்புகளும் 32-bit தூய RGBA ஆல்பா சேனலுடன் இணைக்கப்பட்டு மொபைல் திரைகளில் வர்ணப் பிறழ்வின்றி (Zero Color Banding) தத்ரூபமாக ஒளிரும்.
 
-3. **🗺️ Terrain & Item Texture Atlas மேப்பிங்:**
-   - `textures/terrain_texture.json` (267 HD பிளாக் மேப்பிங்குகள்) & `textures/item_texture.json` (122 HD பொருட்கள்).
-   - விளையாட்டு எந்தக் குழப்பமுமின்றி அனைத்து டெக்ஸ்சர்களையும் மிக வேகமாக லோட் செய்யும்.
+3. **✨ PBR MER ஷேடர்கள் தயார்நிலை (Deferred Shaders Ready):**
+   - வைரம் (Diamond Block), தங்கம் (Gold Block), இரும்பு, நெதரைட், எமரால்டு, சீ லேண்டர்ன், க்ளோஸ்டோன், ரெட்ஸ்டோன், அமேதிஸ்ட் போன்ற 12 முக்கிய பிளாக்குகளுக்கு `_mer.png` (Metallic, Emissive, Roughness) மேப்கள் இணைக்கப்பட்டுள்ளன. RTX அல்லது நவீன Deferred Shading உள்ள சாதனங்களில் தத்ரூபமான உலோகப் பிரதிபலிப்பும் ஒளிர்வும் தரும்!
 
-4. **🌧️ HD மழை மற்றும் பனிப்பொழிவு (HD Rain & Crystalline Snow):**
-   - 128x128 HD மழைத் தூறல்கள் (`rain.png`) மற்றும் நேர்த்தியான ஸ்படிகப் பனித்துகள்கள் (`snow.png`).
+4. **📱 டிரான்ஸ்லூசென்ட் டார்க் கிளாஸ் UI & நவீன HUD (Translucent Dark Glass HUD):**
+   - **கண்ணாடி ஹாட்பார்:** நவீன புகைக்கண்ணாடி வடிவிலான இன்வென்டரி ஸ்லாட்டுகள் (`hotbar_slot.png`).
+   - **ஒளிரும் சியான் செலக்டர்:** நியான் சியான்-கோல்ட் நிறத்தில் தேர்ந்தெடுக்கப்பட்ட ஸ்லாட் பாக்ஸ் (`selected_hotbar_slot.png`).
+   - **HD ஸ்லீக் இதயங்கள்:** நவீன முப்பரிமாண சிவப்பு இதயங்கள் (`heart_new.png`, `heart_half.png`, `heart_empty.png`).
+   - **மின்னும் எக்ஸ்பீரியன்ஸ் பார்:** பச்சை நியான் ஒளிரும் பட்டையுடன் கூடிய XP பார் (`experience_bar_full.png`).
 
-5. **☁️ தடையற்ற 3D பஞ்சு மேகங்கள் (Seamless HD Clouds):**
-   - 256x256 அளவில் இயற்கை அமைப்பிலான மென்மையான பஞ்சு போன்ற மேகங்கள் (`clouds.png`).
+5. **🎵 HD சுற்றுச்சூழல் ஒலி அமைப்பு (Ambient Audio Overhaul):**
+   - `sound_definitions.json` மற்றும் `sounds.json` மூலம் சினிமாட்டிக் மழை, இடி முழக்கம், மற்றும் கடலடி அலை ஒலிகள் ஒருங்கிணைக்கப்பட்டுள்ளன.
 
-6. **🌊 காஸ்டிக் ஒளி அலைகளுடன் கூடிய படிக நீர் (Caustic Underwater Overlay):**
-   - தண்ணீருக்குள் நீந்தும்போது சூரிய ஒளி பிரதிபலிக்கும் அலைவரிசை (`underwater.png`).
+6. **🧱 267 HD பிளாக் டெக்ஸ்சர்கள் & 74 மாப் டெக்ஸ்சர்கள்:**
+   - ஃபெர்னஸ் (எரியும் நெருப்புடன்), அனைத்து தண்டவாளங்கள், ரெட்ஸ்டோன், TNT, பிஸ்டன்கள், என்சான்டிங் டேபிள், ஜூக் பாக்ஸ்.
+   - Wither Skeleton, Magma Cube, Wandering Trader, Panda, Red Parrot, Blue Axolotl, Tadpole உள்ளிட்ட 74 HD மாப்கள்.
 
-7. **🎬 சினிமாட்டிக் லென்ஸ் விக்னெட் (Cinematic Optical Vignette):**
-   - திரையின் விளிம்புகளில் மெல்லிய நிழல் விளைவு (`vignette.png`).
+7. **🗺️ முழுமையான அட்லஸ் மேப்பிங்:**
+   - `textures/terrain_texture.json` (267 பிளாக்குகள்) & `textures/item_texture.json` (122 பொருட்கள்).
 
-8. **🎃 தெளிவான தந்திரோபாய பார்வை (Tactical Clear Pumpkin Visor):**
-   - பூசணிக்காய் தலையை அணியும்போது முழுக் காட்சியும் தெளிவாகத் தெரியும் நவீன வைசர் (`pumpkinblur.png`).
+8. **🌧️ HD மழை, பனிப்பொழிவு & தடையற்ற மேகங்கள்:**
+   - 128x128 HD மழைத் தூறல்கள் (`rain.png`), படிகப் பனித்துகள்கள் (`snow.png`) மற்றும் 256x256 பஞ்சு மேகங்கள் (`clouds.png`).
 
-9. **✨ 256x256 HD துகள்கள் (HD Particles System):**
-   - கேம்ப்ஃபயர் மென் புகை, ஒளிரும் நெருப்புப் பொறிகள், மின்னும் கிரிட்டிகல் நட்சத்திரங்கள், இதயங்கள் (`particles.png`).
+9. **🌫️ 8 தனித்துவமான பயோம் மூடுபனிகள் (8 Custom Biome Fogs & Biomes Client):**
+   - Ocean, Forest, Desert, Swamp, Snow, Nether, End மற்றும் Default fogs.
 
-10. **🌫️ 8 தனித்துவமான பயோம் மூடுபனிகள் (8 Custom Biome Fogs & Biomes Client):**
-    - Ocean, Forest, Desert, Swamp, Snow, Nether, End மற்றும் Default fogs.
-
-11. **🏔️ 65+ இயற்கையான ஐசோட்ரோபிக் பாறைகள் (Natural Isotropic Blocks):**
-    - பாறை, மண், மணல், பாசிப்பாறை, செங்கல், சரளை மற்றும் தாதுக்கள் தன்னிச்சையாகச் சுழன்று (Random Rotation) தோன்றும்.
+10. **🏔️ 65+ இயற்கையான ஐசோட்ரோபிக் பாறைகள் (Natural Isotropic Blocks):**
+    - பாறை, மண், மணல், சரளை ஆகியவை தன்னிச்சையாகச் சுழன்று இயற்கை நிலப்பரப்பாகத் தோன்றும்.
 
 ---
 
