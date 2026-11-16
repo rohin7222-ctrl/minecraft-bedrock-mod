@@ -71,52 +71,55 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Wheel of Adaptation Mahoraga Edition v1.0.100)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Aplok Guns 3D & UltraReal Sky Fix v1.0.101)
           body: |
-            ## ☸️ Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Wheel of Adaptation Mahoraga Edition v1.0.100)
-            Epic Anime expansion! Introduces the **Wheel of Adaptation (Mahoraga v1.3.1)** from Jujutsu Kaisen, pixel-perfect text alignment across all UI cards, removed retired addons, and full 1-Click direct Minecraft auto-import!
+            ## 🔫 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Aplok Guns 3D & UltraReal Sky Fix v1.0.101)
+            Ultimate Weapons & Graphics upgrade! Introduces **Aplok Guns 3D (v1.8.8)** hyper-realistic firearms, completely eliminates the **Square in the Sky bug** in UltraReal 100x HD Texture Pack, and delivers 15 total legendary mods with 1-Click Minecraft Auto-Import!
             
-            ### ☸️ What's New in v1.0.100:
-            - **☸️ Wheel of Adaptation (魔虚羅 Mahoraga v1.3.1 Added)**: Lore-accurate Eight-Handled Sword Divergent Sila Divine General Mahoraga! Adapts to all incoming damage phenomena (fire, melee, magic, projectiles, void), Sword of Extermination positive energy blade, mode switcher, and Mahoraga armor!
-            - **📐 UI & Text Alignment Overhaul**: Pixel-perfect text alignment on all cards and headers. Fixed badge height wrapping, ensured horizontal button centering, and streamlined category chips!
-            - **🧹 Streamlined Mod Suite**: Permanently removed Minecraft AI Edition and Green Lantern per user request.
+            ### 🔫 What's New in v1.0.101:
+            - **🔫 Aplok Guns 3D (v1.8.8 Added)**: Hyper-realistic 3D firearms for Minecraft Bedrock! First-person tactical reload animations, realistic muzzle flash, scopes & holographic sights, custom ammo crafting, suppressor attachments, and recoil physics!
+            - **🌅 UltraReal 100x HD Sky Bug Fixed (Square Box Removed)**: Solved the infamous "Square in the Sky" issue! Applied radial cosine falloff to `sun.png` (zero border alpha), masked 8-phase `moon_phases.png`, and generated mathematically seamless edge-blending across all 6 faces of `overworld_cubemap` so looking straight up or around has zero square seams!
+            - **📱 15 Legendary Bedrock Addons Integrated**: Full collection of Action, RPG, Anime, and Superhero addons in one single Android app.
             - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline targeting `com.mojang.minecraftpe` and `com.mojang.minecrafttrialpe` with full `FLAG_GRANT_READ_URI_PERMISSION`!
             
-            ### 🔮 14 Legendary Bedrock Mods Included:
+            ### 🔮 15 Legendary Bedrock Mods Included:
             1. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
                - 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, Aegis Artifact Armor, and 60 FPS mobile performance!
             2. **☸️ Wheel of Adaptation: Mahoraga (v1.3.1 Masterpiece Addon)**
                - Eight-Handled Sword Divergent Sila Divine General Mahoraga, adaptive immunity wheel, Sword of Extermination, and mode switcher!
-            3. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
-               - Ultra-realistic 100x high-definition textures with PBR lighting reflections, realistic skies, crystal waters, and 60 FPS mobile optimization.
-            4. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+            3. **💎 UltraReal 100x HD Realistic Textures (v2.0 - Square Sky Bug Fixed)**
+               - Ultra-realistic 100x high-definition textures with PBR lighting reflections, 360 seamless sky dome, caustic waters, and 60 FPS mobile optimization.
+            4. **🔫 Aplok Guns 3D (v1.8.8 Public Beta)**
+               - Hyper-realistic 3D weapons, smooth tactical reload animations, muzzle flashes, holographic scopes, and recoil physics!
+            5. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
-            5. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+            6. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
                - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            6. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+            7. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
                - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            7. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+            8. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            8. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            9. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            9. **🐉 Dragon Evolution (v1.5.0)**
-               - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            10. **🔫 Actual Guns 2: 3D Tactical**
+            10. **🐉 Dragon Evolution (v1.5.0)**
+                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
+            11. **🔫 Actual Guns 2: 3D Tactical**
                 - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            11. **⚡ Quirkborn: My Hero Academia (v1.515)**
+            12. **⚡ Quirkborn: My Hero Academia (v1.515)**
                 - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            12. **🤖 Iron Man: Armor Wars Addon**
+            13. **🤖 Iron Man: Armor Wars Addon**
                 - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            13. **🕷️ Spider-Man: Web of Shadows Addon**
+            14. **🕷️ Spider-Man: Web of Shadows Addon**
                 - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            14. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
+            15. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
                 - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
+            - **Direct Aplok Guns Addon**: Download `Aplok_Guns_v1.8.8.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Wheel of Adaptation Addon**: Download `Wheel_of_Adaptation_v1.3.1.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Mythos Ascension Addon**: Download `MYTHOS_Ascension_v7_16_0.mcaddon` (Auto-opens in Minecraft!)
-            - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
+            - **Direct UltraReal 100x HD Texture Pack (Fixed Sky)**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
             - **Direct Omni Bound Addon**: Download `Omni_Bound_v1.5.2.mcaddon`
             - **Direct Solo Leveling Addon**: Download `Solo_Leveling_v1.0.6.mcaddon`

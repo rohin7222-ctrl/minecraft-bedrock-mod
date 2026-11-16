@@ -199,7 +199,7 @@ class MainActivity : AppCompatActivity() {
             .append("   • Supported: v1.20.80 through v1.21.x\n\n")
             .append("💾 Device Telemetry & Storage:\n")
             .append(String.format("   • Free Internal Space: %.2f GB\n", freeGb))
-            .append("   • Available Addons: 14 High-Speed Mods\n")
+            .append("   • Available Addons: 15 High-Speed Mods\n")
             .append("   • Battery Profile: Cosmic Dark OLED Optimized\n\n")
             .append("⚡ Performance Engine:\n")
             .append("   • Script Runtime: 100% Offline QuickJS\n")

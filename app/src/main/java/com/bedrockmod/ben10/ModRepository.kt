@@ -135,6 +135,19 @@ object ModRepository {
                 guideInfo = "🔫 Actual Guns 2 Guide:\n• Craft weapons at the Custom Weapon Bench.\n• Reload ammo by holding magazine in offhand and sneaking.\n• Aim down sights (ADS) with sniper scopes and holographic reticles."
             ),
             ModItem(
+                id = "aplok_guns",
+                title = "APLOK GUNS 3D (v1.8.8)",
+                category = ModCategory.ACTION,
+                badge = "🔫 3D FIREARMS • RELOAD ANIMATIONS • SCOPES",
+                desc = "Official Aplok Guns Public Beta Addon! Hyper-realistic 3D firearms, smooth first-person tactical reload animations, realistic muzzle flash, scopes & sights, custom ammo crafting, and recoil physics!",
+                sizeText = "💾 13.2 MB",
+                iconEmoji = "🔫",
+                assetFileName = ModInstaller.ASSET_APLOK_GUNS,
+                buttonBgRes = R.drawable.btn_actualguns_red,
+                buttonText = "🔫 IMPORT APLOK GUNS 🔫",
+                guideInfo = "🔫 Aplok Guns In-Game Guide:\n• 1. Craft weapons and ammunition at the custom Gun Workbench.\n• 2. Reload: Hold matching ammo magazine in your inventory and sneak/crouch to execute realistic reload animations.\n• 3. Aim Down Sights (ADS): Sneak to aim with holographic sights, red dot, or sniper scopes.\n• 4. Tactical Attachments: Suppressors, extended magazines, and flashlights can be attached.\n• 5. Enable 'Beta APIs' experimental toggle in world settings for full functionality."
+            ),
+            ModItem(
                 id = "quirkborn",
                 title = "QUIRKBORN: MY HERO ACADEMIA",
                 category = ModCategory.ACTION,
