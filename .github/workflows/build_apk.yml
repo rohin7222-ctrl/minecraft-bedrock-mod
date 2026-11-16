@@ -71,71 +71,51 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Mech & Drone Edition v1.0.99)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Wheel of Adaptation Mahoraga Edition v1.0.100)
           body: |
-            ## 🤖 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (S.H.A.D.O.W. AI Mech & Drone Edition v1.0.99)
-            Groundbreaking AI companion expansion! Introduces the **S.H.A.D.O.W AI Mech (Crawler Grenade Launcher)** alongside the AI Drone, featuring 3D custom crawler geometry, Dual Shield & Health bars, Redstone boundary containment, obstacle step-crossing navigation, and Chirp revival!
+            ## ☸️ Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Wheel of Adaptation Mahoraga Edition v1.0.100)
+            Epic Anime expansion! Introduces the **Wheel of Adaptation (Mahoraga v1.3.1)** from Jujutsu Kaisen, pixel-perfect text alignment across all UI cards, removed retired addons, and full 1-Click direct Minecraft auto-import!
             
-            ### 🤖 What's New in v1.0.99:
-            - **🦾 S.H.A.D.O.W AI Mech (Crawler Grenade Launcher)**: Heavy tactical ground robot crafted via [Iron Blocks, Dispenser, Gold, Chirp Disc, Redstone Blocks].
-            - **🎮 3D Crawler Geometry & Animations**: Authentic 3D quad-legged crawler model converted directly from Blockbench GLB, featuring dynamic crawling walk cycles, idle hydraulic sway, and powered-down rest pose!
-            - **🛡️ Dual Shield & Health System**: Custom HUD nametag with dual dynamic bars (`[██████████] 100 🛡️ | [██████████] 100 ❤️`). Incoming attacks deplete the Shield first; health is only damaged when shield reaches 0!
-            - **❤️ Downed State & Chirp Revival**: When health drops to 0, the Mech enters an offline 'downed' state instead of dying. Interacting with 'Chirp' fully restores both Shield (100/100) and Health (100/100) and reactivates the Mech!
-            - **💣 30-Block Tactical Grenade Launcher**: Targets Spiders, Zombies, Skeletons, and Creepers within 30 blocks with explosive arched grenade projectiles!
-            - **⚡ Redstone Wire Boundary Containment**: Script API continuously monitors blocks around the Mech; if redstone wire is detected, pathfinding is restricted so the Mech stays strictly inside the designated perimeter!
-            - **🧗 Obstacle Step-Crossing & Anti-Phasing**: Equipped with collision physics, `can_climb`, and script-assisted terrain detection so the Mech smoothly climbs 1-block steps, slabs, and hills without clipping or phasing into solid blocks!
-            - **🍖 Hunger Monitor & Auto-Hunt**: Drone monitors hunger; automatically hunts livestock and delivers cooked food!
-            - **🚑 Emergency Medical Support**: Drone fires healing nanite lasers when player health drops below 30%!
-            - **🧭 No-Teleport Flight Tracking**: Drone physical chunk navigation to rendezvous upon respawn!
-            - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline for instant import!
-            - **💖 Safe Shooting & Heal On Accident**: Drone lasers colliding with owner deal 0 damage and automatically apply Regeneration II and Instant Health!
-            - **⚔️ Combat Triggers (Protect Owner)**: If a mob attacks player or player attacks a mob, drone instantly locks on and engages that specific target!
-            - **🚑 Emergency Medical Support**: Drone continuously monitors owner health; when health drops below 30%, drone fires nanite healing laser beams directly at the owner until safe!
-            - **🧭 No-Teleport Flight Tracking**: Drone never teleports on owner death. Upon respawn, drone calculates long-range coordinates and physically navigates across world chunks with thruster particle FX to rendezvous with the player!
-            - **🛡️ Collision Physics & Grounded Rest**: Equipped with `minecraft:collision_box` to prevent block-phasing; rests peacefully on the ground upon spawning.
-            - **🎵 Chirp Taming & Hover Propulsion**: Tame the wild drone using 'Chirp' (`minecraft:music_disc_chirp`) to activate `minecraft:movement.hover`, `flying_speed`, and `follow_owner` navigation!
-            - **🔋 Sit / Stand Power Controls**: Owner can tap/interact with the drone to Power Down (Sit/land on ground, stop moving) or Power Up (Stand/float and protect)!
-            - **❤️ Visible Health Bar & Downed State**: Displays an on-screen boss health bar. Upon taking fatal damage, the drone does NOT die; it drops to the ground in a 'downed' inactive state!
-            - **⚡ Chirp Reboot & Revive System**: Interacting with a downed drone using 'Chirp' reboots and restores it to full 50 HP floating combat readiness!
+            ### ☸️ What's New in v1.0.100:
+            - **☸️ Wheel of Adaptation (魔虚羅 Mahoraga v1.3.1 Added)**: Lore-accurate Eight-Handled Sword Divergent Sila Divine General Mahoraga! Adapts to all incoming damage phenomena (fire, melee, magic, projectiles, void), Sword of Extermination positive energy blade, mode switcher, and Mahoraga armor!
+            - **📐 UI & Text Alignment Overhaul**: Pixel-perfect text alignment on all cards and headers. Fixed badge height wrapping, ensured horizontal button centering, and streamlined category chips!
+            - **🧹 Streamlined Mod Suite**: Permanently removed Minecraft AI Edition and Green Lantern per user request.
+            - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline targeting `com.mojang.minecraftpe` and `com.mojang.minecrafttrialpe` with full `FLAG_GRANT_READ_URI_PERMISSION`!
             
-            ### 🔮 15 Legendary Bedrock Mods Included:
-            1. **🤖 Minecraft AI Edition (S.H.A.D.O.W. UI & Resource Pack)**
-               - Futuristic cyberpunk loading screen UI, custom high-resolution 'Minecraft AI Edition' title logo, animated glowing cyan progress matrix, and cybernetic AI companion theme!
-            2. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
+            ### 🔮 14 Legendary Bedrock Mods Included:
+            1. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
                - 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, Aegis Artifact Armor, and 60 FPS mobile performance!
+            2. **☸️ Wheel of Adaptation: Mahoraga (v1.3.1 Masterpiece Addon)**
+               - Eight-Handled Sword Divergent Sila Divine General Mahoraga, adaptive immunity wheel, Sword of Extermination, and mode switcher!
             3. **💎 UltraReal 100x HD Realistic Textures (v2.0)**
                - Ultra-realistic 100x high-definition textures with PBR lighting reflections, realistic skies, crystal waters, and 60 FPS mobile optimization.
-            4. **🟢 Green Lantern: Corps Universe (v3.9.1 Masterpiece Addon)**
-               - 7 Lantern Corps, Power Batteries, 21 Split Suits, Ring Builder, Energy Constructs (Shields, Fists, Swords, Cannons), Supersonic Ring Flight, and Oa Missions!
-            5. **🧬 Ben 10: Omni Evolution (Beta Addon)**
+            4. **🧬 Ben 10: Omni Evolution (Beta Addon)**
                - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
-            6. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
+            5. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
                - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            7. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
+            6. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
                - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            8. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
+            7. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
                - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            9. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
+            8. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
                - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            10. **🐉 Dragon Evolution (v1.5.0)**
+            9. **🐉 Dragon Evolution (v1.5.0)**
                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            11. **🔫 Actual Guns 2: 3D Tactical**
+            10. **🔫 Actual Guns 2: 3D Tactical**
                 - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            12. **⚡ Quirkborn: My Hero Academia (v1.515)**
+            11. **⚡ Quirkborn: My Hero Academia (v1.515)**
                 - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            13. **🤖 Iron Man: Armor Wars Addon**
+            12. **🤖 Iron Man: Armor Wars Addon**
                 - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            14. **🕷️ Spider-Man: Web of Shadows Addon**
+            13. **🕷️ Spider-Man: Web of Shadows Addon**
                 - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            15. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
+            14. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
                 - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
             
             ### 📥 Direct Downloads:
             - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
-            - **Direct Minecraft AI Edition Addon**: Download `Minecraft_AI_Edition_v1.0.0.mcaddon` (Installs BP + RP in 1-Click!)
-            - **Direct Minecraft AI Edition Resource Pack**: Download `Minecraft_AI_Edition_v1.0.0.mcpack`
+            - **Direct Wheel of Adaptation Addon**: Download `Wheel_of_Adaptation_v1.3.1.mcaddon` (Auto-opens in Minecraft!)
             - **Direct Mythos Ascension Addon**: Download `MYTHOS_Ascension_v7_16_0.mcaddon` (Auto-opens in Minecraft!)
-            - **Direct Green Lantern Addon**: Download `Green_Lantern_3_9_1.mcaddon` (Auto-opens in Minecraft!)
             - **Direct UltraReal 100x HD Texture Pack**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
             - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
             - **Direct Omni Bound Addon**: Download `Omni_Bound_v1.5.2.mcaddon`

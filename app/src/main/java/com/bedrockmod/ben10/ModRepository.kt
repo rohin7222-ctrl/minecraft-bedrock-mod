@@ -5,19 +5,6 @@ object ModRepository {
     fun getModList(): List<ModItem> {
         return listOf(
             ModItem(
-                id = "minecraft_ai_edition",
-                title = "MINECRAFT AI EDITION (S.H.A.D.O.W.)",
-                category = ModCategory.AI,
-                badge = "🤖 3D DRONE & MECH • AUTO-HUNT • DUAL SHIELD",
-                desc = "Official Minecraft AI Edition Addon by Professor Rohin! Full Behavior & Resource Pack featuring the 3D S.H.A.D.O.W AI Drone & Crawler Grenade Launcher Mech! Includes Dual Shield/Health bars, Redstone boundary containment, obstacle step-crossing, Auto-Hunt & Cook delivery, Medical Support, and custom UI!",
-                sizeText = "💾 4.1 MB",
-                iconEmoji = "🤖",
-                assetFileName = ModInstaller.ASSET_MINECRAFT_AI_EDITION,
-                buttonBgRes = R.drawable.btn_ai_cyan,
-                buttonText = "🤖 IMPORT MINECRAFT AI EDITION 🤖",
-                guideInfo = "🤖 Minecraft AI Edition In-Game Guide:\n• 1. Craft Chirp Music Disc: Top [Copper, Gold, Copper], Mid [Gold, Redstone, Gold], Bot [Copper, Gold, Copper].\n• 2. Craft S.H.A.D.O.W AI Drone: Top [Iron, Red Concrete, Iron], Mid [Iron, Chirp Disc, Iron], Bot [Redstone, Iron, Empty].\n• 3. Craft S.H.A.D.O.W AI Mech: Top [Iron Block, Dispenser, Iron Block], Mid [Gold, Chirp Disc, Gold], Bot [Redstone Block, Iron Ingot, Redstone Block].\n• 4. AI Mech (Crawler Grenade Launcher): Spawns inactive; tame with 'Chirp' to activate random stroll patrol! Targets spiders, zombies, skeletons, and creepers within 30 blocks with explosive grenades. Features Dual Shield & Health bar, stays strictly inside Redstone wire boundaries, and detects/crosses 1-block obstacles without clipping!\n• 5. Revive & Recharge: Interacting with 'Chirp' restores Mech's Shield & Health to 100/100!\n• 6. Auto-Hunt & Feed: When hunger reaches critical levels, Drone attacks livestock (cow/pig/sheep/chicken), bypasses raw meat, and delivers hot cooked food to you!\n• 7. Emergency Medical Support: Drone continuously tracks player health; if <30%, fires nanite healing lasers at owner!\n• 8. Safe Shooting: Drone lasers hitting owner deal 0 damage and grant Regeneration + Instant Health!\n• 9. Type '!hunt' in chat to trigger hunting manually, or '!status' to check system vitals!"
-            ),
-            ModItem(
                 id = "mythos",
                 title = "MYTHOS: ASCENSION RPG",
                 category = ModCategory.MYTHOS,
@@ -42,6 +29,19 @@ object ModRepository {
                 buttonBgRes = R.drawable.btn_ultrareal_hd,
                 buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨",
                 guideInfo = "🎨 UltraReal HD In-Game Guide:\n• Activate under Global Resources or World Resource Packs.\n• Features 100x HD Mobs, 360 dynamic skybox, caustic waters, and 3D ore blocks.\n• Locked 60 FPS mobile optimization with zero frame drops."
+            ),
+            ModItem(
+                id = "wheel_of_adaptation",
+                title = "WHEEL OF ADAPTATION (MAHORAGA)",
+                category = ModCategory.ANIME,
+                badge = "☸️ MAHORAGA • DHARMA WHEEL • ADAPTATION",
+                desc = "Official Lore-Accurate Wheel of Adaptation (魔虚羅) from Jujutsu Kaisen! Summon the Eight-Handled Sword Divergent Sila Divine General Mahoraga's Dharma Wheel. Adapts to every phenomenon, physical & elemental attacks, and wields the Sword of Extermination!",
+                sizeText = "💾 1.0 MB",
+                iconEmoji = "☸️",
+                assetFileName = ModInstaller.ASSET_WHEEL_OF_ADAPTATION,
+                buttonBgRes = R.drawable.btn_dragon_amber,
+                buttonText = "☸️ IMPORT WHEEL OF ADAPTATION ☸️",
+                guideInfo = "☸️ Wheel of Adaptation In-Game Guide:\n• 1. Craft/Equip the Dharma Wheel on your head or offhand to begin adaptation.\n• 2. Adaptation Mechanism: When taking damage from any source (fire, melee, magic, arrows, poison, void), the wheel spins and progressively increases resistance until 100% immune!\n• 3. Sword of Extermination: Unleash positive energy blade that one-shots cursed spirits and undead mobs.\n• 4. Mode Switcher: Sneak + use to cycle between Defense, Attack, and Barehand combat modes.\n• 5. Mahoraga Armor: Equip Mahoraga armor pieces for massive physical buffs and continuous regeneration!"
             ),
             ModItem(
                 id = "omni_evolution",
@@ -185,19 +185,6 @@ object ModRepository {
                 buttonBgRes = R.drawable.btn_marvel_purple,
                 buttonText = "⭐ IMPORT MARVEL PROJECT ⭐",
                 guideInfo = "⭐ Marvel Project Guide:\n• Summon Thor's Mjolnir and call down thunder.\n• Throw Captain America's Vibranium shield which ricochets.\n• Collect all 6 Infinity Stones to snap enemies out of existence."
-            ),
-            ModItem(
-                id = "green_lantern",
-                title = "GREEN LANTERN: CORPS UNIVERSE",
-                category = ModCategory.SUPERHERO,
-                badge = "🟢 7 LANTERN CORPS • 21 SUITS • RING CONSTRUCTS",
-                desc = "Green Lantern v3.9.1 Masterpiece! 7 Lantern Corps (Willpower Green, Sinestro Yellow, Red Rage, Blue Hope, Indigo Tribe, Orange Greed, Star Sapphire Pink, White Life, Black Death), Power Batteries, 21 Split Suits, Ring Builder with 6 Blueprints, Custom Energy Constructs, Supersonic Ring Flight, and Oa Quests!",
-                sizeText = "💾 13.9 MB",
-                iconEmoji = "🟢",
-                assetFileName = ModInstaller.ASSET_GREEN_LANTERN,
-                buttonBgRes = R.drawable.btn_green_lantern_emerald,
-                buttonText = "🟢 IMPORT GREEN LANTERN 🟢",
-                guideInfo = "🟢 Green Lantern In-Game Guide:\n• Craft Power Batteries & Lantern Rings at the Ring Builder workbench.\n• 7 Corps: Willpower (Green), Fear (Yellow), Rage (Red), Hope (Blue), Compassion (Indigo), Greed (Orange), Love (Pink), Life (White), Death (Black).\n• Ring Constructs: Hold ring to project energy shields, giant fists, swords, chains, and cannons.\n• Supersonic Flight: Double-jump while wearing ring and Lantern suit to fly!"
             )
         )
     }

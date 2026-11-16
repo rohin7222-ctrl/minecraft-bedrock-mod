@@ -62,7 +62,7 @@
                     android:paddingTop="3dp"
                     android:paddingEnd="7dp"
                     android:paddingBottom="3dp"
-                    android:text="v1.0.90 PRO"
+                    android:text="v1.0.100 PRO"
                     android:textColor="@color/omnitrix_glow"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -149,7 +149,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:gravity="center_vertical"
-                android:hint="Search 15 mods (AI Edition, Mythos, Green Lantern)..."
+                android:hint="Search 14 mods (Mythos, Mahoraga, Solo Leveling)..."
                 android:imeOptions="actionSearch"
                 android:includeFontPadding="false"
                 android:inputType="text"
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:minHeight="36dp"
-                android:text="🌟 All (15)"
+                android:text="🌟 All (14)"
                 android:textColor="@color/text_white"
                 app:chipBackgroundColor="@color/card_dark"
                 app:chipStrokeColor="@color/card_stroke"
@@ -211,22 +211,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="36dp"
-                android:text="⭐ Starred (0)"
+                android:text="⭐ Starred"
                 android:textColor="#FDE047"
                 app:chipBackgroundColor="@color/card_dark"
                 app:chipStrokeColor="#CA8A04"
-                app:chipStrokeWidth="1dp" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipAiEdition"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="36dp"
-                android:text="🤖 AI Edition (1)"
-                android:textColor="#22D3EE"
-                app:chipBackgroundColor="@color/card_dark"
-                app:chipStrokeColor="#0891B2"
                 app:chipStrokeWidth="1dp" />
 
             <com.google.android.material.chip.Chip
@@ -259,7 +247,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="36dp"
-                android:text="🎌 Anime Legends (4)"
+                android:text="🎌 Anime Legends (5)"
                 android:textColor="@color/text_white"
                 app:chipBackgroundColor="@color/card_dark"
                 app:chipStrokeColor="@color/card_stroke"
@@ -271,7 +259,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="36dp"
-                android:text="🦸 Superheroes (4)"
+                android:text="🦸 Superheroes (3)"
                 android:textColor="@color/text_white"
                 app:chipBackgroundColor="@color/card_dark"
                 app:chipStrokeColor="@color/card_stroke"

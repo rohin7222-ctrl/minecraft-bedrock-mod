@@ -29,8 +29,7 @@ object ModInstaller {
     const val ASSET_SOLO_LEVELING = "Solo_Leveling_v1.0.6.mcaddon"
     const val ASSET_MYTHOS = "MYTHOS_Ascension_v7_16_0.mcaddon"
     const val ASSET_ULTRAREAL = "UltraReal_100x_HD_v2.mcpack"
-    const val ASSET_GREEN_LANTERN = "Green_Lantern_3_9_1.mcaddon"
-    const val ASSET_MINECRAFT_AI_EDITION = "Minecraft_AI_Edition_v1.0.0.mcaddon"
+    const val ASSET_WHEEL_OF_ADAPTATION = "Wheel_of_Adaptation_v1.3.1.mcaddon"
 
     private val mainHandler = Handler(Looper.getMainLooper())
 
