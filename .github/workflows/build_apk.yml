@@ -71,24 +71,29 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Aplok Guns 3D & UltraReal Sky Fix v1.0.101)
+          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (UltraReal v3.0 Zero-Experiments Edition)
           body: |
-            ## 🔫 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (Aplok Guns 3D & UltraReal Sky Fix v1.0.101)
-            Ultimate Weapons & Graphics upgrade! Introduces **Aplok Guns 3D (v1.8.8)** hyper-realistic firearms, completely eliminates the **Square in the Sky bug** in UltraReal 100x HD Texture Pack, and delivers 15 total legendary mods with 1-Click Minecraft Auto-Import!
+            ## 💎 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (UltraReal v3.0 Zero-Experiments Edition)
+            Major Visual Overhaul! Introduces **UltraReal 100x HD v3.0 (100% Zero Experimental Toggles Required / Pure Vanilla Safe)** with HD rain & snow, 8 custom biome fogs, caustic crystal waters, seamless clouds, and 40+ natural isotropic terrain blocks!
             
-            ### 🔫 What's New in v1.0.101:
-            - **🔫 Aplok Guns 3D (v1.8.8 Added)**: Hyper-realistic 3D firearms for Minecraft Bedrock! First-person tactical reload animations, realistic muzzle flash, scopes & holographic sights, custom ammo crafting, suppressor attachments, and recoil physics!
-            - **🌅 UltraReal 100x HD Sky Bug Fixed (Square Box Removed)**: Solved the infamous "Square in the Sky" issue! Applied radial cosine falloff to `sun.png` (zero border alpha), masked 8-phase `moon_phases.png`, and generated mathematically seamless edge-blending across all 6 faces of `overworld_cubemap` so looking straight up or around has zero square seams!
-            - **📱 15 Legendary Bedrock Addons Integrated**: Full collection of Action, RPG, Anime, and Superhero addons in one single Android app.
-            - **🚀 Direct 1-Click Minecraft Launch & Auto-Import**: Resilient direct-intent pipeline targeting `com.mojang.minecraftpe` and `com.mojang.minecrafttrialpe` with full `FLAG_GRANT_READ_URI_PERMISSION`!
+            ### 💎 What's New in UltraReal 100x HD v3.0:
+            - **🌟 100% Zero Experimental Toggles**: Designed specifically for pure vanilla Minecraft Bedrock without requiring ANY experimental toggles. Achievements stay active!
+            - **🌧️ HD Rain & Crystalline Snow**: Fine angled rain streaks (`rain.png`) and delicate hexagonal crystalline snowflakes (`snow.png`) replace chunky low-res pixel blocks.
+            - **☁️ Seamless Fluffy Clouds**: 256x256 periodic cloud texture (`clouds.png`) for soft volumetric atmospheric clouds.
+            - **🌊 Caustic Water & Underwater Overlay**: Shimmering tropical sunlight caustics (`underwater.png`) when submerged, plus crystal clear water visibility.
+            - **🌫️ 8 Custom Biome Fogs**: Data-driven fogs for Ocean, Forest, Desert, Swamp, Snow, Nether, End, and Overworld in `fogs/` and `biomes_client.json`.
+            - **🏔️ 40+ Natural Isotropic Blocks**: Enabled random face rotation in `blocks.json` for stone, dirt, sand, gravel, deepslate, and ores to eliminate repetitive grid patterns.
+            - **🎃 Tactical Clear Visor & Vignette**: Clear view pumpkin visor (`pumpkinblur.png`) and cinematic optical lens vignette (`vignette.png`).
+            - **✨ HD Particle Atlas**: 256x256 `particles.png` with glowing crit stars, soft Gaussian smoke, glossy 3D hearts, and magic swirls!
+            - **🔫 Aplok Guns 3D (v1.8.8 Integrated)**: 15 total legendary mods bundled in the Android app.
             
             ### 🔮 15 Legendary Bedrock Mods Included:
             1. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
                - 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, Aegis Artifact Armor, and 60 FPS mobile performance!
             2. **☸️ Wheel of Adaptation: Mahoraga (v1.3.1 Masterpiece Addon)**
                - Eight-Handled Sword Divergent Sila Divine General Mahoraga, adaptive immunity wheel, Sword of Extermination, and mode switcher!
-            3. **💎 UltraReal 100x HD Realistic Textures (v2.0 - Square Sky Bug Fixed)**
-               - Ultra-realistic 100x high-definition textures with PBR lighting reflections, 360 seamless sky dome, caustic waters, and 60 FPS mobile optimization.
+            3. **💎 UltraReal 100x HD Textures (v3.0 - Zero Experiments Required)**
+               - 100x HD Mobs, 360 seamless sky dome, HD rain & snow, 8 biome fogs, crystal waters, natural isotropic blocks, 100% Vanilla safe, 60 FPS!
             4. **🔫 Aplok Guns 3D (v1.8.8 Public Beta)**
                - Hyper-realistic 3D weapons, smooth tactical reload animations, muzzle flashes, holographic scopes, and recoil physics!
             5. **🧬 Ben 10: Omni Evolution (Beta Addon)**

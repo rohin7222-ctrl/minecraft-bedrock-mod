@@ -19,16 +19,16 @@ object ModRepository {
             ),
             ModItem(
                 id = "ultrareal_texture_pack",
-                title = "ULTRAREAL 100X HD TEXTURE PACK",
+                title = "ULTRAREAL 100X HD v3.0 (ULTRA PRO)",
                 category = ModCategory.MYTHOS,
-                badge = "🎨 100X REALISTIC MOBS • 360 SKY • CAUSTIC WATER",
-                desc = "UltraReal 100x v2.0 HD Texture Pack! 100x Realistic Mobs, 11 sun-shadowed trees, 360 dynamic sky, caustic water, 3D ores, and 110+ HD items. Includes 64x Low-End Mobile 60 FPS mode and Ultra 128x mode. Tap to automatically open and import directly into Minecraft PE!",
-                sizeText = "💾 3.7 MB",
+                badge = "🎨 ZERO EXPERIMENTS • 100X MOBS • BIOME FOGS",
+                desc = "UltraReal 100x v3.0 Ultra Pro Edition! 100% Zero Experimental Toggles required (pure vanilla resource pack). Features 100x Realistic Mobs, 360 seamless sky, crystal caustic waters, HD rain & crystalline snow, 8 custom biome fogs, natural isotropic block rotations, and 60 FPS locked!",
+                sizeText = "💾 3.8 MB",
                 iconEmoji = "🎨",
                 assetFileName = ModInstaller.ASSET_ULTRAREAL,
                 buttonBgRes = R.drawable.btn_ultrareal_hd,
                 buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨",
-                guideInfo = "🎨 UltraReal HD In-Game Guide:\n• Activate under Global Resources or World Resource Packs.\n• Features 100x HD Mobs, 360 dynamic skybox, caustic waters, and 3D ore blocks.\n• Locked 60 FPS mobile optimization with zero frame drops."
+                guideInfo = "🎨 UltraReal v3.0 In-Game Guide:\n• 1. 100% Zero Experiments: Works in pure vanilla Minecraft Bedrock with ALL experimental toggles turned OFF!\n• 2. Activate under Global Resources or World Resource Packs.\n• 3. Features: 100x HD Mobs, 360 seamless sky dome, crystal clear waters with caustics, HD rain & snow, 8 biome fogs, and natural non-repeating isotropic terrain.\n• 4. Locked 60 FPS performance on all mobile devices!"
             ),
             ModItem(
                 id = "wheel_of_adaptation",
