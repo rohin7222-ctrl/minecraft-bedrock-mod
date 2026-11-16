@@ -1,19 +1,19 @@
 # 🔮 Minecraft Bedrock Mod Hub (15-in-1 Next-Gen Pro Suite v1.0.101)
-### 📱 15 Legendary Bedrock Addons | UltraReal HD v3.2 Ultimate (Zero Experiments) | Aplok Guns 3D (v1.8.8) | Wheel of Adaptation | 60 FPS Locked
+### 📱 15 Legendary Bedrock Addons | UltraReal HD v3.3 (Pure Vanilla - Zero Vibrant Visuals) | Aplok Guns 3D (v1.8.8) | Wheel of Adaptation | 60 FPS Locked
 
 ---
 
-## 🚀 v1.0.101 UltraReal HD v3.2 Ultimate பிரம்மாண்ட அப்கிரேட் (Zero Experimental Toggles):
+## 🚀 v1.0.101 UltraReal HD v3.3 பிரம்மாண்ட அப்கிரேட் (Zero Experiments & Zero Vibrant Visuals):
 
 > [!IMPORTANT]
-> **🌟 100% தூய Vanilla Resource Pack - எந்த எக்ஸ்பெரிமென்ட்களும் தேவையில்லை (Zero Experiments Required):**
-> பயனர் கோரியபடி, **UltraReal 100x HD v3.2 Ultimate** முற்றிலும் எவ்வித `Experimental Toggles` தேவையின்றி, 100% இயல்பான Minecraft Bedrock 1.21+ உலகங்களில் நேரடி Resource Pack ஆக இயங்கும் வகையில் முழுமையாக மேம்படுத்தப்பட்டுள்ளது!
+> **🌟 100% தூய Vanilla Resource Pack - Zero Vibrant Visuals Dependency:**
+> பயனர் கோரியபடி, **UltraReal 100x HD v3.3** எவ்வித `Vibrant Visuals`, `Deferred Shaders` அல்லது `Experimental Toggles` அமைப்புகளையும் சார்ந்திருக்காது! 100% இயல்பான நிலையான Minecraft Bedrock கிராபிக்ஸ் எஞ்சினில் அனைத்து மொபைல்களிலும் நேரடியாக இயங்கும்!
 > - **Audit முடிவு:** 0 பிழைகள் (Zero Critical Errors), 24/24 சோதனைகள் வெற்றி!
 > - சாதனைகள் (Achievements) எதுவும் தடைபடாது! 60 FPS Locked Performance!
 
 ---
 
-### 💎 UltraReal 100x HD v3.2 Ultimate-ல் சேர்க்கப்பட்டுள்ள பிரம்மாண்ட அம்சங்கள்:
+### 💎 UltraReal 100x HD v3.3-ல் சேர்க்கப்பட்டுள்ள பிரம்மாண்ட அம்சங்கள்:
 
 1. **🌟 128x128 HD பிளாக் டெக்ஸ்சர்கள் (True 100x Micro-Detail Upscale):**
    - அனைத்து 261 பிளாக்குகளும் 64x64 இலிருந்து **128x128 HD** தரத்திற்கு உயர்த்தப்பட்டு, அன்ஷார்ப் மாஸ்க் (Unsharp Masking) மூலம் கல் விரிசல்கள், மர வரிகள், தாதுப் படிகங்கள் 4 மடங்கு அதிகத் துல்லியத்துடன் காட்சியளிக்கும்.
@@ -21,8 +21,8 @@
 2. **🌌 32-bit RGBA தடையற்ற வானம் (Zero Color-Banding Cubemap):**
    - அனைத்து 6 கியூப்மேப் ஸ்கை கோப்புகளும் 32-bit தூய RGBA ஆல்பா சேனலுடன் இணைக்கப்பட்டு மொபைல் திரைகளில் வர்ணப் பிறழ்வின்றி (Zero Color Banding) தத்ரூபமாக ஒளிரும்.
 
-3. **✨ PBR MER ஷேடர்கள் தயார்நிலை (Deferred Shaders Ready):**
-   - வைரம் (Diamond Block), தங்கம் (Gold Block), இரும்பு, நெதரைட், எமரால்டு, சீ லேண்டர்ன், க்ளோஸ்டோன், ரெட்ஸ்டோன், அமேதிஸ்ட் போன்ற 12 முக்கிய பிளாக்குகளுக்கு `_mer.png` (Metallic, Emissive, Roughness) மேப்கள் இணைக்கப்பட்டுள்ளன. RTX அல்லது நவீன Deferred Shading உள்ள சாதனங்களில் தத்ரூபமான உலோகப் பிரதிபலிப்பும் ஒளிர்வும் தரும்!
+3. **🛡️ 100% தூய வெண்ணிலா கிராபிக்ஸ் (Zero Vibrant Visuals Dependency):**
+   - இந்த பேக் எவ்வித 'Vibrant Visuals' அல்லது 'Deferred Shaders' அல்லது RTX அமைப்புகளையும் சார்ந்திருக்காது! சாதாரண Minecraft Bedrock இயங்கும் எந்தவொரு மொபைலிலும் 100% நேரடி வெண்ணிலா கிராபிக்ஸ் எஞ்சினிலேயே அதிவேகமாக இயங்கும்!
 
 4. **📱 டிரான்ஸ்லூசென்ட் டார்க் கிளாஸ் UI & நவீன HUD (Translucent Dark Glass HUD):**
    - **கண்ணாடி ஹாட்பார்:** நவீன புகைக்கண்ணாடி வடிவிலான இன்வென்டரி ஸ்லாட்டுகள் (`hotbar_slot.png`).

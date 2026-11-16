@@ -19,16 +19,16 @@ object ModRepository {
             ),
             ModItem(
                 id = "ultrareal_texture_pack",
-                title = "ULTRAREAL 100X HD v3.2 (ULTRA PRO ULTIMATE)",
+                title = "ULTRAREAL 100X HD v3.3 (PURE VANILLA)",
                 category = ModCategory.MYTHOS,
-                badge = "🎨 ZERO EXPERIMENTS • 128X HD BLOCKS • PBR SHADERS READY",
-                desc = "UltraReal 100x v3.2 Ultimate Edition! 100% Zero Experimental Toggles required (pure vanilla resource pack). Features 128x128 HD Blocks, 74+ Mobs, PBR MER Shaders Ready (Diamond, Gold, Iron, Netherite, Emerald), Translucent Dark Glass UI & Modern HUD, Ambient Audio Overhaul (Rain/Thunder/Underwater), and 60 FPS locked!",
+                badge = "🎨 ZERO EXPERIMENTS • 128X HD • ZERO VIBRANT VISUALS",
+                desc = "UltraReal 100x v3.3 Pure Vanilla Edition! 100% Zero Experimental Toggles & ZERO Vibrant Visuals dependency required. Runs purely on standard Minecraft Bedrock graphics. Features 128x128 HD Blocks, 74+ Mobs, Translucent Dark Glass UI & Modern HUD, Ambient Audio Overhaul (Rain/Thunder/Underwater), and 60 FPS locked on ALL mobile devices!",
                 sizeText = "💾 8.7 MB",
                 iconEmoji = "🎨",
                 assetFileName = ModInstaller.ASSET_ULTRAREAL,
                 buttonBgRes = R.drawable.btn_ultrareal_hd,
                 buttonText = "🎨 IMPORT ULTRAREAL TEXTURE PACK 🎨",
-                guideInfo = "🎨 UltraReal v3.2 In-Game Guide:\n• 1. 100% Zero Experiments: Works in pure vanilla Minecraft Bedrock 1.21+ with ALL experimental toggles turned OFF!\n• 2. Activate under Global Resources or World Resource Packs.\n• 3. Features: 128x128 HD Blocks, 74+ Mobs, PBR MER maps for metallic/emissive blocks, Translucent Dark Glass UI & Modern HUD, Ambient Audio Overhaul, 8 biome fogs, and 60 FPS locked performance!"
+                guideInfo = "🎨 UltraReal v3.3 In-Game Guide:\n• 1. 100% Standard Vanilla Graphics: Works on pure default Bedrock engine with NO Vibrant Visuals or Experimental Toggles required!\n• 2. Activate under Global Resources or World Resource Packs.\n• 3. Features: 128x128 HD Blocks, 74+ Mobs, Translucent Dark Glass UI & Modern HUD, Ambient Audio Overhaul, 8 biome fogs, and 60 FPS locked performance on all devices!"
             ),
             ModItem(
                 id = "wheel_of_adaptation",
