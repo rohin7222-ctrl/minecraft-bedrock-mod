@@ -90,7 +90,7 @@
                     android:paddingEnd="6dp"
                     android:paddingBottom="2dp"
                     android:singleLine="true"
-                    android:text="v1.0.112 PRO"
+                    android:text="v1.0.113 PRO"
                     android:textColor="@color/omnitrix_glow"
                     android:textSize="9.5sp"
                     android:textStyle="bold" />

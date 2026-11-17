@@ -52,14 +52,14 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.112.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.113.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.112.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.113.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -74,6 +74,6 @@ jobs:
             - Custom Cobblemon Legends loading/title screen logo
             - Clean slate logic ready for custom systems
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.112.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.113.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
