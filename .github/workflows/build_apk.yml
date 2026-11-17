@@ -52,14 +52,14 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.107.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.108.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.107.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.108.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -67,15 +67,13 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Script & Pokeball Throw & Starter Fix)
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Clean Slate Foundation)
           body: |
-            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Full Working Edition)
-            - Fixed Script Engine crash across all 17 service files (Beta API polyfills for stable 1.21)
-            - Fixed Pokeball throwing mechanism by resolving registerItems component registration
-            - Fixed Starter Pokemon prompt & menu distribution
-            - Fixed Wild Pokemon spawning by unblocking SpawnManager & SpawnContext
-            - Added official pack icon support (pack_icon.png)
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Clean Slate Foundation)
+            - Retained all 1,252 Pokemon entities, 3D models, textures, animations, sounds, items & blocks
+            - Purged 467 bloated/broken minified scripts
+            - Initialized fresh, zero-lag, clean Script API main.js engine ready for custom logic
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.107.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.108.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

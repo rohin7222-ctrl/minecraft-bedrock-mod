@@ -11,8 +11,8 @@ android {
         applicationId "com.bedrockmod.hub"
         minSdk 21
         targetSdk 34
-        versionCode 107
-        versionName "1.0.107"
+        versionCode 108
+        versionName "1.0.108"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
