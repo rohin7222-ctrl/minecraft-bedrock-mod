@@ -52,7 +52,7 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build/outputs/apk -name "*debug.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.104.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.104.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
@@ -70,74 +70,17 @@ jobs:
           name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
           body: |
             ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
-            Official Bedrock Mod Hub Release! Clean single APK build.
+            Official Bedrock Mod Hub Release! Clean single APK build without duplicate files.
+
+            ### 🌟 What's New in v1.0.104:
+            - **🏷️ Official Name: Bedrock Mod Hub**: Completely removed all Ben 10 branding and package naming.
+            - **🎨 3D Bedrock Cube Logo**: Modern Netherite/Bedrock cube with glowing cyan runes and pickaxe-gear nexus.
+            - **🔴 Cobblemon Bedrock (v1.8.12)**: 500+ Pokemon species, Pokeballs, Healing machine, PC Box.
+            - **📤 Custom Mod Upload (`➕ Add Mod`)**: Add any `.mcaddon` or `.mcpack` from your phone!
+            - **🗑️ Delete Confirmation**: Delete mods safely with confirmation popup.
+            - **🧹 Storage Auto-Purge**: Auto-cleans cache 25s after import so app data never inflates.
+            - **📦 Clean Single APK**: Fixed download so only `Bedrock-Mod-Hub-v1.0.104.apk` is downloaded!
           files: |
             apk_output/Bedrock-Mod-Hub-v1.0.104.apk
-            Major Visual Overhaul! Introduces **UltraReal 100x HD v3.0 (100% Zero Experimental Toggles Required / Pure Vanilla Safe)** with HD rain & snow, 8 custom biome fogs, caustic crystal waters, seamless clouds, and 40+ natural isotropic terrain blocks!
-            
-            ### 💎 What's New in UltraReal 100x HD v3.0:
-            - **🌟 100% Zero Experimental Toggles**: Designed specifically for pure vanilla Minecraft Bedrock without requiring ANY experimental toggles. Achievements stay active!
-            - **🌧️ HD Rain & Crystalline Snow**: Fine angled rain streaks (`rain.png`) and delicate hexagonal crystalline snowflakes (`snow.png`) replace chunky low-res pixel blocks.
-            - **☁️ Seamless Fluffy Clouds**: 256x256 periodic cloud texture (`clouds.png`) for soft volumetric atmospheric clouds.
-            - **🌊 Caustic Water & Underwater Overlay**: Shimmering tropical sunlight caustics (`underwater.png`) when submerged, plus crystal clear water visibility.
-            - **🌫️ 8 Custom Biome Fogs**: Data-driven fogs for Ocean, Forest, Desert, Swamp, Snow, Nether, End, and Overworld in `fogs/` and `biomes_client.json`.
-            - **🏔️ 40+ Natural Isotropic Blocks**: Enabled random face rotation in `blocks.json` for stone, dirt, sand, gravel, deepslate, and ores to eliminate repetitive grid patterns.
-            - **🎃 Tactical Clear Visor & Vignette**: Clear view pumpkin visor (`pumpkinblur.png`) and cinematic optical lens vignette (`vignette.png`).
-            - **✨ HD Particle Atlas**: 256x256 `particles.png` with glowing crit stars, soft Gaussian smoke, glossy 3D hearts, and magic swirls!
-            - **🔫 Aplok Guns 3D (v1.8.8 Integrated)**: 15 total legendary mods bundled in the Android app.
-            
-            ### 🔮 15 Legendary Bedrock Mods Included:
-            1. **🔮 MYTHOS: Ascension (v7.16.0 Masterpiece RPG Addon)**
-               - 6 Ascendant Classes, dynamic Mana & Spell-casting, Omega Fortress Dungeons, Mythic World Bosses, Aegis Artifact Armor, and 60 FPS mobile performance!
-            2. **☸️ Wheel of Adaptation: Mahoraga (v1.3.1 Masterpiece Addon)**
-               - Eight-Handled Sword Divergent Sila Divine General Mahoraga, adaptive immunity wheel, Sword of Extermination, and mode switcher!
-            3. **💎 UltraReal 100x HD Textures (v3.0 - Zero Experiments Required)**
-               - 100x HD Mobs, 360 seamless sky dome, HD rain & snow, 8 biome fogs, crystal waters, natural isotropic blocks, 100% Vanilla safe, 60 FPS!
-            4. **🔫 Aplok Guns 3D (v1.8.8 Public Beta)**
-               - Hyper-realistic 3D weapons, smooth tactical reload animations, muzzle flashes, holographic scopes, and recoil physics!
-            5. **🧬 Ben 10: Omni Evolution (Beta Addon)**
-               - Custom evolution dimension, Vilgax boss animations, custom combat controllers, and alien transformations.
-            6. **🛸 Omni-Bound: Faster Switching (v1.5.2)**
-               - Instant quick-dial switching, 50+ alien forms, ultimate evolutions, and cinematic sound FX.
-            7. **🗡️ Solo Leveling (v1.0.6 System Awakening)**
-               - Sung Jinwoo's Hunter System, daily stat quests, Dagger combat, Red Gate dungeons, and Arise Shadow Soldier extraction!
-            8. **🏴‍☠️ One Piece: Bedrock Edition (v76.0.0)**
-               - Grand Line anime adventure! Devil Fruits, Haki mastery, Marine & Pirate factions, custom katanas (Yoru, Enma), and bosses!
-            9. **🔮 Tensura: Reincarnated Requiem (v4 / 26.52)**
-               - That Time I Got Reincarnated as a Slime! Great Sage mental HUD overlay, Predator skill mimicry, magicules system, Direwolves, Goblins, Charybdis and Demon Lord abilities!
-            10. **🐉 Dragon Evolution (v1.5.0)**
-                - Massive Dragon Evolution experience! Transform into Super Saiyan, unleash Kamehameha & Final Flash ki attacks, custom dimensions, and anime bosses!
-            11. **🔫 Actual Guns 2: 3D Tactical**
-                - Ultra-detailed 3D firearms! Custom recoil, first-person reload animations, sniper scopes, shotguns, assault rifles, and tactical combat!
-            12. **⚡ Quirkborn: My Hero Academia (v1.515)**
-                - Awaken your Quirk! One For All, Explosion, Decay, Overhaul, Half-Cold Half-Hot, fight Nomus, craft hero/villain gear, and unlock super moves!
-            13. **🤖 Iron Man: Armor Wars Addon**
-                - Mark 1 through 85 suits, supersonic flight, repulsors, micro-missiles, unibeam, and JARVIS HUD!
-            14. **🕷️ Spider-Man: Web of Shadows Addon**
-                - Fluid web slinging, wall climbing, Spider-Sense, 20+ movie suits (Symbiote, Iron Spider), and classic villain fights!
-            15. **⭐ Marvel Project: Avengers Assemble (v3.0.1)**
-                - Summon Mjolnir lightning, throw Cap's vibranium shield, Wolverine adamantium claws, Doctor Strange mystic portals, and the Infinity Gauntlet!
-            
-            ### 📥 Direct Downloads:
-            - **Android Multi-Mod Installer App**: Download `app-debug.apk` and tap Install!
-            - **Direct Aplok Guns Addon**: Download `Aplok_Guns_v1.8.8.mcaddon` (Auto-opens in Minecraft!)
-            - **Direct Wheel of Adaptation Addon**: Download `Wheel_of_Adaptation_v1.3.1.mcaddon` (Auto-opens in Minecraft!)
-            - **Direct Mythos Ascension Addon**: Download `MYTHOS_Ascension_v7_16_0.mcaddon` (Auto-opens in Minecraft!)
-            - **Direct UltraReal 100x HD Texture Pack (Fixed Sky)**: Download `UltraReal_100x_HD_v2.mcpack` (Auto-opens in Minecraft!)
-            - **Direct Omni Evolution Addon**: Download `Omni-Evolution-Beta.mcaddon`
-            - **Direct Omni Bound Addon**: Download `Omni_Bound_v1.5.2.mcaddon`
-            - **Direct Solo Leveling Addon**: Download `Solo_Leveling_v1.0.6.mcaddon`
-            - **Direct One Piece Addon**: Download `OnePiece_Bedrock_Edition_v76.mcaddon`
-            - **Direct Tensura Requiem Addon**: Download `Tensura_Reincarnated_Requiem_v4.mcaddon`
-            - **Direct Dragon Evolution Addon**: Download `Dragon_Evolution_v1.5.0.mcaddon`
-            - **Direct Actual Guns 2 Addon**: Download `Actual_Guns_2.mcaddon`
-            - **Direct Quirkborn Addon**: Download `Quirkborn_v1.515.3.mcaddon`
-            - **Direct Iron Man Addon**: Download `Iron_Man_Addon.mcaddon`
-            - **Direct Spider-Man Addon**: Download `Spider_Man_Addon.mcaddon`
-            - **Direct Marvel Project Addon**: Download `Marvel_Project_v3.0.1.mcaddon`
-          files: |
-            apk_output/*.apk
-            apk_output/*.mcaddon
-            apk_output/*.mcpack
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
