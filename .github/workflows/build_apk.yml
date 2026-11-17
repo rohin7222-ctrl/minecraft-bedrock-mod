@@ -52,14 +52,14 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.106.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.107.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.106.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.107.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -67,14 +67,15 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Lag & Bug Fix Ultra Edition)
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Script & Pokeball Throw & Starter Fix)
           body: |
-            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Lag & Bug Fix Ultra Edition)
-            - Patched Cobblemon wild Pokemon despawn leak across all 1,122 entities
-            - Fixed worldInitialize and startup crash on Minecraft 1.21
-            - Optimized wild spawner tick rates to eliminate CPU spikes and frame drops
-            - Tuned RaidDen and PokeSnack tick load
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Full Working Edition)
+            - Fixed Script Engine crash across all 17 service files (Beta API polyfills for stable 1.21)
+            - Fixed Pokeball throwing mechanism by resolving registerItems component registration
+            - Fixed Starter Pokemon prompt & menu distribution
+            - Fixed Wild Pokemon spawning by unblocking SpawnManager & SpawnContext
+            - Added official pack icon support (pack_icon.png)
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.106.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.107.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
