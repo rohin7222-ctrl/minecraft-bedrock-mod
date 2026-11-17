@@ -1,12 +1,12 @@
-# 🔮 Bedrock Mod Hub (16-in-1 Next-Gen Pro Suite v1.0.111)
+# 🔮 Bedrock Mod Hub (16-in-1 Next-Gen Pro Suite v1.0.112)
 ### 📱 16 Legendary Bedrock Addons | Rohin's Cobblemon Official Edition | 60 FPS Locked
 
 ---
 
-## 🚀 v1.0.111 Rohin's Cobblemon Official Edition:
+## 🚀 v1.0.112 Rohin's Cobblemon Official Edition:
 
 > [!IMPORTANT]
-> **🌟 v1.0.111 Rohin's Cobblemon:**
+> **🌟 v1.0.112 Rohin's Cobblemon:**
 > 1. **🏷️ Addon Name மாற்றம்:** மாடின் பெயர் அதிகாரப்பூர்வமாக Minecraft மற்றும் செயலியில் **"Rohin's Cobblemon"** எனப் புதுப்பிக்கப்பட்டுள்ளது!
 > 2. **🎨 Cobblemon Legends Loading Screen Logo:** வேர்ல்ட் உருவாகும் திரையில் (Loading Screen) Minecraft லோகோவிற்கு பதிலாக **"COBBLEMON LEGENDS"** 3D கோல்டன் லோகோ பிரம்மாண்டமாகத் தோன்றும்!
 > 3. **🛡️ 100% Assets பாதுகாக்கப்பட்டுள்ளது:** 1,252 போக்கிமான்கள், 3D Models, 29,000+ Textures, Animations, Sounds, Pokeballs, Healing Machine, Blocks & Items அனைத்தும் முழுமையாக உள்ளன!
