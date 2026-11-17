@@ -49,23 +49,17 @@ jobs:
             exit 1
           fi
 
-      - name: Verify and Copy APK and MCADDON
+      - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.103.apk \;
-          find app/build -name "*.apk" -exec cp {} apk_output/ \;
-          cp app/src/main/assets/*.mcaddon apk_output/ 2>/dev/null || true
-          cp app/src/main/assets/*.mcpack apk_output/ 2>/dev/null || true
+          find app/build/outputs/apk -name "*debug.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.104.apk \;
           ls -la apk_output/
 
-      - name: Upload Debug APK Artifact
+      - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: |
-            apk_output/*.apk
-            apk_output/*.mcaddon
-            apk_output/*.mcpack
+          path: apk_output/Bedrock-Mod-Hub-v1.0.104.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -76,6 +70,9 @@ jobs:
           name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
           body: |
             ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
+            Official Bedrock Mod Hub Release! Clean single APK build.
+          files: |
+            apk_output/Bedrock-Mod-Hub-v1.0.104.apk
             Major Visual Overhaul! Introduces **UltraReal 100x HD v3.0 (100% Zero Experimental Toggles Required / Pure Vanilla Safe)** with HD rain & snow, 8 custom biome fogs, caustic crystal waters, seamless clouds, and 40+ natural isotropic terrain blocks!
             
             ### 💎 What's New in UltraReal 100x HD v3.0:
