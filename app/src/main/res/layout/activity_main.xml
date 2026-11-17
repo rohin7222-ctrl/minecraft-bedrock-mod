@@ -90,7 +90,7 @@
                     android:paddingEnd="6dp"
                     android:paddingBottom="2dp"
                     android:singleLine="true"
-                    android:text="v1.0.115 PRO"
+                    android:text="v1.0.116 PRO"
                     android:textColor="@color/omnitrix_glow"
                     android:textSize="9.5sp"
                     android:textStyle="bold" />
@@ -167,7 +167,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:gravity="center_vertical"
-                android:hint="Search mods (Cobblemon, Mythos, Guns)..."
+                android:hint="Search mods (Mythos, Guns, Anime)..."
                 android:imeOptions="actionSearch"
                 android:includeFontPadding="false"
                 android:inputType="text"

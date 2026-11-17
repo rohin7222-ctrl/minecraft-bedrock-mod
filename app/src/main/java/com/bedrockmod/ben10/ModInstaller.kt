@@ -31,7 +31,6 @@ object ModInstaller {
     const val ASSET_ULTRAREAL = "UltraReal_100x_HD_v2.mcpack"
     const val ASSET_WHEEL_OF_ADAPTATION = "Wheel_of_Adaptation_v1.3.1.mcaddon"
     const val ASSET_APLOK_GUNS = "Aplok_Guns_v1.8.8.mcaddon"
-    const val ASSET_COBBLEMON = "coblemon-1.8.12.mcaddon"
 
     private val mainHandler = Handler(Looper.getMainLooper())
 

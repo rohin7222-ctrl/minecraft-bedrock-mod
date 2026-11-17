@@ -52,28 +52,27 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.115.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.116.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.115.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.116.apk
           retention-days: 30
 
       - name: Create GitHub Release
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.0-${{ github.run_number }}
-          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Rohin's Cobblemon Edition)
+          tag_name: v1.0.116-${{ github.run_number }}
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (15 Legendary Addons Pro Suite)
           body: |
-            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Rohin's Cobblemon Edition)
-            - Official Addon Name updated to: Rohin's Cobblemon (Behavior & Resource)
-            - Custom Cobblemon Legends loading/title screen logo
-            - Clean slate logic ready for custom systems
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (15 Legendary Addons Pro Suite)
+            - Clean 15-in-1 Legendary Addons suite with 60 FPS performance
+            - Lightweight fast build without Cobblemon
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.115.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.116.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -198,19 +198,6 @@ object ModRepository {
                 buttonBgRes = R.drawable.btn_marvel_purple,
                 buttonText = "⭐ IMPORT MARVEL PROJECT ⭐",
                 guideInfo = "⭐ Marvel Project Guide:\n• Summon Thor's Mjolnir and call down thunder.\n• Throw Captain America's Vibranium shield which ricochets.\n• Collect all 6 Infinity Stones to snap enemies out of existence."
-            ),
-            ModItem(
-                id = "cobblemon",
-                title = "ROHIN'S COBBLEMON",
-                category = ModCategory.ANIME,
-                badge = "🔴 POKEMON • 1200+ SPECIES • ZERO LAG",
-                desc = "Rohin's Cobblemon for Minecraft Bedrock! Catch, train, and battle open-world Pokemon with authentic animations, Pokeballs, healing machines, PC storage, apricorn farming, and evolution items!",
-                sizeText = "💾 123.5 MB",
-                iconEmoji = "🔴",
-                assetFileName = ModInstaller.ASSET_COBBLEMON,
-                buttonBgRes = R.drawable.btn_actualguns_red,
-                buttonText = "🔴 IMPORT ROHIN'S COBBLEMON 🔴",
-                guideInfo = "🔴 Rohin's Cobblemon Guide:\n• 1. Craft Pokeballs from Apricorns and Iron.\n• 2. Catch and train open-world Pokemon with authentic animations.\n• 3. Build Healing Machine and PC Storage to manage your Pokemon team.\n• 4. Enable 'Beta APIs' in world settings."
             )
         )
     }
