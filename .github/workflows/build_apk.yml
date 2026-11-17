@@ -52,14 +52,14 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.105.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.106.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.105.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.106.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -67,11 +67,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Bedrock 1.21 Fix Edition)
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Lag & Bug Fix Ultra Edition)
           body: |
-            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Bedrock 1.21 Fix Edition)
-            Official Bedrock Mod Hub Release! Patched Cobblemon for 100% compatibility with Minecraft Bedrock 1.21.
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Lag & Bug Fix Ultra Edition)
+            - Patched Cobblemon wild Pokemon despawn leak across all 1,122 entities
+            - Fixed worldInitialize and startup crash on Minecraft 1.21
+            - Optimized wild spawner tick rates to eliminate CPU spikes and frame drops
+            - Tuned RaidDen and PokeSnack tick load
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.105.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.106.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

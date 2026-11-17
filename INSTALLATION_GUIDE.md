@@ -1,5 +1,21 @@
-# 🔮 Bedrock Mod Hub (16-in-1 Next-Gen Pro Suite v1.0.103)
-### 📱 16 Legendary Bedrock Addons | Cobblemon v1.8.12 | Custom Mod Upload | New App Logo & Name | UltraReal HD v3.3 | 60 FPS Locked
+# 🔮 Bedrock Mod Hub (16-in-1 Next-Gen Pro Suite v1.0.106)
+### 📱 16 Legendary Bedrock Addons | Cobblemon Ultra-Patched (Zero Lag & No Crash) | Custom Mod Upload | 60 FPS Locked
+
+---
+
+## 🚀 v1.0.106 Cobblemon Ultra Fix Edition (முழுமையான பிழை & லேக் தீர்வுகள்):
+
+> [!IMPORTANT]
+> **🌟 v1.0.106 Cobblemon பக் & லேக் தீர்வுகள் (CurseForge Unofficial Port Fixes):**
+> 1. **🔴 Wild Entity Despawn Bug Fix (1,122 போக்கிமான்களுக்கு Despawn இயக்கம்):**
+>    - அசல் மாடில் காட்டு போக்கிமான்கள் மீது `minecraft:despawn` இல்லாததால் உலகத்தில் போக்கிமான்கள் இறக்காமலும் மறையாமலும் குவிந்து லேக் ஏற்பட்டது.
+>    - இப்போது அனைத்து 1,122 போக்கிமான்களுக்கும் `cooblemon:despawn_allowed` தானாக இணக்கப்பட்டு, தூரமானால் அழியும் வகையில் சரிசெய்யப்பட்டுள்ளது! (பிடிக்கப்பட்ட போக்கிமான்கள் அழியாது).
+> 2. **⚡ Script Startup Crash Fix (`worldInitialize` Fallback):**
+>    - எதிர்கால `system.beforeEvents.startup` எரர் கொடுக்காமல் Bedrock 1.21-ன் `world.beforeEvents.worldInitialize`-க்கு மாற்றப்பட்டு, ஸ்கிரிப்ட் கிராஷ் முழுமையாகத் தடுக்கப்பட்டுள்ளது.
+> 3. **🐢 Spawner Tick Optimization (CPU லேக் நீக்கம்):**
+>    - ஸ்பானர் பரிசோதனை 20 ticks-லிருந்து 40 ticks-ஆகவும், அதிகபட்ச ஸ்பான் 8-லிருந்து 4-ஆகவும் உகந்ததாக்கப்பட்டு ஸ்டட்டர் / லேக் ஸ்பைக்ஸ் நீக்கப்பட்டுள்ளன.
+> 4. **🎯 Raycast & Berry Scan Optimization:**
+>    - RaidDen மற்றும் PokeSnack சேவைகளின் ஸ்கேனிங் சுமை 50% குறைக்கப்பட்டுள்ளது.
 
 ---
 
