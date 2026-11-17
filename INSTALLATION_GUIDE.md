@@ -1,15 +1,15 @@
-# 🔮 Bedrock Mod Hub (16-in-1 Next-Gen Pro Suite v1.0.108)
-### 📱 16 Legendary Bedrock Addons | Cobblemon Clean Slate Foundation (Zero Lag, 100% Assets Preserved) | 60 FPS Locked
+# 🔮 Bedrock Mod Hub (16-in-1 Next-Gen Pro Suite v1.0.109)
+### 📱 16 Legendary Bedrock Addons | Cobblemon Legends Custom Title & Loading Logo | 60 FPS Locked
 
 ---
 
-## 🚀 v1.0.108 Cobblemon Clean Slate Foundation:
+## 🚀 v1.0.109 Cobblemon Legends Custom Logo Edition:
 
 > [!IMPORTANT]
-> **🌟 v1.0.108 Cobblemon Clean Slate:**
-> 1. **🎨 100% Assets பாதுகாக்கப்பட்டுள்ளது:** 1,252 போக்கிமான்கள், 3D Models, 29,000+ Textures, Animations, Sounds, Pokeballs, Healing Machine, Blocks & Items அனைத்தும் முழுமையாக உள்ளன!
-> 2. **🧹 467 பழைய முறிந்த Scripts நீக்கம்:** கிராஷ் மற்றும் கடும் லேக்கிற்கு காரணமான 467 முந்தைய ஜாவாஸ்கிரிப்டுகள் முழுமையாக அகற்றப்பட்டன.
-> 3. **⚡ Clean Script Engine:** புத்தம் புதிய, லேக் இல்லாத `main.js` பொருத்தப்பட்டு, படிப்படியாக சுத்தமான Custom Logic எழுதத் தயாராக உள்ளது!
+> **🌟 v1.0.109 Cobblemon Legends Logo:**
+> 1. **🎨 Cobblemon Legends Loading Screen Logo:** வேர்ல்ட் உருவாக்கும் போதும் (World Generation / Loading Screen) மெனுவிலும் Minecraft லோகோவிற்கு பதிலாக **"COBBLEMON LEGENDS"** 3D கோல்டன் லோகோ பிரம்மாண்டமாகத் தோன்றும்!
+> 2. **🛡️ 100% Assets பாதுகாக்கப்பட்டுள்ளது:** 1,252 போக்கிமான்கள், 3D Models, 29,000+ Textures, Animations, Sounds, Pokeballs, Healing Machine, Blocks & Items அனைத்தும் முழுமையாக உள்ளன!
+> 3. **⚡ Clean Script Engine:** லேக் இல்லாத சுத்தமான `main.js` பொருத்தப்பட்டு, உங்களுடன் இணைந்து புதிய Custom Logics எழுதத் தயாராக உள்ளது!
 
 ---
 

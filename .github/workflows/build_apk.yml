@@ -52,14 +52,14 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.108.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.109.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.108.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.109.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -67,13 +67,12 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Clean Slate Foundation)
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Legends Custom Title Logo Edition)
           body: |
-            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Clean Slate Foundation)
-            - Retained all 1,252 Pokemon entities, 3D models, textures, animations, sounds, items & blocks
-            - Purged 467 bloated/broken minified scripts
-            - Initialized fresh, zero-lag, clean Script API main.js engine ready for custom logic
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Legends Custom Title Logo Edition)
+            - Added Cobblemon Legends custom 3D title screen & world loading logo replacing default Minecraft logo
+            - Clean slate logic ready for custom systems
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.108.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.109.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
