@@ -52,14 +52,14 @@ jobs:
       - name: Verify and Copy Clean APK
         run: |
           mkdir -p apk_output
-          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.104.apk \;
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.105.apk \;
           ls -la apk_output/
 
       - name: Upload Clean APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Bedrock-Mod-Hub-APK
-          path: apk_output/Bedrock-Mod-Hub-v1.0.104.apk
+          path: apk_output/Bedrock-Mod-Hub-v1.0.105.apk
           retention-days: 30
 
       - name: Create GitHub Release
@@ -67,20 +67,11 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Bedrock 1.21 Fix Edition)
           body: |
-            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
-            Official Bedrock Mod Hub Release! Clean single APK build without duplicate files.
-
-            ### 🌟 What's New in v1.0.104:
-            - **🏷️ Official Name: Bedrock Mod Hub**: Completely removed all Ben 10 branding and package naming.
-            - **🎨 3D Bedrock Cube Logo**: Modern Netherite/Bedrock cube with glowing cyan runes and pickaxe-gear nexus.
-            - **🔴 Cobblemon Bedrock (v1.8.12)**: 500+ Pokemon species, Pokeballs, Healing machine, PC Box.
-            - **📤 Custom Mod Upload (`➕ Add Mod`)**: Add any `.mcaddon` or `.mcpack` from your phone!
-            - **🗑️ Delete Confirmation**: Delete mods safely with confirmation popup.
-            - **🧹 Storage Auto-Purge**: Auto-cleans cache 25s after import so app data never inflates.
-            - **📦 Clean Single APK**: Fixed download so only `Bedrock-Mod-Hub-v1.0.104.apk` is downloaded!
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon Bedrock 1.21 Fix Edition)
+            Official Bedrock Mod Hub Release! Patched Cobblemon for 100% compatibility with Minecraft Bedrock 1.21.
           files: |
-            apk_output/Bedrock-Mod-Hub-v1.0.104.apk
+            apk_output/Bedrock-Mod-Hub-v1.0.105.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
