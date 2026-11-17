@@ -8,11 +8,11 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.bedrockmod.ben10"
+        applicationId "com.bedrockmod.hub"
         minSdk 21
         targetSdk 34
-        versionCode 102
-        versionName "1.0.102"
+        versionCode 103
+        versionName "1.0.103"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

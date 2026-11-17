@@ -52,6 +52,7 @@ jobs:
       - name: Verify and Copy APK and MCADDON
         run: |
           mkdir -p apk_output
+          find app/build -name "*.apk" -exec cp {} apk_output/Bedrock-Mod-Hub-v1.0.103.apk \;
           find app/build -name "*.apk" -exec cp {} apk_output/ \;
           cp app/src/main/assets/*.mcaddon apk_output/ 2>/dev/null || true
           cp app/src/main/assets/*.mcpack apk_output/ 2>/dev/null || true
@@ -60,7 +61,7 @@ jobs:
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Minecraft-Bedrock-Ben10-Mod-APK
+          name: Bedrock-Mod-Hub-APK
           path: |
             apk_output/*.apk
             apk_output/*.mcaddon
@@ -72,9 +73,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.0-${{ github.run_number }}
-          name: Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (UltraReal v3.0 Zero-Experiments Edition)
+          name: Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
           body: |
-            ## 💎 Minecraft Bedrock Mod Hub v1.0.${{ github.run_number }} (UltraReal v3.0 Zero-Experiments Edition)
+            ## 🎮 Bedrock Mod Hub v1.0.${{ github.run_number }} (Cobblemon v1.8.12 & Custom Mod Upload Edition)
             Major Visual Overhaul! Introduces **UltraReal 100x HD v3.0 (100% Zero Experimental Toggles Required / Pure Vanilla Safe)** with HD rain & snow, 8 custom biome fogs, caustic crystal waters, seamless clouds, and 40+ natural isotropic terrain blocks!
             
             ### 💎 What's New in UltraReal 100x HD v3.0:
