@@ -1,14 +1,14 @@
 package com.bedrockmod.ben10
 
 enum class ModCategory(val displayName: String) {
-    ALL("🌟 All (15)"),
+    ALL("🌟 All"),
     FAVORITES("⭐ Starred"),
-    AI("🤖 AI Edition (1)"),
-    MYTHOS("🔮 Mythos & HD (2)"),
-    BEN10("👽 Ben 10 (2)"),
-    ANIME("🎌 Anime (4)"),
-    SUPERHERO("🦸 Superheroes (4)"),
-    ACTION("⚔️ Action & Guns (2)")
+    CUSTOM("✨ My Mods"),
+    MYTHOS("🔮 Mythos & HD"),
+    BEN10("👽 Ben 10"),
+    ANIME("🎌 Anime"),
+    SUPERHERO("🦸 Superheroes"),
+    ACTION("⚔️ Action & Guns")
 }
 
 data class ModItem(
@@ -22,5 +22,7 @@ data class ModItem(
     val assetFileName: String,
     val buttonBgRes: Int,
     val buttonText: String,
-    val guideInfo: String = ""
+    val guideInfo: String = "",
+    val isCustom: Boolean = false,
+    val customFilePath: String? = null
 )

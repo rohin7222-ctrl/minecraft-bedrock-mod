@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.progressindicator.LinearProgressIndicator
 
 class ModAdapter(
-    private val allMods: List<ModItem>,
+    private var allMods: MutableList<ModItem>,
     private val favoritesManager: FavoritesManager,
     private val onModClick: (ModItem) -> Unit,
     private val onDetailsClick: (ModItem) -> Unit,
+    private val onDeleteClick: (ModItem) -> Unit,
     private val onFavoriteToggled: (ModItem, Boolean) -> Unit
 ) : RecyclerView.Adapter<ModAdapter.ModViewHolder>() {
 
@@ -31,6 +32,7 @@ class ModAdapter(
         val btnFavorite: TextView = itemView.findViewById(R.id.btnFavorite)
         val cardProgress: LinearProgressIndicator = itemView.findViewById(R.id.cardProgress)
         val btnModDetails: Button = itemView.findViewById(R.id.btnModDetails)
+        val btnDeleteMod: Button = itemView.findViewById(R.id.btnDeleteMod)
         val btnImport: Button = itemView.findViewById(R.id.btnImportMod)
     }
 
@@ -48,11 +50,11 @@ class ModAdapter(
         holder.tvSize.text = mod.sizeText
         holder.tvDesc.text = mod.desc
 
-        // Category Badge Tinting for Visual Alignment
+        // Category Badge Tinting
         when (mod.category) {
-            ModCategory.AI -> {
-                holder.tvBadge.setTextColor(0xFF67E8F9.toInt())
-                holder.tvBadge.background?.mutate()?.setTint(0xFF083344.toInt())
+            ModCategory.CUSTOM -> {
+                holder.tvBadge.setTextColor(0xFF34D399.toInt())
+                holder.tvBadge.background?.mutate()?.setTint(0xFF064E3B.toInt())
             }
             ModCategory.MYTHOS -> {
                 holder.tvBadge.setTextColor(0xFFF0ABFC.toInt())
@@ -99,6 +101,12 @@ class ModAdapter(
             onDetailsClick(mod)
         }
 
+        // Delete Button
+        holder.btnDeleteMod.setOnClickListener {
+            it.performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
+            onDeleteClick(mod)
+        }
+
         // Import Button styling & state
         holder.btnImport.setBackgroundResource(mod.buttonBgRes)
         val isImporting = (activeImportingId == mod.id)
@@ -106,24 +114,25 @@ class ModAdapter(
 
         if (isImporting) {
             holder.cardProgress.visibility = View.VISIBLE
-            holder.btnImport.text = "⏳ EXPORTING..."
+            holder.btnImport.text = "⏳ IMPORTING..."
             holder.btnImport.isEnabled = false
         } else {
             holder.cardProgress.visibility = View.GONE
-            holder.btnImport.text = mod.buttonText
+            // Concise button text that never truncates on screen
+            holder.btnImport.text = if (mod.isCustom) "📥 IMPORT CUSTOM" else "${mod.iconEmoji} IMPORT MOD"
             holder.btnImport.isEnabled = !isAnyImporting
         }
 
-        // Text color for buttons with bright background
+        // High-contrast text color for bright button backgrounds
         if (mod.buttonBgRes == R.drawable.btn_dragonball_orange ||
             mod.buttonBgRes == R.drawable.btn_quirkborn_yellow ||
             mod.buttonBgRes == R.drawable.btn_omnibound_lime ||
             mod.buttonBgRes == R.drawable.btn_onepiece_orange ||
             mod.buttonBgRes == R.drawable.btn_omni_blue ||
-            mod.buttonBgRes == R.drawable.btn_ben10_v6_neon ||
-            mod.buttonBgRes == R.drawable.btn_ben10_omni_nr_neon
+            mod.buttonBgRes == R.drawable.btn_header_mc ||
+            mod.buttonBgRes == R.drawable.btn_mod_custom
         ) {
-            holder.btnImport.setTextColor(0xFF050B14.toInt())
+            holder.btnImport.setTextColor(0xFF042F2E.toInt())
         } else {
             holder.btnImport.setTextColor(0xFFFFFFFF.toInt())
         }
@@ -151,6 +160,23 @@ class ModAdapter(
         notifyDataSetChanged()
     }
 
+    fun updateModsList(newMods: List<ModItem>) {
+        allMods.clear()
+        allMods.addAll(newMods)
+        applyFilter(currentQuery, currentCategory)
+    }
+
+    fun removeMod(mod: ModItem) {
+        val indexInDisplayed = displayedMods.indexOfFirst { it.id == mod.id }
+        allMods.removeAll { it.id == mod.id }
+        if (indexInDisplayed != -1) {
+            displayedMods.removeAt(indexInDisplayed)
+            notifyItemRemoved(indexInDisplayed)
+        } else {
+            notifyDataSetChanged()
+        }
+    }
+
     fun applyFilter(query: String, category: ModCategory) {
         currentQuery = query.trim().lowercase()
         currentCategory = category
@@ -160,6 +186,7 @@ class ModAdapter(
             val matchesCategory = when (category) {
                 ModCategory.ALL -> true
                 ModCategory.FAVORITES -> favoritesManager.isFavorite(mod.id)
+                ModCategory.CUSTOM -> mod.isCustom
                 else -> mod.category == category
             }
             val matchesQuery = if (currentQuery.isEmpty()) {
@@ -200,4 +227,6 @@ class ModAdapter(
     }
 
     fun getDisplayedCount(): Int = displayedMods.size
+    fun getTotalCount(): Int = allMods.size
+    fun getCustomModsCount(): Int = allMods.count { it.isCustom }
 }

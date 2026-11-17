@@ -31,6 +31,7 @@ object ModInstaller {
     const val ASSET_ULTRAREAL = "UltraReal_100x_HD_v2.mcpack"
     const val ASSET_WHEEL_OF_ADAPTATION = "Wheel_of_Adaptation_v1.3.1.mcaddon"
     const val ASSET_APLOK_GUNS = "Aplok_Guns_v1.8.8.mcaddon"
+    const val ASSET_COBBLEMON = "coblemon-1.8.12.mcaddon"
 
     private val mainHandler = Handler(Looper.getMainLooper())
 
@@ -91,6 +92,19 @@ object ModInstaller {
             val cacheFiles = context.cacheDir.listFiles() ?: return 0L
             for (file in cacheFiles) {
                 if (file.name.endsWith(".mcaddon", ignoreCase = true) ||
+                    file.name.endsWith(".mcpack", ignoreCase = true) ||
+                    file.name.endsWith(".tmp", ignoreCase = true) ||
+                    file.name.endsWith(".zip", ignoreCase = true)
+                ) {
+                    val size = file.length()
+                    if (file.delete()) {
+                        freedBytes += size
+                    }
+                }
+            }
+            // Also clean externalCacheDir if available
+            context.externalCacheDir?.listFiles()?.forEach { file ->
+                if (file.name.endsWith(".mcaddon", ignoreCase = true) ||
                     file.name.endsWith(".mcpack", ignoreCase = true)
                 ) {
                     val size = file.length()
@@ -138,77 +152,130 @@ object ModInstaller {
                 outputStream.close()
                 inputStream.close()
 
-                postProgress(onProgress, "Granting permissions & launching...")
-                val contentUri: Uri = FileProvider.getUriForFile(
-                    context,
-                    "${context.packageName}.provider",
-                    targetFile
-                )
+                launchMinecraftWithFile(context, targetFile, modTitle, onProgress, onComplete)
 
-                // Explicitly grant read & write URI permissions to Minecraft
-                val permFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-                try {
-                    context.grantUriPermission(MINECRAFT_PACKAGE, contentUri, permFlags)
-                    context.grantUriPermission(MINECRAFT_TRIAL_PACKAGE, contentUri, permFlags)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-
-                // 1. Primary: Direct launch targeting official Minecraft Bedrock
-                try {
-                    val mcIntent = Intent(Intent.ACTION_VIEW).apply {
-                        setDataAndType(contentUri, "*/*")
-                        setPackage(MINECRAFT_PACKAGE)
-                        addFlags(permFlags)
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    }
-                    context.startActivity(mcIntent)
-                    postComplete(onComplete, true, "🎮 Launching Minecraft... Importing $modTitle!")
-                    return@Thread
-                } catch (e1: Exception) {
-                    // Fall through to trial or chooser
-                }
-
-                // 2. Secondary: Launch targeting Minecraft Trial Edition
-                try {
-                    val trialIntent = Intent(Intent.ACTION_VIEW).apply {
-                        setDataAndType(contentUri, "*/*")
-                        setPackage(MINECRAFT_TRIAL_PACKAGE)
-                        addFlags(permFlags)
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    }
-                    context.startActivity(trialIntent)
-                    postComplete(onComplete, true, "🎮 Launching Minecraft Trial... Importing $modTitle!")
-                    return@Thread
-                } catch (e2: Exception) {
-                    // Fall through to system chooser
-                }
-
-                // 3. Tertiary: System App Chooser for Minecraft or custom Bedrock variants
-                try {
-                    val genericIntent = Intent(Intent.ACTION_VIEW).apply {
-                        setDataAndType(contentUri, "*/*")
-                        addFlags(permFlags)
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    }
-                    val chooser = Intent.createChooser(genericIntent, "Open with Minecraft").apply {
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    }
-                    context.startActivity(chooser)
-                    postComplete(onComplete, true, "Select Minecraft from the list to import $modTitle!")
-                } catch (e3: Exception) {
-                    // 4. Fallback: Prompt user to install Minecraft PE
-                    launchMinecraft(context)
-                    postComplete(onComplete, false, "Minecraft Bedrock not found. Please install Minecraft PE!")
-                }
+                // Auto-cleanup after Minecraft finishes reading the file (prevent 350MB bloat)
+                mainHandler.postDelayed({
+                    clearModCache(context)
+                }, 25000L)
 
             } catch (e: Exception) {
                 e.printStackTrace()
                 postComplete(onComplete, false, "Failed to export mod: ${e.localizedMessage}")
             }
         }.start()
+    }
+
+    /**
+     * Installs a user-uploaded custom mod file directly into Minecraft Bedrock.
+     */
+    fun installCustomMod(
+        context: Context,
+        customFile: File,
+        modTitle: String,
+        onProgress: ((String) -> Unit)? = null,
+        onComplete: (Boolean, String) -> Unit
+    ) {
+        Thread {
+            try {
+                if (!customFile.exists()) {
+                    postComplete(onComplete, false, "Custom mod file not found on device!")
+                    return@Thread
+                }
+
+                postProgress(onProgress, "Preparing custom mod $modTitle...")
+                clearModCache(context)
+
+                // Copy to cache for secure FileProvider sharing
+                val targetFile = File(context.cacheDir, customFile.name)
+                customFile.copyTo(targetFile, overwrite = true)
+
+                launchMinecraftWithFile(context, targetFile, modTitle, onProgress, onComplete)
+
+                // Auto-cleanup cached copy after Minecraft launches
+                mainHandler.postDelayed({
+                    clearModCache(context)
+                }, 25000L)
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+                postComplete(onComplete, false, "Failed to launch custom mod: ${e.localizedMessage}")
+            }
+        }.start()
+    }
+
+    private fun launchMinecraftWithFile(
+        context: Context,
+        targetFile: File,
+        modTitle: String,
+        onProgress: ((String) -> Unit)?,
+        onComplete: (Boolean, String) -> Unit
+    ) {
+        postProgress(onProgress, "Granting permissions & launching...")
+        val contentUri: Uri = FileProvider.getUriForFile(
+            context,
+            "${context.packageName}.provider",
+            targetFile
+        )
+
+        // Explicitly grant read & write URI permissions to Minecraft
+        val permFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+        try {
+            context.grantUriPermission(MINECRAFT_PACKAGE, contentUri, permFlags)
+            context.grantUriPermission(MINECRAFT_TRIAL_PACKAGE, contentUri, permFlags)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        // 1. Primary: Direct launch targeting official Minecraft Bedrock
+        try {
+            val mcIntent = Intent(Intent.ACTION_VIEW).apply {
+                setDataAndType(contentUri, "*/*")
+                setPackage(MINECRAFT_PACKAGE)
+                addFlags(permFlags)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            }
+            context.startActivity(mcIntent)
+            postComplete(onComplete, true, "🎮 Launching Minecraft... Importing $modTitle!")
+            return
+        } catch (e1: Exception) {
+            // Fall through to trial or chooser
+        }
+
+        // 2. Secondary: Launch targeting Minecraft Trial Edition
+        try {
+            val trialIntent = Intent(Intent.ACTION_VIEW).apply {
+                setDataAndType(contentUri, "*/*")
+                setPackage(MINECRAFT_TRIAL_PACKAGE)
+                addFlags(permFlags)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            }
+            context.startActivity(trialIntent)
+            postComplete(onComplete, true, "🎮 Launching Minecraft Trial... Importing $modTitle!")
+            return
+        } catch (e2: Exception) {
+            // Fall through to system chooser
+        }
+
+        // 3. Tertiary: System App Chooser for Minecraft or custom Bedrock variants
+        try {
+            val genericIntent = Intent(Intent.ACTION_VIEW).apply {
+                setDataAndType(contentUri, "*/*")
+                addFlags(permFlags)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            val chooser = Intent.createChooser(genericIntent, "Open with Minecraft").apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(chooser)
+            postComplete(onComplete, true, "Select Minecraft from the list to import $modTitle!")
+        } catch (e3: Exception) {
+            // 4. Fallback: Prompt user to install Minecraft PE
+            launchMinecraft(context)
+            postComplete(onComplete, false, "Minecraft Bedrock not found. Please install Minecraft PE!")
+        }
     }
 
     private fun postProgress(callback: ((String) -> Unit)?, message: String) {

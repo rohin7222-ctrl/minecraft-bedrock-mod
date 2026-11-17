@@ -198,6 +198,19 @@ object ModRepository {
                 buttonBgRes = R.drawable.btn_marvel_purple,
                 buttonText = "⭐ IMPORT MARVEL PROJECT ⭐",
                 guideInfo = "⭐ Marvel Project Guide:\n• Summon Thor's Mjolnir and call down thunder.\n• Throw Captain America's Vibranium shield which ricochets.\n• Collect all 6 Infinity Stones to snap enemies out of existence."
+            ),
+            ModItem(
+                id = "cobblemon",
+                title = "COBBLEMON BEDROCK (v1.8.12)",
+                category = ModCategory.ANIME,
+                badge = "🔴 POKEMON • 500+ SPECIES • POKEBALLS",
+                desc = "Official Cobblemon v1.8.12 for Minecraft Bedrock! Catch, train, and battle 500+ open-world Pokemon with authentic animations, Pokeballs, healing machines, PC storage, apricorn farming, and evolution items!",
+                sizeText = "💾 123.7 MB",
+                iconEmoji = "🔴",
+                assetFileName = ModInstaller.ASSET_COBBLEMON,
+                buttonBgRes = R.drawable.btn_actualguns_red,
+                buttonText = "🔴 IMPORT COBBLEMON 🔴",
+                guideInfo = "🔴 Cobblemon In-Game Guide:\n• 1. Craft Pokeballs from Apricorns and Iron.\n• 2. Right-click wild Pokemon to initiate real-time battles or throw Pokeballs.\n• 3. Build Healing Machine and PC Storage to manage your Pokemon team.\n• 4. Enable 'Beta APIs' in world settings."
             )
         )
     }

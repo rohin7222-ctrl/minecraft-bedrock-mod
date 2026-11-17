@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface_dark"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Header Icon + Title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📤"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Custom Minecraft Mod"
+                android:textColor="@color/text_white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Upload .mcaddon, .mcpack, or .zip from your device"
+                android:textColor="@color/text_gray"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:background="@color/card_stroke" />
+
+    <!-- Mod Title Input -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mod Name *"
+        android:textColor="@color/omnitrix_glow"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etCustomModTitle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/search_box_background"
+        android:hint="e.g. Legendary Katana Addon"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:maxLines="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/text_white"
+        android:textColorHint="@color/text_muted"
+        android:textSize="13.5sp" />
+
+    <!-- Mod Description Input -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Description *"
+        android:textColor="@color/omnitrix_glow"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etCustomModDesc"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/search_box_background"
+        android:gravity="top|start"
+        android:hint="e.g. Custom 3D weapons, armor, and special abilities for survival..."
+        android:inputType="textMultiLine"
+        android:maxLines="3"
+        android:padding="12dp"
+        android:textColor="@color/text_white"
+        android:textColorHint="@color/text_muted"
+        android:textSize="13sp" />
+
+    <!-- File Picker Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Select Addon / Pack File *"
+        android:textColor="@color/omnitrix_glow"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/search_box_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnSelectFile"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:background="@drawable/btn_footer_tool"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="📁 Choose File"
+            android:textColor="@color/omnitrix_glow"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSelectedFileStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:text="No file selected yet"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Dialog Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancelDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/btn_footer_tool"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Cancel"
+            android:textColor="@color/text_muted"
+            android:textSize="12.5sp" />
+
+        <Button
+            android:id="@+id/btnUploadSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:background="@drawable/btn_header_mc"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="🚀 Add &amp; Save Mod"
+            android:textColor="#042F2E"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

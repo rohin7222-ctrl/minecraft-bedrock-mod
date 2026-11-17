@@ -176,7 +176,7 @@
             app:indicatorColor="@color/omnitrix_green"
             app:trackColor="@color/surface_dark" />
 
-        <!-- Action Row: Guide + Import (Pixel-Perfect 46dp Height Alignment) -->
+        <!-- Action Row: Guide + Delete + Import (Pixel-Perfect 42dp Uniform Height) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -187,26 +187,41 @@
             <Button
                 android:id="@+id/btnModDetails"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="6dp"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:background="@drawable/btn_mod_guide_outline"
                 android:elevation="2dp"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
                 android:text="📖 Guide"
                 android:textColor="@color/omnitrix_glow"
-                android:textSize="12sp"
+                android:textSize="11.5sp"
                 android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnDeleteMod"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="6dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:background="@drawable/btn_delete_card"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="🗑️"
+                android:textSize="13sp"
                 app:backgroundTint="@null" />
 
             <Button
                 android:id="@+id/btnImportMod"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
+                android:layout_height="42dp"
                 android:layout_weight="1"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
@@ -216,10 +231,10 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:singleLine="true"
-                android:text="🔮 IMPORT MYTHOS ASCENSION 🔮"
+                android:text="📥 IMPORT MOD"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:textStyle="bold"
